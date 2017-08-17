@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Match, Miss } from 'react-router-dom';
+import 'bulma/css/bulma.css';
+import 'font-awesome/css/font-awesome.css';
 import './index.css';
 import StorePicker from './components/StorePicker';
 import App from './components/App';
@@ -11,7 +13,7 @@ const Root = () =>
   <BrowserRouter>
     <div>
       <Match exactly pattern="/" component={StorePicker} />
-      <Match exactly pattern="/store/storeId" component={App} />
+      <Match exactly pattern="/store/:storeId" component={App} />
       <Miss component={NotFound} />
     </div>
   </BrowserRouter>;
