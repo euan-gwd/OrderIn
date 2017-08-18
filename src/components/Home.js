@@ -5,7 +5,7 @@ class Home extends Component {
   state = {};
   render() {
     return (
-      <section className="hero is-danger is-fullheight">
+      <section className="hero is-danger is-medium">
         <Header className="hero-head" />
         <div className="hero-body">
           <div className="container">
@@ -25,14 +25,17 @@ class Home extends Component {
                   </label>
                 </p>
               </div>
-              <p className="has-text-centered label">Enter your street address & suburb:</p>
+              <p className="has-text-centered is-size-3">Enter your street address & suburb:</p>
               <div className="field has-addons">
-                <p className="control is-expanded">
+                <p className="control is-expanded has-icons-left">
                   <input
                     className="input"
                     type="text"
                     placeholder="e.g. 90 Victoria Road, Woodstock"
                   />
+                  <span className="icon is-left">
+                    <i className="fa fa-search" />
+                  </span>
                 </p>
                 <p className="control">
                   <a className="button is-danger">Find Restaurants</a>
