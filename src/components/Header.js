@@ -11,9 +11,9 @@ const Header = () =>
       </div>
       <div className="navbar-end">
         <div className="navbar-item">
-          <div className="field is-grouped">
+          <div className="field has-addons">
             <p className="control">
-              <a className="button is-outlined is-info">
+              <a className="button is-danger">
                 <span className="icon">
                   <i className="fa fa-pencil-square-o" />
                 </span>
@@ -21,7 +21,7 @@ const Header = () =>
               </a>
             </p>
             <p className="control">
-              <a className="button is-outlined is-success">
+              <a className="button is-danger">
                 <span className="icon">
                   <i className="fa fa-lock" />
                 </span>

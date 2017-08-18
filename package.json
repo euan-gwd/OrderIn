@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "4.0.0-beta",
     "bulma": "^0.5.1",
     "font-awesome": "^4.7.0",
     "react": "^15.6.1",

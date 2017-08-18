@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Header from "./Header";
+import Header from "../Header";
 
-class Home extends Component {
+class Hero extends Component {
   state = {};
   render() {
     return (
@@ -9,7 +9,9 @@ class Home extends Component {
         <Header className="hero-head" />
         <div className="hero-body">
           <div className="container">
-            <h1 className="title has-text-centered">Simply order food online.</h1>
+            <h1 className="has-text-centered is-size-3">
+              <strong>Simply</strong> Order food online.
+            </h1>
             <form className="box">
               <div className="field is-grouped is-grouped-centered">
                 <p className="control">
@@ -25,7 +27,7 @@ class Home extends Component {
                   </label>
                 </p>
               </div>
-              <p className="has-text-centered is-size-3">Enter your street address & suburb:</p>
+              <p className="has-text-centered is-size-4">Enter your street address & suburb:</p>
               <div className="field has-addons">
                 <p className="control is-expanded has-icons-left">
                   <input
@@ -49,4 +51,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Hero;

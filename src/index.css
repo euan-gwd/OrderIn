@@ -1,4 +1,4 @@
-/*! bulma.io v0.5.1 | MIT License | github.com/jgthms/bulma */
+/*! customised bulma.io v0.5.1 | MIT License | github.com/jgthms/bulma */
 @-webkit-keyframes spinAround {
   from {
     -webkit-transform: rotate(0deg);
@@ -107,6 +107,12 @@ th {
   text-align: left;
 }
 
+:root {
+  --wrapper-bkgrd: #991e01;
+  --main-bkgrd: #a72101;
+  --btn-bkgrd: #891b01;
+}
+
 html {
   background-color: #fff;
   font-size: 16px;
@@ -166,7 +172,7 @@ a:hover {
 
 code {
   background-color: whitesmoke;
-  color: #ff3860;
+  color: var(--btn-bkgrd);
   font-size: 0.875em;
   font-weight: normal;
   padding: 0.25em 0.5em 0.25em;
@@ -789,7 +795,7 @@ a.has-text-warning:hover, a.has-text-warning:focus {
 }
 
 .has-text-danger {
-  color: #ff3860 !important;
+  color: var(--btn-bkgrd) !important;
 }
 
 a.has-text-danger:hover, a.has-text-danger:focus {
@@ -2165,7 +2171,7 @@ a.box:active {
 }
 
 .button.is-danger {
-  background-color: #ff3860;
+  background-color: var(--btn-bkgrd);
   border-color: transparent;
   color: #fff;
 }
@@ -2192,7 +2198,7 @@ a.box:active {
 }
 
 .button.is-danger[disabled] {
-  background-color: #ff3860;
+  background-color: var(--btn-bkgrd);
   border-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2200,7 +2206,7 @@ a.box:active {
 
 .button.is-danger.is-inverted {
   background-color: #fff;
-  color: #ff3860;
+  color: var(--btn-bkgrd);
 }
 
 .button.is-danger.is-inverted:hover {
@@ -2212,7 +2218,7 @@ a.box:active {
   border-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #ff3860;
+  color: var(--btn-bkgrd);
 }
 
 .button.is-danger.is-loading:after {
@@ -2221,26 +2227,26 @@ a.box:active {
 
 .button.is-danger.is-outlined {
   background-color: transparent;
-  border-color: #ff3860;
-  color: #ff3860;
+  border-color: var(--btn-bkgrd);
+  color: var(--btn-bkgrd);
 }
 
 .button.is-danger.is-outlined:hover, .button.is-danger.is-outlined:focus {
-  background-color: #ff3860;
-  border-color: #ff3860;
+  background-color: var(--btn-bkgrd);
+  border-color: var(--btn-bkgrd);
   color: #fff;
 }
 
 .button.is-danger.is-outlined.is-loading:after {
-  border-color: transparent transparent #ff3860 #ff3860 !important;
+  border-color: transparent transparent var(--btn-bkgrd) var(--btn-bkgrd) !important;
 }
 
 .button.is-danger.is-outlined[disabled] {
   background-color: transparent;
-  border-color: #ff3860;
+  border-color: var(--btn-bkgrd);
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #ff3860;
+  color: var(--btn-bkgrd);
 }
 
 .button.is-danger.is-inverted.is-outlined {
@@ -2251,7 +2257,7 @@ a.box:active {
 
 .button.is-danger.is-inverted.is-outlined:hover, .button.is-danger.is-inverted.is-outlined:focus {
   background-color: #fff;
-  color: #ff3860;
+  color: var(--btn-bkgrd);
 }
 
 .button.is-danger.is-inverted.is-outlined[disabled] {
@@ -2605,7 +2611,7 @@ a.box:active {
 .textarea.is-focused,
 .textarea:active,
 .textarea.is-active {
-  border-color: #00d1b2;
+  border-color: var(--btn-bkgrd);
 }
 
 .input[disabled],
@@ -2684,7 +2690,7 @@ a.box:active {
 
 .input.is-danger,
 .textarea.is-danger {
-  border-color: #ff3860;
+  border-color: var(--btn-bkgrd);
 }
 
 .input.is-small,
@@ -2930,7 +2936,7 @@ a.box:active {
 }
 
 .select.is-danger select {
-  border-color: #ff3860;
+  border-color: var(--btn-bkgrd);
 }
 
 .select.is-small {
@@ -3209,7 +3215,7 @@ a.box:active {
 }
 
 .file.is-danger .file-cta {
-  background-color: #ff3860;
+  background-color: var(--btn-bkgrd);
   border-color: transparent;
   color: #fff;
 }
@@ -3534,7 +3540,7 @@ a.box:active {
 }
 
 .help.is-danger {
-  color: #ff3860;
+  color: var(--btn-bkgrd);
 }
 
 .field:not(:last-child) {
@@ -4101,7 +4107,7 @@ a.box:active {
 }
 
 .notification.is-danger {
-  background-color: #ff3860;
+  background-color: var(--btn-bkgrd);
   color: #fff;
 }
 
@@ -4198,11 +4204,11 @@ a.box:active {
 }
 
 .progress.is-danger::-webkit-progress-value {
-  background-color: #ff3860;
+  background-color: var(--btn-bkgrd);
 }
 
 .progress.is-danger::-moz-progress-bar {
-  background-color: #ff3860;
+  background-color: var(--btn-bkgrd);
 }
 
 .progress.is-small {
@@ -4289,8 +4295,8 @@ a.box:active {
 
 .table td.is-danger,
 .table th.is-danger {
-  background-color: #ff3860;
-  border-color: #ff3860;
+  background-color: var(--btn-bkgrd);
+  border-color: var(--btn-bkgrd);
   color: #fff;
 }
 
@@ -4480,7 +4486,7 @@ a.box:active {
 }
 
 .tag.is-danger {
-  background-color: #ff3860;
+  background-color: var(--btn-bkgrd);
   color: #fff;
 }
 
@@ -5526,12 +5532,12 @@ a.dropdown-item.is-active {
 }
 
 .message.is-danger .message-header {
-  background-color: #ff3860;
+  background-color: var(--btn-bkgrd);
   color: #fff;
 }
 
 .message.is-danger .message-body {
-  border-color: #ff3860;
+  border-color: var(--btn-bkgrd);
   color: #cd0930;
 }
 
@@ -6089,7 +6095,7 @@ a.nav-item:not(.button).is-tab.is-active {
 }
 
 .navbar {
-  background-color: white;
+  background-color: var(--wrapper-bkgrd);
   min-height: 3.25rem;
   position: relative;
 }
@@ -9272,7 +9278,7 @@ label.panel-block:hover {
 }
 
 .hero.is-danger {
-  background-color: #ff3860;
+  background-color: var(--main-bkgrd);
   color: #fff;
 }
 
@@ -9301,7 +9307,7 @@ label.panel-block:hover {
 
 @media screen and (max-width: 768px) {
   .hero.is-danger .nav-menu {
-    background-color: #ff3860;
+    background-color: var(--main-bkgrd);
   }
 }
 
@@ -9340,16 +9346,16 @@ label.panel-block:hover {
 .hero.is-danger .tabs.is-boxed li.is-active a, .hero.is-danger .tabs.is-boxed li.is-active a:hover, .hero.is-danger .tabs.is-toggle li.is-active a, .hero.is-danger .tabs.is-toggle li.is-active a:hover {
   background-color: #fff;
   border-color: #fff;
-  color: #ff3860;
+  color: var(--main-bkgrd);
 }
 
 .hero.is-danger.is-bold {
-  background-image: linear-gradient(141deg, #ff0561 0%, #ff3860 71%, #ff5257 100%);
+  background-image: linear-gradient(141deg, #ff0561 0%, var(--main-bkgrd) 71%, #ff5257 100%);
 }
 
 @media screen and (max-width: 768px) {
   .hero.is-danger.is-bold .nav-menu {
-    background-image: linear-gradient(141deg, #ff0561 0%, #ff3860 71%, #ff5257 100%);
+    background-image: linear-gradient(141deg, #ff0561 0%, var(--main-bkgrd) 71%, #ff5257 100%);
   }
 }
 
