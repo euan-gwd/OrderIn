@@ -30,3 +30,10 @@ input[type=radio].with-font:focus ~ label:before,
 input[type=radio].with-font:focus ~ label {
   color: #891b01;
 }
+
+.well {
+  background-color: #991e01;
+  border-radius: 5px;
+  margin-bottom: .75em;
+  padding: 1.25em 1.5em 1em 1.5em;
+}

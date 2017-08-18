@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header";
-import "./Search.css";
+import "./styles.css";
 
 class Search extends Component {
   state = {};

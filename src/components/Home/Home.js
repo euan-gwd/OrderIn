@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Search from "./Search";
-import City from "./City";
-import Cuisine from "./Cuisine";
+import CategoryListing from "./CategoryListing";
 
 class Home extends Component {
   state = {};
@@ -9,8 +8,7 @@ class Home extends Component {
     return (
       <div className="">
         <Search />
-        <City />
-        <Cuisine />
+        <CategoryListing />
       </div>
     );
   }
