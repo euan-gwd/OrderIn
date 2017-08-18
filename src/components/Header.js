@@ -13,10 +13,20 @@ const Header = () =>
         <div className="navbar-item">
           <div className="field is-grouped">
             <p className="control">
-              <a className="button is-outlined is-info">SignUp</a>
+              <a className="button is-outlined is-info">
+                <span className="icon">
+                  <i className="fa fa-pencil-square-o" />
+                </span>
+                <span>Register</span>
+              </a>
             </p>
             <p className="control">
-              <a className="button is-outlined is-success">Login</a>
+              <a className="button is-outlined is-success">
+                <span className="icon">
+                  <i className="fa fa-lock" />
+                </span>
+                <span>Sign In</span>
+              </a>
             </p>
           </div>
         </div>
