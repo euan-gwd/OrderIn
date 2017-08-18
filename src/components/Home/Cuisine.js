@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Category extends Component {
+class Cuisine extends Component {
   state = {};
   render() {
     return (
@@ -11,7 +11,7 @@ class Category extends Component {
               <span className="icon is-large">
                 <i className="fa fa-cutlery" />
               </span>
-              Search by Category
+              Search by Cuisine
             </h1>
           </div>
         </div>
@@ -27,4 +27,4 @@ class Category extends Component {
   }
 }
 
-export default Category;
+export default Cuisine;

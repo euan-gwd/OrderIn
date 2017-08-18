@@ -1,0 +1,32 @@
+input[type=radio].with-font {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+input[type=radio].with-font ~ label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f1db";
+  letter-spacing: 10px;
+  font-size: 1.5rem;
+  color: #535353;
+  width: 1.8rem;
+}
+
+input[type=radio].with-font:checked ~ label:before {
+  content: "\f00c";
+  font-size: 1.5rem;
+  color: #991e01;
+  letter-spacing: 5px;
+}
+
+input[type=radio].with-font:focus ~ label:before,
+input[type=radio].with-font:focus ~ label {
+  color: #891b01;
+}
