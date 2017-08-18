@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import Header from "../Header";
 
-class Hero extends Component {
+class Search extends Component {
   state = {};
   render() {
     return (
-      <section className="hero is-danger is-medium">
+      <section className="hero is-danger is-fullheight">
         <Header className="hero-head" />
         <div className="hero-body">
           <div className="container">
@@ -51,4 +51,4 @@ class Hero extends Component {
   }
 }
 
-export default Hero;
+export default Search;

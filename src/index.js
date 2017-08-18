@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./index.css";
 import "font-awesome/css/font-awesome.css";
-import Home from "./components/Home/Hero";
+import Home from "./components/Home/Home";
 import App from "./components/App";
 import NotFound from "./components/NotFound";
 import registerServiceWorker from "./registerServiceWorker";

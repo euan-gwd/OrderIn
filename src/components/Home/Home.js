@@ -1,12 +1,16 @@
 import React, { Component } from "react";
-import Hero from "./Hero";
+import Search from "./Search";
+import City from "./City";
+import Category from "./Category";
 
 class Home extends Component {
   state = {};
   render() {
     return (
       <div className="">
-        <Hero />
+        <Search />
+        <City />
+        <Category />
       </div>
     );
   }
