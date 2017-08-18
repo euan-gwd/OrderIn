@@ -17,12 +17,12 @@ class CategoryListing extends Component {
           <div className="container">
             <div className="well">
               <h1 className="has-text-centered is-size-3">
-                <span className="icon is-large">
+                <span className="icon is-medium">
                   <i className="fa fa-map-marker" />
                 </span>
                 Search by City
               </h1>
-              <ul className="">
+              <ul className="columns is-multiline">
                 {Object.keys(this.state.cities).map(key =>
                   <City key={key} suburbs={this.state.cities[key]} name={key} />
                 )}
@@ -32,12 +32,12 @@ class CategoryListing extends Component {
           <div className="container">
             <div className="well">
               <h1 className="has-text-centered is-size-3">
-                <span className="icon is-large">
+                <span className="icon is-medium">
                   <i className="fa fa-cutlery" />
                 </span>
                 Search by Cuisine
               </h1>
-              <ul className="">
+              <ul className="columns is-multiline">
                 {this.state.cuisines.map(cuisine => <Category key={cuisine} name={cuisine} />)}
               </ul>
             </div>

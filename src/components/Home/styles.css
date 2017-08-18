@@ -22,17 +22,17 @@ input[type=radio].with-font ~ label:before {
 input[type=radio].with-font:checked ~ label:before {
   content: "\f00c";
   font-size: 1.5rem;
-  color: #991e01;
+  color: var(--btn-bkgrd);
   letter-spacing: 5px;
 }
 
 input[type=radio].with-font:focus ~ label:before,
 input[type=radio].with-font:focus ~ label {
-  color: #891b01;
+  color: var(--btn-hover);
 }
 
 .well {
-  background-color: #991e01;
+  background-color: var(--header-bkgrd);
   border-radius: 5px;
   margin-bottom: .75em;
   padding: 1.25em 1.5em 1em 1.5em;

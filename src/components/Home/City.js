@@ -1,10 +1,10 @@
 import React from "react";
 
 const City = ({ name, suburbs }) =>
-  <li>
-    <a href="/">
+  <li className="column is-4 has-text-centered">
+    <button className="button is-danger">
       {name}
-    </a>
+    </button>
   </li>;
 
 export default City;

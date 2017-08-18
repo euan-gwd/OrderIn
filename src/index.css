@@ -108,9 +108,12 @@ th {
 }
 
 :root {
-  --wrapper-bkgrd: #991e01;
-  --main-bkgrd: #a72101;
-  --btn-bkgrd: #891b01;
+  --header-bkgrd: #991e01;
+  --body-bkgrd: #A81F00;
+  --well-bkgrd: #9A1C00; 
+  --btn-bkgrd: #a72101;
+  --btn-hover: #841a01;
+  --deep-red: #600D03;
 }
 
 html {
@@ -2177,7 +2180,7 @@ a.box:active {
 }
 
 .button.is-danger:hover, .button.is-danger.is-hovered {
-  background-color: #ff2b56;
+  background-color: var(--btn-hover);
   border-color: transparent;
   color: #fff;
 }
@@ -2190,7 +2193,7 @@ a.box:active {
 }
 
 .button.is-danger:active, .button.is-danger.is-active {
-  background-color: #ff1f4b;
+  background-color: var(--btn-hover);
   border-color: transparent;
   -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
           box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
@@ -2611,7 +2614,7 @@ a.box:active {
 .textarea.is-focused,
 .textarea:active,
 .textarea.is-active {
-  border-color: var(--btn-bkgrd);
+  border-color: var(--btn-hover);
 }
 
 .input[disabled],
@@ -3221,7 +3224,7 @@ a.box:active {
 }
 
 .file.is-danger:hover .file-cta, .file.is-danger.is-hovered .file-cta {
-  background-color: #ff2b56;
+  background-color: var(--btn-hover);
   border-color: transparent;
   color: #fff;
 }
@@ -3234,7 +3237,7 @@ a.box:active {
 }
 
 .file.is-danger:active .file-cta, .file.is-danger.is-active .file-cta {
-  background-color: #ff1f4b;
+  background-color: var(--btn-hover);
   border-color: transparent;
   color: #fff;
 }
@@ -4204,7 +4207,7 @@ a.box:active {
 }
 
 .progress.is-danger::-webkit-progress-value {
-  background-color: var(--btn-bkgrd);
+  background-color: var(--btn-hover);
 }
 
 .progress.is-danger::-moz-progress-bar {
@@ -9278,7 +9281,7 @@ label.panel-block:hover {
 }
 
 .hero.is-danger {
-  background-color: var(--main-bkgrd);
+  background-color: var(--body-bkgrd);
   color: #fff;
 }
 
@@ -9307,7 +9310,7 @@ label.panel-block:hover {
 
 @media screen and (max-width: 768px) {
   .hero.is-danger .nav-menu {
-    background-color: var(--main-bkgrd);
+    background-color: var(--body-bkgrd);
   }
 }
 
@@ -9346,16 +9349,16 @@ label.panel-block:hover {
 .hero.is-danger .tabs.is-boxed li.is-active a, .hero.is-danger .tabs.is-boxed li.is-active a:hover, .hero.is-danger .tabs.is-toggle li.is-active a, .hero.is-danger .tabs.is-toggle li.is-active a:hover {
   background-color: #fff;
   border-color: #fff;
-  color: var(--main-bkgrd);
+  color: var(--body-bkgrd);
 }
 
 .hero.is-danger.is-bold {
-  background-image: linear-gradient(141deg, #ff0561 0%, var(--main-bkgrd) 71%, #ff5257 100%);
+  background-image: linear-gradient(141deg, #ff0561 0%, var(--body-bkgrd) 71%, #ff5257 100%);
 }
 
 @media screen and (max-width: 768px) {
   .hero.is-danger.is-bold .nav-menu {
-    background-image: linear-gradient(141deg, #ff0561 0%, var(--main-bkgrd) 71%, #ff5257 100%);
+    background-image: linear-gradient(141deg, #ff0561 0%, var(--body-bkgrd) 71%, #ff5257 100%);
   }
 }
 

@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../images/logo-orderin-208x50.png";
 
 const Header = () =>
-  <nav className="navbar is-transparent">
+  <nav className="navbar is-danger has-shadow">
     <div className="container is-fluid">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">

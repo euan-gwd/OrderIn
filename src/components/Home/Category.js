@@ -1,10 +1,10 @@
 import React from "react";
 
 const Category = ({ name }) =>
-  <li>
-    <a href="/">
+  <li className="column is-2 has-text-centered">
+    <button className="button is-danger">
       {name}
-    </a>
+    </button>
   </li>;
 
 export default Category;
