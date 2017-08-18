@@ -1,11 +1,11 @@
 // This is just some sample data so you don't have to think of your own!
 module.exports = {
   Alberton: {
-    Suburb: ["Alberton"]
+    suburbs: ["Alberton"]
   },
 
   CapeTown: {
-    Suburb: [
+    suburbs: [
       "Acacia Park",
       "Athlone",
       "Bellville",
@@ -53,7 +53,7 @@ module.exports = {
   },
 
   Centurion: {
-    Suburb: [
+    suburbs: [
       "Centurion Central",
       "Clubview",
       "Die Hoewes",
@@ -64,7 +64,7 @@ module.exports = {
   },
 
   Durban: {
-    Suburb: [
+    suburbs: [
       "Durban Central",
       "Durban North",
       "Glenashley",
@@ -80,11 +80,11 @@ module.exports = {
   },
 
   Franschhoek: {
-    Suburb: ["Franschhoek"]
+    suburbs: ["Franschhoek"]
   },
 
   Johannesburg: {
-    Suburb: [
+    suburbs: [
       "Atholl",
       "Barbeque Downs",
       "Beaulieu",
@@ -157,15 +157,15 @@ module.exports = {
   },
 
   KemptonPark: {
-    Suburb: ["Kempton Park"]
+    suburbs: ["Kempton Park"]
   },
 
   Paarl: {
-    Suburb: ["Paarl"]
+    suburbs: ["Paarl"]
   },
 
   Pretoria: {
-    Suburb: [
+    suburbs: [
       "Brooklyn PTA",
       "Constantia Park",
       "Die Wilgers",
@@ -188,14 +188,14 @@ module.exports = {
   },
 
   SomersetWest: {
-    Suburb: ["Somerset West"]
+    suburbs: ["Somerset West"]
   },
 
   Stellenbosch: {
-    Suburb: ["Stellenbosch Central", "Stellenbosch Ext"]
+    suburbs: ["Stellenbosch Central", "Stellenbosch Ext"]
   },
 
   Strand: {
-    Suburb: ["Strand"]
+    suburbs: ["Strand"]
   }
 };
