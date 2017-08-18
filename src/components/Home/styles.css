@@ -28,7 +28,7 @@ input[type=radio].with-font:checked ~ label:before {
 
 input[type=radio].with-font:focus ~ label:before,
 input[type=radio].with-font:focus ~ label {
-  color: var(--btn-hover);
+  color: var(--btn-bkgrd);
 }
 
 .well {

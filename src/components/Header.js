@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../images/logo-orderin-208x50.png";
 
 const Header = () =>
-  <nav className="navbar is-danger has-shadow">
+  <nav className="navbar is-transparent has-shadow">
     <div className="container is-fluid">
       <div className="navbar-brand">
         <a className="navbar-item" href="/">
@@ -13,7 +13,7 @@ const Header = () =>
         <div className="navbar-item">
           <div className="field has-addons">
             <p className="control">
-              <a className="button is-danger">
+              <a className="button is-danger is-inverted">
                 <span className="icon">
                   <i className="fa fa-pencil-square-o" />
                 </span>
@@ -21,7 +21,7 @@ const Header = () =>
               </a>
             </p>
             <p className="control">
-              <a className="button is-danger">
+              <a className="button is-danger is-inverted">
                 <span className="icon">
                   <i className="fa fa-lock" />
                 </span>
