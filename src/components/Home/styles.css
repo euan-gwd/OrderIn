@@ -37,3 +37,15 @@ input[type=radio].with-font:focus ~ label {
   margin-bottom: .75em;
   padding: 1.25em 1.5em 1em 1.5em;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1vh;
+}
+
+.grid .inner-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1vh;
+}

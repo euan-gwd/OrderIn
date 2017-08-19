@@ -34,7 +34,7 @@ module.exports = {
       "Parklands",
       "Parow",
       "Pinelands",
-      "Plattekloof 1",
+      "Plattekloof",
       "Rondebosch",
       "Salt River",
       "Sea Point",

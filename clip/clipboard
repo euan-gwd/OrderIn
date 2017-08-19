@@ -1,0 +1,13 @@
+          <div className="container">
+            <div className="well">
+              <h1 className="has-text-centered is-size-3">
+                <span className="icon is-medium">
+                  <i className="fa fa-cutlery" />
+                </span>
+                Search by Cuisine
+              </h1>
+              <ul className="columns is-multiline">
+                {this.state.cuisines.map(cuisine => <Category key={cuisine} name={cuisine} />)}
+              </ul>
+            </div>
+          </div>

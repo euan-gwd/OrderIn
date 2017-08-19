@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Store from "./Store";
 import Header from "../Header";
 import "./StorePicker.css";
-import sampleStores from "../../sample-stores";
+import sampleStores from "../../mock/sample-stores";
 class StorePicker extends Component {
   constructor() {
     super();
