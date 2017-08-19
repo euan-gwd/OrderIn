@@ -34,7 +34,7 @@ input[type=radio].with-font:focus ~ label {
 .well {
   background-color: var(--header-bkgrd);
   border-radius: 5px;
-  margin-bottom: .75em;
+  margin-bottom: 2em;
   padding: 1.25em 1.5em 1em 1.5em;
 }
 

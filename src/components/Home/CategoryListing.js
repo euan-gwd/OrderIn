@@ -4,13 +4,13 @@ import sampleCities from "../../mock/sample-city-list";
 import sampleCuisines from "../../mock/sample-cuisine-list";
 import CityList from "./CityList";
 // import SuburbList from "./SuburbList";
-// import Category from "./Category";
+import Category from "./Category";
 
 class CategoryListing extends Component {
   state = {
     cities: sampleCities,
     cuisines: sampleCuisines,
-    suburbs: []
+    suburbs: 0
   };
 
   showSuburbs(city, evt) {
@@ -42,21 +42,36 @@ class CategoryListing extends Component {
               </div>
             </div>
           </div>
+          {this.state.suburbs !== 0
+            ? <div className="container">
+                <div className="well">
+                  <h1 className="has-text-centered is-size-3">
+                    <span className="icon is-medium">
+                      <i className="fa fa-map-marker" />
+                    </span>
+                    Search by Suburb
+                  </h1>
+                  <div className="grid">
+                    {this.state.suburbs.map(element =>
+                      <button key={element} className="button is-danger">
+                        {element}
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            : <div className="" />}
           <div className="container">
             <div className="well">
               <h1 className="has-text-centered is-size-3">
                 <span className="icon is-medium">
-                  <i className="fa fa-map-marker" />
+                  <i className="fa fa-cutlery" />
                 </span>
-                Search by Suburb
+                Search by Cuisine
               </h1>
-              <div className="grid">
-                {this.state.suburbs.map(element =>
-                  <button key={element} className="button is-danger">
-                    {element}
-                  </button>
-                )}
-              </div>
+              <ul className="grid">
+                {this.state.cuisines.map(cuisine => <Category key={cuisine} name={cuisine} />)}
+              </ul>
             </div>
           </div>
         </div>
