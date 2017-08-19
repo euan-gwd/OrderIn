@@ -1,7 +1,7 @@
 import React from "react";
 
-const Category = ({ name }) =>
-  <button className="button is-danger">
+const Category = ({ name, searchSelected }) =>
+  <button className="button is-danger" onClick={searchSelected.bind(this)}>
     {name}
   </button>;
 

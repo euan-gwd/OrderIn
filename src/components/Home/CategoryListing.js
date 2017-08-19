@@ -18,6 +18,10 @@ class CategoryListing extends Component {
     this.setState({ suburbs: citySuburb });
   }
 
+  searchSelected(item) {
+    console.log(item);
+  }
+
   render() {
     return (
       <section className="hero is-danger is-medium">
@@ -52,7 +56,11 @@ class CategoryListing extends Component {
                   </h1>
                   <div className="grid">
                     {this.state.suburbs.map(element =>
-                      <button key={element} className="button is-danger">
+                      <button
+                        key={element}
+                        className="button is-danger"
+                        onClick={this.searchSelected.bind(this, element)}
+                      >
                         {element}
                       </button>
                     )}
@@ -69,7 +77,13 @@ class CategoryListing extends Component {
                 Search by Cuisine
               </h1>
               <ul className="grid">
-                {this.state.cuisines.map(cuisine => <Category key={cuisine} name={cuisine} />)}
+                {this.state.cuisines.map(cuisine =>
+                  <Category
+                    key={cuisine}
+                    name={cuisine}
+                    searchSelected={this.searchSelected.bind(this, cuisine)}
+                  />
+                )}
               </ul>
             </div>
           </div>
