@@ -5,7 +5,7 @@ import CategoryListing from "./CategoryListing";
 class Home extends Component {
   render() {
     return (
-      <div className="">
+      <div>
         <Search />
         <CategoryListing />
       </div>

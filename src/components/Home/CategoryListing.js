@@ -3,7 +3,6 @@ import "./styles.css";
 import sampleCities from "../../mock/sample-city-list";
 import sampleCuisines from "../../mock/sample-cuisine-list";
 import CityList from "./CityList";
-// import SuburbList from "./SuburbList";
 import Category from "./Category";
 
 class CategoryListing extends Component {
@@ -60,7 +59,7 @@ class CategoryListing extends Component {
                   </div>
                 </div>
               </div>
-            : <div className="" />}
+            : <div />}
           <div className="container">
             <div className="well">
               <h1 className="has-text-centered is-size-3">
