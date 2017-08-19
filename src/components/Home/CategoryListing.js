@@ -3,13 +3,22 @@ import "./styles.css";
 import sampleCities from "../../mock/sample-city-list";
 import sampleCuisines from "../../mock/sample-cuisine-list";
 import CityList from "./CityList";
+// import SuburbList from "./SuburbList";
 // import Category from "./Category";
 
 class CategoryListing extends Component {
   state = {
     cities: sampleCities,
-    cuisines: sampleCuisines
+    cuisines: sampleCuisines,
+    suburbs: []
   };
+
+  showSuburbs(city, evt) {
+    evt.preventDefault();
+    const citySuburb = city.suburbs.map(suburb => suburb);
+    this.setState({ suburbs: citySuburb });
+  }
+
   render() {
     return (
       <section className="hero is-danger is-medium">
@@ -24,14 +33,30 @@ class CategoryListing extends Component {
               </h1>
               <div className="grid">
                 {Object.keys(this.state.cities).map(city =>
-                  <CityList key={city} city={this.state.cities[city]} name={city} />
+                  <CityList
+                    key={city}
+                    showSuburbs={this.showSuburbs.bind(this, this.state.cities[city])}
+                    name={city}
+                  />
                 )}
               </div>
             </div>
           </div>
           <div className="container">
             <div className="well">
-              <ul className="" />
+              <h1 className="has-text-centered is-size-3">
+                <span className="icon is-medium">
+                  <i className="fa fa-map-marker" />
+                </span>
+                Search by Suburb
+              </h1>
+              <div className="grid">
+                {this.state.suburbs.map(element =>
+                  <button key={element} className="button is-danger">
+                    {element}
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>

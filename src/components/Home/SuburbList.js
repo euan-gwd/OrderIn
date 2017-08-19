@@ -1,12 +1,8 @@
 import React from "react";
 
-const SuburbList = ({ city }) =>
-  <ul className="inner-grid">
-    {city.map(suburb =>
-      <li key={suburb}>
-        {suburb}
-      </li>
-    )}
-  </ul>;
+const SuburbList = ({ name }) =>
+  <button className="button is-danger">
+    {name}
+  </button>;
 
 export default SuburbList;

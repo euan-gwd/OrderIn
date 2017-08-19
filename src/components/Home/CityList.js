@@ -1,31 +1,8 @@
-import React, { Component } from "react";
-import SuburbList from "./SuburbList";
+import React from "react";
 
-class CityList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { selected: false };
-  }
-
-  handleCityBtnClick() {
-    this.state.selected === false
-      ? this.setState({ selected: true })
-      : this.setState({ selected: false });
-  }
-
-  render() {
-    const { name, city } = this.props;
-    return (
-      <div className="has-text-centered">
-        <a>
-          <button className="button is-danger" onClick={this.handleCityBtnClick.bind(this)}>
-            {name}
-          </button>
-        </a>
-        {this.state.selected ? <SuburbList city={city.suburbs} /> : null}
-      </div>
-    );
-  }
-}
+const CityList = ({ name, showSuburbs }) =>
+  <button className="button is-danger" onClick={showSuburbs.bind(this)}>
+    {name}
+  </button>;
 
 export default CityList;

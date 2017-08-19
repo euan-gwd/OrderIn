@@ -3,7 +3,6 @@ import Search from "./Search";
 import CategoryListing from "./CategoryListing";
 
 class Home extends Component {
-  state = {};
   render() {
     return (
       <div className="">
