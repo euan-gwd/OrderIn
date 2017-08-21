@@ -3,7 +3,25 @@ import Header from "../Header";
 import "./styles.css";
 
 class Search extends Component {
-  state = {};
+  state = { selectedOption: "delivery" };
+
+  handleOptionChange = event => {
+    this.setState({
+      selectedOption: event.target.value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const details = {
+      searchTerm: this.searchTerm.value,
+      orderOption: this.state.selectedOption
+    };
+    console.log(details);
+    this.props.searchSelected(details);
+    this.searchForm.reset();
+  };
+
   render() {
     return (
       <section className="hero is-danger">
@@ -14,16 +32,36 @@ class Search extends Component {
               <strong>Simply</strong> Order food online.
             </h1>
             <div className="columns is-centered">
-              <form className="column is-half box">
+              <form
+                ref={input => (this.searchForm = input)}
+                className="column is-half box"
+                onSubmit={e => this.handleSubmit(e)}
+              >
                 <div className="field is-grouped is-grouped-centered">
                   <div className="control">
-                    <input type="radio" id="Delivery" name="question" className="with-font" />
+                    <input
+                      type="radio"
+                      id="Delivery"
+                      value="delivery"
+                      name="question"
+                      className="with-font"
+                      checked={this.state.selectedOption === "delivery"}
+                      onChange={this.handleOptionChange}
+                    />
                     <label htmlFor="Delivery" className="is-size-4">
                       Delivery
                     </label>
                   </div>
                   <div className="control">
-                    <input type="radio" id="Pickup" name="question" className="with-font" />
+                    <input
+                      type="radio"
+                      id="Pickup"
+                      value="pickup"
+                      name="question"
+                      className="with-font"
+                      checked={this.state.selectedOption === "pickup"}
+                      onChange={this.handleOptionChange}
+                    />
                     <label htmlFor="Pickup" className="is-size-4">
                       Pickup
                     </label>
@@ -36,6 +74,7 @@ class Search extends Component {
                       className="input is-large"
                       type="text"
                       placeholder="e.g. 90 Victoria Road, Woodstock"
+                      ref={input => (this.searchTerm = input)}
                     />
                     <span className="icon is-left">
                       <i className="fa fa-search" />
