@@ -1,13 +1,28 @@
 import React, { Component } from "react";
 import Search from "./Search";
 import CategoryListing from "./CategoryListing";
+import StorePicker from "../StorePicker/StorePicker";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchResult: 0
+    };
+  }
+
+  searchSelected(item) {
+    this.setState({ searchResult: item });
+  }
+
   render() {
     return (
       <div>
-        <Search />
-        <CategoryListing />
+        <Search searchSelected={this.searchSelected.bind(this)} />
+        <CategoryListing searchSelected={this.searchSelected.bind(this)} />
+        {this.state.searchResult !== 0
+          ? <StorePicker searchResult={this.state.searchResult || 0} />
+          : <div />}
       </div>
     );
   }

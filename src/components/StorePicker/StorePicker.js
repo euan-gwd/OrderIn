@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Store from "./Store";
-import Header from "../Header";
 import "./StorePicker.css";
 import sampleStores from "../../mock/sample-stores";
 class StorePicker extends Component {
@@ -13,8 +12,7 @@ class StorePicker extends Component {
 
   render() {
     return (
-      <div>
-        <Header />
+      <div className="top-spacer">
         <div className="container">
           <h2 className="title has-text-centered">Woodstock Restaurants</h2>
           <div className="">

@@ -6,7 +6,7 @@ class Search extends Component {
   state = {};
   render() {
     return (
-      <section className="hero is-danger is-fullheight">
+      <section className="hero is-danger">
         <Header className="hero-head" />
         <div className="hero-body">
           <div className="container">

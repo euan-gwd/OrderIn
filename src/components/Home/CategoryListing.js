@@ -3,7 +3,7 @@ import "./styles.css";
 import sampleCities from "../../mock/sample-city-list";
 import sampleCuisines from "../../mock/sample-cuisine-list";
 import CityList from "./CityList";
-import Category from "./Category";
+// import Category from "./Category";
 
 class CategoryListing extends Component {
   state = {
@@ -18,10 +18,6 @@ class CategoryListing extends Component {
     this.setState({ suburbs: citySuburb });
   }
 
-  searchSelected(item) {
-    console.log(item);
-  }
-
   render() {
     return (
       <section className="hero is-danger is-medium">
@@ -34,7 +30,7 @@ class CategoryListing extends Component {
                 </span>
                 Search by City
               </h1>
-              <div className="grid">
+              <div className="inner-grid">
                 {Object.keys(this.state.cities).map(city =>
                   <CityList
                     key={city}
@@ -54,12 +50,12 @@ class CategoryListing extends Component {
                     </span>
                     Search by Suburb
                   </h1>
-                  <div className="grid">
+                  <div className="inner-grid">
                     {this.state.suburbs.map(element =>
                       <button
                         key={element}
                         className="button is-danger"
-                        onClick={this.searchSelected.bind(this, element)}
+                        onClick={this.props.searchSelected.bind(this, element)}
                       >
                         {element}
                       </button>
@@ -68,25 +64,6 @@ class CategoryListing extends Component {
                 </div>
               </div>
             : <div />}
-          <div className="container">
-            <div className="well">
-              <h1 className="has-text-centered is-size-3">
-                <span className="icon is-medium">
-                  <i className="fa fa-cutlery" />
-                </span>
-                Search by Cuisine
-              </h1>
-              <ul className="grid">
-                {this.state.cuisines.map(cuisine =>
-                  <Category
-                    key={cuisine}
-                    name={cuisine}
-                    searchSelected={this.searchSelected.bind(this, cuisine)}
-                  />
-                )}
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
     );

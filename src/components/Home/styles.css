@@ -32,19 +32,14 @@ input[type=radio].with-font:focus ~ label {
 }
 
 .well {
+  display: grid;
   background-color: var(--header-bkgrd);
   border-radius: 5px;
   margin-bottom: 2em;
   padding: 1.25em 1.5em 1em 1.5em;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1vh;
-}
-
-.grid .inner-grid {
+.inner-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1vh;

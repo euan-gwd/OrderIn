@@ -6,8 +6,14 @@
                 </span>
                 Search by Cuisine
               </h1>
-              <ul className="columns is-multiline">
-                {this.state.cuisines.map(cuisine => <Category key={cuisine} name={cuisine} />)}
+              <ul className="inner-grid">
+                {this.state.cuisines.map(cuisine =>
+                  <Category
+                    key={cuisine}
+                    name={cuisine}
+                    searchSelected={this.props.searchSelected.bind(this, cuisine)}
+                  />
+                )}
               </ul>
             </div>
           </div>
