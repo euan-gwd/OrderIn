@@ -25,7 +25,7 @@ class CategoryListing extends Component {
     this.setState({ selectedCity: name });
   };
 
-  getCuisineName = (item, name) => {
+  getCuisineName = name => {
     this.setState({ selectedCusine: name });
   };
 
@@ -46,9 +46,7 @@ class CategoryListing extends Component {
                   <button
                     key={cuisine}
                     className="button is-link"
-                    onClick={event => {
-                      this.getCuisineName(this, cuisine);
-                    }}
+                    onClick={this.getCuisineName.bind(this, cuisine)}
                   >
                     {cuisine}
                   </button>
