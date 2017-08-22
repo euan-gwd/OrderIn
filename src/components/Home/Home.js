@@ -8,7 +8,12 @@ class Home extends Component {
     searchResult: 0
   };
 
-  searchSelected(item) {
+  searchSelected(suburb, city, cuisine) {
+    const item = {
+      suburb,
+      city,
+      cuisine
+    };
     this.setState({ searchResult: item });
   }
 
@@ -18,7 +23,7 @@ class Home extends Component {
         <Search searchSelected={this.searchSelected.bind(this)} />
         <CategoryListing searchSelected={this.searchSelected.bind(this)} />
         {this.state.searchResult !== 0
-          ? <StorePicker searchResult={this.state.searchResult || 0} />
+          ? <StorePicker searchResult={this.state.searchResult} />
           : <div />}
       </div>
     );

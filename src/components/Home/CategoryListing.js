@@ -3,7 +3,6 @@ import "./styles.css";
 import sampleCities from "../../mock/sample-city-list";
 import sampleCuisines from "../../mock/sample-cuisine-list";
 import CityList from "./CityList";
-import Category from "./Category";
 
 class CategoryListing extends Component {
   constructor(props) {
@@ -12,7 +11,8 @@ class CategoryListing extends Component {
       cities: sampleCities,
       cuisines: sampleCuisines,
       suburbs: 0,
-      selectedCity: {}
+      selectedCity: {},
+      selectedCusine: {}
     };
   }
 
@@ -23,6 +23,10 @@ class CategoryListing extends Component {
 
   getCityName = (item, name) => {
     this.setState({ selectedCity: name });
+  };
+
+  getCuisineName = (item, name) => {
+    this.setState({ selectedCusine: name });
   };
 
   render() {
@@ -39,11 +43,15 @@ class CategoryListing extends Component {
               </h1>
               <ul className="inner-grid">
                 {this.state.cuisines.map(cuisine =>
-                  <Category
+                  <button
                     key={cuisine}
-                    name={cuisine}
-                    searchSelected={this.props.searchSelected.bind(this, cuisine)}
-                  />
+                    className="button is-link"
+                    onClick={event => {
+                      this.getCuisineName(this, cuisine);
+                    }}
+                  >
+                    {cuisine}
+                  </button>
                 )}
               </ul>
             </div>
@@ -85,7 +93,8 @@ class CategoryListing extends Component {
                         onClick={this.props.searchSelected.bind(
                           this,
                           suburb,
-                          this.state.selectedCity
+                          this.state.selectedCity,
+                          this.state.selectedCusine
                         )}
                       >
                         {suburb}

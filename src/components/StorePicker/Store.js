@@ -1,5 +1,5 @@
 import React from "react";
-const Store = ({ details, suburbName }) =>
+const Store = ({ details }) =>
   <li className="media">
     <div className="media-left">
       <img src={details.image} alt="logo" className="image is-64x64" />
@@ -10,7 +10,7 @@ const Store = ({ details, suburbName }) =>
           {details.name}
         </h5>
         <p className="subtitle">
-          {details.address} {suburbName}
+          {details.address}
         </p>
       </div>
     </div>

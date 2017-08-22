@@ -1,19 +1,33 @@
-          <div className="container">
-            <div className="well">
-              <h1 className="has-text-centered is-size-3">
-                <span className="icon is-medium">
-                  <i className="fa fa-cutlery" />
-                </span>
-                Search by Cuisine
-              </h1>
-              <ul className="inner-grid">
-                {this.state.cuisines.map(cuisine =>
-                  <Category
-                    key={cuisine}
-                    name={cuisine}
-                    searchSelected={this.props.searchSelected.bind(this, cuisine)}
-                  />
-                )}
-              </ul>
-            </div>
-          </div>
+
+
+
+                <div className="field is-grouped is-grouped-centered">
+                  <div className="control">
+                    <input
+                      type="radio"
+                      id="Delivery"
+                      value="delivery"
+                      name="question"
+                      className="with-font"
+                      checked={this.state.selectedOption === "delivery"}
+                      onChange={this.handleOptionChange}
+                    />
+                    <label htmlFor="Delivery" className="is-size-4">
+                      Delivery
+                    </label>
+                  </div>
+                  <div className="control">
+                    <input
+                      type="radio"
+                      id="Pickup"
+                      value="pickup"
+                      name="question"
+                      className="with-font"
+                      checked={this.state.selectedOption === "pickup"}
+                      onChange={this.handleOptionChange}
+                    />
+                    <label htmlFor="Pickup" className="is-size-4">
+                      Pickup
+                    </label>
+                  </div>
+                </div>

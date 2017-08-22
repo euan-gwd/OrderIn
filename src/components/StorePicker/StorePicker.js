@@ -13,12 +13,12 @@ class StorePicker extends Component {
       <div className="top-spacer">
         <div className="container">
           <h2 className="title has-text-centered">
-            {searchResult} Restaurants
+            {searchResult.cuisine} Restaurants near {searchResult.suburb} in {searchResult.city}
           </h2>
           <div className="">
             <ul className="">
               {Object.keys(this.state.stores).map(key =>
-                <Store key={key} details={this.state.stores[key]} suburbName={searchResult} />
+                <Store key={key} details={this.state.stores[key]} />
               )}
             </ul>
           </div>
