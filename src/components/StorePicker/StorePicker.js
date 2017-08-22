@@ -3,24 +3,22 @@ import Store from "./Store";
 import "./StorePicker.css";
 import sampleStores from "../../mock/sample-stores";
 class StorePicker extends Component {
-  constructor() {
-    super();
-    this.state = {
-      stores: sampleStores
-    };
-  }
+  state = {
+    stores: sampleStores
+  };
 
   render() {
+    const { searchResult } = this.props;
     return (
       <div className="top-spacer">
         <div className="container">
           <h2 className="title has-text-centered">
-            {this.props.searchResult} Restaurants
+            {searchResult} Restaurants
           </h2>
           <div className="">
             <ul className="">
               {Object.keys(this.state.stores).map(key =>
-                <Store key={key} details={this.state.stores[key]} />
+                <Store key={key} details={this.state.stores[key]} suburbName={searchResult} />
               )}
             </ul>
           </div>

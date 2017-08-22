@@ -6,21 +6,28 @@ import CityList from "./CityList";
 import Category from "./Category";
 
 class CategoryListing extends Component {
-  state = {
-    cities: sampleCities,
-    cuisines: sampleCuisines,
-    suburbs: 0
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      cities: sampleCities,
+      cuisines: sampleCuisines,
+      suburbs: 0,
+      selectedCity: {}
+    };
+  }
 
-  showSuburbs(city, evt) {
-    evt.preventDefault();
+  showSuburbs(city) {
     const citySuburb = city.suburbs.map(citySuburb => citySuburb);
     this.setState({ suburbs: citySuburb });
   }
 
+  getCityName = (item, name) => {
+    this.setState({ selectedCity: name });
+  };
+
   render() {
     return (
-      <section className="hero is-danger is-medium">
+      <section className="hero is-danger">
         <div className="hero-body">
           <div className="container">
             <div className="well">
@@ -28,7 +35,7 @@ class CategoryListing extends Component {
                 <span className="icon is-medium">
                   <i className="fa fa-cutlery" />
                 </span>
-                Which? Search by Cuisine
+                Search by Cuisine
               </h1>
               <ul className="inner-grid">
                 {this.state.cuisines.map(cuisine =>
@@ -54,6 +61,7 @@ class CategoryListing extends Component {
                   <CityList
                     key={city}
                     showSuburbs={this.showSuburbs.bind(this, this.state.cities[city])}
+                    getCityName={this.getCityName}
                     name={city}
                   />
                 )}
@@ -74,7 +82,11 @@ class CategoryListing extends Component {
                       <button
                         key={suburb}
                         className="button is-link"
-                        onClick={this.props.searchSelected.bind(this, suburb)}
+                        onClick={this.props.searchSelected.bind(
+                          this,
+                          suburb,
+                          this.state.selectedCity
+                        )}
                       >
                         {suburb}
                       </button>
