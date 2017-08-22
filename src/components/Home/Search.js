@@ -3,7 +3,10 @@ import Header from "../Header";
 import "./styles.css";
 
 class Search extends Component {
-  state = { selectedOption: "pickup", searchTerm: 0 };
+  constructor(props) {
+    super(props);
+    this.state = { selectedOption: "pickup", searchTerm: 0 };
+  }
 
   handleOptionChange = event => {
     this.setState({

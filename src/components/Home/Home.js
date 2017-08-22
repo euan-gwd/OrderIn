@@ -4,9 +4,12 @@ import CategoryListing from "./CategoryListing";
 import StorePicker from "../StorePicker/StorePicker";
 
 class Home extends Component {
-  state = {
-    searchResult: 0
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchResult: 0
+    };
+  }
 
   searchSelected(suburb, city, cuisine) {
     const item = {

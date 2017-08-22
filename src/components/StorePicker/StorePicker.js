@@ -3,9 +3,12 @@ import Store from "./Store";
 import "./StorePicker.css";
 import sampleStores from "../../mock/sample-stores";
 class StorePicker extends Component {
-  state = {
-    stores: sampleStores
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      stores: sampleStores
+    };
+  }
 
   render() {
     const { searchResult } = this.props;

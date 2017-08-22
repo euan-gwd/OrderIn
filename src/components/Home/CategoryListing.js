@@ -10,7 +10,7 @@ class CategoryListing extends Component {
     this.state = {
       cities: sampleCities,
       cuisines: sampleCuisines,
-      suburbs: 0,
+      suburbs: {},
       selectedCity: {},
       selectedCusine: {}
     };
@@ -56,54 +56,54 @@ class CategoryListing extends Component {
               </ul>
             </div>
           </div>
-          <div className="container">
-            <div className="well">
-              <h1 className="has-text-centered is-size-3">
-                <span className="icon is-medium">
-                  <i className="fa fa-map-marker" />
-                </span>
-                Where? Search by City
-              </h1>
-              <div className="inner-grid">
-                {Object.keys(this.state.cities).map(city =>
-                  <CityList
-                    key={city}
-                    showSuburbs={this.showSuburbs.bind(this, this.state.cities[city])}
-                    getCityName={this.getCityName}
-                    name={city}
-                  />
-                )}
-              </div>
-            </div>
-          </div>
-          {this.state.suburbs !== 0
-            ? <div className="container">
-                <div className="well">
-                  <h1 className="has-text-centered is-size-3">
-                    <span className="icon is-medium">
-                      <i className="fa fa-map-marker" />
-                    </span>
-                    Refine Search by Suburb
-                  </h1>
-                  <div className="inner-grid">
-                    {this.state.suburbs.map(suburb =>
-                      <button
-                        key={suburb}
-                        className="button is-link"
-                        onClick={this.props.searchSelected.bind(
-                          this,
-                          suburb,
-                          this.state.selectedCity,
-                          this.state.selectedCusine
-                        )}
-                      >
-                        {suburb}
-                      </button>
-                    )}
-                  </div>
+          {this.state.selectedCusine.length > 0 &&
+            <div className="container">
+              <div className="well">
+                <h1 className="has-text-centered is-size-3">
+                  <span className="icon is-medium">
+                    <i className="fa fa-map-marker" />
+                  </span>
+                  Where? Search by City
+                </h1>
+                <div className="inner-grid">
+                  {Object.keys(this.state.cities).map(city =>
+                    <CityList
+                      key={city}
+                      showSuburbs={this.showSuburbs.bind(this, this.state.cities[city])}
+                      getCityName={this.getCityName}
+                      name={city}
+                    />
+                  )}
                 </div>
               </div>
-            : <div />}
+            </div>}
+          {this.state.suburbs.length > 0 &&
+            <div className="container">
+              <div className="well">
+                <h1 className="has-text-centered is-size-3">
+                  <span className="icon is-medium">
+                    <i className="fa fa-map-marker" />
+                  </span>
+                  Refine Search by Suburb
+                </h1>
+                <div className="inner-grid">
+                  {this.state.suburbs.map(suburb =>
+                    <button
+                      key={suburb}
+                      className="button is-link"
+                      onClick={this.props.searchSelected.bind(
+                        this,
+                        suburb,
+                        this.state.selectedCity,
+                        this.state.selectedCusine
+                      )}
+                    >
+                      {suburb}
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>}
         </div>
       </section>
     );
