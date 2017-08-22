@@ -3,7 +3,7 @@ import Header from "../Header";
 import "./styles.css";
 
 class Search extends Component {
-  state = { selectedOption: "delivery" };
+  state = { selectedOption: "delivery", searchTerm: 0 };
 
   handleOptionChange = event => {
     this.setState({
@@ -11,15 +11,21 @@ class Search extends Component {
     });
   };
 
+  handleInput = event => {
+    this.setState({ searchTerm: event.target.value });
+  };
+
   handleSubmit = event => {
     event.preventDefault();
     const details = {
-      searchTerm: this.searchTerm.value,
+      searchTerm: this.state.searchTerm,
       orderOption: this.state.selectedOption
     };
-    console.log(details);
-    this.props.searchSelected(details);
-    this.searchForm.reset();
+    if (this.state.searchTerm.length > 0) {
+      console.log(details);
+      this.props.searchSelected(details);
+      this.searchForm.reset();
+    }
   };
 
   render() {
@@ -74,7 +80,7 @@ class Search extends Component {
                       className="input is-large"
                       type="text"
                       placeholder="e.g. 90 Victoria Road, Woodstock"
-                      ref={input => (this.searchTerm = input)}
+                      onChange={this.handleInput.bind(this)}
                     />
                     <span className="icon is-left">
                       <i className="fa fa-search" />
@@ -82,7 +88,7 @@ class Search extends Component {
                   </p>
                 </div>
                 <div className="field is-grouped is-grouped-centered">
-                  <button type="submit" className="button is-danger is-medium is-fullwidth">
+                  <button type="submit" className="button is-danger is-fullwidth is-medium">
                     Find Restaurants
                   </button>
                 </div>

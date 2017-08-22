@@ -73,7 +73,7 @@ class CategoryListing extends Component {
                     {this.state.suburbs.map(element =>
                       <button
                         key={element}
-                        className="button is-danger"
+                        className="button is-link"
                         onClick={this.props.searchSelected.bind(this, element)}
                       >
                         {element}
