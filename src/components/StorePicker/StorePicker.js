@@ -14,7 +14,9 @@ class StorePicker extends Component {
     return (
       <div className="top-spacer">
         <div className="container">
-          <h2 className="title has-text-centered">Woodstock Restaurants</h2>
+          <h2 className="title has-text-centered">
+            {this.props.searchResult} Restaurants
+          </h2>
           <div className="">
             <ul className="">
               {Object.keys(this.state.stores).map(key =>

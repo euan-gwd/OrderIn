@@ -14,7 +14,7 @@ class CategoryListing extends Component {
 
   showSuburbs(city, evt) {
     evt.preventDefault();
-    const citySuburb = city.suburbs.map(suburb => suburb);
+    const citySuburb = city.suburbs.map(citySuburb => citySuburb);
     this.setState({ suburbs: citySuburb });
   }
 
@@ -70,13 +70,13 @@ class CategoryListing extends Component {
                     Refine Search by Suburb
                   </h1>
                   <div className="inner-grid">
-                    {this.state.suburbs.map(element =>
+                    {this.state.suburbs.map(suburb =>
                       <button
-                        key={element}
+                        key={suburb}
                         className="button is-link"
-                        onClick={this.props.searchSelected.bind(this, element)}
+                        onClick={this.props.searchSelected.bind(this, suburb)}
                       >
-                        {element}
+                        {suburb}
                       </button>
                     )}
                   </div>
