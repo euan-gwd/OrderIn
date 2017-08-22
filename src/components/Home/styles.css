@@ -11,10 +11,10 @@ input[type=radio].with-font {
 
 input[type=radio].with-font ~ label:before {
   font-family: FontAwesome;
-  display: inline-block;
+  display: inline-flex;
   content: "\f1db";
   letter-spacing: 10px;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #535353;
   width: 1.8rem;
 }

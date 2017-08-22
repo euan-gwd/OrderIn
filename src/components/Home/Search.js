@@ -82,10 +82,7 @@ class Search extends Component {
                   </p>
                 </div>
                 <div className="field is-grouped is-grouped-centered">
-                  <button
-                    type="submit"
-                    className="button is-danger is-medium is-large-tablet is-size-3-tablet"
-                  >
+                  <button type="submit" className="button is-danger is-medium is-fullwidth">
                     Find Restaurants
                   </button>
                 </div>
