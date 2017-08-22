@@ -4,7 +4,7 @@ module.exports = {
     suburbs: ["Alberton"]
   },
 
-  CapeTown: {
+  "Cape Town": {
     suburbs: [
       "Acacia Park",
       "Athlone",
@@ -156,7 +156,7 @@ module.exports = {
     ]
   },
 
-  KemptonPark: {
+  "Kempton Park": {
     suburbs: ["Kempton Park"]
   },
 
@@ -187,7 +187,7 @@ module.exports = {
     ]
   },
 
-  SomersetWest: {
+  "Somerset West": {
     suburbs: ["Somerset West"]
   },
 

@@ -24,7 +24,7 @@ class Search extends Component {
 
   render() {
     return (
-      <section className="hero is-danger">
+      <section className="hero is-danger is-fullheight">
         <Header className="hero-head" />
         <div className="hero-body">
           <div className="container">
