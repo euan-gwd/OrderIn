@@ -5,14 +5,8 @@ import "./styles.css";
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { selectedOption: "pickup", searchTerm: 0 };
+    this.state = { searchTerm: 0 };
   }
-
-  handleOptionChange = event => {
-    this.setState({
-      selectedOption: event.target.value
-    });
-  };
 
   handleInput = event => {
     this.setState({ searchTerm: event.target.value });
@@ -21,12 +15,12 @@ class Search extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const details = {
-      searchTerm: this.state.searchTerm,
-      orderOption: this.state.selectedOption
+      searchTerm: this.state.searchTerm
     };
     if (this.state.searchTerm.length > 0) {
-      this.props.searchSelected(details);
-      this.searchForm.reset();
+      console.log(details);
+      // this.props.searchSelected(details);
+      // this.searchForm.reset();
     }
   };
 
@@ -43,38 +37,8 @@ class Search extends Component {
               <form
                 ref={input => (this.searchForm = input)}
                 className="column is-half box"
-                onSubmit={e => this.handleSubmit(e)}
+                onSubmit={this.handleSubmit}
               >
-                <div className="field is-grouped is-grouped-centered">
-                  <div className="control">
-                    <input
-                      type="radio"
-                      id="Delivery"
-                      value="delivery"
-                      name="question"
-                      className="with-font"
-                      checked={this.state.selectedOption === "delivery"}
-                      onChange={this.handleOptionChange}
-                    />
-                    <label htmlFor="Delivery" className="is-size-4">
-                      Delivery
-                    </label>
-                  </div>
-                  <div className="control">
-                    <input
-                      type="radio"
-                      id="Pickup"
-                      value="pickup"
-                      name="question"
-                      className="with-font"
-                      checked={this.state.selectedOption === "pickup"}
-                      onChange={this.handleOptionChange}
-                    />
-                    <label htmlFor="Pickup" className="is-size-4">
-                      Pickup
-                    </label>
-                  </div>
-                </div>
                 <p className="has-text-centered is-size-4">Enter your street address & suburb:</p>
                 <div className="field has-addons">
                   <p className="control is-expanded has-icons-left">
