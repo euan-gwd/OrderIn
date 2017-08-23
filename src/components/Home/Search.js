@@ -100,7 +100,7 @@ class Search extends Component {
           </div>
         </div>
         <div className="hero-foot">
-          <div className="is-centered">
+          <div className="item-centered">
             <span className="icon">
               <i className="fa fa-arrow-down" />
             </span>
