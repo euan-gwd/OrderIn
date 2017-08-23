@@ -12,21 +12,20 @@ class StoreList extends Component {
 
   render() {
     const { searchResult } = this.props;
-    console.log(searchResult);
     return (
       <div className="top-spacer">
         <div className="container">
-          <h2 className="title has-text-centered">
+          <h2 className="title has-text-centered has-text-white">
             {searchResult.cuisine} Restaurants near {searchResult.suburb} in {searchResult.city}
           </h2>
-          <div className="">
-            <ul className="">
+          <div className="box">
+            <ul>
               {Object.keys(this.state.stores).map(key =>
                 <Store key={key} details={this.state.stores[key]} />
               )}
             </ul>
           </div>
-          <footer className="has-text-centered spacer">
+          <footer className="has-text-centered spacer has-text-white">
             <p className="icon is-large">
               <i className="fa fa-cutlery" aria-hidden="true" />
             </p>
