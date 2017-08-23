@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styles.css";
+import "./homestyles.css";
 import sampleCities from "../../mock/sample-city-list";
 import sampleCuisines from "../../mock/sample-cuisine-list";
 import CityList from "./CityList";

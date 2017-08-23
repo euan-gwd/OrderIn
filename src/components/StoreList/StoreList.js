@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Store from "./Store";
-import "./StorePicker.css";
+import "./storestyles.css";
 import sampleStores from "../../mock/sample-stores";
-class StorePicker extends Component {
+class StoreList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,4 +37,4 @@ class StorePicker extends Component {
   }
 }
 
-export default StorePicker;
+export default StoreList;

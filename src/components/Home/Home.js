@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Search from "./Search";
 import SearchByCuisine from "./SearchByCuisine";
-import StorePicker from "../StorePicker/StorePicker";
+import StoreList from "../StoreList/StoreList";
 
 class Home extends Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class Home extends Component {
         />
         <SearchByCuisine searchSelected={this.searchSelected.bind(this)} />
         {this.state.searchResult !== 0
-          ? <StorePicker searchResult={this.state.searchResult} />
+          ? <StoreList searchResult={this.state.searchResult} />
           : <div />}
       </div>
     );
