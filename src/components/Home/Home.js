@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import Search from "./Search";
 import SearchByCuisine from "./SearchByCuisine";
-import SearchByCity from "./SearchByCity";
 import StorePicker from "../StorePicker/StorePicker";
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResult: {}
+      searchResult: 0
     };
   }
 
@@ -26,9 +25,9 @@ class Home extends Component {
       <div>
         <Search searchSelected={this.searchSelected.bind(this)} />
         <SearchByCuisine searchSelected={this.searchSelected.bind(this)} />
-        <SearchByCity searchSelected={this.searchSelected.bind(this)} />
-        {this.state.searchResult.length > 0 &&
-          <StorePicker searchResult={this.state.searchResult} />}
+        {this.state.searchResult !== 0
+          ? <StorePicker searchResult={this.state.searchResult} />
+          : <div />}
       </div>
     );
   }
