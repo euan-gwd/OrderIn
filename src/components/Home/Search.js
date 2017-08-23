@@ -14,13 +14,12 @@ class Search extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const details = {
-      searchTerm: this.state.searchTerm
-    };
+    const item = this.state.searchTerm.split(",");
+    const [street, suburb, city] = item;
     if (this.state.searchTerm.length > 0) {
-      console.log(details);
-      // this.props.searchSelected(details);
-      // this.searchForm.reset();
+      this.props.searchSelected(suburb, city, undefined, street);
+      this.props.fromSearchForm(this.state.searchTerm);
+      this.searchForm.reset();
     }
   };
 
@@ -39,13 +38,15 @@ class Search extends Component {
                 className="column is-half box"
                 onSubmit={this.handleSubmit}
               >
-                <p className="has-text-centered is-size-4">Enter your street address & suburb:</p>
+                <p className="has-text-centered is-size-4">
+                  Enter your street address, suburb & city:
+                </p>
                 <div className="field has-addons">
                   <p className="control is-expanded has-icons-left">
                     <input
                       className="input is-large"
                       type="text"
-                      placeholder="e.g. 90 Victoria Road, Woodstock"
+                      placeholder="e.g. 90 Victoria Road,Woodstock,Cape Town"
                       onChange={this.handleInput.bind(this)}
                     />
                     <span className="icon is-left">

@@ -11,19 +11,27 @@ class Home extends Component {
     };
   }
 
+  fromSearchForm(deliveryAddress) {
+    // console.log(deliveryAddress);
+    // this.setState({ deliveryAddress });
+  }
+
   searchSelected(suburb, city, cuisine) {
-    const item = {
+    const searchItem = {
       suburb,
       city,
       cuisine
     };
-    this.setState({ searchResult: item });
+    this.setState({ searchResult: searchItem });
   }
 
   render() {
     return (
       <div>
-        <Search searchSelected={this.searchSelected.bind(this)} />
+        <Search
+          searchSelected={this.searchSelected.bind(this)}
+          fromSearchForm={this.fromSearchForm.bind(this)}
+        />
         <SearchByCuisine searchSelected={this.searchSelected.bind(this)} />
         {this.state.searchResult !== 0
           ? <StorePicker searchResult={this.state.searchResult} />

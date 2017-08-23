@@ -12,6 +12,7 @@ class StorePicker extends Component {
 
   render() {
     const { searchResult } = this.props;
+    console.log(searchResult);
     return (
       <div className="top-spacer">
         <div className="container">
