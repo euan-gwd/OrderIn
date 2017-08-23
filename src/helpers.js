@@ -1,20 +1,13 @@
 export function formatPrice(cents) {
-  return `$${(cents / 100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
+  return `$${(cents / 100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 }
 
-export function getStoreNames() {
-  const restaurants = [
-    'Senhor Calistos',
-    'The Sticky Fingers BBQ',
-    'KFC',
-    'Steers',
-    'Cafe Jinga',
-    'Three Feathers',
-    'The Mash Tun',
-    'Bingo',
-    'Fishaways',
-    'Burger King'
-  ];
-
-  return restaurants;
+export function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(word => {
+      return word.replace(word[0], word[0].toUpperCase());
+    })
+    .join(" ");
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "../Header";
+import { titleCase } from "../../helpers";
 import "./styles.css";
 
 class Search extends Component {
@@ -15,7 +16,9 @@ class Search extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const item = this.state.searchTerm.split(",");
-    const [street, suburb, city] = item;
+    const [street, suburbName, cityName] = item;
+    const suburb = titleCase(suburbName);
+    const city = titleCase(cityName);
     if (this.state.searchTerm.length > 0) {
       this.props.searchSelected(suburb, city, undefined, street);
       this.props.fromSearchForm(this.state.searchTerm);
