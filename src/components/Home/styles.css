@@ -44,3 +44,9 @@ input[type=radio].with-font:focus ~ label {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1vh;
 }
+
+.is-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

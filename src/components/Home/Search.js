@@ -46,6 +46,36 @@ class Search extends Component {
                 className="column is-half box"
                 onSubmit={e => this.handleSubmit(e)}
               >
+                <div className="field is-grouped is-grouped-centered">
+                  <div className="control">
+                    <input
+                      type="radio"
+                      id="Delivery"
+                      value="delivery"
+                      name="question"
+                      className="with-font"
+                      checked={this.state.selectedOption === "delivery"}
+                      onChange={this.handleOptionChange}
+                    />
+                    <label htmlFor="Delivery" className="is-size-4">
+                      Delivery
+                    </label>
+                  </div>
+                  <div className="control">
+                    <input
+                      type="radio"
+                      id="Pickup"
+                      value="pickup"
+                      name="question"
+                      className="with-font"
+                      checked={this.state.selectedOption === "pickup"}
+                      onChange={this.handleOptionChange}
+                    />
+                    <label htmlFor="Pickup" className="is-size-4">
+                      Pickup
+                    </label>
+                  </div>
+                </div>
                 <p className="has-text-centered is-size-4">Enter your street address & suburb:</p>
                 <div className="field has-addons">
                   <p className="control is-expanded has-icons-left">
@@ -67,6 +97,13 @@ class Search extends Component {
                 </div>
               </form>
             </div>
+          </div>
+        </div>
+        <div className="hero-foot">
+          <div className="is-centered">
+            <span className="icon">
+              <i className="fa fa-arrow-down" />
+            </span>
           </div>
         </div>
       </section>
