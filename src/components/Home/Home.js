@@ -8,7 +8,7 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResult: 0
+      searchResult: {}
     };
   }
 
@@ -27,9 +27,8 @@ class Home extends Component {
         <Search searchSelected={this.searchSelected.bind(this)} />
         <SearchByCuisine searchSelected={this.searchSelected.bind(this)} />
         <SearchByCity searchSelected={this.searchSelected.bind(this)} />
-        {this.state.searchResult !== 0
-          ? <StorePicker searchResult={this.state.searchResult} />
-          : <div />}
+        {this.state.searchResult.length > 0 &&
+          <StorePicker searchResult={this.state.searchResult} />}
       </div>
     );
   }

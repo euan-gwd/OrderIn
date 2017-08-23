@@ -25,7 +25,6 @@ class Search extends Component {
       orderOption: this.state.selectedOption
     };
     if (this.state.searchTerm.length > 0) {
-      console.log(details);
       this.props.searchSelected(details);
       this.searchForm.reset();
     }
