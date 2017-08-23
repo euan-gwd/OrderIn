@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Search from "./Search";
-import CategoryListing from "./CategoryListing";
+import CuisineListing from "./CuisineListing";
 import StorePicker from "../StorePicker/StorePicker";
 
 class Home extends Component {
@@ -24,7 +24,7 @@ class Home extends Component {
     return (
       <div>
         <Search searchSelected={this.searchSelected.bind(this)} />
-        <CategoryListing searchSelected={this.searchSelected.bind(this)} />
+        <CuisineListing searchSelected={this.searchSelected.bind(this)} />
         {this.state.searchResult !== 0
           ? <StorePicker searchResult={this.state.searchResult} />
           : <div />}

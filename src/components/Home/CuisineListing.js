@@ -4,7 +4,7 @@ import sampleCities from "../../mock/sample-city-list";
 import sampleCuisines from "../../mock/sample-cuisine-list";
 import CityList from "./CityList";
 
-class CategoryListing extends Component {
+class CuisineListing extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -135,4 +135,4 @@ class CategoryListing extends Component {
   }
 }
 
-export default CategoryListing;
+export default CuisineListing;
