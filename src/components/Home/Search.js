@@ -69,7 +69,7 @@ class Search extends Component {
         <div className="hero-foot">
           <div className="item-centered">
             <span className="icon">
-              <i className="fa fa-arrow-down" />
+              <i className="fa fa-chevron-down" />
             </span>
           </div>
         </div>
