@@ -57,6 +57,10 @@ class SearchByCuisine extends Component {
           {this.state.selectedCusine.length > 0 &&
             <div className="container">
               <div className="box has-text-centered has-text-danger">
+                <span className="selection-text-padding has-text-grey-light">Search</span>
+                <span className="icon is-left has-text-grey-light">
+                  <i className="fa fa-chevron-right fa-lg" />
+                </span>
                 <span className="selection-text-padding">
                   {this.state.selectedCusine}
                 </span>
@@ -86,6 +90,10 @@ class SearchByCuisine extends Component {
           {this.state.suburbs.length > 0 &&
             <div className="container">
               <div className="box has-text-centered has-text-danger">
+                <span className="selection-text-padding has-text-grey-light">Search</span>
+                <span className="icon is-left has-text-grey-light">
+                  <i className="fa fa-chevron-right fa-lg" />
+                </span>
                 <span className="selection-text-padding has-text-grey-light">
                   {this.state.selectedCusine}
                 </span>

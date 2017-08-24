@@ -28,7 +28,7 @@ class Search extends Component {
 
   render() {
     return (
-      <section className="hero is-danger is-fullheight">
+      <section className="hero is-danger is-medium">
         <Header className="hero-head" />
         <div className="hero-body">
           <div className="container">
@@ -64,13 +64,6 @@ class Search extends Component {
                 </div>
               </form>
             </div>
-          </div>
-        </div>
-        <div className="hero-foot">
-          <div className="item-centered">
-            <span className="icon">
-              <i className="fa fa-chevron-down" />
-            </span>
           </div>
         </div>
       </section>
