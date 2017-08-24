@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Store from "./Store";
-import "./storestyles.css";
+import "./store_styles.css";
 import sampleStores from "../../mock/sample-stores";
 class StoreList extends Component {
   constructor(props) {

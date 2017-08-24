@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../Header";
-import { titleCase } from "../../helpers";
-import "./homestyles.css";
+import { titleCase } from "../helpers";
+import "./home_styles.css";
 
 class Search extends Component {
   constructor(props) {

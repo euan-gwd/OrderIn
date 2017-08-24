@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../images/logo-orderin-208x50.png";
+import Logo from "./logo-orderin-208x50.png";
 
 const Header = () =>
   <nav className="navbar is-transparent has-shadow">
