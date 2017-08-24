@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Search from "./Search";
-import SearchByCuisine from "./SearchByCuisine";
-import StoreList from "../StoreList/StoreList";
+import Search from "./Search/Search";
+import SearchByCuisine from "./Search/SearchByCuisine";
+import StoreList from "./StoreList/StoreList";
 
-class Home extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,4 +41,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default App;

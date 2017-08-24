@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./home_styles.css";
+import "./search_styles.css";
 import sampleCities from "../../mock/sample-city-list";
 import sampleCuisines from "../../mock/sample-cuisine-list";
 import CityList from "./CityList";
 
-class SearchByCuisine extends Component {
+class SearchByCity extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,10 +57,6 @@ class SearchByCuisine extends Component {
           {this.state.selectedCusine.length > 0 &&
             <div className="container">
               <div className="box has-text-centered has-text-danger">
-                <span className="selection-text-padding has-text-grey-light">Search</span>
-                <span className="icon is-left has-text-grey-light">
-                  <i className="fa fa-chevron-right fa-lg" />
-                </span>
                 <span className="selection-text-padding">
                   {this.state.selectedCusine}
                 </span>
@@ -90,10 +86,6 @@ class SearchByCuisine extends Component {
           {this.state.suburbs.length > 0 &&
             <div className="container">
               <div className="box has-text-centered has-text-danger">
-                <span className="selection-text-padding has-text-grey-light">Search</span>
-                <span className="icon is-left has-text-grey-light">
-                  <i className="fa fa-chevron-right fa-lg" />
-                </span>
                 <span className="selection-text-padding has-text-grey-light">
                   {this.state.selectedCusine}
                 </span>
@@ -143,4 +135,4 @@ class SearchByCuisine extends Component {
   }
 }
 
-export default SearchByCuisine;
+export default SearchByCity;
