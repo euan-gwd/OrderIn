@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
-const Store = ({ details }) => {
+const Store = ({ details, history }) => {
   const storeId = details.name.replace(/\s+/g, "");
   return (
     <li className="media">
@@ -19,12 +20,21 @@ const Store = ({ details }) => {
         </div>
       </div>
       <div className="media-right">
-        <Link to={`/order-online/${storeId}`}>
-          <button className="button is-danger is-outlined"> Order Now </button>
-        </Link>
+        <button
+          className="button is-danger is-outlined"
+          onClick={() => history.push(`/order-online/${storeId}`)}
+        >
+          Order Now
+        </button>
       </div>
     </li>
   );
 };
 
-export default Store;
+Store.contextTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.object
+  })
+};
+
+export default withRouter(Store);
