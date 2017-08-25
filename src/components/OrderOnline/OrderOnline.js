@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./orderonline_styles.css";
 
-class OrderOnlineMain extends Component {
+class OrderOnline extends Component {
   render() {
+    console.log(this.props);
     return (
       <div className="App">
         <div className="App-header">
@@ -16,4 +17,4 @@ class OrderOnlineMain extends Component {
   }
 }
 
-export default OrderOnlineMain;
+export default OrderOnline;

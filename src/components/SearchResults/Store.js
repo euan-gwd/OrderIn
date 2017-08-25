@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 const Store = ({ details }) =>
   <li className="media">
     <div className="media-left">
@@ -15,7 +16,9 @@ const Store = ({ details }) =>
       </div>
     </div>
     <div className="media-right">
-      <button className="button is-danger is-outlined"> Order Now </button>
+      <Link to={`/order-online/${details.name}`}>
+        <button className="button is-danger is-outlined"> Order Now </button>
+      </Link>
     </div>
   </li>;
 
