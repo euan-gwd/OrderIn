@@ -22,14 +22,17 @@ class RefineSearchByCuisine extends Component {
             <span className="icon is-left has-text-grey-light">
               <i className="fa fa-chevron-right fa-lg" />
             </span>
-            <span className="selection-text-padding">
+            <span className="selection-text-padding has-text-grey-light">
               {cityId}
             </span>
-            <span className="icon is-left">
+            <span className="icon is-left has-text-grey-light">
               <i className="fa fa-chevron-right fa-lg" />
             </span>
             <span className="selection-text-padding">
               {match.params.suburbId}
+            </span>
+            <span className="icon is-left">
+              <i className="fa fa-chevron-right fa-lg" />
             </span>
           </div>
           <div className="well">
