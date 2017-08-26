@@ -3,7 +3,7 @@ import Header from "../Header";
 import { titleCase } from "../helpers";
 import "./search_styles.css";
 
-class Search extends Component {
+class SearchBox extends Component {
   constructor(props) {
     super(props);
     this.state = { searchTerm: 0 };
@@ -71,4 +71,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default SearchBox;

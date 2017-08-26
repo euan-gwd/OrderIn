@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Search from "./Search/Search";
+import SearchBox from "./Search/SearchBox";
 import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
 import SearchResultsList from "./SearchResults/SearchResultsList";
 
@@ -28,7 +28,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Search
+        <SearchBox
           searchSelected={this.searchSelected.bind(this)}
           fromSearchForm={this.fromSearchForm.bind(this)}
         />
