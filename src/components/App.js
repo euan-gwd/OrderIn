@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchBox from "./Search/SearchBox";
 import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
+import SearchByCity from "./Search/SearchByCity/SearchByCity";
 import SearchResultsList from "./SearchResults/SearchResultsList";
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
           searchSelected={this.searchSelected.bind(this)}
           fromSearchForm={this.fromSearchForm.bind(this)}
         />
+        <SearchByCity searchSelected={this.searchSelected.bind(this)} />
         <SearchByCuisine searchSelected={this.searchSelected.bind(this)} />
         {this.state.searchResult !== 0
           ? <SearchResultsList searchResult={this.state.searchResult} />
