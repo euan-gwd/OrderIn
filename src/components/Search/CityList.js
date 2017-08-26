@@ -1,11 +1,10 @@
 import React from "react";
 
-const CityList = ({ name, showSuburbs, getCityName }) =>
+const CityList = ({ name, showSuburbs }) =>
   <button
     className="button is-link"
     onClick={event => {
       showSuburbs(this);
-      getCityName(this, name);
     }}
   >
     {name}
