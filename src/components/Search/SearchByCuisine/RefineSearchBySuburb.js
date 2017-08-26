@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
 import SuburbView from "./SuburbView";
-import "./search_styles.css";
-import sampleCities from "../../mock/sample-city-list";
+import "../search_styles.css";
+import sampleCities from "../../../mock/sample-city-list";
 
 class RefineSearchBySuburb extends Component {
   constructor(props) {

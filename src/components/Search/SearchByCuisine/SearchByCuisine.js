@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
-import "./search_styles.css";
-import sampleCuisines from "../../mock/sample-cuisine-list";
+import "../search_styles.css";
+import sampleCuisines from "../../../mock/sample-cuisine-list";
 import RefineSearchByCity from "./RefineSearchByCity";
 
 class SearchByCuisine extends Component {

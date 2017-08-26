@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Search from "./Search/Search";
-import SearchByCuisine from "./Search/SearchByCuisine";
+import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
 import SearchResultsList from "./SearchResults/SearchResultsList";
 
 class App extends Component {
