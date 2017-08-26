@@ -1,36 +1,48 @@
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
+import SuburbView from "./SuburbView";
 import "./search_styles.css";
 import sampleCities from "../../mock/sample-city-list";
-import SearchBySuburb from "./SearchBySuburb";
 
-class SearchByCity extends Component {
+class RefineSearchBySuburb extends Component {
   constructor(props) {
     super(props);
     this.state = {
       cities: sampleCities,
-      suburbs: {},
-      selectedCity: {}
+      suburbs: {}
     };
   }
 
-  showSuburbs(city) {
-    const citySuburb = city.suburbs.map(citySuburb => citySuburb);
-    this.setState({ suburbs: citySuburb });
+  componentWillMount() {
+    const city = this.props.match.params.cityId;
+    const suburbsList = this.state.cities[city].suburbs;
+    this.setState({ suburbs: suburbsList });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const city = nextProps.match.params.cityId;
+    const suburbsList = this.state.cities[city].suburbs;
+    this.setState({ suburbs: suburbsList });
   }
 
   render() {
-    const { match } = this.props;
+    const { match, cuisineId } = this.props;
     return (
-      <div className="">
+      <div>
         <div className="container">
           <div className="box has-text-centered has-text-danger">
             <span className="selection-text-padding has-text-grey-light">Cuisine</span>
             <span className="icon is-left has-text-grey-light">
               <i className="fa fa-chevron-right fa-lg" />
             </span>
+            <span className="selection-text-padding has-text-grey-light">
+              {cuisineId}
+            </span>
+            <span className="icon is-left has-text-grey-light">
+              <i className="fa fa-chevron-right fa-lg" />
+            </span>
             <span className="selection-text-padding">
-              {match.params.cuisineId}
+              {match.params.cityId}
             </span>
             <span className="icon is-left">
               <i className="fa fa-chevron-right fa-lg" />
@@ -41,24 +53,25 @@ class SearchByCity extends Component {
               <span className="icon is-medium">
                 <i className="fa fa-map-marker" />
               </span>
-              Where? Search by City
+              Refine Search by Suburb
             </h1>
             <div className="inner-grid">
-              {Object.keys(this.state.cities).map(city =>
-                <Link to={`${match.url}/${city}`} key={city} className="button is-link">
-                  {city}
+              {this.state.suburbs.map(suburb =>
+                <Link to={`${match.url}/${suburb}`} key={suburb} className="button is-link">
+                  {suburb}
                 </Link>
               )}
             </div>
           </div>
         </div>
         <Route
-          path={`${match.url}/:cityId`}
-          render={props => <SearchBySuburb {...props} cuisineId={match.params.cuisineId} />}
+          path={`${match.url}/:suburbId`}
+          render={props =>
+            <SuburbView {...props} cuisineId={cuisineId} cityId={match.params.cityId} />}
         />
       </div>
     );
   }
 }
 
-export default SearchByCity;
+export default RefineSearchBySuburb;

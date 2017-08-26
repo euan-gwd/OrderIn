@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
 import "./search_styles.css";
 import sampleCuisines from "../../mock/sample-cuisine-list";
-import SearchByCity from "./SearchByCity";
+import RefineSearchByCity from "./RefineSearchByCity";
 
 class SearchByCuisine extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class SearchByCuisine extends Component {
               </ul>
             </div>
           </div>
-          <Route path="/Cuisine/:cuisineId" render={props => <SearchByCity {...props} />} />
+          <Route path="/Cuisine/:cuisineId" render={props => <RefineSearchByCity {...props} />} />
         </div>
       </section>
     );
