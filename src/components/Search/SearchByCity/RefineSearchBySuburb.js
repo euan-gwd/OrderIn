@@ -59,7 +59,7 @@ class RefineSearchBySuburb extends Component {
           </div>
         </div>
         <Route
-          path={`${match.url}/:suburbId`}
+          path={`${match.path}/:suburbId`}
           render={props => <RefineSearchByCuisine {...props} cityId={match.params.cityId} />}
         />
       </div>
