@@ -15,12 +15,17 @@ class App extends Component {
     };
   }
 
-  searchSelected(suburb, city, cuisine) {
+  searchSelected(SearchTerm) {
+    const item = SearchTerm.split(",");
+    const [street, suburb, city] = item;
+    console.log(street);
+    const cuisine = undefined;
     const searchItem = {
       suburb,
       city,
       cuisine
     };
+
     this.setState({ searchResult: searchItem });
   }
 

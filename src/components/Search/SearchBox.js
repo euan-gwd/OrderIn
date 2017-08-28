@@ -14,11 +14,8 @@ class SearchBox extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const item = this.state.searchTerm.split(",");
-    const [street, suburb, city] = item;
-    const cuisine = undefined;
     if (this.state.searchTerm.length > 0) {
-      this.props.searchSelected(suburb, city, cuisine);
+      this.props.searchSelected(this.state.searchTerm);
       this.setState({ fireRedirect: true });
     }
   };
