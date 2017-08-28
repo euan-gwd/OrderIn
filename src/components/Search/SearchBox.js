@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { titleCase } from "../helpers";
+import { Redirect } from "react-router-dom";
 import "./search_styles.css";
 
 class SearchBox extends Component {
   constructor(props) {
     super(props);
-    this.state = { searchTerm: 0 };
+    this.state = { searchTerm: 0, fireRedirect: false };
   }
 
   handleInput = event => {
@@ -15,17 +15,17 @@ class SearchBox extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const item = this.state.searchTerm.split(",");
-    const [street, suburbName, cityName] = item;
-    const suburb = titleCase(suburbName);
-    const city = titleCase(cityName);
+    const [street, suburb, city] = item;
+    const cuisine = undefined;
     if (this.state.searchTerm.length > 0) {
-      this.props.searchSelected(suburb, city, undefined, street);
-      this.props.fromSearchForm(this.state.searchTerm);
-      this.searchForm.reset();
+      this.props.searchSelected(suburb, city, cuisine);
+      this.setState({ fireRedirect: true });
     }
   };
 
   render() {
+    const { fireRedirect } = this.state;
+
     return (
       <section className="hero is-danger ">
         <div className="hero-body">
@@ -63,6 +63,7 @@ class SearchBox extends Component {
               </form>
             </div>
           </div>
+          {fireRedirect && <Redirect push to="/Search" />}
         </div>
       </section>
     );
