@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import logo from '../images/logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from "./Home";
+import Header from "./Header";
+import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
+import SearchByCity from "./Search/SearchByCity/SearchByCity";
+import NotFound from "./NotFound";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+const App = () =>
+  <BrowserRouter>
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/Cities/:cityId" component={SearchByCity} />
+        <Route path="/Cuisine/:cuisineId" component={SearchByCuisine} />
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+  </BrowserRouter>;
 
 export default App;

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Search from "./Search";
-import SearchByCuisine from "./SearchByCuisine";
-import StoreList from "../StoreList/StoreList";
+import SearchBox from "./Search/SearchBox";
+import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
+import SearchByCity from "./Search/SearchByCity/SearchByCity";
+// import SearchResultsList from "./SearchResults/SearchResultsList";
 
 class Home extends Component {
   constructor(props) {
@@ -28,14 +29,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Search
+        <SearchBox
           searchSelected={this.searchSelected.bind(this)}
           fromSearchForm={this.fromSearchForm.bind(this)}
         />
+        <SearchByCity searchSelected={this.searchSelected.bind(this)} />
         <SearchByCuisine searchSelected={this.searchSelected.bind(this)} />
-        {this.state.searchResult !== 0
-          ? <StoreList searchResult={this.state.searchResult} />
-          : <div />}
       </div>
     );
   }

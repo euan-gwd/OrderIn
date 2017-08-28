@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import Header from "../Header";
-import { titleCase } from "../../helpers";
-import "./homestyles.css";
+import { titleCase } from "../helpers";
+import "./search_styles.css";
 
-class Search extends Component {
+class SearchBox extends Component {
   constructor(props) {
     super(props);
     this.state = { searchTerm: 0 };
@@ -28,8 +27,7 @@ class Search extends Component {
 
   render() {
     return (
-      <section className="hero is-danger is-fullheight">
-        <Header className="hero-head" />
+      <section className="hero is-danger ">
         <div className="hero-body">
           <div className="container">
             <h1 className="subtitle has-text-centered is-size-2">
@@ -66,16 +64,9 @@ class Search extends Component {
             </div>
           </div>
         </div>
-        <div className="hero-foot">
-          <div className="item-centered">
-            <span className="icon">
-              <i className="fa fa-chevron-down" />
-            </span>
-          </div>
-        </div>
       </section>
     );
   }
 }
 
-export default Search;
+export default SearchBox;
