@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import "../search_styles.css";
 import sampleCuisines from "../../../mock/sample-cuisine-list";
 import CuisineView from "./CuisineView";
@@ -44,9 +44,9 @@ class RefineSearchByCuisine extends Component {
             </h1>
             <ul className="inner-grid">
               {this.state.cuisines.map(cuisine =>
-                <Link to={`${match.url}/${cuisine}`} key={cuisine} className="button is-link">
+                <NavLink to={`${match.url}/${cuisine}`} key={cuisine} className="button is-link">
                   {cuisine}
-                </Link>
+                </NavLink>
               )}
             </ul>
           </div>

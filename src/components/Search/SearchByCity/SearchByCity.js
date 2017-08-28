@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import "../search_styles.css";
 import sampleCities from "../../../mock/sample-city-list";
 import RefineSearchBySuburb from "./RefineSearchBySuburb";
@@ -26,14 +26,17 @@ class SearchByCity extends Component {
               </h1>
               <div className="inner-grid">
                 {Object.keys(this.state.cities).map(city =>
-                  <Link to={`/Cities/${city}`} key={city} className="button is-link">
+                  <NavLink to={`/Cities/${city}`} key={city} className="button is-link">
                     {city}
-                  </Link>
+                  </NavLink>
                 )}
               </div>
             </div>
           </div>
-          <Route path={`/Cities/:cityId`} render={props => <RefineSearchBySuburb {...props} />} />
+          <Route
+            path={`/Cities/:cityId`}
+            render={props => <RefineSearchBySuburb {...props} data={this.state.cities} />}
+          />
         </div>
       </section>
     );

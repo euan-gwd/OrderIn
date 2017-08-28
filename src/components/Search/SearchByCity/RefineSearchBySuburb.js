@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import { NavLink, Route } from "react-router-dom";
 import RefineSearchByCuisine from "./RefineSearchByCuisine";
 import "../search_styles.css";
-import sampleCities from "../../../mock/sample-city-list";
 
 class RefineSearchBySuburb extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cities: sampleCities,
+      cities: this.props.data,
       suburbs: {}
     };
   }
@@ -51,9 +50,9 @@ class RefineSearchBySuburb extends Component {
             </h1>
             <div className="inner-grid">
               {this.state.suburbs.map(suburb =>
-                <Link to={`${match.url}/${suburb}`} key={suburb} className="button is-link">
+                <NavLink to={`${match.url}/${suburb}`} key={suburb} className="button is-link">
                   {suburb}
-                </Link>
+                </NavLink>
               )}
             </div>
           </div>
