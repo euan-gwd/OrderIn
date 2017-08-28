@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Header from "../Header";
 import { titleCase } from "../helpers";
 import "./search_styles.css";
 
@@ -28,8 +27,7 @@ class SearchBox extends Component {
 
   render() {
     return (
-      <section className="hero is-danger is-medium">
-        <Header className="hero-head" />
+      <section className="hero is-danger ">
         <div className="hero-body">
           <div className="container">
             <h1 className="subtitle has-text-centered is-size-2">

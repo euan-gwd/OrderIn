@@ -22,7 +22,7 @@ class SearchByCity extends Component {
                 <span className="icon is-medium">
                   <i className="fa fa-map-marker" />
                 </span>
-                Where? Search by City
+                Search by City
               </h1>
               <div className="inner-grid">
                 {Object.keys(this.state.cities).map(city =>
