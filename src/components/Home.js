@@ -6,8 +6,8 @@ import SearchByCity from "./Search/SearchByCity/SearchByCity";
 const Home = ({ searchSelected }) =>
   <div>
     <SearchBox searchSelected={searchSelected} />
-    <SearchByCity searchSelected={searchSelected} />
-    <SearchByCuisine searchSelected={searchSelected} />
+    <SearchByCity />
+    <SearchByCuisine  />
   </div>;
 
 export default Home;

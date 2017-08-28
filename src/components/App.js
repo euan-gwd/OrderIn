@@ -39,14 +39,8 @@ class App extends Component {
               path="/"
               render={() => <Home searchSelected={this.searchSelected.bind(this)} />}
             />
-            <Route
-              path="/Cities/:cityId"
-              render={() => <SearchByCity searchSelected={this.searchSelected.bind(this)} />}
-            />
-            <Route
-              path="/Cuisine/:cuisineId"
-              render={() => <SearchByCuisine searchSelected={this.searchSelected.bind(this)} />}
-            />
+            <Route path="/Cities/:cityId" render={() => <SearchByCity />} />
+            <Route path="/Cuisine/:cuisineId" render={() => <SearchByCuisine />} />
             <Route
               path="/Search"
               render={() => <SearchResultsList searchResult={this.state.searchResult} />}

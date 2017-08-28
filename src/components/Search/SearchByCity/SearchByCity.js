@@ -8,8 +8,19 @@ class SearchByCity extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cities: sampleCities
+      cities: sampleCities,
+      searchResult: 0
     };
+  }
+
+  searchSelected(SearchTerm) {
+    console.log(SearchTerm);
+    // const searchItem = {
+    //   suburb,
+    //   city,
+    //   cuisine
+    // };
+    // this.setState({ searchResult: searchItem });
   }
 
   render() {

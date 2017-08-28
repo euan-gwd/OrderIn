@@ -8,7 +8,8 @@ class SearchByCuisine extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cuisines: sampleCuisines
+      cuisines: sampleCuisines,
+      searchResult: 0
     };
   }
 
