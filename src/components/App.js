@@ -25,7 +25,6 @@ class App extends Component {
       city,
       cuisine
     };
-
     this.setState({ searchResult: searchItem });
   }
 

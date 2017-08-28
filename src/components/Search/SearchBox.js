@@ -21,8 +21,6 @@ class SearchBox extends Component {
   };
 
   render() {
-    const { fireRedirect } = this.state;
-
     return (
       <section className="hero is-danger ">
         <div className="hero-body">
@@ -60,7 +58,7 @@ class SearchBox extends Component {
               </form>
             </div>
           </div>
-          {fireRedirect && <Redirect push to="/Search" />}
+          {this.state.fireRedirect && <Redirect push to="/Search" />}
         </div>
       </section>
     );
