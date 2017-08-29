@@ -23,12 +23,8 @@ class Store extends Component {
         </div>
         <div className="media-content">
           <div className="content">
-            <h5 className="title">
-              {details.name}
-            </h5>
-            <p className="subtitle">
-              {details.address}
-            </p>
+            <h5 className="title has-text-grey-dark">{details.name}</h5>
+            <p className="subtitle has-text-grey-light">{details.address}</p>
           </div>
         </div>
         <div className="media-right">
