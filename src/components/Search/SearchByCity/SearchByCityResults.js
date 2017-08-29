@@ -1,7 +1,7 @@
 import React from "react";
 import SearchResultsList from "../../SearchResults/SearchResultsList";
 
-const SearchByCityResults = ({ match, suburbId, cityId }) => {
+const SearchByCityResults = ({ match, suburbId, cityId, selectStore }) => {
   const cuisine = match.params.cuisineId;
   const city = cityId;
   const suburb = suburbId;
@@ -29,7 +29,7 @@ const SearchByCityResults = ({ match, suburbId, cityId }) => {
           {cuisine}
         </span>
       </div>
-      <SearchResultsList searchResult={searchResult} />
+      <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
     </div>
   );
 };

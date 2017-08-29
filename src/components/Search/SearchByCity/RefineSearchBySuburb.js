@@ -25,7 +25,7 @@ class RefineSearchBySuburb extends Component {
   }
 
   render() {
-    const { match } = this.props;
+    const { match, selectStore } = this.props;
     return (
       <div>
         <div className="container">
@@ -59,7 +59,12 @@ class RefineSearchBySuburb extends Component {
         </div>
         <Route
           path={`${match.path}/:suburbId`}
-          render={props => <RefineSearchByCuisine {...props} cityId={match.params.cityId} />}
+          render={props =>
+            <RefineSearchByCuisine
+              {...props}
+              cityId={match.params.cityId}
+              selectStore={selectStore}
+            />}
         />
       </div>
     );

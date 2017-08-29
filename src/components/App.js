@@ -5,13 +5,15 @@ import Header from "./Header";
 import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
 import SearchByCity from "./Search/SearchByCity/SearchByCity";
 import SearchResultsList from "./SearchResults/SearchResultsList";
+import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResult: {}
+      searchResult: {},
+      selectedStore: {}
     };
   }
 
@@ -28,8 +30,8 @@ class App extends Component {
     this.setState({ searchResult: searchItem });
   }
 
-  selectedStore(store) {
-    console.log(store);
+  selectStore(store) {
+    this.setState({ selectedStore: store });
   }
 
   render() {
@@ -43,11 +45,18 @@ class App extends Component {
               path="/"
               render={() => <Home searchSelected={this.searchSelected.bind(this)} />}
             />
-            <Route path="/Cities/:cityId" render={() => <SearchByCity />} />
+            <Route
+              path="/Cities/:cityId"
+              render={() => <SearchByCity selectStore={this.selectStore.bind(this)} />}
+            />
             <Route path="/Cuisine/:cuisineId" render={() => <SearchByCuisine />} />
             <Route
               path="/Search"
               render={() => <SearchResultsList searchResult={this.state.searchResult} />}
+            />
+            <Route
+              path="/order-online/:storeId"
+              render={() => <OrderOnline name={this.state.selectedStore} />}
             />
             <Route component={NotFound} />
           </Switch>

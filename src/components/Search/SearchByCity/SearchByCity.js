@@ -36,7 +36,12 @@ class SearchByCity extends Component {
           </div>
           <Route
             path={`/Cities/:cityId`}
-            render={props => <RefineSearchBySuburb {...props} data={this.state.cities} />}
+            render={props =>
+              <RefineSearchBySuburb
+                {...props}
+                data={this.state.cities}
+                selectStore={this.props.selectStore}
+              />}
           />
         </div>
       </section>

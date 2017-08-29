@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 class Store extends Component {
   constructor(props) {
@@ -8,13 +8,14 @@ class Store extends Component {
   }
 
   handleClick = () => {
-    const { details } = this.props;
-    const storeId = details.name.replace(/\s+/g, "");
-    console.log(storeId);
+    const { details, selectStore } = this.props;
+    selectStore(details.name);
+    this.setState({ fireRedirect: true });
   };
 
   render() {
     const { details } = this.props;
+    const storeId = details.name.replace(/\s+/g, "");
     return (
       <li className="media">
         <div className="media-left">
@@ -35,6 +36,7 @@ class Store extends Component {
             Order Now
           </button>
         </div>
+        {this.state.fireRedirect && <Redirect push to={`/order-online/${storeId}`} />}
       </li>
     );
   }

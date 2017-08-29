@@ -12,7 +12,7 @@ class SearchResultsList extends Component {
   }
 
   render() {
-    const { searchResult } = this.props;
+    const { searchResult, selectStore } = this.props;
     return (
       <div className="top-spacer">
         <div className="container">
@@ -22,7 +22,7 @@ class SearchResultsList extends Component {
           <div className="box">
             <ul>
               {Object.keys(this.state.stores).map(key =>
-                <Store key={key} details={this.state.stores[key]} />
+                <Store key={key} details={this.state.stores[key]} selectStore={selectStore} />
               )}
             </ul>
           </div>
