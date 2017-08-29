@@ -28,6 +28,10 @@ class App extends Component {
     this.setState({ searchResult: searchItem });
   }
 
+  selectedStore(store) {
+    console.log(store);
+  }
+
   render() {
     return (
       <BrowserRouter>

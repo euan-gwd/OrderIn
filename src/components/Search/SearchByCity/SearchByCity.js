@@ -13,16 +13,6 @@ class SearchByCity extends Component {
     };
   }
 
-  searchSelected(SearchTerm) {
-    console.log(SearchTerm);
-    // const searchItem = {
-    //   suburb,
-    //   city,
-    //   cuisine
-    // };
-    // this.setState({ searchResult: searchItem });
-  }
-
   render() {
     return (
       <section className="hero is-danger">

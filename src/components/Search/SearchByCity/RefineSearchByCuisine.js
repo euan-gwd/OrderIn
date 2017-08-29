@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { NavLink, Route } from "react-router-dom";
 import "../search_styles.css";
 import sampleCuisines from "../../../mock/sample-cuisine-list";
-import CuisineView from "./CuisineView";
+import SearchByCityResults from "./SearchByCityResults";
 
 class RefineSearchByCuisine extends Component {
   constructor(props) {
@@ -54,7 +54,7 @@ class RefineSearchByCuisine extends Component {
         <Route
           path={`${match.path}/:cuisineId`}
           render={props =>
-            <CuisineView {...props} cityId={cityId} suburbId={match.params.suburbId} />}
+            <SearchByCityResults {...props} cityId={cityId} suburbId={match.params.suburbId} />}
         />
       </div>
     );

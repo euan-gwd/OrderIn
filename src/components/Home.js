@@ -7,7 +7,7 @@ const Home = ({ searchSelected }) =>
   <div>
     <SearchBox searchSelected={searchSelected} />
     <SearchByCity />
-    <SearchByCuisine  />
+    <SearchByCuisine />
   </div>;
 
 export default Home;

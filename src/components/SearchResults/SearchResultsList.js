@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Store from "./Store";
 import "./results_styles.css";
 import sampleStores from "../../mock/sample-stores";
+
 class SearchResultsList extends Component {
   constructor(props) {
     super(props);
