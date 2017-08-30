@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Store from "./Store";
 import "./results_styles.css";
 import sampleStores from "../../mock/sample-stores";
+
 class SearchResultsList extends Component {
   constructor(props) {
     super(props);
@@ -11,18 +12,19 @@ class SearchResultsList extends Component {
   }
 
   render() {
-    const { searchResult } = this.props;
+    const { searchResult, selectStore } = this.props;
     return (
       <div className="top-spacer">
         <div className="container">
           <h2 className="title has-text-centered has-text-white">
-            {searchResult.cuisine} Restaurants near {searchResult.suburb} in {searchResult.city}
+            {searchResult.cuisineName} Restaurants in {searchResult.suburbName}{" "}
+            {searchResult.cityName}
           </h2>
           <div className="box">
             <ul>
-              {Object.keys(this.state.stores).map(key =>
-                <Store key={key} details={this.state.stores[key]} />
-              )}
+              {Object.keys(this.state.stores).map(key => (
+                <Store key={key} details={this.state.stores[key]} selectStore={selectStore} />
+              ))}
             </ul>
           </div>
           <footer className="has-text-centered spacer has-text-white">

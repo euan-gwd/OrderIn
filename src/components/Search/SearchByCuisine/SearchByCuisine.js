@@ -1,18 +1,10 @@
 import React, { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "../search_styles.css";
-import sampleCuisines from "../../../mock/sample-cuisine-list";
-import RefineSearchByCity from "./RefineSearchByCity";
 
 class SearchByCuisine extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cuisines: sampleCuisines
-    };
-  }
-
   render() {
+    const { selectCuisine, cuisinesData } = this.props;
     return (
       <section className="hero is-danger">
         <div className="hero-body">
@@ -20,20 +12,30 @@ class SearchByCuisine extends Component {
             <div className="well">
               <h1 className="has-text-centered is-size-3">
                 <span className="icon is-medium">
-                  <i className="fa fa-cutlery" />
+                  <i className="fa fa-map-marker" />
                 </span>
                 Search by Cuisine
               </h1>
-              <ul className="inner-grid">
-                {this.state.cuisines.map(cuisine =>
-                  <NavLink to={`/Cuisine/${cuisine}`} key={cuisine} className="button is-link">
-                    {cuisine}
-                  </NavLink>
-                )}
-              </ul>
+              <div className="inner-grid">
+                {cuisinesData.map(cuisine => (
+                  <Route
+                    key={cuisine}
+                    render={props => (
+                      <button
+                        onClick={() => {
+                          selectCuisine(`${cuisine}`);
+                          props.history.push(`/Cuisine/${cuisine}`);
+                        }}
+                        className="button is-link"
+                      >
+                        {cuisine}
+                      </button>
+                    )}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-          <Route path="/Cuisine/:cuisineId" render={props => <RefineSearchByCity {...props} />} />
         </div>
       </section>
     );

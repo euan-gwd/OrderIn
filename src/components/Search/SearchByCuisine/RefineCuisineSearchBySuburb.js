@@ -3,21 +3,24 @@ import { Route } from "react-router-dom";
 import "../search_styles.css";
 import SearchResultsList from "../../SearchResults/SearchResultsList";
 
-class RefineSearchBySuburb extends Component {
+class RefineCuisineSearchBySuburb extends Component {
   render() {
-    const { citiesData, match, selectSuburb, selectStore } = this.props;
+    const { citiesData, match, selectSuburb, cuisineName, selectStore } = this.props;
     const cityName = match.params.cityId;
     const city = citiesData.find(city => city.name === cityName);
     const suburbsData = city.suburbs;
-    // eslint-disable-next-line
-    const searchResult = { undefined, cityName, undefined };
+    const searchResult = { undefined, cityName, cuisineName };
 
     return (
       <section className="hero is-danger">
         <div className="hero-body">
           <div className="container">
             <div className="box has-text-centered has-text-danger">
-              <span className="selection-text-padding has-text-grey-light">Cities</span>
+              <span className="selection-text-padding has-text-grey-light">Cuisine</span>
+              <span className="icon is-left has-text-grey-light">
+                <i className="fa fa-chevron-right fa-lg" />
+              </span>
+              <span className="selection-text-padding has-text-grey-light">{cuisineName}</span>
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
@@ -41,7 +44,7 @@ class RefineSearchBySuburb extends Component {
                       <button
                         onClick={() => {
                           selectSuburb(`${suburb}`);
-                          props.history.push(`/Cities/${cityName}/${suburb}`);
+                          props.history.push(`${match.url}/${suburb}`);
                         }}
                         className="button is-link"
                       >
@@ -60,4 +63,4 @@ class RefineSearchBySuburb extends Component {
   }
 }
 
-export default RefineSearchBySuburb;
+export default RefineCuisineSearchBySuburb;

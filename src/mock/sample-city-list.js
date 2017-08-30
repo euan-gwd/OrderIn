@@ -1,10 +1,10 @@
-// This is just some sample data so you don't have to think of your own!
-module.exports = {
-  Alberton: {
+export const Cities = [
+  {
+    name: "Alberton",
     suburbs: ["Alberton"]
   },
-
-  "Cape Town": {
+  {
+    name: "Cape Town",
     suburbs: [
       "Acacia Park",
       "Athlone",
@@ -51,8 +51,8 @@ module.exports = {
       "Woodstock"
     ]
   },
-
-  Centurion: {
+  {
+    name: "Centurion",
     suburbs: [
       "Centurion Central",
       "Clubview",
@@ -62,8 +62,8 @@ module.exports = {
       "Lyttelton Manor"
     ]
   },
-
-  Durban: {
+  {
+    name: "Durban",
     suburbs: [
       "Durban Central",
       "Durban North",
@@ -78,12 +78,12 @@ module.exports = {
       "Westville"
     ]
   },
-
-  Franschhoek: {
+  {
+    name: "Franschhoek",
     suburbs: ["Franschhoek"]
   },
-
-  Johannesburg: {
+  {
+    name: "Johannesburg",
     suburbs: [
       "Atholl",
       "Barbeque Downs",
@@ -155,16 +155,16 @@ module.exports = {
       "Wynberg"
     ]
   },
-
-  "Kempton Park": {
+  {
+    name: "Kempton Park",
     suburbs: ["Kempton Park"]
   },
-
-  Paarl: {
+  {
+    name: "Paarl",
     suburbs: ["Paarl"]
   },
-
-  Pretoria: {
+  {
+    name: "Pretoria",
     suburbs: [
       "Brooklyn PTA",
       "Constantia Park",
@@ -186,16 +186,16 @@ module.exports = {
       "Waterkloof Heights"
     ]
   },
-
-  "Somerset West": {
+  {
+    name: "Somerset West",
     suburbs: ["Somerset West"]
   },
-
-  Stellenbosch: {
+  {
+    name: "Stellenbosch",
     suburbs: ["Stellenbosch Central", "Stellenbosch Ext"]
   },
-
-  Strand: {
+  {
+    name: "Strand",
     suburbs: ["Strand"]
   }
-};
+];

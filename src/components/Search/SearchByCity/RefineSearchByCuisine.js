@@ -1,62 +1,62 @@
 import React, { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "../search_styles.css";
-import sampleCuisines from "../../../mock/sample-cuisine-list";
-import CuisineView from "./CuisineView";
+import SearchResultsList from "../../SearchResults/SearchResultsList";
 
 class RefineSearchByCuisine extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cuisines: sampleCuisines
-    };
-  }
-
   render() {
-    const { match, cityId } = this.props;
+    const { cuisinesData, match, selectCuisine, cityName, selectStore } = this.props;
+    const suburbName = match.params.suburbId;
+    const searchResult = { suburbName, cityName, undefined };
+
     return (
-      <div className="">
-        <div className="container">
-          <div className="box has-text-centered has-text-danger">
-            <span className="selection-text-padding has-text-grey-light">Cities</span>
-            <span className="icon is-left has-text-grey-light">
-              <i className="fa fa-chevron-right fa-lg" />
-            </span>
-            <span className="selection-text-padding has-text-grey-light">
-              {cityId}
-            </span>
-            <span className="icon is-left has-text-grey-light">
-              <i className="fa fa-chevron-right fa-lg" />
-            </span>
-            <span className="selection-text-padding">
-              {match.params.suburbId}
-            </span>
-            <span className="icon is-left">
-              <i className="fa fa-chevron-right fa-lg" />
-            </span>
-          </div>
-          <div className="well">
-            <h1 className="has-text-centered is-size-3">
-              <span className="icon is-medium">
-                <i className="fa fa-cutlery" />
+      <section className="hero is-danger">
+        <div className="hero-body">
+          <div className="container">
+            <div className="box has-text-centered has-text-danger">
+              <span className="selection-text-padding has-text-grey-light">Cities</span>
+              <span className="icon is-left has-text-grey-light">
+                <i className="fa fa-chevron-right fa-lg" />
               </span>
-              Search by Cuisine
-            </h1>
-            <ul className="inner-grid">
-              {this.state.cuisines.map(cuisine =>
-                <NavLink to={`${match.url}/${cuisine}`} key={cuisine} className="button is-link">
-                  {cuisine}
-                </NavLink>
-              )}
-            </ul>
+              <span className="selection-text-padding has-text-grey-light">{cityName}</span>
+              <span className="icon is-left has-text-grey-light">
+                <i className="fa fa-chevron-right fa-lg" />
+              </span>
+              <span className="selection-text-padding">{suburbName}</span>
+              <span className="icon is-left">
+                <i className="fa fa-chevron-right fa-lg" />
+              </span>
+            </div>
+            <div className="well">
+              <h1 className="has-text-centered is-size-3">
+                <span className="icon is-medium">
+                  <i className="fa fa-map-marker" />
+                </span>
+                Search by Cuisine
+              </h1>
+              <div className="inner-grid">
+                {cuisinesData.map(cuisine => (
+                  <Route
+                    key={cuisine}
+                    render={props => (
+                      <button
+                        onClick={() => {
+                          selectCuisine(`${cuisine}`);
+                          props.history.push(`${match.url}/${cuisine}`);
+                        }}
+                        className="button is-link"
+                      >
+                        {cuisine}
+                      </button>
+                    )}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
+          <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
         </div>
-        <Route
-          path={`${match.path}/:cuisineId`}
-          render={props =>
-            <CuisineView {...props} cityId={cityId} suburbId={match.params.suburbId} />}
-        />
-      </div>
+      </section>
     );
   }
 }

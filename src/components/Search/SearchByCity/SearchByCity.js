@@ -1,18 +1,10 @@
 import React, { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "../search_styles.css";
-import sampleCities from "../../../mock/sample-city-list";
-import RefineSearchBySuburb from "./RefineSearchBySuburb";
 
 class SearchByCity extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cities: sampleCities
-    };
-  }
-
   render() {
+    const { selectCity, citiesData } = this.props;
     return (
       <section className="hero is-danger">
         <div className="hero-body">
@@ -25,18 +17,25 @@ class SearchByCity extends Component {
                 Search by City
               </h1>
               <div className="inner-grid">
-                {Object.keys(this.state.cities).map(city =>
-                  <NavLink to={`/Cities/${city}`} key={city} className="button is-link">
-                    {city}
-                  </NavLink>
-                )}
+                {citiesData.map(city => (
+                  <Route
+                    key={city.name}
+                    render={props => (
+                      <button
+                        onClick={() => {
+                          selectCity(`${city.name}`);
+                          props.history.push(`/Cities/${city.name}`);
+                        }}
+                        className="button is-link"
+                      >
+                        {city.name}
+                      </button>
+                    )}
+                  />
+                ))}
               </div>
             </div>
           </div>
-          <Route
-            path={`/Cities/:cityId`}
-            render={props => <RefineSearchBySuburb {...props} data={this.state.cities} />}
-          />
         </div>
       </section>
     );

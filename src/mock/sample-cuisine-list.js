@@ -1,4 +1,4 @@
-const Cuisine = [
+export const Cuisines = [
   "24 Hour",
   "American",
   "Asian",
@@ -54,5 +54,3 @@ const Cuisine = [
   "Vegetarian",
   "Wraps"
 ];
-
-export default Cuisine;

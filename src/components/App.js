@@ -2,30 +2,58 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
-import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
-import SearchByCity from "./Search/SearchByCity/SearchByCity";
-import SearchResultsList from "./SearchResults/SearchResultsList";
+import {
+  RefineSearchBySuburb,
+  RefineSearchByCuisine,
+  SearchCityResultsContainer,
+  RefineCuisineSearchByCity,
+  RefineCuisineSearchBySuburb,
+  SearchCuisineResultsContainer
+} from "./Search/";
+import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
+import { Cities } from "../mock/sample-city-list";
+import { Cuisines } from "../mock/sample-cuisine-list";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchResult: {}
+      searchResult: {},
+      selectedStore: {},
+      selectedCity: {},
+      selectedSuburb: {},
+      selectedCuisine: {}
     };
   }
 
   searchSelected(SearchTerm) {
     const item = SearchTerm.split(",");
-    const [street, suburb, city] = item;
+    const [street, suburbName, cityName] = item;
     console.log(street);
-    const cuisine = undefined;
+    const cuisineName = undefined;
     const searchItem = {
-      suburb,
-      city,
-      cuisine
+      suburbName,
+      cityName,
+      cuisineName
     };
     this.setState({ searchResult: searchItem });
+  }
+
+  selectStore(store) {
+    this.setState({ selectedStore: store });
+  }
+
+  selectCity(item) {
+    this.setState({ selectedCity: item });
+  }
+
+  selectSuburb(item) {
+    this.setState({ selectedSuburb: item });
+  }
+
+  selectCuisine(item) {
+    this.setState({ selectedCuisine: item });
   }
 
   render() {
@@ -37,19 +65,97 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={() => <Home searchSelected={this.searchSelected.bind(this)} />}
+              render={() => (
+                <Home
+                  searchSelected={this.searchSelected.bind(this)}
+                  selectCity={this.selectCity.bind(this)}
+                  selectCuisine={this.selectCuisine.bind(this)}
+                  citiesData={Cities}
+                  cuisinesData={Cuisines}
+                />
+              )}
             />
             <Route
+              exact
               path="/Cities/:cityId"
-              render={() => <SearchByCity searchSelected={this.searchSelected.bind(this)} />}
+              render={props => (
+                <RefineSearchBySuburb
+                  {...props}
+                  citiesData={Cities}
+                  cityName={this.state.selectedCity}
+                  selectSuburb={this.selectSuburb.bind(this)}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
             />
             <Route
+              exact
+              path="/Cities/:cityId/:suburbId"
+              render={props => (
+                <RefineSearchByCuisine
+                  {...props}
+                  cuisinesData={Cuisines}
+                  cityName={this.state.selectedCity}
+                  suburbName={this.state.selectedSuburb}
+                  selectCuisine={this.selectCuisine.bind(this)}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/Cities/:cityId/:suburbId/:cuisineId"
+              render={() => (
+                <SearchCityResultsContainer
+                  cityName={this.state.selectedCity}
+                  suburbName={this.state.selectedSuburb}
+                  cuisineName={this.state.selectedCuisine}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
+            />
+            <Route
+              exact
               path="/Cuisine/:cuisineId"
-              render={() => <SearchByCuisine searchSelected={this.searchSelected.bind(this)} />}
+              render={props => (
+                <RefineCuisineSearchByCity
+                  {...props}
+                  citiesData={Cities}
+                  cuisineName={this.state.selectedCuisine}
+                  selectCity={this.selectCity.bind(this)}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
             />
             <Route
-              path="/Search"
-              render={() => <SearchResultsList searchResult={this.state.searchResult} />}
+              exact
+              path="/Cuisine/:cuisineId/:cityId"
+              render={props => (
+                <RefineCuisineSearchBySuburb
+                  {...props}
+                  citiesData={Cities}
+                  cuisineName={this.state.selectedCuisine}
+                  cityName={this.state.selectedCity}
+                  selectSuburb={this.selectSuburb.bind(this)}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/Cuisine/:cuisineId/:cityId/:suburbId"
+              render={() => (
+                <SearchCuisineResultsContainer
+                  cuisineName={this.state.selectedCuisine}
+                  cityName={this.state.selectedCity}
+                  suburbName={this.state.selectedSuburb}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
+            />
+            <Route
+              path="/order-online/:storeId"
+              render={() => <OrderOnline name={this.state.selectedStore} />}
             />
             <Route component={NotFound} />
           </Switch>

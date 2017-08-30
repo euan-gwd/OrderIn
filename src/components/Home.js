@@ -3,11 +3,12 @@ import SearchBox from "./Search/SearchBox";
 import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
 import SearchByCity from "./Search/SearchByCity/SearchByCity";
 
-const Home = ({ searchSelected }) =>
+const Home = ({ searchSelected, selectCity, citiesData, selectCuisine, cuisinesData }) => (
   <div>
     <SearchBox searchSelected={searchSelected} />
-    <SearchByCity searchSelected={searchSelected} />
-    <SearchByCuisine searchSelected={searchSelected} />
-  </div>;
+    <SearchByCity selectCity={selectCity} citiesData={citiesData} />
+    <SearchByCuisine selectCuisine={selectCuisine} cuisinesData={cuisinesData} />
+  </div>
+);
 
 export default Home;

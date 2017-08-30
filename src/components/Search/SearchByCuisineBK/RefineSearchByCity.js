@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { NavLink, Route } from "react-router-dom";
 import "../search_styles.css";
-import sampleCities from "../../../mock/sample-city-list";
+import { Cities } from "../../../mock/sample-city-list";
 import RefineSearchBySuburb from "./RefineSearchBySuburb";
 
 class RefineSearchByCity extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cities: sampleCities
+      cities: Cities
     };
   }
 
@@ -22,9 +22,7 @@ class RefineSearchByCity extends Component {
             <span className="icon is-left has-text-grey-light">
               <i className="fa fa-chevron-right fa-lg" />
             </span>
-            <span className="selection-text-padding">
-              {match.params.cuisineId}
-            </span>
+            <span className="selection-text-padding">{match.params.cuisineId}</span>
             <span className="icon is-left">
               <i className="fa fa-chevron-right fa-lg" />
             </span>
@@ -37,22 +35,23 @@ class RefineSearchByCity extends Component {
               Search by City
             </h1>
             <div className="inner-grid">
-              {Object.keys(this.state.cities).map(city =>
+              {Object.keys(this.state.cities).map(city => (
                 <NavLink to={`${match.url}/${city}`} key={city} className="button is-link">
                   {city}
                 </NavLink>
-              )}
+              ))}
             </div>
           </div>
         </div>
         <Route
           path={`${match.path}/:cityId`}
-          render={props =>
+          render={props => (
             <RefineSearchBySuburb
               {...props}
               cuisineId={match.params.cuisineId}
               data={this.state.cities}
-            />}
+            />
+          )}
         />
       </div>
     );
