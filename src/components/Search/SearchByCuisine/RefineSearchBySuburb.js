@@ -1,75 +1,61 @@
 import React, { Component } from "react";
-import { NavLink, Route } from "react-router-dom";
-import SuburbView from "./SuburbView";
+import { Route } from "react-router-dom";
 import "../search_styles.css";
-// import sampleCities from "../../../mock/sample-city-list";
+import SearchResultsList from "../../SearchResults/SearchResultsList";
 
 class RefineSearchBySuburb extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cities: this.props.data,
-      suburbs: {}
-    };
-  }
-
-  componentWillMount() {
-    const city = this.props.match.params.cityId;
-    const suburbsList = this.state.cities[city].suburbs;
-    this.setState({ suburbs: suburbsList });
-  }
-
-  componentWillReceiveProps(nextProps) {
-    const city = nextProps.match.params.cityId;
-    const suburbsList = this.state.cities[city].suburbs;
-    this.setState({ suburbs: suburbsList });
-  }
-
   render() {
-    const { match, cuisineId } = this.props;
+    const { citiesData, match, selectSuburb, selectStore } = this.props;
+    const cityName = match.params.cityId;
+    const city = citiesData.find(city => city.name === cityName);
+    const suburbsData = city.suburbs;
+    // eslint-disable-next-line
+    const searchResult = { undefined, cityName, undefined };
+
     return (
-      <div>
-        <div className="container">
-          <div className="box has-text-centered has-text-danger">
-            <span className="selection-text-padding has-text-grey-light">Cuisine</span>
-            <span className="icon is-left has-text-grey-light">
-              <i className="fa fa-chevron-right fa-lg" />
-            </span>
-            <span className="selection-text-padding has-text-grey-light">
-              {cuisineId}
-            </span>
-            <span className="icon is-left has-text-grey-light">
-              <i className="fa fa-chevron-right fa-lg" />
-            </span>
-            <span className="selection-text-padding">
-              {match.params.cityId}
-            </span>
-            <span className="icon is-left">
-              <i className="fa fa-chevron-right fa-lg" />
-            </span>
-          </div>
-          <div className="well">
-            <h1 className="has-text-centered is-size-3">
-              <span className="icon is-medium">
-                <i className="fa fa-map-marker" />
+      <section className="hero is-danger">
+        <div className="hero-body">
+          <div className="container">
+            <div className="box has-text-centered has-text-danger">
+              <span className="selection-text-padding has-text-grey-light">Cities</span>
+              <span className="icon is-left has-text-grey-light">
+                <i className="fa fa-chevron-right fa-lg" />
               </span>
-              Refine Search by Suburb
-            </h1>
-            <div className="inner-grid">
-              {this.state.suburbs.map(suburb =>
-                <NavLink to={`${match.url}/${suburb}`} key={suburb} className="button is-link">
-                  {suburb}
-                </NavLink>
-              )}
+              <span className="selection-text-padding">{cityName}</span>
+              <span className="icon is-left">
+                <i className="fa fa-chevron-right fa-lg" />
+              </span>
+            </div>
+            <div className="well">
+              <h1 className="has-text-centered is-size-3">
+                <span className="icon is-medium">
+                  <i className="fa fa-map-marker" />
+                </span>
+                Search by Suburb
+              </h1>
+              <div className="inner-grid">
+                {suburbsData.map(suburb => (
+                  <Route
+                    key={suburb}
+                    render={props => (
+                      <button
+                        onClick={() => {
+                          selectSuburb(`${suburb}`);
+                          props.history.push(`/Cities/${cityName}/${suburb}`);
+                        }}
+                        className="button is-link"
+                      >
+                        {suburb}
+                      </button>
+                    )}
+                  />
+                ))}
+              </div>
             </div>
           </div>
+          <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
         </div>
-        <Route
-          path={`${match.path}/:suburbId`}
-          render={props =>
-            <SuburbView {...props} cuisineId={cuisineId} cityId={match.params.cityId} />}
-        />
-      </div>
+      </section>
     );
   }
 }

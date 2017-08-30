@@ -9,6 +9,7 @@ class RefineSearchBySuburb extends Component {
     const cityName = match.params.cityId;
     const city = citiesData.find(city => city.name === cityName);
     const suburbsData = city.suburbs;
+    // eslint-disable-next-line
     const searchResult = { undefined, cityName, undefined };
 
     return (
