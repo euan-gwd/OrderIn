@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { NavLink, Route } from "react-router-dom";
 import "../search_styles.css";
-import sampleCuisines from "../../../mock/sample-cuisine-list";
+import { Cuisines } from "../../../mock/sample-cuisine-list";
 import RefineSearchByCity from "./RefineSearchByCity";
 
 class SearchByCuisine extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cuisines: sampleCuisines,
+      cuisines: Cuisines,
       searchResult: 0
     };
   }
@@ -26,11 +26,11 @@ class SearchByCuisine extends Component {
                 Search by Cuisine
               </h1>
               <ul className="inner-grid">
-                {this.state.cuisines.map(cuisine =>
+                {this.state.cuisines.map(cuisine => (
                   <NavLink to={`/Cuisine/${cuisine}`} key={cuisine} className="button is-link">
                     {cuisine}
                   </NavLink>
-                )}
+                ))}
               </ul>
             </div>
           </div>

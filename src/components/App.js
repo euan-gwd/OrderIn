@@ -3,10 +3,11 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
 import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
-import SearchByCity from "./Search/SearchByCity/SearchByCity";
+import SearchContainer from "./Search/SearchByCity/SearchContainer";
 import SearchResultsList from "./SearchResults/SearchResultsList";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
+// import { Cities } from "../mock/sample-city-list";
 
 class App extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class App extends Component {
             />
             <Route
               path="/Cities/:cityId"
-              render={() => <SearchByCity selectStore={this.selectStore.bind(this)} />}
+              render={() => <SearchContainer selectStore={this.selectStore.bind(this)} />}
             />
             <Route path="/Cuisine/:cuisineId" render={() => <SearchByCuisine />} />
             <Route

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { NavLink, Route } from "react-router-dom";
 import "../search_styles.css";
-import sampleCuisines from "../../../mock/sample-cuisine-list";
+import { Cuisines } from "../../../mock/sample-cuisine-list";
 import SearchByCityResults from "./SearchByCityResults";
 
 class RefineSearchByCuisine extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cuisines: sampleCuisines
+      cuisines: Cuisines
     };
   }
 
@@ -22,15 +22,11 @@ class RefineSearchByCuisine extends Component {
             <span className="icon is-left has-text-grey-light">
               <i className="fa fa-chevron-right fa-lg" />
             </span>
-            <span className="selection-text-padding has-text-grey-light">
-              {cityId}
-            </span>
+            <span className="selection-text-padding has-text-grey-light">{cityId}</span>
             <span className="icon is-left has-text-grey-light">
               <i className="fa fa-chevron-right fa-lg" />
             </span>
-            <span className="selection-text-padding">
-              {match.params.suburbId}
-            </span>
+            <span className="selection-text-padding">{match.params.suburbId}</span>
             <span className="icon is-left">
               <i className="fa fa-chevron-right fa-lg" />
             </span>
@@ -43,23 +39,24 @@ class RefineSearchByCuisine extends Component {
               Search by Cuisine
             </h1>
             <ul className="inner-grid">
-              {this.state.cuisines.map(cuisine =>
+              {this.state.cuisines.map(cuisine => (
                 <NavLink to={`${match.url}/${cuisine}`} key={cuisine} className="button is-link">
                   {cuisine}
                 </NavLink>
-              )}
+              ))}
             </ul>
           </div>
         </div>
         <Route
           path={`${match.path}/:cuisineId`}
-          render={props =>
+          render={props => (
             <SearchByCityResults
               {...props}
               cityId={cityId}
               suburbId={match.params.suburbId}
               selectStore={selectStore}
-            />}
+            />
+          )}
         />
       </div>
     );
