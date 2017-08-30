@@ -1,17 +1,15 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import "../search_styles.css";
 import { Cities } from "../../../mock/sample-city-list";
 
 class SearchContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cities: Cities
-    };
-  }
-
   render() {
+    let sampleCities = Cities.map(city => (
+      <button key={city.name} className="button is-link">
+        {city.name}
+      </button>
+    ));
     return (
       <section className="hero is-danger">
         <div className="hero-body">
@@ -23,13 +21,7 @@ class SearchContainer extends Component {
                 </span>
                 Search by City
               </h1>
-              <div className="inner-grid">
-                {this.state.cities.map(city => (
-                  <NavLink to={`/Cities/${city}`} key={city} className="button is-link">
-                    {city}
-                  </NavLink>
-                ))}
-              </div>
+              <div className="inner-grid">{sampleCities}</div>
             </div>
           </div>
         </div>
