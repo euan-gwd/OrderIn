@@ -1,32 +1,14 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
-import SearchResultsList from "../../SearchResults/SearchResultsList";
 
 class SearchByCuisine extends Component {
   render() {
-    const { cuisinesData, match, selectCuisine, cityName, selectStore } = this.props;
-    const suburbName = match.params.suburbId;
-    const searchResult = { suburbName, cityName, undefined };
-
+    const { selectCuisine, cuisinesData } = this.props;
     return (
       <section className="hero is-danger">
         <div className="hero-body">
           <div className="container">
-            <div className="box has-text-centered has-text-danger">
-              <span className="selection-text-padding has-text-grey-light">Cities</span>
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <span className="selection-text-padding has-text-grey-light">{cityName}</span>
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <span className="selection-text-padding">{suburbName}</span>
-              <span className="icon is-left">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-            </div>
             <div className="well">
               <h1 className="has-text-centered is-size-3">
                 <span className="icon is-medium">
@@ -42,7 +24,7 @@ class SearchByCuisine extends Component {
                       <button
                         onClick={() => {
                           selectCuisine(`${cuisine}`);
-                          props.history.push(`${match.url}/${cuisine}`);
+                          props.history.push(`/Cuisine/${cuisine}`);
                         }}
                         className="button is-link"
                       >
@@ -54,7 +36,6 @@ class SearchByCuisine extends Component {
               </div>
             </div>
           </div>
-          <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
         </div>
       </section>
     );

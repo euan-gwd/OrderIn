@@ -41,7 +41,7 @@ class RefineSearchBySuburb extends Component {
                       <button
                         onClick={() => {
                           selectSuburb(`${suburb}`);
-                          props.history.push(`/Cities/${cityName}/${suburb}`);
+                          props.history.push(`/Cuisine/${cityName}/${suburb}`);
                         }}
                         className="button is-link"
                       >
