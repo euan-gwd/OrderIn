@@ -10,6 +10,7 @@ import {
   RefineCuisineSearchBySuburb,
   SearchCuisineResultsContainer
 } from "./Search/";
+import SearchResultsList from "../../SearchResults/SearchResultsList";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
