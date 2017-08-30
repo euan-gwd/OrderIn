@@ -64,6 +64,7 @@ class App extends Component {
                   searchSelected={this.searchSelected.bind(this)}
                   selectCity={this.selectCity.bind(this)}
                   citiesData={Cities}
+                  cuisinesData={Cuisines}
                 />
               )}
             />
@@ -86,10 +87,22 @@ class App extends Component {
               render={props => (
                 <RefineSearchByCuisine
                   {...props}
-                  CuisinesData={Cuisines}
+                  cuisinesData={Cuisines}
                   cityName={this.state.selectedCity}
                   suburbName={this.state.selectedSuburb}
                   selectCuisine={this.selectCuisine.bind(this)}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/Cities/:cityId/:suburbId/:cuisineId"
+              render={() => (
+                <SearchContainer
+                  cityName={this.state.selectedCity}
+                  suburbName={this.state.selectedSuburb}
+                  cuisineName={this.state.selectedCuisine}
                   selectStore={this.selectStore.bind(this)}
                 />
               )}

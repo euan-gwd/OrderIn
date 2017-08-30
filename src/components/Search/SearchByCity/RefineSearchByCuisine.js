@@ -4,7 +4,7 @@ import "../search_styles.css";
 
 class RefineSearchByCuisine extends Component {
   render() {
-    const { CuisinesData, match, selectCuisine, cityName } = this.props;
+    const { cuisinesData, match, selectCuisine, cityName } = this.props;
     const suburbId = match.params.suburbId;
 
     return (
@@ -33,7 +33,7 @@ class RefineSearchByCuisine extends Component {
                 Search by Cuisine
               </h1>
               <div className="inner-grid">
-                {CuisinesData.map(cuisine => (
+                {cuisinesData.map(cuisine => (
                   <Route
                     key={cuisine}
                     render={props => (
