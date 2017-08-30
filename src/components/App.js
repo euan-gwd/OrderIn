@@ -10,7 +10,7 @@ import {
   RefineCuisineSearchBySuburb,
   SearchCuisineResultsContainer
 } from "./Search/";
-import SearchResultsList from "../../SearchResults/SearchResultsList";
+import SearchResultsList from "./SearchResults/SearchResultsList";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
@@ -151,6 +151,20 @@ class App extends Component {
                   cityName={this.state.selectedCity}
                   suburbName={this.state.selectedSuburb}
                   selectStore={this.selectStore.bind(this)}
+                />
+              )}
+            />
+            <Route
+              path="/Search"
+              render={() => (
+                <Route
+                  path="/Search"
+                  render={() => (
+                    <SearchResultsList
+                      searchResult={this.state.searchResult}
+                      selectStore={this.selectStore.bind(this)}
+                    />
+                  )}
                 />
               )}
             />
