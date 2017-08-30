@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
-import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
 import SearchContainer from "./Search/SearchByCity/SearchContainer";
-import RefineSearchBySuburb from "./Search/";
-import SearchResultsList from "./SearchResults/SearchResultsList";
+import { RefineSearchBySuburb, RefineSearchByCuisine } from "./Search/";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
+import { Cuisines } from "../mock/sample-cuisine-list";
 
 class App extends Component {
   constructor(props) {
@@ -69,6 +68,7 @@ class App extends Component {
               )}
             />
             <Route
+              exact
               path="/Cities/:cityId"
               render={props => (
                 <RefineSearchBySuburb
@@ -81,22 +81,18 @@ class App extends Component {
               )}
             />
             <Route
+              exact
               path="/Cities/:cityId/:suburbId"
               render={props => (
-                <SearchContainer
+                <RefineSearchByCuisine
                   {...props}
-                  citiesData={Cities}
+                  CuisinesData={Cuisines}
                   cityName={this.state.selectedCity}
                   suburbName={this.state.selectedSuburb}
                   selectCuisine={this.selectCuisine.bind(this)}
                   selectStore={this.selectStore.bind(this)}
                 />
               )}
-            />
-            <Route path="/Cuisine/:cuisineId" render={() => <SearchByCuisine />} />
-            <Route
-              path="/Search"
-              render={() => <SearchResultsList searchResult={this.state.searchResult} />}
             />
             <Route
               path="/order-online/:storeId"
