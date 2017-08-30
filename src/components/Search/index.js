@@ -4,7 +4,9 @@ import RefineSearchBySuburb from "./SearchByCity/RefineSearchBySuburb";
 import RefineSearchByCuisine from "./SearchByCity/RefineSearchByCuisine";
 import SearchCityResultsContainer from "./SearchByCity/SearchCityResultsContainer";
 import SearchByCuisine from "./SearchByCuisine/SearchByCuisine";
-import RefineSearchByCity from "./SearchByCuisine/RefineSearchByCity";
+import RefineCuisineSearchByCity from "./SearchByCuisine/RefineCuisineSearchByCity";
+import RefineCuisineSearchBySuburb from "./SearchByCuisine/RefineCuisineSearchBySuburb";
+import SearchCuisineResultsContainer from "./SearchByCuisine/SearchCuisineResultsContainer";
 
 export {
   SearchBox,
@@ -13,5 +15,7 @@ export {
   RefineSearchByCuisine,
   SearchCityResultsContainer,
   SearchByCuisine,
-  RefineSearchByCity
+  RefineCuisineSearchByCity,
+  RefineCuisineSearchBySuburb,
+  SearchCuisineResultsContainer
 };

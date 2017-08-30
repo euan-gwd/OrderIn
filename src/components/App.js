@@ -6,12 +6,15 @@ import {
   RefineSearchBySuburb,
   RefineSearchByCuisine,
   SearchCityResultsContainer,
-  RefineSearchByCity
+  RefineCuisineSearchByCity,
+  RefineCuisineSearchBySuburb,
+  SearchCuisineResultsContainer
 } from "./Search/";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
 import { Cuisines } from "../mock/sample-cuisine-list";
+import Test from "./Search/SearchByCuisine/test";
 
 class App extends Component {
   constructor(props) {
@@ -116,11 +119,37 @@ class App extends Component {
               exact
               path="/Cuisine/:cuisineId"
               render={props => (
-                <RefineSearchByCity
+                <RefineCuisineSearchByCity
                   {...props}
                   citiesData={Cities}
                   cuisineName={this.state.selectedCuisine}
                   selectCity={this.selectCity.bind(this)}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/Cuisine/:cuisineId/:cityId"
+              render={props => (
+                <RefineCuisineSearchBySuburb
+                  {...props}
+                  citiesData={Cities}
+                  cuisineName={this.state.selectedCuisine}
+                  cityName={this.state.selectedCity}
+                  selectSuburb={this.selectSuburb.bind(this)}
+                  selectStore={this.selectStore.bind(this)}
+                />
+              )}
+            />
+            <Route
+              exact
+              path="/Cuisine/:cuisineId/:cityId/:suburbId"
+              render={() => (
+                <SearchCuisineResultsContainer
+                  cuisineName={this.state.selectedCuisine}
+                  cityName={this.state.selectedCity}
+                  suburbName={this.state.selectedSuburb}
                   selectStore={this.selectStore.bind(this)}
                 />
               )}

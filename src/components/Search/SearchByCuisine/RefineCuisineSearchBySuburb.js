@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
+import SearchResultsList from "../../SearchResults/SearchResultsList";
 
-class RefineSearchByCity extends Component {
+class RefineCuisineSearchBySuburb extends Component {
   render() {
-    const { selectCity, citiesData, cuisineName } = this.props;
+    const { citiesData, match, selectSuburb, cuisineName, selectStore } = this.props;
+    const cityName = match.params.cityId;
+    const city = citiesData.find(city => city.name === cityName);
+    const suburbsData = city.suburbs;
+    const searchResult = { undefined, cityName, cuisineName };
+
     return (
       <section className="hero is-danger">
         <div className="hero-body">
@@ -18,27 +24,31 @@ class RefineSearchByCity extends Component {
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
+              <span className="selection-text-padding">{cityName}</span>
+              <span className="icon is-left">
+                <i className="fa fa-chevron-right fa-lg" />
+              </span>
             </div>
             <div className="well">
               <h1 className="has-text-centered is-size-3">
                 <span className="icon is-medium">
                   <i className="fa fa-map-marker" />
                 </span>
-                Search by City
+                Search by Suburb
               </h1>
               <div className="inner-grid">
-                {citiesData.map(city => (
+                {suburbsData.map(suburb => (
                   <Route
-                    key={city.name}
+                    key={suburb}
                     render={props => (
                       <button
                         onClick={() => {
-                          selectCity(`${city.name}`);
-                          props.history.push(`/Cuisine/${city.name}`);
+                          selectSuburb(`${suburb}`);
+                          props.history.push(`${match.url}/${suburb}`);
                         }}
                         className="button is-link"
                       >
-                        {city.name}
+                        {suburb}
                       </button>
                     )}
                   />
@@ -46,10 +56,11 @@ class RefineSearchByCity extends Component {
               </div>
             </div>
           </div>
+          <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
         </div>
       </section>
     );
   }
 }
 
-export default RefineSearchByCity;
+export default RefineCuisineSearchBySuburb;
