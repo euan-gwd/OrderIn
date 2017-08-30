@@ -28,9 +28,9 @@ class App extends Component {
     };
   }
 
-  searchSelected(SearchTerm) {
-    const item = SearchTerm.split(",");
-    const [street, suburbName, cityName] = item;
+  searchSelected(searchTerm) {
+    console.log(searchTerm);
+    const [street, suburbName, cityName] = searchTerm;
     console.log(street);
     const cuisineName = undefined;
     const searchItem = {

@@ -11,7 +11,3 @@ export function titleCase(str) {
     })
     .join(" ");
 }
-
-export function removeSpaces(str) {
-  return str.replace(/\s+/g, "");
-}
