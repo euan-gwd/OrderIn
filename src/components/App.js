@@ -14,7 +14,6 @@ import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
 import { Cuisines } from "../mock/sample-cuisine-list";
-import Test from "./Search/SearchByCuisine/test";
 
 class App extends Component {
   constructor(props) {
