@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
+import SearchResultsList from "../../SearchResults/SearchResultsList";
 
 class RefineSearchByCuisine extends Component {
   render() {
-    const { cuisinesData, match, selectCuisine, cityName } = this.props;
-    const suburbId = match.params.suburbId;
+    const { cuisinesData, match, selectCuisine, cityName, selectStore } = this.props;
+    const suburbName = match.params.suburbId;
+    const searchResult = { suburbName, cityName, undefined };
 
     return (
       <section className="hero is-danger">
@@ -20,7 +22,7 @@ class RefineSearchByCuisine extends Component {
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding">{suburbId}</span>
+              <span className="selection-text-padding">{suburbName}</span>
               <span className="icon is-left">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
@@ -52,6 +54,7 @@ class RefineSearchByCuisine extends Component {
               </div>
             </div>
           </div>
+          <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
         </div>
       </section>
     );

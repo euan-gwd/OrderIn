@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
+import SearchResultsList from "../../SearchResults/SearchResultsList";
 
 class RefineSearchBySuburb extends Component {
   render() {
-    const { citiesData, match, selectSuburb } = this.props;
-    const cityId = match.params.cityId;
-    const city = citiesData.find(city => city.name === cityId);
+    const { citiesData, match, selectSuburb, selectStore } = this.props;
+    const cityName = match.params.cityId;
+    const city = citiesData.find(city => city.name === cityName);
     const suburbsData = city.suburbs;
+    const searchResult = { undefined, cityName, undefined };
 
     return (
       <section className="hero is-danger">
@@ -18,7 +20,7 @@ class RefineSearchBySuburb extends Component {
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding">{cityId}</span>
+              <span className="selection-text-padding">{cityName}</span>
               <span className="icon is-left">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
@@ -38,7 +40,7 @@ class RefineSearchBySuburb extends Component {
                       <button
                         onClick={() => {
                           selectSuburb(`${suburb}`);
-                          props.history.push(`/Cities/${cityId}/${suburb}`);
+                          props.history.push(`/Cities/${cityName}/${suburb}`);
                         }}
                         className="button is-link"
                       >
@@ -50,6 +52,7 @@ class RefineSearchBySuburb extends Component {
               </div>
             </div>
           </div>
+          <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
         </div>
       </section>
     );

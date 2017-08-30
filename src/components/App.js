@@ -22,13 +22,13 @@ class App extends Component {
 
   searchSelected(SearchTerm) {
     const item = SearchTerm.split(",");
-    const [street, suburb, city] = item;
+    const [street, suburbName, cityName] = item;
     console.log(street);
-    const cuisine = undefined;
+    const cuisineName = undefined;
     const searchItem = {
-      suburb,
-      city,
-      cuisine
+      suburbName,
+      cityName,
+      cuisineName
     };
     this.setState({ searchResult: searchItem });
   }

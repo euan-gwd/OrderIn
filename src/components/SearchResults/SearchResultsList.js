@@ -17,7 +17,8 @@ class SearchResultsList extends Component {
       <div className="top-spacer">
         <div className="container">
           <h2 className="title has-text-centered has-text-white">
-            {searchResult.cuisine} Restaurants in {searchResult.suburb} {searchResult.city}
+            {searchResult.cuisineName} Restaurants in {searchResult.suburbName}{" "}
+            {searchResult.cityName}
           </h2>
           <div className="box">
             <ul>
