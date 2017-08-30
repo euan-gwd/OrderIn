@@ -40,7 +40,7 @@ class RefineSearchByCuisine extends Component {
                       <button
                         onClick={() => {
                           selectCuisine(`${cuisine}`);
-                          props.history.push(`${match.path}/${cuisine}`);
+                          props.history.push(`${match.url}/${cuisine}`);
                         }}
                         className="button is-link"
                       >

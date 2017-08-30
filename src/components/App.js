@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
-import SearchContainer from "./Search/SearchByCity/SearchContainer";
-import { RefineSearchBySuburb, RefineSearchByCuisine } from "./Search/";
+import { RefineSearchBySuburb, RefineSearchByCuisine, SearchResultsContainer } from "./Search/";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
@@ -99,7 +98,7 @@ class App extends Component {
               exact
               path="/Cities/:cityId/:suburbId/:cuisineId"
               render={() => (
-                <SearchContainer
+                <SearchResultsContainer
                   cityName={this.state.selectedCity}
                   suburbName={this.state.selectedSuburb}
                   cuisineName={this.state.selectedCuisine}
