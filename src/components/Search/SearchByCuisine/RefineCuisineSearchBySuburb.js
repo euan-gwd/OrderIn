@@ -16,18 +16,37 @@ class RefineCuisineSearchBySuburb extends Component {
         <div className="hero-body">
           <div className="container">
             <div className="box has-text-centered has-text-danger">
-              <span className="selection-text-padding has-text-grey-light">Cuisine</span>
+              <Route
+                render={props => (
+                  <a
+                    className="selection-text-padding has-text-grey-light"
+                    onClick={() => {
+                      props.history.push(`/`);
+                    }}
+                  >
+                    Cuisine
+                  </a>
+                )}
+              />
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding has-text-grey-light">{cuisineName}</span>
+              <Route
+                render={props => (
+                  <a
+                    className="selection-text-padding has-text-grey-light"
+                    onClick={() => {
+                      props.history.goBack();
+                    }}
+                  >
+                    {cuisineName}
+                  </a>
+                )}
+              />
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
               <span className="selection-text-padding">{cityName}</span>
-              <span className="icon is-left">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
             </div>
             <div className="well">
               <h1 className="has-text-centered is-size-3">

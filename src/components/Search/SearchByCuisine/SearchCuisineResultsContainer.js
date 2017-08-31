@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../search_styles.css";
+import { Route } from "react-router-dom";
 import SearchResultsList from "../../SearchResults/SearchResultsList";
 
 class SearchCuisineResultsContainer extends Component {
@@ -15,11 +16,33 @@ class SearchCuisineResultsContainer extends Component {
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding has-text-grey-light">{cuisineName}</span>
+              <Route
+                render={props => (
+                  <a
+                    className="selection-text-padding has-text-grey-light"
+                    onClick={() => {
+                      props.history.push(`/`);
+                    }}
+                  >
+                    {cuisineName}
+                  </a>
+                )}
+              />
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding has-text-grey-light">{cityName}</span>
+              <Route
+                render={props => (
+                  <a
+                    className="selection-text-padding has-text-grey-light"
+                    onClick={() => {
+                      props.history.goBack();
+                    }}
+                  >
+                    {cityName}
+                  </a>
+                )}
+              />
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
