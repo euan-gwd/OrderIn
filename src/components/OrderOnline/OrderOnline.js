@@ -3,7 +3,6 @@ import "./orderonline_styles.css";
 
 class OrderOnline extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <div className="App-header">
