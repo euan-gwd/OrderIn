@@ -1,20 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import "./BreadCrumbNav.css";
 
 const BreadCrumbNav = () => (
   <div className="box breadcrumb-item-centered">
-    <Link to={`/`}>
-      <i className="fa fa-icon fa-map-marker" />
-      Enter Your Address
-    </Link>
+    <Route
+      render={props => (
+        <a
+          onClick={() => {
+            props.history.push(`/`);
+          }}
+        >
+          <i className="fa fa-icon fa-map-marker" />
+          Enter Your Address
+        </a>
+      )}
+    />
     <span className="icon is-left has-text-grey-light">
       <i className="fa fa-chevron-right" />
     </span>
-    <Link to={`/`}>
-      <i className="fa fa-icon fa-home" />
-      Pick A Restaurant
-    </Link>
+    <Route
+      render={props => (
+        <a
+          onClick={() => {
+            props.history.goBack();
+          }}
+        >
+          <i className="fa fa-icon fa-home" />
+          Pick A Restaurant
+        </a>
+      )}
+    />
     <span className="icon is-left has-text-grey-light">
       <i className="fa fa-chevron-right" />
     </span>
