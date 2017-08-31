@@ -10,9 +10,9 @@ class SearchByCity extends Component {
         <div className="hero-body">
           <div className="container">
             <div className="well">
-              <h1 className="has-text-centered is-size-3">
+              <h1 className="has-text-centered is-size-4">
                 <span className="icon is-medium">
-                  <i className="fa fa-map-marker" />
+                  <i className="fa fa-map-marker fa-lg" />
                 </span>
                 Search by City
               </h1>

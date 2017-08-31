@@ -12,14 +12,6 @@
   grid-gap: 1vh;
 }
 
-.item-centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  padding-bottom: 0.5rem;
-}
-
 .selection-text-padding {
   padding: 1.8rem;
   font-size: 1.5rem;

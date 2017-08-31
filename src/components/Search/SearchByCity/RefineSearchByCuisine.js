@@ -14,25 +14,44 @@ class RefineSearchByCuisine extends Component {
         <div className="hero-body">
           <div className="container">
             <div className="box has-text-centered has-text-danger">
-              <span className="selection-text-padding has-text-grey-light">Cities</span>
+              <Route
+                render={props => (
+                  <a
+                    className="selection-text-padding has-text-grey-light"
+                    onClick={() => {
+                      props.history.push(`/`);
+                    }}
+                  >
+                    Cities
+                  </a>
+                )}
+              />
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding has-text-grey-light">{cityName}</span>
+              <Route
+                render={props => (
+                  <a
+                    className="selection-text-padding has-text-grey-light"
+                    onClick={() => {
+                      props.history.goBack();
+                    }}
+                  >
+                    {cityName}
+                  </a>
+                )}
+              />
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
               <span className="selection-text-padding">{suburbName}</span>
-              <span className="icon is-left">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
             </div>
             <div className="well">
-              <h1 className="has-text-centered is-size-3">
-                <span className="icon is-medium">
-                  <i className="fa fa-map-marker" />
+              <h1 className="has-text-centered is-size-4">
+                <span className="icon">
+                  <i className="fa fa-cutlery fa-lg" />
                 </span>
-                Search by Cuisine
+                Refine Search by Cuisine
               </h1>
               <div className="inner-grid">
                 {cuisinesData.map(cuisine => (

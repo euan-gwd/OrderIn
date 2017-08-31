@@ -29,7 +29,7 @@ class SearchResultsList extends Component {
           </div>
           <footer className="has-text-centered spacer has-text-white">
             <p className="icon is-large">
-              <i className="fa fa-cutlery" aria-hidden="true" />
+              <i className="fa fa-street-view" aria-hidden="true" />
             </p>
           </footer>
         </div>
