@@ -28,9 +28,9 @@ class RefineSearchByCuisine extends Component {
               </span>
             </div>
             <div className="well">
-              <h1 className="has-text-centered is-size-3">
-                <span className="icon is-medium">
-                  <i className="fa fa-cutlery" />
+              <h1 className="has-text-centered is-size-4">
+                <span className="icon">
+                  <i className="fa fa-cutlery fa-lg" />
                 </span>
                 Refine Search by Cuisine
               </h1>

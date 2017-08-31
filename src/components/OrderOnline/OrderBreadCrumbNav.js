@@ -26,7 +26,7 @@ const OrderBreadCrumbNav = () => (
             props.history.goBack();
           }}
         >
-          <i className="fa fa-icon fa-home" />
+          <i className="fa fa-icon fa-home fa-lg" />
           Pick A Restaurant
         </a>
       )}
