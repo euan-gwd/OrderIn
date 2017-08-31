@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import "./search_styles.css";
+import { titleCase } from "../helpers";
 
 class SearchBox extends Component {
   constructor(props) {
@@ -15,7 +16,14 @@ class SearchBox extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (this.state.searchTerm.length > 0) {
-      this.props.searchSelected(this.state.searchTerm);
+      const searchItems = this.state.searchTerm.split(",");
+      let sanitizeitems = searchItems.map(item => {
+        return item.startsWith(" ") ? item.trim() : item;
+      });
+      let newSearchTerm = sanitizeitems.map(item => {
+        return titleCase(item);
+      });
+      this.props.searchSelected(newSearchTerm);
       this.setState({ fireRedirect: true });
     }
   };
