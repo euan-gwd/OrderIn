@@ -1,8 +1,8 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import "./BreadCrumbNav.css";
+import "./SearchBreadCrumbNav.css";
 
-const BreadCrumbNav = () => (
+const SearchBreadCrumbNav = () => (
   <div className="box breadcrumb-item-centered">
     <Route
       render={props => (
@@ -48,4 +48,4 @@ const BreadCrumbNav = () => (
   </div>
 );
 
-export default BreadCrumbNav;
+export default SearchBreadCrumbNav;

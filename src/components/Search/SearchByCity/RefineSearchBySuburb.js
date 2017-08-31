@@ -29,9 +29,9 @@ class RefineSearchBySuburb extends Component {
             <div className="well">
               <h1 className="has-text-centered is-size-3">
                 <span className="icon is-medium">
-                  <i className="fa fa-map-marker" />
+                  <i className="fa fa-map-o" />
                 </span>
-                Search by Suburb
+                Refine Search by Suburb
               </h1>
               <div className="inner-grid">
                 {suburbsData.map(suburb => (

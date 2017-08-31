@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import "./orderonline_styles.css";
-import BreadCrumbNav from "./BreadCrumbNav";
+import OrderBreadCrumbNav from "./OrderBreadCrumbNav";
 
 class OrderOnline extends Component {
   render() {
     return (
       <div className="StoreMenu">
         <div className="container">
-          <BreadCrumbNav />
-          
+          <OrderBreadCrumbNav />
         </div>
       </div>
     );

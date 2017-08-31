@@ -30,9 +30,9 @@ class RefineSearchByCuisine extends Component {
             <div className="well">
               <h1 className="has-text-centered is-size-3">
                 <span className="icon is-medium">
-                  <i className="fa fa-map-marker" />
+                  <i className="fa fa-cutlery" />
                 </span>
-                Search by Cuisine
+                Refine Search by Cuisine
               </h1>
               <div className="inner-grid">
                 {cuisinesData.map(cuisine => (

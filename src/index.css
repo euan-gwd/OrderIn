@@ -4760,7 +4760,8 @@ a.tag:hover {
 .fa {
   font-size: 21px;
   text-align: center;
-  vertical-align: top;
+  vertical-align: middle;
+  padding-right: 0.5rem;
 }
 
 .heading {
