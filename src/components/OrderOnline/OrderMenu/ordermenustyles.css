@@ -18,10 +18,11 @@
 .store-delivery {
   /* border: 1px solid green; */
   grid-area: storedelivery;
-  padding: 0.5rem;
-  /* box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1); */
-  border: 1.5px dashed rgba(10, 10, 10, 0.1);
-  border-radius: 2.5px;
+  border: 1px dashed #23d160;
+  border-radius: 3px;
+  background-color: #f6fef9;
+  color: #0e301a;
+  padding: 1em 1.25em;
 }
 
 .store-main-content {
