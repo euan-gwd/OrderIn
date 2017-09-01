@@ -8,7 +8,7 @@ class SearchResultsList extends Component {
     const { searchResult, selectStore } = this.props;
     const restaurants = Stores;
     return (
-      <div className="top-spacer">
+      <div>
         <div className="container">
           <h2 className="title has-text-centered has-text-white">
             {searchResult.cuisineName} Restaurants in {searchResult.suburbName}{" "}

@@ -30,45 +30,43 @@ class SearchBox extends Component {
 
   render() {
     return (
-      <section className="hero is-danger ">
-        <div className="hero-body">
-          <div className="container">
-            <h1 className="subtitle has-text-centered is-size-2">
-              <strong>Simply</strong> Order food online.
-            </h1>
-            <div className="columns is-centered">
-              <form
-                ref={input => (this.searchForm = input)}
-                className="column is-half box"
-                onSubmit={this.handleSubmit}
-              >
-                <p className="has-text-centered is-size-4">
-                  Enter your street address, suburb & city:
+      <div className="hero-body">
+        <div className="container">
+          <h1 className="subtitle has-text-centered is-size-2">
+            <strong>Simply</strong> Order food online.
+          </h1>
+          <div className="columns is-centered">
+            <form
+              ref={input => (this.searchForm = input)}
+              className="column is-half box"
+              onSubmit={this.handleSubmit}
+            >
+              <p className="has-text-centered is-size-4">
+                Enter your street address, suburb & city:
+              </p>
+              <div className="field has-addons">
+                <p className="control is-expanded has-icons-left">
+                  <input
+                    className="input is-large"
+                    type="text"
+                    placeholder="e.g. 90 Victoria Road,Woodstock,Cape Town"
+                    onChange={this.handleInput.bind(this)}
+                  />
+                  <span className="icon is-left">
+                    <i className="fa fa-search" />
+                  </span>
                 </p>
-                <div className="field has-addons">
-                  <p className="control is-expanded has-icons-left">
-                    <input
-                      className="input is-large"
-                      type="text"
-                      placeholder="e.g. 90 Victoria Road,Woodstock,Cape Town"
-                      onChange={this.handleInput.bind(this)}
-                    />
-                    <span className="icon is-left">
-                      <i className="fa fa-search" />
-                    </span>
-                  </p>
-                </div>
-                <div className="field is-grouped is-grouped-centered">
-                  <button type="submit" className="button is-danger is-fullwidth is-medium">
-                    Find Restaurants
-                  </button>
-                </div>
-              </form>
-            </div>
+              </div>
+              <div className="field is-grouped is-grouped-centered">
+                <button type="submit" className="button is-danger is-fullwidth is-medium">
+                  Find Restaurants
+                </button>
+              </div>
+            </form>
           </div>
-          {this.state.fireRedirect && <Redirect push to="/Search" />}
         </div>
-      </section>
+        {this.state.fireRedirect && <Redirect push to="/Search" />}
+      </div>
     );
   }
 }
