@@ -2,9 +2,8 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: minmax(1em, auto) 1fr;
-  grid-template-areas: 
-  "storeheader storeorderlist" 
-  "storemenulist storeorderlist";
+  grid-template-areas: "storeheader storeorderlist" "storedelivery storeorderlist"
+    "storemenulist storeorderlist";
   grid-gap: 1vh;
 }
 
@@ -13,6 +12,15 @@
   grid-area: storeheader;
   padding: 0.5rem;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  border-radius: 2.5px;
+}
+
+.store-delivery {
+  /* border: 1px solid green; */
+  grid-area: storedelivery;
+  padding: 0.5rem;
+  /* box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1); */
+  border: 1.5px dashed rgba(10, 10, 10, 0.1);
   border-radius: 2.5px;
 }
 
