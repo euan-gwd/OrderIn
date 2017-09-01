@@ -73,4 +73,5 @@ input[type="radio"].pickup:focus ~ label {
 
 .deliveryAddress {
   border-top: 1px dashed darkgrey;
+  padding: 0.5vh;
 }

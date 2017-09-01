@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import "./OrderDeliveryOptions.css";
+import DeliveryAddressForm from "./DeliveryAddressForm";
 
 class OrderDeliveryOptions extends Component {
-  state = { selectedOption: "pickup" };
+  state = { selectedOption: "pickup", deliveryAddress: "pickup" };
 
   handleOptionChange = changeEvent => {
     this.setState({ selectedOption: changeEvent.target.value });
   };
+
+  clientAddress(item) {
+    this.setState({ deliveryAddress: item });
+  }
 
   render() {
     return (
@@ -38,7 +43,7 @@ class OrderDeliveryOptions extends Component {
           </div>
         </div>
         {this.state.selectedOption === "delivery" && (
-          <div className="deliveryAddress">Confirm address</div>
+          <DeliveryAddressForm clientAddress={this.clientAddress.bind(this)} />
         )}
       </div>
     );
