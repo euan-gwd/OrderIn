@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
-import SearchResultsList from "../../SearchResults/SearchResultsList";
+import SearchResultsList from "../SearchResults/SearchResultsList";
 
 class RefineCuisineSearchBySuburb extends Component {
   render() {

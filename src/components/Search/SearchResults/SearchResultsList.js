@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Store from "./Store";
 import "./results_styles.css";
-import { Stores } from "../../mock/sample-stores";
+import { Stores } from "../../../mock/sample-stores";
 
 class SearchResultsList extends Component {
   render() {
@@ -23,7 +23,7 @@ class SearchResultsList extends Component {
           </div>
           <footer className="has-text-centered spacer has-text-white">
             <p className="icon is-large">
-              <i className="fa fa-street-view" aria-hidden="true" />
+              <i className="fa fa-chevron-up" aria-hidden="true" />
             </p>
           </footer>
         </div>

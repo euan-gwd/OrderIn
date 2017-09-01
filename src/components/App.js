@@ -8,9 +8,9 @@ import {
   SearchCityResultsContainer,
   RefineCuisineSearchByCity,
   RefineCuisineSearchBySuburb,
-  SearchCuisineResultsContainer
+  SearchCuisineResultsContainer,
+  SearchResultsList
 } from "./Search/";
-import SearchResultsList from "./SearchResults/SearchResultsList";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";

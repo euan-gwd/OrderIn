@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../search_styles.css";
 import { Route } from "react-router-dom";
-import SearchResultsList from "../../SearchResults/SearchResultsList";
+import SearchResultsList from "../SearchResults/SearchResultsList";
 
 class SearchCityResultsContainer extends Component {
   render() {
