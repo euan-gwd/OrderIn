@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./ordermenustyles.css";
 import OrderMenuHeader from "./OrderMenuHeader";
 import OrderDeliveryOptions from "./OrderDeliveryOptions";
+import OrderMenuList from "./OrderMenuList";
 
 class OrderMenu extends Component {
   render() {
@@ -11,7 +12,7 @@ class OrderMenu extends Component {
       <div className="store-menu">
         <OrderMenuHeader restaurant={restaurant} />
         <OrderDeliveryOptions />
-        <main className="store-main-content">Menu Listing</main>
+        <OrderMenuList />
         <aside className="store-sidebar">Order</aside>
       </div>
     );
