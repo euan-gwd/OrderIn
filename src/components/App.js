@@ -15,6 +15,7 @@ import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
 import { Cuisines } from "../mock/sample-cuisine-list";
+import { Stores } from "../mock/sample-stores";
 
 class App extends Component {
   constructor(props) {
@@ -170,7 +171,9 @@ class App extends Component {
             />
             <Route
               path="/order-online/:storeId"
-              render={() => <OrderOnline name={this.state.selectedStore} />}
+              render={() => (
+                <OrderOnline name={this.state.selectedStore} restaurantsData={Stores} />
+              )}
             />
             <Route component={NotFound} />
           </Switch>

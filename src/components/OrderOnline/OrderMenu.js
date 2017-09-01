@@ -3,9 +3,11 @@ import "./ordermenustyles.css";
 
 class OrderMenu extends Component {
   render() {
-    const { name, storesData } = this.props;
-    // const store = storesData.find(store => store.name === name);
-    console.log(storesData);
+    const { name, restaurantsData } = this.props;
+    // const restaurant = restaurantsData.find(restaurant => restaurant.name === name);
+    console.log(name);
+    console.log(restaurantsData);
+    // console.log(restaurant);
     return (
       <div className="store-menu">
         <header className="store-header">Store info</header>

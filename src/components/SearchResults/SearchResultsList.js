@@ -1,18 +1,12 @@
 import React, { Component } from "react";
 import Store from "./Store";
 import "./results_styles.css";
-import sampleStores from "../../mock/sample-stores";
+import { Stores } from "../../mock/sample-stores";
 
 class SearchResultsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      stores: sampleStores
-    };
-  }
-
   render() {
     const { searchResult, selectStore } = this.props;
+    const restaurants = Stores;
     return (
       <div className="top-spacer">
         <div className="container">
@@ -22,8 +16,8 @@ class SearchResultsList extends Component {
           </h2>
           <div className="box">
             <ul>
-              {Object.keys(this.state.stores).map(key => (
-                <Store key={key} details={this.state.stores[key]} selectStore={selectStore} />
+              {restaurants.map(restaurant => (
+                <Store key={restaurant.name} details={restaurant} selectStore={selectStore} />
               ))}
             </ul>
           </div>
