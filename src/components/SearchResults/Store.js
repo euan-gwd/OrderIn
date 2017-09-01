@@ -1,20 +1,9 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 class Store extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { restaurant: {}, fireRedirect: false };
-  }
-
-  handleClick = () => {
-    const { details, selectStore } = this.props;
-    selectStore(details.name);
-    this.setState({ fireRedirect: true });
-  };
-
   render() {
-    const { details } = this.props;
+    const { details, selectStore } = this.props;
     const storeId = details.name.replace(/\s+/g, "");
     return (
       <li className="media">
@@ -28,11 +17,20 @@ class Store extends Component {
           </div>
         </div>
         <div className="media-right">
-          <button className="button is-danger is-outlined" onClick={this.handleClick}>
-            Order Now
-          </button>
+          <Route
+            render={props => (
+              <button
+                onClick={() => {
+                  selectStore(details.name);
+                  props.history.push(`/order-online/${storeId}`);
+                }}
+                className="button is-danger is-outlined"
+              >
+                Order Now
+              </button>
+            )}
+          />
         </div>
-        {this.state.fireRedirect && <Redirect push to={`/order-online/${storeId}`} />}
       </li>
     );
   }

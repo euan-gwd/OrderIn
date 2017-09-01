@@ -1,0 +1,25 @@
+.store-menu {
+  border: 1px solid red;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: minmax(1em, auto) 1fr;
+  grid-template-areas: 
+  "storeheader storeorderlist" 
+  "storemenulist storeorderlist";
+  grid-gap: 1vh;
+}
+
+.store-header {
+  border: 1px solid green;
+  grid-area: storeheader;
+}
+
+.store-main-content {
+  border: 1px solid blue;
+  grid-area: storemenulist;
+}
+
+.store-sidebar {
+  border: 1px solid yellow;
+  grid-area: storeorderlist;
+}
