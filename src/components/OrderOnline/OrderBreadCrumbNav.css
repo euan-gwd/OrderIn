@@ -5,6 +5,13 @@
   align-content: center;
 }
 
+.navbox {
+  padding: 1.25rem;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 5px;
+  margin-bottom: 1.25rem;
+}
+
 .fa-icon {
   vertical-align: text-top;
   padding-right: 0.5rem;

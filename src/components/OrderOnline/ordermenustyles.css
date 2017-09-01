@@ -1,5 +1,4 @@
 .store-menu {
-  border: 1px solid red;
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: minmax(1em, auto) 1fr;
@@ -10,16 +9,29 @@
 }
 
 .store-header {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   grid-area: storeheader;
+  padding: 0.5rem;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  border-radius: 2.5px;
 }
 
 .store-main-content {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   grid-area: storemenulist;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+  border-bottom-right-radius: 2.5px;
+  border-bottom-left-radius: 2.5px;
 }
 
 .store-sidebar {
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
   grid-area: storeorderlist;
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  border-radius: 2.5px;
+}
+
+.icon-padding {
+  vertical-align: text-top;
+  padding: 0 0.5rem;
 }
