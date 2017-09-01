@@ -23,7 +23,7 @@ class SearchResultsList extends Component {
           </div>
           <footer className="has-text-centered spacer has-text-white">
             <p className="icon is-large">
-              <i className="fa fa-chevron-up" aria-hidden="true" />
+              <i className="fa fa-arrow-up" aria-hidden="true" />
             </p>
           </footer>
         </div>
