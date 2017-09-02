@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Store from "./Store";
-import "./results_styles.css";
+import "./SearchResultsStyles.css";
 import { Stores } from "../../../mock/sample-stores";
 
 class SearchResultsList extends Component {
@@ -15,11 +15,9 @@ class SearchResultsList extends Component {
             {searchResult.cityName}
           </h2>
           <div className="box">
-            <ul>
-              {restaurants.map(restaurant => (
-                <Store key={restaurant.name} details={restaurant} selectStore={selectStore} />
-              ))}
-            </ul>
+            {restaurants.map(restaurant => (
+              <Store key={restaurant.name} details={restaurant} selectStore={selectStore} />
+            ))}
           </div>
           <footer className="has-text-centered spacer has-text-white">
             <p className="icon is-large">

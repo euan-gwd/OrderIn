@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./ordermenustyles.css";
+import "./OrderMenuStyles.css";
 import OrderMenuHeader from "./OrderMenuHeader";
 import OrderDeliveryOptions from "./OrderDeliveryOptions/OrderDeliveryOptions";
 import OrderMenuList from "./OrderMenuList/OrderMenuList";

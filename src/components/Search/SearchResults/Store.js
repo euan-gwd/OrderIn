@@ -6,7 +6,7 @@ class Store extends Component {
     const { details, selectStore } = this.props;
     const storeId = details.name.replace(/\s+/g, "");
     return (
-      <li className="media">
+      <div className="media">
         <div className="media-left">
           <img src={details.image} alt="logo" className="image is-64x64" />
         </div>
@@ -31,7 +31,7 @@ class Store extends Component {
             )}
           />
         </div>
-      </li>
+      </div>
     );
   }
 }
