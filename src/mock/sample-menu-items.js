@@ -35,7 +35,8 @@ export const platters = [
     name: "Vegetarian platter",
     price: 9800,
     description: "4 Dragon Maki 4 California Roll 4 Fashion Sandwich 3 Avo Maki 3 Cucumber Maki",
-    Qty: "18 pieces"
+    Qty: "18 pieces",
+    vegetarian: true
   },
   {
     name: "Malay platter",
