@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import OrderMenuItem from "./OrderMenuItem";
 
 class OrderMenuList extends Component {
   state = {};
   render() {
+    const { menuData } = this.props;
     return (
       <div className="store-main-content">
         <header className="menu-list-header">
@@ -12,7 +14,9 @@ class OrderMenuList extends Component {
             Vegetarian
           </span>
         </header>
-        <main>menu Listing</main>
+        <main>
+          <ul>{menuData.map(item => <OrderMenuItem key={item.name} details={item} />)}</ul>
+        </main>
       </div>
     );
   }

@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./ordermenustyles.css";
 import OrderMenuHeader from "./OrderMenuHeader";
-import OrderDeliveryOptions from "./OrderDeliveryOptions";
-import OrderMenuList from "./OrderMenuList";
+import OrderDeliveryOptions from "./OrderDeliveryOptions/OrderDeliveryOptions";
+import OrderMenuList from "./OrderMenuList/OrderMenuList";
+import { platters } from "../../../mock/sample-menu-items";
 
 class OrderMenu extends Component {
   render() {
@@ -12,7 +13,7 @@ class OrderMenu extends Component {
       <div className="store-menu">
         <OrderMenuHeader restaurant={restaurant} />
         <OrderDeliveryOptions />
-        <OrderMenuList />
+        <OrderMenuList menuData={platters} />
         <aside className="store-sidebar">Order</aside>
       </div>
     );

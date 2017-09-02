@@ -1,6 +1,6 @@
 import React from "react";
 import "./orderonline_styles.css";
-import OrderBreadCrumbNav from "./OrderNav/OrderBreadCrumbNav";
+import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import OrderMenu from "./OrderMenu/OrderMenu";
 
 const OrderOnline = ({ name, restaurantsData }) => (
