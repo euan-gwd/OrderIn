@@ -30,7 +30,7 @@ class DeliveryAddressFrom extends Component {
           <div className="field has-addons">
             <p className="control is-expanded has-icons-left">
               <input
-                className="input is-small"
+                className="input"
                 type="text"
                 placeholder="e.g. 90 Victoria Road, Woodstock, Cape Town"
                 onChange={this.handleInput.bind(this)}
@@ -40,7 +40,7 @@ class DeliveryAddressFrom extends Component {
               </span>
             </p>
             <div className="control">
-              <button type="submit" className="button is-success is-small">
+              <button type="submit" className="button is-success">
                 Confirm
               </button>
             </div>

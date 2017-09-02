@@ -117,6 +117,8 @@ th {
   /* --btn-bkgrd: #a72101; */
   --btn-hover: #841a01;
   --deep-red: #600D03;
+  --border-color: rgba(10, 10, 10, 0.1);
+  --radio-btn-color: #23d160;
 }
 
 html {

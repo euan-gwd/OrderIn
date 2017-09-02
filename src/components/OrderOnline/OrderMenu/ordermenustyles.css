@@ -1,7 +1,3 @@
-:root {
-  --border-color: rgba(10, 10, 10, 0.1);
-}
-
 .store-menu {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -22,7 +18,10 @@
   border-radius: 3px;
   background-color: #f6fef9;
   color: #0e301a;
-  padding: 1em 1.25em;
+  padding-top: calc(0.375em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
 }
 
 .store-main-content {
