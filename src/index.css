@@ -1669,14 +1669,14 @@ a.box:active {
 }
 
 .button.is-light.is-inverted.is-outlined {
-  background-color: transparent;
-  border-color: #363636;
-  color: #363636;
+  background-color: lightgrey;
+  /* border-color: #363636; */
+  color: #727272;
 }
 
 .button.is-light.is-inverted.is-outlined:hover, .button.is-light.is-inverted.is-outlined:focus {
-  background-color: #363636;
-  color: whitesmoke;
+  background-color: darkgrey;
+  color: #0a0a0a;
 }
 
 .button.is-light.is-inverted.is-outlined[disabled] {

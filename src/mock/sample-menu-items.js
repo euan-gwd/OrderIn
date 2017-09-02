@@ -33,39 +33,39 @@ export const platters = [
   },
   {
     name: "Vegetarian platter",
-    price: 98000,
+    price: 9800,
     description: "4 Dragon Maki 4 California Roll 4 Fashion Sandwich 3 Avo Maki 3 Cucumber Maki",
     Qty: "18 pieces"
   },
   {
     name: "Malay platter",
-    price: 125000,
+    price: 12500,
     description:
       "4 Rainbow Maki 4 Salmon California 3 Tuna Maki 3 prawn Maki 3 Crab Maki 3 Cucumber Maki",
     Qty: "20 pieces"
   },
   {
     name: "Zaira's platter",
-    price: 145000,
+    price: 14500,
     description: "8 Tempura California 4 Rainbow Maki 2 Salmon nigiri 3 Avi Maki 3 Crab Maki",
     Qty: "20 pieces"
   },
   {
     name: "Mini platter",
-    price: 90000,
+    price: 9000,
     description: "2 Salmon nigiri 4 ainbow Maki 3 Avo Maki 3 Cucumber Maki",
     Qty: "12 pieces"
   },
   {
     name: "Nigiri Sakura platter",
-    price: 90000,
+    price: 9000,
     description:
       "2 Salmon nigiri 1 prawn nigiri 1 Avo nigiri 1 Crab nigiri 1 Omelette nigiri 1 Inari",
     Qty: "7 pieces"
   },
   {
     name: "Sweetheart platter",
-    price: 305000,
+    price: 30500,
     description:
       "4 Sashimi salmon and tuna 4 nigiri salmon and tuna 12 Maki salmon and tuna 8 California salmon and tuna  4 Roses salmon and tuna",
     Qty: "32 pieces"

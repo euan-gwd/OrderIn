@@ -15,7 +15,7 @@ class OrderMenuList extends Component {
           </span>
         </header>
         <main>
-          <ul>{menuData.map(item => <OrderMenuItem key={item.name} details={item} />)}</ul>
+          <ul>{menuData.map(item => <OrderMenuItem key={item.name} menuItem={item} />)}</ul>
         </main>
       </div>
     );

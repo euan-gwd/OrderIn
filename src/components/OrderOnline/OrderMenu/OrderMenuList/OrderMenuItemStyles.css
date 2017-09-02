@@ -1,0 +1,32 @@
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid lightgrey;
+  padding: 0.5em;
+  align-items: center;
+}
+
+.item-grid:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+
+.item-name {
+  grid-column: 1/3;
+  grid-row: 1;
+}
+
+.item-desc {
+  grid-column: 1/3;
+  grid-row: 2;
+}
+
+.item-actions {
+  grid-column: 4/5;
+  grid-row: span 2;
+}
+
+.item-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
