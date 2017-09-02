@@ -3,11 +3,11 @@ import "./orderonline_styles.css";
 import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import OrderMenu from "./OrderMenu/OrderMenu";
 
-const OrderOnline = ({ name, restaurantsData }) => (
+const OrderOnline = ({ restaurantName }) => (
   <div className="StoreMenu">
     <main className="container">
       <OrderBreadCrumbNav />
-      <OrderMenu name={name} restaurantsData={restaurantsData} />
+      <OrderMenu restaurantName={restaurantName} />
     </main>
   </div>
 );
