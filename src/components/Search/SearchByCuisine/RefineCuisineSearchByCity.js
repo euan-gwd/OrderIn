@@ -41,8 +41,10 @@ class RefineCuisineSearchByCity extends Component {
                     render={props => (
                       <button
                         onClick={() => {
-                          selectCity(`${city.name}`);
-                          props.history.push(`${match.url}/${city.name}`);
+                          let getSlug = require("speakingurl");
+                          let CityName = getSlug(`${city.name}`);
+                          selectCity(`${CityName}`);
+                          props.history.push(`${match.url}/${CityName}`);
                         }}
                         className="button is-link"
                       >

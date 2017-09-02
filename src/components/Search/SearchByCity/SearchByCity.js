@@ -22,8 +22,10 @@ class SearchByCity extends Component {
                   render={props => (
                     <button
                       onClick={() => {
-                        selectCity(`${city.name}`);
-                        props.history.push(`/Cities/${city.name}`);
+                        let getSlug = require("speakingurl");
+                        let CityName = getSlug(`${city.name}`);
+                        selectCity(`${CityName}`);
+                        props.history.push(`/Cities/${CityName}`);
                       }}
                       className="button is-link"
                     >

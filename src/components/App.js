@@ -15,6 +15,7 @@ import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
 import { Cuisines } from "../mock/sample-cuisine-list";
+import { unSlug } from "./helpers";
 
 class App extends Component {
   constructor(props) {
@@ -47,15 +48,18 @@ class App extends Component {
   }
 
   selectCity(item) {
-    this.setState({ selectedCity: item });
+    const city = unSlug(item);
+    this.setState({ selectedCity: city });
   }
 
   selectSuburb(item) {
-    this.setState({ selectedSuburb: item });
+    const suburb = unSlug(item);
+    this.setState({ selectedSuburb: suburb });
   }
 
   selectCuisine(item) {
-    this.setState({ selectedCuisine: item });
+    const cuisine = unSlug(item);
+    this.setState({ selectedCuisine: cuisine });
   }
 
   render() {

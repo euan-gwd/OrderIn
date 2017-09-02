@@ -22,8 +22,10 @@ class SearchByCuisine extends Component {
                   render={props => (
                     <button
                       onClick={() => {
-                        selectCuisine(`${cuisine}`);
-                        props.history.push(`/Cuisine/${cuisine}`);
+                        let getSlug = require("speakingurl");
+                        let cuisineName = getSlug(`${cuisine}`);
+                        selectCuisine(`${cuisineName}`);
+                        props.history.push(`/Cuisine/${cuisineName}`);
                       }}
                       className="button is-link"
                     >
