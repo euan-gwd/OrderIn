@@ -9,11 +9,10 @@ import { Stores } from "../../../mock/sample-stores";
 class OrderMenu extends Component {
   constructor(props) {
     super(props);
-    this.state = { restaurantName: 0, restaurantsData: 0 };
+    this.state = { restaurantName: this.props.restaurantName, restaurantsData: Stores };
   }
 
   componentWillMount() {
-    this.setState({ restaurantName: this.props.restaurantName, restaurantsData: Stores });
     const sessionStorageRef = sessionStorage.getItem(`restaurantName`);
     if (sessionStorageRef) {
       this.setState({
