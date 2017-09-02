@@ -1,3 +1,7 @@
+:root {
+  --radio-btn-color: #23d160;
+}
+
 input[type="radio"].delivery {
   border: 0;
   clip: rect(0 0 0 0);
@@ -17,18 +21,20 @@ input[type="radio"].delivery ~ label:before {
   font-size: 1.2em;
   color: #535353;
   width: 1.4em;
+  cursor: pointer;
 }
 
 input[type="radio"].delivery:checked ~ label:before {
   content: "\f00c";
   font-size: 1.2em;
-  color: darkgreen;
+  color: var(--radio-btn-color);
   letter-spacing: 5px;
 }
 
 input[type="radio"].delivery:focus ~ label:before,
 input[type="radio"].delivery:focus ~ label {
-  color: green;
+  color: var(--radio-btn-color);
+  cursor: pointer;
 }
 
 input[type="radio"].pickup {
@@ -50,18 +56,20 @@ input[type="radio"].pickup ~ label:before {
   font-size: 1.2em;
   color: #535353;
   width: 1.4em;
+  cursor: pointer;
 }
 
 input[type="radio"].pickup:checked ~ label:before {
   content: "\f00c";
   font-size: 1.2em;
-  color: darkgreen;
+  color: var(--radio-btn-color);
   letter-spacing: 5px;
 }
 
 input[type="radio"].pickup:focus ~ label:before,
 input[type="radio"].pickup:focus ~ label {
-  color: green;
+  color: var(--radio-btn-color);
+  cursor: pointer;
 }
 
 .options-container {
