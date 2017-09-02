@@ -41,11 +41,6 @@ class App extends Component {
     this.setState({ searchResult: searchItem });
   }
 
-  // componentWillUpdate(nextProps, nextState) {
-  //   console.log({ nextProps, nextState });
-  //   sessionStorage.setItem(`restaurantName`, JSON.stringify(nextState.restaurantName));
-  // }
-
   selectStore(store) {
     sessionStorage.setItem(`restaurantName`, store);
     this.setState({ selectedStore: store });
