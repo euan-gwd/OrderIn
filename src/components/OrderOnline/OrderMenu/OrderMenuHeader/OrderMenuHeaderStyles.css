@@ -1,9 +1,7 @@
 .storeinfo-wrapper {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-areas: "imgleft maincontent maincontent" "imgleft maincontent maincontent";
-  border-bottom: 1px solid var(--border-color);
-  padding: 0.5em;
+  grid-template-columns: 1fr 9fr;
+  grid-template-areas: "imgleft maincontent" "imgleft maincontent";
   align-items: center;
 }
 
@@ -24,11 +22,3 @@
   font-size: 1rem;
   padding-left: 0.25rem;
 }
-
-/* .menu-list-header {
-  border-bottom: 1px solid var(--border-color);
-  padding: 0.5rem 0.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
