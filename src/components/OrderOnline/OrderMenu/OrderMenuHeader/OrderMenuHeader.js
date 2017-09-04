@@ -1,12 +1,14 @@
 import React from "react";
+import "./OrderMenuHeaderStyles.css";
+
 const OrderMenuHeader = ({ restaurant }) => {
   return (
     <div className="store-header">
-      <div className="media">
-        <div className="media-left">
+      <div className="storeinfo-wrapper">
+        <div className="storeinfo-img">
           <img src={restaurant.image} alt="logo" className="image is-64x64" />
         </div>
-        <div className="media-content">
+        <div className="storeinfo-content">
           <div>
             <h3 className="is-size-4 has-text-grey-dark">
               {restaurant.name}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./OrderMenuStyles.css";
-import OrderMenuHeader from "./OrderMenuHeader";
+import OrderMenuHeader from "./OrderMenuHeader/OrderMenuHeader";
 import OrderDeliveryOptions from "./OrderDeliveryOptions/OrderDeliveryOptions";
 import OrderMenuList from "./OrderMenuList/OrderMenuList";
 import { platters } from "../../../mock/sample-menu-items";

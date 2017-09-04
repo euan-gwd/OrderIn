@@ -35,21 +35,3 @@
   border: 1px solid var(--border-color);
   border-radius: 2.5px;
 }
-
-.icon-padding {
-  vertical-align: text-top;
-  padding: 0 0.5rem;
-}
-
-.menu-list-header {
-  border-bottom: 1px solid var(--border-color);
-  padding: 0.5rem 0.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.restaurant-tagline {
-  font-size: 1rem;
-  padding-left: 0.25rem;
-}
