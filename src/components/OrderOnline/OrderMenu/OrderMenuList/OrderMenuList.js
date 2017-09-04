@@ -1,8 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import OrderMenuItem from "./OrderMenuItem";
 
-class OrderMenuList extends Component {
-  state = {};
+class OrderMenuList extends React.PureComponent {
   render() {
     const { menuData } = this.props;
     return (

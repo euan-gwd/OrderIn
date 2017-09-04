@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import "./OrderDeliveryOptions.css";
 import DeliveryAddressForm from "./DeliveryAddressForm";
 
-class OrderDeliveryOptions extends Component {
+class OrderDeliveryOptions extends React.PureComponent {
   state = { selectedOption: "pickup", deliveryAddress: "pickup" };
 
   handleOptionChange = changeEvent => {

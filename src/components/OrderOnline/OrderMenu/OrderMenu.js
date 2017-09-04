@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./OrderMenuStyles.css";
 import OrderMenuHeader from "./OrderMenuHeader";
 import OrderDeliveryOptions from "./OrderDeliveryOptions/OrderDeliveryOptions";
@@ -6,7 +6,7 @@ import OrderMenuList from "./OrderMenuList/OrderMenuList";
 import { platters } from "../../../mock/sample-menu-items";
 import { Stores } from "../../../mock/sample-stores";
 
-class OrderMenu extends Component {
+class OrderMenu extends React.PureComponent {
   constructor(props) {
     super(props);
     const sessionStorageRef = sessionStorage.getItem(`restaurantName`);
