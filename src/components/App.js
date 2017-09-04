@@ -29,8 +29,7 @@ class App extends React.PureComponent {
     };
   }
 
-  searchSelected(searchTerm) {
-    console.log(searchTerm);
+  searchSelected = searchTerm => {
     const [street, suburbName, cityName] = searchTerm;
     console.log(street);
     const cuisineName = undefined;
@@ -40,27 +39,27 @@ class App extends React.PureComponent {
       cuisineName
     };
     this.setState({ searchResult: searchItem });
-  }
+  };
 
-  selectStore(store) {
+  selectStore = store => {
     sessionStorage.setItem(`restaurantName`, store);
     this.setState({ selectedStore: store });
-  }
+  };
 
-  selectCity(item) {
+  selectCity = item => {
     const city = unSlug(item);
     this.setState({ selectedCity: city });
-  }
+  };
 
-  selectSuburb(item) {
+  selectSuburb = item => {
     const suburb = unSlug(item);
     this.setState({ selectedSuburb: suburb });
-  }
+  };
 
-  selectCuisine(item) {
+  selectCuisine = item => {
     const cuisine = unSlug(item);
     this.setState({ selectedCuisine: cuisine });
-  }
+  };
 
   render() {
     return (
@@ -73,9 +72,9 @@ class App extends React.PureComponent {
               path="/"
               render={() => (
                 <Home
-                  searchSelected={this.searchSelected.bind(this)}
-                  selectCity={this.selectCity.bind(this)}
-                  selectCuisine={this.selectCuisine.bind(this)}
+                  searchSelected={this.searchSelected}
+                  selectCity={this.selectCity}
+                  selectCuisine={this.selectCuisine}
                   citiesData={Cities}
                   cuisinesData={Cuisines}
                 />
@@ -89,8 +88,8 @@ class App extends React.PureComponent {
                   {...props}
                   citiesData={Cities}
                   cityName={this.state.selectedCity}
-                  selectSuburb={this.selectSuburb.bind(this)}
-                  selectStore={this.selectStore.bind(this)}
+                  selectSuburb={this.selectSuburb}
+                  selectStore={this.selectStore}
                 />
               )}
             />
@@ -103,8 +102,8 @@ class App extends React.PureComponent {
                   cuisinesData={Cuisines}
                   cityName={this.state.selectedCity}
                   suburbName={this.state.selectedSuburb}
-                  selectCuisine={this.selectCuisine.bind(this)}
-                  selectStore={this.selectStore.bind(this)}
+                  selectCuisine={this.selectCuisine}
+                  selectStore={this.selectStore}
                 />
               )}
             />
@@ -116,7 +115,7 @@ class App extends React.PureComponent {
                   cityName={this.state.selectedCity}
                   suburbName={this.state.selectedSuburb}
                   cuisineName={this.state.selectedCuisine}
-                  selectStore={this.selectStore.bind(this)}
+                  selectStore={this.selectStore}
                 />
               )}
             />
@@ -128,8 +127,8 @@ class App extends React.PureComponent {
                   {...props}
                   citiesData={Cities}
                   cuisineName={this.state.selectedCuisine}
-                  selectCity={this.selectCity.bind(this)}
-                  selectStore={this.selectStore.bind(this)}
+                  selectCity={this.selectCity}
+                  selectStore={this.selectStore}
                 />
               )}
             />
@@ -142,8 +141,8 @@ class App extends React.PureComponent {
                   citiesData={Cities}
                   cuisineName={this.state.selectedCuisine}
                   cityName={this.state.selectedCity}
-                  selectSuburb={this.selectSuburb.bind(this)}
-                  selectStore={this.selectStore.bind(this)}
+                  selectSuburb={this.selectSuburb}
+                  selectStore={this.selectStore}
                 />
               )}
             />
@@ -155,7 +154,7 @@ class App extends React.PureComponent {
                   cuisineName={this.state.selectedCuisine}
                   cityName={this.state.selectedCity}
                   suburbName={this.state.selectedSuburb}
-                  selectStore={this.selectStore.bind(this)}
+                  selectStore={this.selectStore}
                 />
               )}
             />
@@ -167,7 +166,7 @@ class App extends React.PureComponent {
                   render={() => (
                     <SearchResultsList
                       searchResult={this.state.searchResult}
-                      selectStore={this.selectStore.bind(this)}
+                      selectStore={this.selectStore}
                     />
                   )}
                 />

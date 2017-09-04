@@ -18,6 +18,10 @@ class OrderMenu extends React.PureComponent {
       : (this.state = { restaurantName: this.props.restaurantName, restaurantsData: Stores });
   }
 
+  addToOrder = item => {
+    console.log(item);
+  };
+
   render() {
     const { restaurantName, restaurantsData } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);
