@@ -1,22 +1,21 @@
 import React from "react";
 import { Route } from "react-router-dom";
+import "./StoreStyles.css";
 
 class Store extends React.PureComponent {
   render() {
     const { details, selectStore } = this.props;
     const storeId = details.name.replace(/\s+/g, "");
     return (
-      <div className="media">
-        <div className="media-left">
+      <div className="storelist-wrapper">
+        <div className="storelist-img">
           <img src={details.image} alt="logo" className="image is-64x64" />
         </div>
-        <div className="media-content">
-          <div className="content">
-            <h5 className="title has-text-grey-dark">{details.name}</h5>
-            <p className="subtitle has-text-grey-light">{details.address}</p>
-          </div>
+        <div className="storelist-content">
+          <h5 className="title is-4 has-text-grey-dark">{details.name}</h5>
+          <p className="subtitle is-6 has-text-grey-light">{details.address}</p>
         </div>
-        <div className="media-right">
+        <div className="storelist-actions">
           <Route
             render={props => (
               <button

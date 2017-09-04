@@ -1,0 +1,25 @@
+.storelist-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr 1fr;
+  grid-template-areas: "imgleft maincontent maincontent actionsright"
+    "imgleft maincontent maincontent actionsright";
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5em;
+  align-items: center;
+}
+
+.storelist-wrapper:hover {
+  background-color: var(--border-color);
+}
+
+.storelist-img {
+  grid-area: imgleft;
+}
+
+.storelist-content {
+  grid-area: maincontent;
+}
+
+.storelist-actions {
+  grid-area: actionsright;
+}

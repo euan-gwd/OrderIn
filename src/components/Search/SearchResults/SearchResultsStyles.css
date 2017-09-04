@@ -2,11 +2,9 @@
   padding: 1.25rem;
 }
 
-.top-spacer {
-  padding-top: 1.25rem;
-  background-color: var(--body-bkgrd);
-}
-
-.media-hover:hover {
-  border: 1px solid black;
+.storelist-box {
+  background-color: white;
+  border-radius: 2.5px;
+  color: #4a4a4a;
+  display: block;
 }

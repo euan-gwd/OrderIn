@@ -14,7 +14,7 @@ class SearchResultsList extends React.PureComponent {
             {searchResult.cuisineName} Restaurants in {searchResult.suburbName}{" "}
             {searchResult.cityName}
           </h2>
-          <div className="box">
+          <div className="storelist-box">
             {restaurants.map(restaurant => (
               <Store key={restaurant.name} details={restaurant} selectStore={selectStore} />
             ))}
