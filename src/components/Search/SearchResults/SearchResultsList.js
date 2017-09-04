@@ -8,7 +8,7 @@ class SearchResultsList extends React.PureComponent {
     const { searchResult, selectStore } = this.props;
     const restaurants = Stores;
     return (
-      <div>
+      <div className="hero is-danger">
         <div className="container">
           <h2 className="title has-text-centered has-text-white">
             {searchResult.cuisineName} Restaurants in {searchResult.suburbName}{" "}

@@ -12,13 +12,10 @@ class DeliveryAddressFrom extends React.PureComponent {
     event.preventDefault();
     if (this.state.DeliveryAddress.length > 0) {
       const searchItems = this.state.DeliveryAddress.split(",");
-      let sanitizeitems = searchItems.map(item => {
-        return item.startsWith(" ") ? item.trim() : item;
-      });
-      let newDeliveryAddress = sanitizeitems.map(item => {
-        return titleCase(item);
-      });
-      let clientsDeliveryAddress = newDeliveryAddress.toString();
+      let clientsDeliveryAddress = searchItems
+        .map(item => (item.startsWith(" ") ? item.trim() : item))
+        .map(item => titleCase(item))
+        .toString();
       this.props.clientAddress(clientsDeliveryAddress);
     }
   };

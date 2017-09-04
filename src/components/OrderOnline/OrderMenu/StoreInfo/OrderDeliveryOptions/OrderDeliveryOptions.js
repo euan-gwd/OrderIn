@@ -9,9 +9,9 @@ class OrderDeliveryOptions extends React.PureComponent {
     this.setState({ selectedOption: changeEvent.target.value });
   };
 
-  clientAddress(item) {
+  clientAddress = item => {
     this.setState({ deliveryAddress: item });
-  }
+  };
 
   render() {
     return (
@@ -43,7 +43,7 @@ class OrderDeliveryOptions extends React.PureComponent {
           </div>
         </div>
         {this.state.selectedOption === "delivery" && (
-          <DeliveryAddressForm clientAddress={this.clientAddress.bind(this)} />
+          <DeliveryAddressForm clientAddress={this.clientAddress} />
         )}
       </div>
     );
