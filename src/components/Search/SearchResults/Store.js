@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 
-class Store extends Component {
+class Store extends React.PureComponent {
   render() {
     const { details, selectStore } = this.props;
     const storeId = details.name.replace(/\s+/g, "");

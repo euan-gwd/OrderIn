@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
 
-class RefineCuisineSearchByCity extends Component {
+class RefineCuisineSearchByCity extends React.PureComponent {
   render() {
     const { selectCity, citiesData, cuisineName, match } = this.props;
     return (

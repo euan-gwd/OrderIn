@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 import { unSlug } from "../../helpers";
 
-class RefineSearchBySuburb extends Component {
+class RefineSearchBySuburb extends React.PureComponent {
   render() {
     const { citiesData, match, selectSuburb, selectStore } = this.props;
     const cityName = unSlug(match.params.cityId);

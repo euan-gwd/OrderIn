@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { Redirect } from "react-router-dom";
 import "./search_styles.css";
 import { titleCase } from "../helpers";
 
-class SearchBox extends Component {
+class SearchBox extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { searchTerm: 0, fireRedirect: false };

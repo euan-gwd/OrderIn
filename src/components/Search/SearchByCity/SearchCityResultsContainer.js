@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import "../search_styles.css";
 import { Route } from "react-router-dom";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 
-class SearchCityResultsContainer extends Component {
+class SearchCityResultsContainer extends React.PureComponent {
   render() {
     const { cityName, suburbName, cuisineName, selectStore } = this.props;
     const searchResult = { suburbName, cityName, cuisineName };

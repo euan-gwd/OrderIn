@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
 
-class SearchByCuisine extends Component {
+class SearchByCuisine extends React.PureComponent {
   render() {
     const { selectCuisine, cuisinesData } = this.props;
     return (

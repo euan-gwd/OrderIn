@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
@@ -17,7 +17,7 @@ import { Cities } from "../mock/sample-city-list";
 import { Cuisines } from "../mock/sample-cuisine-list";
 import { unSlug } from "./helpers";
 
-class App extends Component {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Store from "./Store";
 import "./SearchResultsStyles.css";
 import { Stores } from "../../../mock/sample-stores";
 
-class SearchResultsList extends Component {
+class SearchResultsList extends React.PureComponent {
   render() {
     const { searchResult, selectStore } = this.props;
     const restaurants = Stores;
