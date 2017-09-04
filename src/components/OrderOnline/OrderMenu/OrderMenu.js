@@ -1,7 +1,7 @@
 import React from "react";
 import "./OrderMenuStyles.css";
 import StoreInfo from "./StoreInfo/StoreInfo";
-import OrderMenuList from "./OrderMenuList/OrderMenuList";
+import OrderMenuItem from "./OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
 import { platters } from "../../../mock/sample-menu-items";
 import { Stores } from "../../../mock/sample-stores";
@@ -37,10 +37,22 @@ class OrderMenu extends React.PureComponent {
   render() {
     const { restaurantName, restaurantsData, orderOption } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);
+    const menuData = platters;
     return (
       <div className="store-menu">
         <StoreInfo restaurant={restaurant} selectDeliveryOption={this.selectDeliveryOption} />
-        <OrderMenuList menuData={platters} />
+        <div className="store-main-content">
+          <header className="menu-list-header">
+            <span className="is-size-4">Menu</span>
+            <span>
+              <i className="fa fa-icon fa-leaf has-text-success" />
+              Vegetarian
+            </span>
+          </header>
+          <ul>
+            {menuData.map(menuItem => <OrderMenuItem key={menuItem.name} menuItem={menuItem} />)}
+          </ul>
+        </div>
         <OrderCart restaurantName={restaurantName} orderOption={orderOption} />
       </div>
     );
