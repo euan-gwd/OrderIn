@@ -22,7 +22,7 @@ class DeliveryAddressFrom extends React.PureComponent {
   render() {
     return (
       <div className="deliveryAddress">
-        <form ref={input => (this.deliveryForm = input)} className="" onSubmit={this.handleSubmit}>
+        <form ref={input => (this.deliveryForm = input)} onSubmit={this.handleSubmit}>
           <p className="">Please Confirm your delivery address:</p>
           <div className="field has-addons">
             <p className="control is-expanded has-icons-left">

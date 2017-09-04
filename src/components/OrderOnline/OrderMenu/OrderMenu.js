@@ -10,26 +10,38 @@ class OrderMenu extends React.PureComponent {
   constructor(props) {
     super(props);
     const sessionStorageRef = sessionStorage.getItem(`restaurantName`);
+    //set initial state
     sessionStorageRef
       ? (this.state = {
           restaurantName: `${sessionStorageRef}`,
-          restaurantsData: Stores
+          restaurantsData: Stores,
+          order: {},
+          orderOption: 0
         })
-      : (this.state = { restaurantName: this.props.restaurantName, restaurantsData: Stores });
+      : (this.state = {
+          restaurantName: this.props.restaurantName,
+          restaurantsData: Stores,
+          order: {},
+          orderOption: 0
+        });
   }
 
   addToOrder = item => {
     console.log(item);
   };
 
+  selectDeliveryOption = selectedDeliveryOption => {
+    this.setState({ orderOption: selectedDeliveryOption });
+  };
+
   render() {
-    const { restaurantName, restaurantsData } = this.state;
+    const { restaurantName, restaurantsData, orderOption } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);
     return (
       <div className="store-menu">
-        <StoreInfo restaurant={restaurant} />
+        <StoreInfo restaurant={restaurant} selectDeliveryOption={this.selectDeliveryOption} />
         <OrderMenuList menuData={platters} />
-        <OrderCart restaurantName={restaurantName} />
+        <OrderCart restaurantName={restaurantName} orderOption={orderOption} />
       </div>
     );
   }

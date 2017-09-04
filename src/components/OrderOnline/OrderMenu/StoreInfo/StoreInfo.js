@@ -2,7 +2,7 @@ import React from "react";
 import OrderDeliveryOptions from "./OrderDeliveryOptions/OrderDeliveryOptions";
 import "./StoreInfoStyles.css";
 
-const StoreInfo = ({ restaurant }) => {
+const StoreInfo = ({ restaurant, selectDeliveryOption }) => {
   return (
     <div className="store-header">
       <div className="storeinfo-wrapper">
@@ -24,7 +24,7 @@ const StoreInfo = ({ restaurant }) => {
           </span>
         </div>
       </div>
-      <OrderDeliveryOptions />
+      <OrderDeliveryOptions selectDeliveryOption={selectDeliveryOption} />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import "./OrderCartStyles.css";
 
 class OrderCart extends React.PureComponent {
   render() {
-    const { restaurantName } = this.props;
+    const { restaurantName, orderOption } = this.props;
     return (
       <div className="store-sidebar">
         <div className="cart">
@@ -15,7 +15,7 @@ class OrderCart extends React.PureComponent {
             <p>
               <span className="has-text-danger has-text-bold">#xxxxxx</span> from
               <span className="has-text-danger has-text-bold"> {restaurantName} </span>
-              for <span className="has-text-danger has-text-bold">Pickup</span>
+              for <span className="has-text-danger has-text-bold">{orderOption || "Pickup"}</span>
             </p>
           </div>
           <div className="cartitem-items has-text-grey-lighter">
