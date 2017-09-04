@@ -1,7 +1,7 @@
 import React from "react";
 import Store from "./Store";
 import "./SearchResultsStyles.css";
-import { Stores } from "../../../mock/sample-stores";
+import { Stores } from "../../../mockAPI/sample-stores";
 
 class SearchResultsList extends React.PureComponent {
   render() {

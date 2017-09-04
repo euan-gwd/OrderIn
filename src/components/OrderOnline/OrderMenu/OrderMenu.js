@@ -3,8 +3,8 @@ import "./OrderMenuStyles.css";
 import StoreInfo from "./StoreInfo/StoreInfo";
 import OrderMenuItem from "./OrderMenuItem/OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
-import { platters } from "../../../mock/sample-menu-items";
-import { Stores } from "../../../mock/sample-stores";
+import { platters } from "../../../mockAPI/sample-menu-items";
+import { Stores } from "../../../mockAPI/sample-stores";
 
 class OrderMenu extends React.PureComponent {
   constructor(props) {

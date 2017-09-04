@@ -13,8 +13,8 @@ import {
 } from "./Search/";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
-import { Cities } from "../mock/sample-city-list";
-import { Cuisines } from "../mock/sample-cuisine-list";
+import { Cities } from "../mockAPI/sample-city-list";
+import { Cuisines } from "../mockAPI/sample-cuisine-list";
 import { unSlug } from "./helpers";
 
 class App extends React.PureComponent {
