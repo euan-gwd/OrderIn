@@ -1,5 +1,5 @@
 import React from "react";
-import OrderDeliveryOptions from "../OrderDeliveryOptions/OrderDeliveryOptions";
+import OrderDeliveryOptions from "./OrderDeliveryOptions/OrderDeliveryOptions";
 import "./StoreInfoStyles.css";
 
 const StoreInfo = ({ restaurant }) => {

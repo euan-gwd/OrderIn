@@ -12,9 +12,7 @@ const OrderMenuList = ({ menuData }) => {
           Vegetarian
         </span>
       </header>
-      <main>
-        <ul>{menuData.map(item => <OrderMenuItem key={item.name} menuItem={item} />)}</ul>
-      </main>
+      <ul>{menuData.map(item => <OrderMenuItem key={item.name} menuItem={item} />)}</ul>
     </div>
   );
 };
