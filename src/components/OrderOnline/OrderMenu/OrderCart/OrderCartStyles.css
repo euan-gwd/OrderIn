@@ -1,0 +1,30 @@
+.cart-divider {
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 0.25rem;
+}
+
+.cartitem-spacing {
+  padding: 0.5rem 0.25rem;
+}
+
+.cart-totals-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem;
+}
+
+.cart-input {
+  border-radius: 0.125rem;
+}
+
+.totals .cart-totals-wrapper {
+  display: grid;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.cart-orderNo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
