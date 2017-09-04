@@ -1,7 +1,8 @@
 import React from "react";
-import "./OrderMenuHeaderStyles.css";
+import OrderDeliveryOptions from "../OrderDeliveryOptions/OrderDeliveryOptions";
+import "./StoreInfoStyles.css";
 
-const OrderMenuHeader = ({ restaurant }) => {
+const StoreInfo = ({ restaurant }) => {
   return (
     <div className="store-header">
       <div className="storeinfo-wrapper">
@@ -23,8 +24,9 @@ const OrderMenuHeader = ({ restaurant }) => {
           </span>
         </div>
       </div>
+      <OrderDeliveryOptions />
     </div>
   );
 };
 
-export default OrderMenuHeader;
+export default StoreInfo;

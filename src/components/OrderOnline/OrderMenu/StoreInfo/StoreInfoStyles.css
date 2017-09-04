@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 9fr;
   grid-template-areas: "imgleft maincontent" "imgleft maincontent";
   align-items: center;
+  padding-bottom: 0.5rem;
 }
 
 .storeinfo-img {
