@@ -25,7 +25,7 @@ class OrderMenu extends React.PureComponent {
       <div className="store-menu">
         <StoreInfo restaurant={restaurant} />
         <OrderMenuList menuData={platters} />
-        <OrderCart />
+        <OrderCart restaurantName={restaurantName} />
       </div>
     );
   }
