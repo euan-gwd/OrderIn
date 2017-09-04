@@ -13,7 +13,7 @@ const OrderMenuItem = ({ menuItem }) => {
       <div className="item-actions">
         <div className="item-group">
           <span className="item-price">{formatPrice(menuItem.price)}</span>
-          <a className="button is-light is-inverted is-outlined">
+          <a className="button is-danger is-outlined">
             <span className="icon is-small">
               <i className="fa fa-plus-circle" />
             </span>

@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.item-grid:nth-child(odd) {
+.item-grid:nth-child(even) {
   background-color: #f3f3f3;
 }
 
