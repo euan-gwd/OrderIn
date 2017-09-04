@@ -7,6 +7,7 @@ import SearchByCuisine from "./SearchByCuisine/SearchByCuisine";
 import RefineCuisineSearchByCity from "./SearchByCuisine/RefineCuisineSearchByCity";
 import RefineCuisineSearchBySuburb from "./SearchByCuisine/RefineCuisineSearchBySuburb";
 import SearchCuisineResultsContainer from "./SearchByCuisine/SearchCuisineResultsContainer";
+import SearchResultsList from "./SearchResults/SearchResultsList";
 
 export {
   SearchBox,
@@ -17,5 +18,6 @@ export {
   SearchByCuisine,
   RefineCuisineSearchByCity,
   RefineCuisineSearchBySuburb,
-  SearchCuisineResultsContainer
+  SearchCuisineResultsContainer,
+  SearchResultsList
 };

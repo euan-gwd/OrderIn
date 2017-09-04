@@ -3,7 +3,7 @@ import { Route } from "react-router-dom";
 import "./OrderBreadCrumbNav.css";
 
 const OrderBreadCrumbNav = () => (
-  <div className="box breadcrumb-item-centered">
+  <div className="navbox breadcrumb-item-centered">
     <Route
       render={props => (
         <a

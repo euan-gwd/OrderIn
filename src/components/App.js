@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
@@ -8,15 +8,16 @@ import {
   SearchCityResultsContainer,
   RefineCuisineSearchByCity,
   RefineCuisineSearchBySuburb,
-  SearchCuisineResultsContainer
+  SearchCuisineResultsContainer,
+  SearchResultsList
 } from "./Search/";
-import SearchResultsList from "./SearchResults/SearchResultsList";
 import OrderOnline from "./OrderOnline/OrderOnline";
 import NotFound from "./NotFound";
 import { Cities } from "../mock/sample-city-list";
 import { Cuisines } from "../mock/sample-cuisine-list";
+import { unSlug } from "./helpers";
 
-class App extends Component {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,19 +43,23 @@ class App extends Component {
   }
 
   selectStore(store) {
+    sessionStorage.setItem(`restaurantName`, store);
     this.setState({ selectedStore: store });
   }
 
   selectCity(item) {
-    this.setState({ selectedCity: item });
+    const city = unSlug(item);
+    this.setState({ selectedCity: city });
   }
 
   selectSuburb(item) {
-    this.setState({ selectedSuburb: item });
+    const suburb = unSlug(item);
+    this.setState({ selectedSuburb: suburb });
   }
 
   selectCuisine(item) {
-    this.setState({ selectedCuisine: item });
+    const cuisine = unSlug(item);
+    this.setState({ selectedCuisine: cuisine });
   }
 
   render() {
@@ -170,7 +175,7 @@ class App extends Component {
             />
             <Route
               path="/order-online/:storeId"
-              render={() => <OrderOnline name={this.state.selectedStore} />}
+              render={() => <OrderOnline restaurantName={this.state.selectedStore} />}
             />
             <Route component={NotFound} />
           </Switch>

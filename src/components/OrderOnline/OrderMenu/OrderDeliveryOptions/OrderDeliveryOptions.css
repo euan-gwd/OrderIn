@@ -1,0 +1,81 @@
+input[type="radio"].delivery {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+input[type="radio"].delivery ~ label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f0d1";
+  letter-spacing: 10px;
+  font-size: 1.5em;
+  color: #535353;
+  width: 1.4em;
+  cursor: pointer;
+}
+
+input[type="radio"].delivery:checked ~ label:before {
+  content: "\f00c";
+  font-size: 1.5em;
+  color: var(--radio-btn-color);
+  letter-spacing: 5px;
+}
+
+input[type="radio"].delivery:focus ~ label:before,
+input[type="radio"].delivery:focus ~ label {
+  color: var(--radio-btn-color);
+  cursor: pointer;
+}
+
+input[type="radio"].pickup {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+input[type="radio"].pickup ~ label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f19c";
+  letter-spacing: 10px;
+  font-size: 1.5em;
+  color: #535353;
+  width: 1.25em;
+  cursor: pointer;
+}
+
+input[type="radio"].pickup:checked ~ label:before {
+  content: "\f00c";
+  font-size: 1.5em;
+  color: var(--radio-btn-color);
+  letter-spacing: 5px;
+}
+
+input[type="radio"].pickup:focus ~ label:before,
+input[type="radio"].pickup:focus ~ label {
+  color: var(--radio-btn-color);
+  cursor: pointer;
+}
+
+.options-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 1vh;
+}
+
+.deliveryAddress {
+  border-top: 1px dashed darkgrey;
+  padding: 0.5vh;
+}

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
 
-class RefineCuisineSearchByCity extends Component {
+class RefineCuisineSearchByCity extends React.PureComponent {
   render() {
     const { selectCity, citiesData, cuisineName, match } = this.props;
     return (
@@ -41,8 +41,10 @@ class RefineCuisineSearchByCity extends Component {
                     render={props => (
                       <button
                         onClick={() => {
-                          selectCity(`${city.name}`);
-                          props.history.push(`${match.url}/${city.name}`);
+                          let getSlug = require("speakingurl");
+                          let CityName = getSlug(`${city.name}`);
+                          selectCity(`${CityName}`);
+                          props.history.push(`${match.url}/${CityName}`);
                         }}
                         className="button is-link"
                       >

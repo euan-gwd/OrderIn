@@ -1,0 +1,55 @@
+.store-menu {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: minmax(1em, auto) 1fr;
+  grid-template-areas: "storeheader storeorderlist" "storedelivery storeorderlist"
+    "storemenulist storeorderlist";
+  grid-gap: 1vh;
+}
+
+.store-header {
+  grid-area: storeheader;
+  padding: 0.5rem;
+}
+
+.store-delivery {
+  grid-area: storedelivery;
+  border: 1px dashed #23d160;
+  border-radius: 3px;
+  background-color: #f6fef9;
+  color: #0e301a;
+  padding-top: calc(0.375em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+}
+
+.store-main-content {
+  grid-area: storemenulist;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.store-sidebar {
+  grid-area: storeorderlist;
+  border: 1px solid var(--border-color);
+  border-radius: 2.5px;
+}
+
+.icon-padding {
+  vertical-align: text-top;
+  padding: 0 0.5rem;
+}
+
+.menu-list-header {
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-tagline {
+  font-size: 1rem;
+  padding-left: 0.25rem;
+}

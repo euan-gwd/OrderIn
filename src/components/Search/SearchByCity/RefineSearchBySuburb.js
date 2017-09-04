@@ -1,12 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
-import SearchResultsList from "../../SearchResults/SearchResultsList";
+import SearchResultsList from "../SearchResults/SearchResultsList";
+import { unSlug } from "../../helpers";
 
-class RefineSearchBySuburb extends Component {
+class RefineSearchBySuburb extends React.PureComponent {
   render() {
     const { citiesData, match, selectSuburb, selectStore } = this.props;
-    const cityName = match.params.cityId;
+    const cityName = unSlug(match.params.cityId);
     const city = citiesData.find(city => city.name === cityName);
     const suburbsData = city.suburbs;
     // eslint-disable-next-line
@@ -48,8 +49,11 @@ class RefineSearchBySuburb extends Component {
                     render={props => (
                       <button
                         onClick={() => {
-                          selectSuburb(`${suburb}`);
-                          props.history.push(`/Cities/${cityName}/${suburb}`);
+                          let getSlug = require("speakingurl");
+                          let SubName = getSlug(`${suburb}`);
+                          let CtyName = getSlug(`${cityName}`);
+                          selectSuburb(`${SubName}`);
+                          props.history.push(`/Cities/${CtyName}/${SubName}`);
                         }}
                         className="button is-link"
                       >

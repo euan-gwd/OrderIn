@@ -1,17 +1,15 @@
-import React, { Component } from "react";
-import "./orderonline_styles.css";
-import OrderBreadCrumbNav from "./OrderBreadCrumbNav";
+import React from "react";
+import "./OrderOnlineStyles.css";
+import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
+import OrderMenu from "./OrderMenu/OrderMenu";
 
-class OrderOnline extends Component {
-  render() {
-    return (
-      <div className="StoreMenu">
-        <div className="container">
-          <OrderBreadCrumbNav />
-        </div>
-      </div>
-    );
-  }
-}
+const OrderOnline = ({ restaurantName }) => (
+  <div className="StoreMenu">
+    <main className="container">
+      <OrderBreadCrumbNav />
+      <OrderMenu restaurantName={restaurantName} />
+    </main>
+  </div>
+);
 
 export default OrderOnline;
