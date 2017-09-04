@@ -16,18 +16,24 @@ class OrderCart extends React.PureComponent {
         </div>
         <div className="cart-totals-wrapper">
           <div className="cart-totals-line">
-            <span className="">Subtotal:</span>
+            <span className="">Subtotal:*</span>
             <span>R0.00</span>
           </div>
           <div className="cart-totals-line">
-            <span className="">Add Gratuity</span>
-            <input type="number" className="" />
+            <span className="">Add Gratuity:**</span>
+            <button className="button is-danger is-outlined">
+              <span className="icon is-small">
+                <i className="fa fa-plus-circle" />
+              </span>
+              <span>10%</span>
+            </button>
           </div>
           <div className="cart-totals-line">
             <span className="">Total:</span>
             <span>R0.00</span>
           </div>
         </div>
+        <div className="">*All Totals include VAT **Optional</div>
         <div className="cartitem-spacing">
           <button type="submit" className="button is-warning is-fullwidth is-medium">
             Check Out
