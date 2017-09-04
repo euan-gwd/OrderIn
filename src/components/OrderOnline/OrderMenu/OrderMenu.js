@@ -2,6 +2,7 @@ import React from "react";
 import "./OrderMenuStyles.css";
 import StoreInfo from "./StoreInfo/StoreInfo";
 import OrderMenuList from "./OrderMenuList/OrderMenuList";
+import OrderCart from "./OrderCart/OrderCart";
 import { platters } from "../../../mock/sample-menu-items";
 import { Stores } from "../../../mock/sample-stores";
 
@@ -24,7 +25,7 @@ class OrderMenu extends React.PureComponent {
       <div className="store-menu">
         <StoreInfo restaurant={restaurant} />
         <OrderMenuList menuData={platters} />
-        <aside className="store-sidebar">Order</aside>
+        <OrderCart />
       </div>
     );
   }
