@@ -1,5 +1,5 @@
 import React from "react";
-import { formatPrice } from "../../helpers";
+import { formatPrice } from "../../../helpers";
 import "./OrderMenuItemStyles.css";
 
 class OrderMenuItem extends React.PureComponent {

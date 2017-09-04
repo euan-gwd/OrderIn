@@ -1,7 +1,7 @@
 import React from "react";
 import "./OrderMenuStyles.css";
 import StoreInfo from "./StoreInfo/StoreInfo";
-import OrderMenuItem from "./OrderMenuItem";
+import OrderMenuItem from "./OrderMenuItem/OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
 import { platters } from "../../../mock/sample-menu-items";
 import { Stores } from "../../../mock/sample-stores";
