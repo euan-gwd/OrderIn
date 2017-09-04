@@ -1,6 +1,18 @@
+.cart {
+  border: 1px solid var(--border-color);
+  border-radius: 2.5px;
+  width: 29.8vw;
+  position: fixed;
+}
+
 .cartitem-divider {
   border-bottom: 1px solid var(--border-color);
   padding: 0.5rem 0.25rem;
+}
+
+.cart-orderNo {
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cartitem-items {
@@ -42,9 +54,4 @@
   align-items: center;
   border-bottom: 1px solid var(--border-color);
   font-size: 1.25rem;
-}
-
-.cart-orderNo {
-  padding: 0.5rem 0.25rem;
-  border-bottom: 1px solid var(--border-color);
 }
