@@ -5,7 +5,18 @@ import "./OrderMenuItemStyles.css";
 class OrderMenuItem extends React.PureComponent {
   render() {
     const { menuItem } = this.props;
-
+    const isAvailable = menuItem.status === "available";
+    const buttonText = isAvailable ? (
+      <span>
+        <i className="fa fa-icon fa-plus-circle" />
+        Add
+      </span>
+    ) : (
+      <span>
+        <i className="fa fa-icon fa-exclamation-triangle" />
+        Sold Out
+      </span>
+    );
     return (
       <li className="item-grid">
         <div className="item-name has-text-grey-darker">{menuItem.name}</div>
@@ -16,12 +27,9 @@ class OrderMenuItem extends React.PureComponent {
         <div className="item-actions">
           <div className="item-group">
             <span className="item-price">{formatPrice(menuItem.price)}</span>
-            <a className="button is-danger is-outlined">
-              <span className="icon is-small">
-                <i className="fa fa-plus-circle" />
-              </span>
-              <span>Add</span>
-            </a>
+            <button className="button is-danger is-outlined" disabled={!isAvailable}>
+              {buttonText}
+            </button>
           </div>
         </div>
       </li>
