@@ -1,5 +1,6 @@
 export const platters = [
   {
+    id: 1,
     name: "Salmon Platter",
     price: 12500,
     description: "2 Salmon Sashimi 2 Salmon nigiri 2 Salmon California 6 Salmon Maki",
@@ -7,6 +8,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 2,
     name: "Chef's Choice",
     price: 12500,
     description:
@@ -15,6 +17,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 3,
     name: "Judith's Platter",
     price: 12500,
     description: "8 Tempura California 4 Crabstick California 3 Avo Maki 4 Salmon Fashion Sandwich",
@@ -22,6 +25,7 @@ export const platters = [
     status: "unavailable"
   },
   {
+    id: 4,
     name: "Sushikoto Deluxe Platter",
     price: 22000,
     description: "8 Tempura California 4 Assorted Sashimi 4 Assorted nigiri 4 Assorted Maki",
@@ -29,6 +33,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 5,
     name: "Sushikoto Royal Platter",
     price: 29000,
     description:
@@ -37,6 +42,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 6,
     name: "Vegetarian Platter",
     price: 9800,
     description: "4 Dragon Maki 4 California Roll 4 Fashion Sandwich 3 Avo Maki 3 Cucumber Maki",
@@ -45,6 +51,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 7,
     name: "Malay Platter",
     price: 12500,
     description:
@@ -53,6 +60,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 8,
     name: "Zaira's Platter",
     price: 14500,
     description: "8 Tempura California 4 Rainbow Maki 2 Salmon nigiri 3 Avi Maki 3 Crab Maki",
@@ -60,6 +68,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 9,
     name: "Mini Platter",
     price: 9000,
     description: "2 Salmon nigiri 4 ainbow Maki 3 Avo Maki 3 Cucumber Maki",
@@ -67,6 +76,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 10,
     name: "Nigiri Sakura Platter",
     price: 9000,
     description:
@@ -75,6 +85,7 @@ export const platters = [
     status: "available"
   },
   {
+    id: 11,
     name: "Sweetheart Platter",
     price: 30500,
     description:

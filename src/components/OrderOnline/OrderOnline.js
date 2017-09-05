@@ -27,8 +27,16 @@ class OrderOnline extends React.PureComponent {
         });
   }
 
-  addToOrder = item => {
-    console.log(item);
+  addToOrder = key => {
+    const order = { ...this.state.order };
+    order[key] = order[key] + 1 || 1;
+    this.setState({ order });
+  };
+
+  removeFromOrder = key => {
+    const order = { ...this.state.order };
+    order[key] > 1 ? (order[key] -= 1) : delete order[key];
+    this.setState({ order });
   };
 
   selectDeliveryOption = selectedDeliveryOption => {
@@ -55,7 +63,11 @@ class OrderOnline extends React.PureComponent {
               </header>
               <ul>
                 {menuData.map(menuItem => (
-                  <OrderMenuItem key={menuItem.name} menuItem={menuItem} />
+                  <OrderMenuItem
+                    key={menuItem.name}
+                    menuItem={menuItem}
+                    addToOrder={this.addToOrder}
+                  />
                 ))}
               </ul>
             </div>
