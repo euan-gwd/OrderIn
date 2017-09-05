@@ -37,10 +37,9 @@ class OrderCart extends React.PureComponent {
     );
   };
 
-  render() {
-    const { restaurantName, orderOption, menuItems, order } = this.props;
-    const orderIds = Object.keys(order);
-    const subtotal = orderIds.reduce((prevTotal, key) => {
+  calculateTotals = orderIds => {
+    const { menuItems, order } = this.props;
+    orderIds.reduce((prevTotal, key) => {
       const menuItem = menuItems[key];
       const count = order[key];
       const isAvailable = menuItem && menuItem.status === "available";
@@ -49,6 +48,21 @@ class OrderCart extends React.PureComponent {
       }
       return prevTotal;
     }, 0);
+  };
+
+  render() {
+    const { restaurantName, orderOption, order } = this.props;
+    const orderIds = Object.keys(order);
+    // const subtotal = orderIds.reduce((prevTotal, key) => {
+    //   const menuItem = menuItems[key];
+    //   const count = order[key];
+    //   const isAvailable = menuItem && menuItem.status === "available";
+    //   if (isAvailable) {
+    //     return prevTotal + (count * menuItem.price || 0);
+    //   }
+    //   return prevTotal;
+    // }, 0);
+    const subtotal = this.calculateTotals(orderIds);
     return (
       <div className="store-sidebar">
         <div className="cart">
