@@ -1,0 +1,25 @@
+.storeinfo-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  grid-template-areas: "imgleft maincontent" "imgleft maincontent";
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.storeinfo-img {
+  grid-area: imgleft;
+}
+
+.storeinfo-content {
+  grid-area: maincontent;
+}
+
+.icon-padding {
+  vertical-align: text-top;
+  padding: 0 0.5rem;
+}
+
+.restaurant-tagline {
+  font-size: 1rem;
+  padding-left: 0.25rem;
+}

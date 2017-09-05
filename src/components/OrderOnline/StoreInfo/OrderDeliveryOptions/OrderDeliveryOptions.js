@@ -3,15 +3,16 @@ import "./OrderDeliveryOptions.css";
 import DeliveryAddressForm from "./DeliveryAddressForm";
 
 class OrderDeliveryOptions extends React.PureComponent {
-  state = { selectedOption: "pickup", deliveryAddress: "pickup" };
+  state = { selectedOption: "Pickup", deliveryAddress: "Pickup" };
 
   handleOptionChange = changeEvent => {
     this.setState({ selectedOption: changeEvent.target.value });
+    this.props.selectDeliveryOption(changeEvent.target.value);
   };
 
-  clientAddress(item) {
+  clientAddress = item => {
     this.setState({ deliveryAddress: item });
-  }
+  };
 
   render() {
     return (
@@ -23,8 +24,8 @@ class OrderDeliveryOptions extends React.PureComponent {
               name="question"
               type="radio"
               className="delivery"
-              value="delivery"
-              checked={this.state.selectedOption === "delivery"}
+              value="Delivery"
+              checked={this.state.selectedOption === "Delivery"}
               onChange={this.handleOptionChange}
             />
             <label htmlFor="delivery">Delivery</label>
@@ -35,15 +36,15 @@ class OrderDeliveryOptions extends React.PureComponent {
               name="question"
               type="radio"
               className="pickup"
-              value="pickup"
+              value="Pickup"
               onChange={this.handleOptionChange}
-              checked={this.state.selectedOption === "pickup"}
+              checked={this.state.selectedOption === "Pickup"}
             />
             <label htmlFor="pickup">Pickup</label>
           </div>
         </div>
-        {this.state.selectedOption === "delivery" && (
-          <DeliveryAddressForm clientAddress={this.clientAddress.bind(this)} />
+        {this.state.selectedOption === "Delivery" && (
+          <DeliveryAddressForm clientAddress={this.clientAddress} />
         )}
       </div>
     );

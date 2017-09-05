@@ -17,13 +17,10 @@ class SearchBox extends React.PureComponent {
     event.preventDefault();
     if (this.state.searchTerm.length > 0) {
       const searchItems = this.state.searchTerm.split(",");
-      let sanitizeitems = searchItems.map(item => {
-        return item.startsWith(" ") ? item.trim() : item;
-      });
-      let newSearchTerm = sanitizeitems.map(item => {
-        return titleCase(item);
-      });
-      this.props.searchSelected(newSearchTerm);
+      let sanitizeitems = searchItems
+        .map(item => (item.startsWith(" ") ? item.trim() : item))
+        .map(item => titleCase(item));
+      this.props.searchSelected(sanitizeitems);
       this.setState({ fireRedirect: true });
     }
   };

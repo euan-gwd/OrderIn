@@ -23,13 +23,13 @@ input[type="radio"].delivery ~ label:before {
 input[type="radio"].delivery:checked ~ label:before {
   content: "\f00c";
   font-size: 1.5em;
-  color: var(--radio-btn-color);
+  color: var(--btn-bkgrd);
   letter-spacing: 5px;
 }
 
 input[type="radio"].delivery:focus ~ label:before,
 input[type="radio"].delivery:focus ~ label {
-  color: var(--radio-btn-color);
+  color: var(--btn-bkgrd);
   cursor: pointer;
 }
 
@@ -47,7 +47,7 @@ input[type="radio"].pickup {
 input[type="radio"].pickup ~ label:before {
   font-family: FontAwesome;
   display: inline-block;
-  content: "\f19c";
+  content: "\f290";
   letter-spacing: 10px;
   font-size: 1.5em;
   color: #535353;
@@ -58,13 +58,13 @@ input[type="radio"].pickup ~ label:before {
 input[type="radio"].pickup:checked ~ label:before {
   content: "\f00c";
   font-size: 1.5em;
-  color: var(--radio-btn-color);
+  color: var(--btn-bkgrd);
   letter-spacing: 5px;
 }
 
 input[type="radio"].pickup:focus ~ label:before,
 input[type="radio"].pickup:focus ~ label {
-  color: var(--radio-btn-color);
+  color: var(--btn-bkgrd);
   cursor: pointer;
 }
 
@@ -76,6 +76,6 @@ input[type="radio"].pickup:focus ~ label {
 }
 
 .deliveryAddress {
-  border-top: 1px dashed darkgrey;
+  border-top: 1px dashed var(--border-color);
   padding: 0.5vh;
 }
