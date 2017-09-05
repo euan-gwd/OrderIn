@@ -9,7 +9,7 @@ class OrderCart extends React.PureComponent {
     const count = this.props.order[key];
     const removeButton = (
       <button
-        className="button is-white has-text-danger"
+        className="button is-white has-text-danger is-small"
         onClick={() => {
           this.props.removeFromOrder(key);
         }}
@@ -29,16 +29,7 @@ class OrderCart extends React.PureComponent {
     return (
       <li key={key} className="order-line-item">
         <span>
-          <CSSTransitionGroup
-            component="span"
-            className="count"
-            transitionName="count"
-            transitionEnterTimeout={250}
-            transitionLeaveTimeout={250}
-          >
-            <span key={count}>{count}</span>
-          </CSSTransitionGroup>
-          x {menuItem.name}
+          <span>{count}</span>x {menuItem.name}
         </span>
         {removeButton}
         <span>{formatPrice(count * menuItem.price)}</span>

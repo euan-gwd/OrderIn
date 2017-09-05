@@ -94,16 +94,14 @@
   padding: 0 !important;
 }
 
-/* ul.order li span.count {
+ul.order li span.count {
   position: relative;
   overflow: hidden;
 }
-ul.order li span.count span {
-  display: inline-block;
-} */
 
 .count-enter {
   transition: all 0.25s;
+  position: absolute;
   transform: translateY(100%);
 }
 
@@ -114,8 +112,6 @@ ul.order li span.count span {
 .count-leave {
   transition: all 0.25s;
   position: absolute;
-  left: 0;
-  bottom: 0;
   transform: translateY(0);
 }
 

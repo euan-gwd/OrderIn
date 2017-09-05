@@ -1383,6 +1383,7 @@ a.box:active {
   background-color: transparent;
   border-color: transparent;
   color: white;
+  justify-content: flex-start;
 }
 
 .button.is-link:hover, .button.is-link.is-hovered, .button.is-link:focus, .button.is-link.is-focused, .button.is-link:active, .button.is-link.is-active {
