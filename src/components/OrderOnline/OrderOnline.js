@@ -53,7 +53,7 @@ class OrderOnline extends React.PureComponent {
   render() {
     const { restaurantName, restaurantsData, orderOption, menuItems } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);
-    const orderUid = Date.now();
+    const orderNo = sessionStorage.getItem(`storeUniqueOrderNo`);
     return (
       <div className="StoreMenu">
         <main className="container">
@@ -84,7 +84,7 @@ class OrderOnline extends React.PureComponent {
               menuItems={menuItems}
               orderOption={orderOption}
               order={this.state.order}
-              orderNumber={orderUid}
+              orderNumber={orderNo}
               removeFromOrder={this.removeFromOrder}
             />
           </div>
