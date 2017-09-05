@@ -51,10 +51,9 @@ class OrderCart extends React.PureComponent {
   };
 
   render() {
-    const { restaurantName, orderOption, order } = this.props;
+    const { restaurantName, orderOption, order, orderNumber } = this.props;
     const orderIds = Object.keys(order);
     const subtotal = this.calculateTotals(orderIds);
-
     return (
       <div className="store-sidebar">
         <div className="cart">
@@ -64,7 +63,7 @@ class OrderCart extends React.PureComponent {
           </div>
           <div className="cart-orderNo">
             <p>
-              <span className="has-text-danger has-text-bold">#xxxxxx</span> from
+              <span className="has-text-danger has-text-bold">#{orderNumber}</span> from
               <span className="has-text-danger has-text-bold"> {restaurantName} </span>
               for <span className="has-text-danger has-text-bold">{orderOption || "Pickup"}</span>
             </p>
@@ -106,7 +105,11 @@ class OrderCart extends React.PureComponent {
             <p>**Optional</p>
           </div>
           <div className="cartitem-divider">
-            <button type="submit" className="button is-warning is-fullwidth is-medium">
+            <button
+              type="submit"
+              className="button is-success is-fullwidth is-medium"
+              disabled={orderIds.length === 0}
+            >
               Check Out
             </button>
           </div>
