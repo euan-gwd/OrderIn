@@ -1,9 +1,71 @@
 import React from "react";
+import CSSTransitionGroup from "react-addons-css-transition-group";
+import { formatPrice } from "../../helpers";
 import "./OrderCartStyles.css";
 
 class OrderCart extends React.PureComponent {
+  renderOrder = key => {
+    const menuItem = this.props.menuItems[key];
+    const count = this.props.order[key];
+    const removeButton = (
+      <button
+        className="button is-white"
+        onClick={() => {
+          this.props.removeFromOrder(key);
+        }}
+      >
+        &times;
+      </button>
+    );
+
+    if (!menuItem || menuItem.status === "unavailable") {
+      return (
+        <li key={key}>
+          Sorry, {menuItem ? menuItem.name : "menuItem"} is no longer available {removeButton}
+        </li>
+      );
+    }
+
+    if (!menuItem || count === 0) {
+      return (
+        <li key={key} className=" order-line-item has-text-grey-lighter">
+          No items added yet. &#9785;
+        </li>
+      );
+    }
+
+    return (
+      <li key={key} className="order-line-item">
+        <span>
+          <CSSTransitionGroup
+            component="span"
+            className="count"
+            transitionName="count"
+            transitionEnterTimeout={250}
+            transitionLeaveTimeout={250}
+          >
+            <span key={count}>{count}</span>
+          </CSSTransitionGroup>
+          x {menuItem.name}
+        </span>
+        {removeButton}
+        <span>{formatPrice(count * menuItem.price)}</span>
+      </li>
+    );
+  };
+
   render() {
-    const { restaurantName, orderOption } = this.props;
+    const { restaurantName, orderOption, menuItems, order } = this.props;
+    const orderIds = Object.keys(order);
+    const subtotal = orderIds.reduce((prevTotal, key) => {
+      const menuItem = menuItems[key];
+      const count = order[key];
+      const isAvailable = menuItem && menuItem.status === "available";
+      if (isAvailable) {
+        return prevTotal + (count * menuItem.price || 0);
+      }
+      return prevTotal;
+    }, 0);
     return (
       <div className="store-sidebar">
         <div className="cart">
@@ -18,14 +80,20 @@ class OrderCart extends React.PureComponent {
               for <span className="has-text-danger has-text-bold">{orderOption || "Pickup"}</span>
             </p>
           </div>
-          <div className="cartitem-items has-text-grey-lighter">
-            <span>No items added yet.</span>
-            <i className="fa icon-padding fa-frown-o" aria-hidden="true" />
+          <div className="cartitem-itemsList">
+            <CSSTransitionGroup
+              component="ul"
+              transitionName="order"
+              transitionEnterTimeout={500}
+              transitionLeaveTimeout={500}
+            >
+              {orderIds.map(this.renderOrder)}
+            </CSSTransitionGroup>
           </div>
           <div className="cart-totals-wrapper">
             <div className="cart-subtotal-line">
               <span className="">Subtotal:</span>
-              <span>R0.00</span>
+              <span>{formatPrice(subtotal)}</span>
             </div>
             <div className="cart-gratuity-line">
               <span className="">Add Gratuity:**</span>
@@ -36,7 +104,7 @@ class OrderCart extends React.PureComponent {
             </div>
             <div className="cart-totals-line">
               <span className="">Total:</span>
-              <span>R0.00</span>
+              <span>{formatPrice(subtotal)}</span>
             </div>
           </div>
           <div className="cartitem-divider has-text-grey-light">
