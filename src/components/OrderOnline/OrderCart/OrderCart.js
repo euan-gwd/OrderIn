@@ -9,12 +9,12 @@ class OrderCart extends React.PureComponent {
     const count = this.props.order[key];
     const removeButton = (
       <button
-        className="button is-white"
+        className="button is-white has-text-danger"
         onClick={() => {
           this.props.removeFromOrder(key);
         }}
       >
-        &times;
+        &otimes;
       </button>
     );
 
@@ -22,14 +22,6 @@ class OrderCart extends React.PureComponent {
       return (
         <li key={key}>
           Sorry, {menuItem ? menuItem.name : "menuItem"} is no longer available {removeButton}
-        </li>
-      );
-    }
-
-    if (!menuItem || count === 0) {
-      return (
-        <li key={key} className=" order-line-item has-text-grey-lighter">
-          No items added yet. &#9785;
         </li>
       );
     }
@@ -89,6 +81,11 @@ class OrderCart extends React.PureComponent {
             >
               {orderIds.map(this.renderOrder)}
             </CSSTransitionGroup>
+            {orderIds.length === 0 && (
+              <div className="order-no-line-items has-text-grey-lighter">
+                No items added yet. &#9785;
+              </div>
+            )}
           </div>
           <div className="cart-totals-wrapper">
             <div className="cart-subtotal-line">
