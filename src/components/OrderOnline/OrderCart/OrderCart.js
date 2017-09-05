@@ -37,10 +37,9 @@ class OrderCart extends React.PureComponent {
     );
   };
 
-  render() {
-    const { restaurantName, orderOption, menuItems, order } = this.props;
-    const orderIds = Object.keys(order);
-    const subtotal = orderIds.reduce((prevTotal, key) => {
+  calculateTotals = orderIds => {
+    const { menuItems, order } = this.props;
+    return orderIds.reduce((prevTotal, key) => {
       const menuItem = menuItems[key];
       const count = order[key];
       const isAvailable = menuItem && menuItem.status === "available";
@@ -49,6 +48,12 @@ class OrderCart extends React.PureComponent {
       }
       return prevTotal;
     }, 0);
+  };
+
+  render() {
+    const { restaurantName, orderOption, order, orderNumber } = this.props;
+    const orderIds = Object.keys(order);
+    const subtotal = this.calculateTotals(orderIds);
     return (
       <div className="store-sidebar">
         <div className="cart">
@@ -58,7 +63,7 @@ class OrderCart extends React.PureComponent {
           </div>
           <div className="cart-orderNo">
             <p>
-              <span className="has-text-danger has-text-bold">#xxxxxx</span> from
+              <span className="has-text-danger has-text-bold">#{orderNumber}</span> from
               <span className="has-text-danger has-text-bold"> {restaurantName} </span>
               for <span className="has-text-danger has-text-bold">{orderOption || "Pickup"}</span>
             </p>
@@ -100,7 +105,11 @@ class OrderCart extends React.PureComponent {
             <p>**Optional</p>
           </div>
           <div className="cartitem-divider">
-            <button type="submit" className="button is-warning is-fullwidth is-medium">
+            <button
+              type="submit"
+              className="button is-success is-fullwidth is-medium"
+              disabled={orderIds.length === 0}
+            >
               Check Out
             </button>
           </div>

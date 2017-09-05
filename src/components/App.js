@@ -43,6 +43,8 @@ class App extends React.PureComponent {
 
   selectStore = store => {
     sessionStorage.setItem(`restaurantName`, store);
+    const orderUid = Date.now();
+    sessionStorage.setItem(`storeUniqueOrderNo`, orderUid);
     this.setState({ selectedStore: store });
   };
 
