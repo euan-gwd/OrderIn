@@ -11,7 +11,7 @@ class OrderOnline extends React.PureComponent {
   constructor(props) {
     super(props);
     const sessionStorageRef = sessionStorage.getItem(`restaurantName`);
-    //set initial state
+    //check if restaurantName exists already in session storage and set initial state else set intial state from props
     sessionStorageRef
       ? (this.state = {
           restaurantName: `${sessionStorageRef}`,
