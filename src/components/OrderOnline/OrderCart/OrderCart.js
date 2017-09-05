@@ -14,7 +14,7 @@ class OrderCart extends React.PureComponent {
           this.props.removeFromOrder(key);
         }}
       >
-        &otimes;
+        &#8854; remove
       </button>
     );
 
@@ -85,7 +85,7 @@ class OrderCart extends React.PureComponent {
             </div>
             <div className="cart-gratuity-line">
               <span className="">Add Gratuity:**</span>
-              <button className="button is-danger is-outlined">
+              <button className="button is-danger is-outlined is-small">
                 <i className="fa fa-icon fa-plus-circle" />
                 <span>10%</span>
               </button>
