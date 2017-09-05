@@ -45,6 +45,10 @@ class OrderOnline extends React.PureComponent {
     this.setState({ orderOption: selectedDeliveryOption });
   };
 
+  componentWillUpdate(nextProps, nextState) {
+    console.log({ nextProps, nextState });
+  }
+
   render() {
     const { restaurantName, restaurantsData, orderOption, menuItems } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);

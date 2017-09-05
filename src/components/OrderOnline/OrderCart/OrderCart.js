@@ -31,8 +31,8 @@ class OrderCart extends React.PureComponent {
         <span>
           <span>{count}</span>x {menuItem.name}
         </span>
-        {removeButton}
         <span>{formatPrice(count * menuItem.price)}</span>
+        {removeButton}
       </li>
     );
   };
