@@ -12,7 +12,7 @@ class OrderOnline extends React.PureComponent {
     super(props);
     const nameRef = sessionStorage.getItem(`restaurantName`);
     const ordersRef = sessionStorage.getItem(`currentOrder`);
-    //check if restaurantName exists already in session storage and set initial state else set intial state from props
+    //check if restaurantName exists already in session storage and set initial state else get intial state from props
     nameRef
       ? (this.state = {
           restaurantName: `${nameRef}`,
@@ -47,7 +47,6 @@ class OrderOnline extends React.PureComponent {
   };
 
   componentWillUpdate(nextProps, nextState) {
-    console.log(nextState.order);
     sessionStorage.setItem(`currentOrder`, JSON.stringify(nextState.order));
   }
 
