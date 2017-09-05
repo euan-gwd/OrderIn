@@ -4,7 +4,7 @@ import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import StoreInfo from "./StoreInfo/StoreInfo";
 import OrderMenuItem from "./OrderMenuItem/OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
-import { platters } from "../../mockAPI/sample-menu-items";
+import sampleDishes from "../../mockAPI/sample-dishes";
 import { Stores } from "../../mockAPI/sample-stores";
 
 class OrderOnline extends React.PureComponent {
@@ -16,12 +16,14 @@ class OrderOnline extends React.PureComponent {
       ? (this.state = {
           restaurantName: `${sessionStorageRef}`,
           restaurantsData: Stores,
+          menuItems: sampleDishes,
           order: {},
           orderOption: 0
         })
       : (this.state = {
           restaurantName: this.props.restaurantName,
           restaurantsData: Stores,
+          menuItems: sampleDishes,
           order: {},
           orderOption: 0
         });
@@ -44,9 +46,8 @@ class OrderOnline extends React.PureComponent {
   };
 
   render() {
-    const { restaurantName, restaurantsData, orderOption } = this.state;
+    const { restaurantName, restaurantsData, orderOption, menuItems } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);
-    const menuData = platters;
     return (
       <div className="StoreMenu">
         <main className="container">
@@ -62,16 +63,23 @@ class OrderOnline extends React.PureComponent {
                 </span>
               </header>
               <ul>
-                {menuData.map(menuItem => (
+                {Object.keys(menuItems).map(menuItem => (
                   <OrderMenuItem
-                    key={menuItem.name}
-                    menuItem={menuItem}
+                    key={menuItem}
+                    index={menuItem}
+                    menuItem={menuItems[menuItem]}
                     addToOrder={this.addToOrder}
                   />
                 ))}
               </ul>
             </div>
-            <OrderCart restaurantName={restaurantName} orderOption={orderOption} />
+            <OrderCart
+              restaurantName={restaurantName}
+              menuItems={menuItems}
+              orderOption={orderOption}
+              order={this.state.order}
+              removeFromOrder={this.removeFromOrder}
+            />
           </div>
         </main>
       </div>

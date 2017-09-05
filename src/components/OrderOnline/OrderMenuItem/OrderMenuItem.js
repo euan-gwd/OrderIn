@@ -4,7 +4,7 @@ import "./OrderMenuItemStyles.css";
 
 class OrderMenuItem extends React.PureComponent {
   render() {
-    const { menuItem, addToOrder } = this.props;
+    const { menuItem, addToOrder, index } = this.props;
     const isAvailable = menuItem.status === "available";
     const buttonText = isAvailable ? (
       <span>
@@ -30,7 +30,7 @@ class OrderMenuItem extends React.PureComponent {
             <button
               className="button is-danger is-outlined"
               disabled={!isAvailable}
-              onClick={props => addToOrder(menuItem.name)}
+              onClick={() => addToOrder(index)}
             >
               {buttonText}
             </button>
