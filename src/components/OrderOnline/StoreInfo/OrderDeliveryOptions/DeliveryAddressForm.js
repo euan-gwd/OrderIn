@@ -1,5 +1,5 @@
 import React from "react";
-import { titleCase } from "../../../../helpers";
+import { titleCase } from "../../../helpers";
 
 class DeliveryAddressFrom extends React.PureComponent {
   state = { DeliveryAddress: 0 };

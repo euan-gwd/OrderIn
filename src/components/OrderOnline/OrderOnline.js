@@ -4,8 +4,8 @@ import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import StoreInfo from "./StoreInfo/StoreInfo";
 import OrderMenuItem from "./OrderMenuItem/OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
-import { platters } from "../../../mockAPI/sample-menu-items";
-import { Stores } from "../../../mockAPI/sample-stores";
+import { platters } from "../../mockAPI/sample-menu-items";
+import { Stores } from "../../mockAPI/sample-stores";
 
 class OrderOnline extends React.PureComponent {
   constructor(props) {
