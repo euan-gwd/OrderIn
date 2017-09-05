@@ -10,14 +10,15 @@ import { Stores } from "../../mockAPI/sample-stores";
 class OrderOnline extends React.PureComponent {
   constructor(props) {
     super(props);
-    const sessionStorageRef = sessionStorage.getItem(`restaurantName`);
+    const nameRef = sessionStorage.getItem(`restaurantName`);
+    const ordersRef = sessionStorage.getItem(`currentOrder`);
     //check if restaurantName exists already in session storage and set initial state else set intial state from props
-    sessionStorageRef
+    nameRef
       ? (this.state = {
-          restaurantName: `${sessionStorageRef}`,
+          restaurantName: `${nameRef}`,
           restaurantsData: Stores,
           menuItems: sampleDishes,
-          order: {},
+          order: JSON.parse(ordersRef) || {},
           orderOption: 0
         })
       : (this.state = {
@@ -30,15 +31,15 @@ class OrderOnline extends React.PureComponent {
   }
 
   addToOrder = key => {
-    const order = { ...this.state.order };
-    order[key] = order[key] + 1 || 1;
-    this.setState({ order });
+    const increaseOrder = { ...this.state.order };
+    increaseOrder[key] = increaseOrder[key] + 1 || 1;
+    this.setState({ order: increaseOrder });
   };
 
   removeFromOrder = key => {
-    const order = { ...this.state.order };
-    order[key] > 1 ? (order[key] -= 1) : delete order[key];
-    this.setState({ order });
+    const decreaseOrder = { ...this.state.order };
+    decreaseOrder[key] > 1 ? (decreaseOrder[key] -= 1) : delete decreaseOrder[key];
+    this.setState({ order: decreaseOrder });
   };
 
   selectDeliveryOption = selectedDeliveryOption => {
@@ -46,7 +47,8 @@ class OrderOnline extends React.PureComponent {
   };
 
   componentWillUpdate(nextProps, nextState) {
-    console.log({ nextProps, nextState });
+    console.log(nextState.order);
+    sessionStorage.setItem(`currentOrder`, JSON.stringify(nextState.order));
   }
 
   render() {
