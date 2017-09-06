@@ -37,7 +37,7 @@ class OrderCart extends React.PureComponent {
     );
   };
 
-  calculateTotals = orderIds => {
+  calculateOrder = orderIds => {
     const { menuItems, order } = this.props;
     return orderIds.reduce((prevTotal, key) => {
       const menuItem = menuItems[key];
@@ -50,10 +50,17 @@ class OrderCart extends React.PureComponent {
     }, 0);
   };
 
+  calculateGratuity = subtotal => {
+    const tip = 10 / 100 * subtotal;
+    return subtotal + tip;
+  };
+
   render() {
     const { restaurantName, orderOption, order, orderNumber } = this.props;
     const orderIds = Object.keys(order);
-    const subtotal = this.calculateTotals(orderIds);
+    const subtotal = this.calculateOrder(orderIds);
+    // const totalWithTip = this.calculateGratuity(subtotal);
+
     return (
       <div className="store-sidebar">
         <div className="cart">
@@ -89,11 +96,15 @@ class OrderCart extends React.PureComponent {
               <span>{formatPrice(subtotal)}</span>
             </div>
             <div className="cart-gratuity-line">
-              <span className="">Add Gratuity:**</span>
-              <button className="button is-danger is-outlined is-small">
-                <i className="fa fa-icon fa-plus-circle" />
-                <span>10%</span>
-              </button>
+              <label htmlFor="gratuity" className="gratuity-label">
+                Add Gratuity:**
+              </label>
+              <input
+                type="number"
+                name="gratuity"
+                className="gratuity-input"
+                disabled={orderIds.length === 0}
+              />
             </div>
             <div className="cart-totals-line">
               <span className="">Total:</span>
