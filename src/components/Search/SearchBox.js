@@ -6,7 +6,13 @@ import { titleCase } from "../helpers";
 class SearchBox extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { searchTerm: 0, fireRedirect: false, inputIsValid: false };
+    this.state = {
+      searchTerm: 0,
+      fireRedirect: false,
+      inputIsValid: false,
+      touched: false,
+      invalidSummit: false
+    };
   }
 
   handleInput = event => {
@@ -15,6 +21,10 @@ class SearchBox extends React.PureComponent {
     regex.test(searchInput)
       ? this.setState({ inputIsValid: true, searchTerm: searchInput })
       : this.setState({ inputIsValid: false, searchTerm: 0 });
+  };
+
+  handleInputFocus = event => {
+    this.setState({ touched: true, invalidSummit: false });
   };
 
   handleSubmit = event => {
@@ -26,11 +36,16 @@ class SearchBox extends React.PureComponent {
         .map(item => titleCase(item));
       this.props.searchSelected(sanitizeitems);
       this.setState({ fireRedirect: true });
+    } else {
+      this.setState({ invalidSummit: true });
     }
   };
 
   render() {
-    const { inputIsValid, fireRedirect } = this.state;
+    const { inputIsValid, fireRedirect, touched, invalidSummit } = this.state;
+    const showError = touched
+      ? "icon is-right is-small has-text-warning"
+      : "icon is-right is-small has-text-white";
     return (
       <div className="hero-body">
         <div className="container">
@@ -43,7 +58,7 @@ class SearchBox extends React.PureComponent {
               className="column is-half box"
               onSubmit={this.handleSubmit}
             >
-              <p className="has-text-centered is-size-3">
+              <p className="has-text-centered is-size-4">
                 Enter your street address, suburb & city:
               </p>
               <div className="field has-addons">
@@ -51,7 +66,8 @@ class SearchBox extends React.PureComponent {
                   <input
                     className="input"
                     type="text"
-                    placeholder="e.g. 90 Victoria Road,Woodstock,Cape Town"
+                    placeholder="e.g. 90 Victoria Road, Woodstock, Cape Town"
+                    onFocus={this.handleInputFocus}
                     onChange={this.handleInput.bind(this)}
                   />
                   <span className="icon is-left is-small">
@@ -62,13 +78,18 @@ class SearchBox extends React.PureComponent {
                       <i className="fa fa-check" />
                     </span>
                   ) : (
-                    <span className="icon is-right is-small has-text-warning">
+                    <span className={showError}>
                       <i className="fa fa-warning" />
                     </span>
                   )}
                 </p>
               </div>
-              <div className="field is-grouped is-grouped-centered">
+              {invalidSummit && (
+                <span className="submit-error has-text-warning">
+                  Please supply correctly formatted address.
+                </span>
+              )}
+              <div className="field mt">
                 <button type="submit" className="button is-danger is-fullwidth is-medium">
                   Find Restaurants
                 </button>

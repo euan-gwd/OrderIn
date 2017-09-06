@@ -16,3 +16,11 @@
   padding: 1.8rem;
   font-size: 1.5rem;
 }
+
+.submit-error {
+  font-size: 0.75rem;
+}
+
+.mt {
+  margin-top: 0.5rem;
+}
