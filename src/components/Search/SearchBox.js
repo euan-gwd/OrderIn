@@ -50,7 +50,7 @@ class SearchBox extends React.PureComponent {
       <div className="hero-body">
         <div className="container">
           <h1 className="subtitle has-text-centered is-size-2">
-            <strong>Simply</strong> Order food online.
+            <strong>Simply</strong> order food online.
           </h1>
           <div className="columns is-centered">
             <form

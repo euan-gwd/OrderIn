@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./logo-orderin-208x50.png";
 
-const Header = () =>
+const Header = () => (
   <nav className="navbar is-transparent has-shadow">
     <div className="container is-fluid">
       <div className="navbar-brand">
@@ -14,17 +14,13 @@ const Header = () =>
           <div className="field has-addons">
             <p className="control">
               <a className="button is-danger is-inverted">
-                <span className="icon">
-                  <i className="fa fa-pencil-square-o" />
-                </span>
+                <i className="fa fa-icon fa-pencil-square-o" />
                 <span>Register</span>
               </a>
             </p>
             <p className="control">
               <a className="button is-danger is-inverted">
-                <span className="icon">
-                  <i className="fa fa-lock" />
-                </span>
+                <i className="fa fa-icon fa-lock" />
                 <span>Sign In</span>
               </a>
             </p>
@@ -32,6 +28,7 @@ const Header = () =>
         </div>
       </div>
     </div>
-  </nav>;
+  </nav>
+);
 
 export default Header;
