@@ -4,6 +4,11 @@ import { formatPrice } from "../../helpers";
 import "./OrderCartStyles.css";
 
 class OrderCart extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { gratuityAmount: 0 };
+  }
+
   renderOrder = key => {
     const menuItem = this.props.menuItems[key];
     const count = this.props.order[key];
@@ -51,15 +56,24 @@ class OrderCart extends React.PureComponent {
   };
 
   calculateGratuity = subtotal => {
-    const tip = 10 / 100 * subtotal;
+    const { gratuityAmount } = this.state;
+    const tip = Number(gratuityAmount) * 100;
     return subtotal + tip;
+  };
+
+  handleGratuityChange = evt => {
+    let gratuityAmount = evt.target.value;
+    if (gratuityAmount < 0) {
+      return (gratuityAmount = 0);
+    }
+    this.setState({ gratuityAmount: gratuityAmount });
   };
 
   render() {
     const { restaurantName, orderOption, order, orderNumber } = this.props;
     const orderIds = Object.keys(order);
     const subtotal = this.calculateOrder(orderIds);
-    // const totalWithTip = this.calculateGratuity(subtotal);
+    const total = this.calculateGratuity(subtotal);
 
     return (
       <div className="store-sidebar">
@@ -103,12 +117,14 @@ class OrderCart extends React.PureComponent {
                 type="number"
                 name="gratuity"
                 className="gratuity-input"
+                value={this.state.gratuityAmount}
                 disabled={orderIds.length === 0}
+                onChange={this.handleGratuityChange}
               />
             </div>
             <div className="cart-totals-line">
               <span className="">Total:</span>
-              <span>{formatPrice(subtotal)}</span>
+              <span>{orderIds.length === 0 ? "R0.00" : formatPrice(total)}</span>
             </div>
           </div>
           <div className="cartitem-divider has-text-grey-light">
