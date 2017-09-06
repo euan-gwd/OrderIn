@@ -4,6 +4,11 @@ import { formatPrice } from "../../helpers";
 import "./OrderCartStyles.css";
 
 class OrderCart extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { gratuityAmount: 0 };
+  }
+
   renderOrder = key => {
     const menuItem = this.props.menuItems[key];
     const count = this.props.order[key];
@@ -37,7 +42,7 @@ class OrderCart extends React.PureComponent {
     );
   };
 
-  calculateTotals = orderIds => {
+  calculateOrder = orderIds => {
     const { menuItems, order } = this.props;
     return orderIds.reduce((prevTotal, key) => {
       const menuItem = menuItems[key];
@@ -50,10 +55,26 @@ class OrderCart extends React.PureComponent {
     }, 0);
   };
 
+  calculateGratuity = subtotal => {
+    const { gratuityAmount } = this.state;
+    const tip = Number(gratuityAmount) * 100;
+    return subtotal + tip;
+  };
+
+  handleGratuityChange = evt => {
+    let gratuityAmount = evt.target.value;
+    if (gratuityAmount < 0) {
+      return (gratuityAmount = 0);
+    }
+    this.setState({ gratuityAmount: gratuityAmount });
+  };
+
   render() {
     const { restaurantName, orderOption, order, orderNumber } = this.props;
     const orderIds = Object.keys(order);
-    const subtotal = this.calculateTotals(orderIds);
+    const subtotal = this.calculateOrder(orderIds);
+    const total = this.calculateGratuity(subtotal);
+
     return (
       <div className="store-sidebar">
         <div className="cart">
@@ -89,15 +110,21 @@ class OrderCart extends React.PureComponent {
               <span>{formatPrice(subtotal)}</span>
             </div>
             <div className="cart-gratuity-line">
-              <span className="">Add Gratuity:**</span>
-              <button className="button is-danger is-outlined is-small">
-                <i className="fa fa-icon fa-plus-circle" />
-                <span>10%</span>
-              </button>
+              <label htmlFor="gratuity" className="gratuity-label">
+                Add Gratuity:**
+              </label>
+              <input
+                type="number"
+                name="gratuity"
+                className="gratuity-input"
+                value={this.state.gratuityAmount}
+                disabled={orderIds.length === 0}
+                onChange={this.handleGratuityChange}
+              />
             </div>
             <div className="cart-totals-line">
               <span className="">Total:</span>
-              <span>{formatPrice(subtotal)}</span>
+              <span>{orderIds.length === 0 ? "R0.00" : formatPrice(total)}</span>
             </div>
           </div>
           <div className="cartitem-divider has-text-grey-light">

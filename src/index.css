@@ -3557,9 +3557,9 @@ a.box:active {
   color: var(--btn-bkgrd);
 }
 
-.field:not(:last-child) {
+/* .field:not(:last-child) {
   margin-bottom: 0.75rem;
-}
+} */
 
 .field.has-addons {
   display: -webkit-box;
@@ -3784,9 +3784,9 @@ a.box:active {
         -ms-flex-positive: 1;
             flex-grow: 1;
   }
-  .field-body > .field:not(:last-child) {
+  /* .field-body > .field:not(:last-child) {
     margin-right: 0.75rem;
-  }
+  } */
 }
 
 .control {
