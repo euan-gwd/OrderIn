@@ -6,11 +6,15 @@ import { titleCase } from "../helpers";
 class SearchBox extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { searchTerm: 0, fireRedirect: false };
+    this.state = { searchTerm: 0, fireRedirect: false, inputIsValid: false };
   }
 
   handleInput = event => {
-    this.setState({ searchTerm: event.target.value });
+    const searchInput = event.target.value;
+    const regex = /\d\w+\s\w+\s\w+,\s\w+,\s\w+\s\w+$/;
+    regex.test(searchInput)
+      ? this.setState({ inputIsValid: true, searchTerm: searchInput })
+      : this.setState({ inputIsValid: false, searchTerm: 0 });
   };
 
   handleSubmit = event => {
@@ -26,6 +30,7 @@ class SearchBox extends React.PureComponent {
   };
 
   render() {
+    const { inputIsValid, fireRedirect } = this.state;
     return (
       <div className="hero-body">
         <div className="container">
@@ -38,20 +43,29 @@ class SearchBox extends React.PureComponent {
               className="column is-half box"
               onSubmit={this.handleSubmit}
             >
-              <p className="has-text-centered is-size-4">
+              <p className="has-text-centered is-size-3">
                 Enter your street address, suburb & city:
               </p>
               <div className="field has-addons">
-                <p className="control is-expanded has-icons-left">
+                <p className="control is-expanded has-icons-left has-icons-right">
                   <input
-                    className="input is-large"
+                    className="input"
                     type="text"
                     placeholder="e.g. 90 Victoria Road,Woodstock,Cape Town"
                     onChange={this.handleInput.bind(this)}
                   />
-                  <span className="icon is-left">
-                    <i className="fa fa-search" />
+                  <span className="icon is-left is-small">
+                    <i className="fa fa-icon fa-search" />
                   </span>
+                  {inputIsValid ? (
+                    <span className="icon is-right is-small has-text-success">
+                      <i className="fa fa-check" />
+                    </span>
+                  ) : (
+                    <span className="icon is-right is-small has-text-warning">
+                      <i className="fa fa-warning" />
+                    </span>
+                  )}
                 </p>
               </div>
               <div className="field is-grouped is-grouped-centered">
@@ -62,7 +76,7 @@ class SearchBox extends React.PureComponent {
             </form>
           </div>
         </div>
-        {this.state.fireRedirect && <Redirect push to="/Search" />}
+        {fireRedirect && <Redirect push to="/Search" />}
       </div>
     );
   }
