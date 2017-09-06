@@ -1,7 +1,8 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Home";
-import Header from "./Header";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
 import {
   RefineSearchBySuburb,
   RefineSearchByCuisine,
@@ -180,6 +181,7 @@ class App extends React.PureComponent {
             />
             <Route component={NotFound} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     );
