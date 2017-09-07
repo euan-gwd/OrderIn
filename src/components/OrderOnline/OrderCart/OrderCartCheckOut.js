@@ -23,13 +23,13 @@ const OrderCartCheckOut = ({ match, history }) => {
         <section className="modal-card-body">
           <h1 className="title has-text-centered">Hire Me</h1>
           <div className="hire-icons-wrapper">
-            <a className="hire-icon">
+            <a href="https://github.com/euan-gwd" className="hire-icon">
               <i className="fa fa-github-square fa-3x" />
             </a>
-            <a className="hire-icon">
+            <a href="https://za.linkedin.com/in/euangreenwood" className="hire-icon">
               <i className="fa fa-linkedin-square fa-3x" />
             </a>
-            <a className="hire-icon">
+            <a href="mailto:contact@euangreenwood.com" className="hire-icon">
               <i className="fa fa-envelope-square fa-3x" />
             </a>
           </div>
