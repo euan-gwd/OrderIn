@@ -21,15 +21,9 @@ const Header = () => (
                   state: { modal: true }
                 }}
               >
-                <i className="fa fa-icon fa-pencil-square-o" />
-                <span>Register</span>
-              </Link>
-            </p>
-            <p className="control">
-              <a className="button is-danger is-inverted">
                 <i className="fa fa-icon fa-lock" />
-                <span>Sign In</span>
-              </a>
+                <span>Login</span>
+              </Link>
             </p>
           </div>
         </div>
