@@ -1,6 +1,6 @@
 import React from "react";
 
-const RegisterModal = ({ match, history }) => {
+const UserLoginModal = ({ match, history }) => {
   const back = e => {
     e.stopPropagation();
     history.goBack();
@@ -18,4 +18,4 @@ const RegisterModal = ({ match, history }) => {
   );
 };
 
-export default RegisterModal;
+export default UserLoginModal;

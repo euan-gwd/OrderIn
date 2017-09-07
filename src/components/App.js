@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header/Header";
+import UserLoginModal from "./UserLoginModal";
 import Footer from "./Footer/Footer";
-import { RegisterModal } from "./Modals";
 import {
   RefineSearchBySuburb,
   RefineSearchByCuisine,
@@ -198,7 +198,7 @@ class App extends React.PureComponent {
           />
           <Route component={NotFound} />
         </Switch>
-        {isModal ? <Route path="/register" component={RegisterModal} /> : null}
+        {isModal ? <Route path="/register" component={UserLoginModal} /> : null}
         <Footer />
       </div>
     );
