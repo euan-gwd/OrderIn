@@ -154,3 +154,13 @@
 .gratuity-input[disabled]:hover {
   cursor: not-allowed;
 }
+
+.hire-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hire-icon {
+  padding: 0 2rem;
+}

@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header/Header";
+import OrderCartCheckOut from "./OrderOnline/OrderCart/OrderCartCheckOut";
 import Footer from "./Footer/Footer";
 import {
   RefineSearchBySuburb,
@@ -28,6 +29,16 @@ class App extends React.PureComponent {
       selectedSuburb: {},
       selectedCuisine: {}
     };
+  }
+
+  previousLocation = this.props.location;
+
+  componentWillUpdate(nextProps) {
+    const { location } = this.props;
+    // set previousLocation if props.location is not modal
+    if (nextProps.history.action !== "POP" && (!location.state || !location.state.modal)) {
+      this.previousLocation = this.props.location;
+    }
   }
 
   searchSelected = searchTerm => {
@@ -65,125 +76,131 @@ class App extends React.PureComponent {
   };
 
   render() {
+    const { location } = this.props;
+    const isModal = !!(
+      location.state &&
+      location.state.modal &&
+      this.previousLocation !== location
+    ); // not initial render
+
     return (
-      <BrowserRouter>
-        <div>
-          <Header />
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={() => (
-                <Home
-                  searchSelected={this.searchSelected}
-                  selectCity={this.selectCity}
-                  selectCuisine={this.selectCuisine}
-                  citiesData={Cities}
-                  cuisinesData={Cuisines}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/Cities/:cityId"
-              render={props => (
-                <RefineSearchBySuburb
-                  {...props}
-                  citiesData={Cities}
-                  cityName={this.state.selectedCity}
-                  selectSuburb={this.selectSuburb}
-                  selectStore={this.selectStore}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/Cities/:cityId/:suburbId"
-              render={props => (
-                <RefineSearchByCuisine
-                  {...props}
-                  cuisinesData={Cuisines}
-                  cityName={this.state.selectedCity}
-                  suburbName={this.state.selectedSuburb}
-                  selectCuisine={this.selectCuisine}
-                  selectStore={this.selectStore}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/Cities/:cityId/:suburbId/:cuisineId"
-              render={() => (
-                <SearchCityResultsContainer
-                  cityName={this.state.selectedCity}
-                  suburbName={this.state.selectedSuburb}
-                  cuisineName={this.state.selectedCuisine}
-                  selectStore={this.selectStore}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/Cuisine/:cuisineId"
-              render={props => (
-                <RefineCuisineSearchByCity
-                  {...props}
-                  citiesData={Cities}
-                  cuisineName={this.state.selectedCuisine}
-                  selectCity={this.selectCity}
-                  selectStore={this.selectStore}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/Cuisine/:cuisineId/:cityId"
-              render={props => (
-                <RefineCuisineSearchBySuburb
-                  {...props}
-                  citiesData={Cities}
-                  cuisineName={this.state.selectedCuisine}
-                  cityName={this.state.selectedCity}
-                  selectSuburb={this.selectSuburb}
-                  selectStore={this.selectStore}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/Cuisine/:cuisineId/:cityId/:suburbId"
-              render={() => (
-                <SearchCuisineResultsContainer
-                  cuisineName={this.state.selectedCuisine}
-                  cityName={this.state.selectedCity}
-                  suburbName={this.state.selectedSuburb}
-                  selectStore={this.selectStore}
-                />
-              )}
-            />
-            <Route
-              path="/Search"
-              render={() => (
-                <Route
-                  path="/Search"
-                  render={() => (
-                    <SearchResultsList
-                      searchResult={this.state.searchResult}
-                      selectStore={this.selectStore}
-                    />
-                  )}
-                />
-              )}
-            />
-            <Route
-              path="/order-online/:storeId"
-              render={() => <OrderOnline restaurantName={this.state.selectedStore} />}
-            />
-            <Route component={NotFound} />
-          </Switch>
-          <Footer />
-        </div>
-      </BrowserRouter>
+      <div>
+        <Header />
+        <Switch location={isModal ? this.previousLocation : location}>
+          <Route
+            exact
+            path="/"
+            render={() => (
+              <Home
+                searchSelected={this.searchSelected}
+                selectCity={this.selectCity}
+                selectCuisine={this.selectCuisine}
+                citiesData={Cities}
+                cuisinesData={Cuisines}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/Cities/:cityId"
+            render={props => (
+              <RefineSearchBySuburb
+                {...props}
+                citiesData={Cities}
+                cityName={this.state.selectedCity}
+                selectSuburb={this.selectSuburb}
+                selectStore={this.selectStore}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/Cities/:cityId/:suburbId"
+            render={props => (
+              <RefineSearchByCuisine
+                {...props}
+                cuisinesData={Cuisines}
+                cityName={this.state.selectedCity}
+                suburbName={this.state.selectedSuburb}
+                selectCuisine={this.selectCuisine}
+                selectStore={this.selectStore}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/Cities/:cityId/:suburbId/:cuisineId"
+            render={() => (
+              <SearchCityResultsContainer
+                cityName={this.state.selectedCity}
+                suburbName={this.state.selectedSuburb}
+                cuisineName={this.state.selectedCuisine}
+                selectStore={this.selectStore}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/Cuisine/:cuisineId"
+            render={props => (
+              <RefineCuisineSearchByCity
+                {...props}
+                citiesData={Cities}
+                cuisineName={this.state.selectedCuisine}
+                selectCity={this.selectCity}
+                selectStore={this.selectStore}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/Cuisine/:cuisineId/:cityId"
+            render={props => (
+              <RefineCuisineSearchBySuburb
+                {...props}
+                citiesData={Cities}
+                cuisineName={this.state.selectedCuisine}
+                cityName={this.state.selectedCity}
+                selectSuburb={this.selectSuburb}
+                selectStore={this.selectStore}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/Cuisine/:cuisineId/:cityId/:suburbId"
+            render={() => (
+              <SearchCuisineResultsContainer
+                cuisineName={this.state.selectedCuisine}
+                cityName={this.state.selectedCity}
+                suburbName={this.state.selectedSuburb}
+                selectStore={this.selectStore}
+              />
+            )}
+          />
+          <Route
+            path="/Search"
+            render={() => (
+              <Route
+                path="/Search"
+                render={() => (
+                  <SearchResultsList
+                    searchResult={this.state.searchResult}
+                    selectStore={this.selectStore}
+                  />
+                )}
+              />
+            )}
+          />
+          <Route
+            path="/order-online/:storeId"
+            render={() => <OrderOnline restaurantName={this.state.selectedStore} />}
+          />
+          <Route component={NotFound} />
+        </Switch>
+        {isModal ? <Route path="/checkout" component={OrderCartCheckOut} /> : null}
+        <Footer />
+      </div>
     );
   }
 }
