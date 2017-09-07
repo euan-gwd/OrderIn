@@ -78,6 +78,11 @@ class OrderOnline extends React.PureComponent {
                   />
                 ))}
               </ul>
+              <footer className="has-text-centered spacer has-text-danger">
+                <p className="icon is-large">
+                  <i className="fa fa-arrow-up" aria-hidden="true" />
+                </p>
+              </footer>
             </div>
             <OrderCart
               restaurantName={restaurantName}
