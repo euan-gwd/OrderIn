@@ -1,4 +1,5 @@
-import React from 'react';
-const NotFound = () => <div className="">Not Found</div>;
+import React from "react";
+import { Redirect } from "react-router-dom";
+const NotFound = () => <Redirect push to="/" />;
 
 export default NotFound;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import CSSTransitionGroup from "react-addons-css-transition-group";
 import { formatPrice } from "../../helpers";
 import "./OrderCartStyles.css";
@@ -132,13 +133,17 @@ class OrderCart extends React.PureComponent {
             <p>**Optional</p>
           </div>
           <div className="cartitem-divider">
-            <button
-              type="submit"
+            <Link
               className="button is-success is-fullwidth is-medium"
+              to={{
+                pathname: `/checkout`,
+                state: { modal: true }
+              }}
               disabled={orderIds.length === 0}
             >
-              Check Out
-            </button>
+              <i className="fa fa-icon fa-shopping-cart" />
+              <span>Check Out</span>
+            </Link>
           </div>
         </div>
       </div>

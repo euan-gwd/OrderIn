@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Logo from "./logo-orderin-208x50.png";
 
 const Header = () => (
@@ -14,16 +14,16 @@ const Header = () => (
         <div className="navbar-item">
           <div className="field has-addons">
             <p className="control">
-              <Link
-                className="button is-danger is-inverted"
-                to={{
-                  pathname: `/register`,
-                  state: { modal: true }
-                }}
-              >
+              <button className="button is-danger is-inverted">
+                <i className="fa fa-icon fa-pencil-square-o" />
+                <span>Register</span>
+              </button>
+            </p>
+            <p className="control">
+              <button className="button is-danger is-inverted">
                 <i className="fa fa-icon fa-lock" />
                 <span>Login</span>
-              </Link>
+              </button>
             </p>
           </div>
         </div>

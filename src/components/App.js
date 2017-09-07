@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header/Header";
-import UserLoginModal from "./UserLoginModal";
+import OrderCartCheckOut from "./OrderOnline/OrderCart/OrderCartCheckOut";
 import Footer from "./Footer/Footer";
 import {
   RefineSearchBySuburb,
@@ -198,7 +198,7 @@ class App extends React.PureComponent {
           />
           <Route component={NotFound} />
         </Switch>
-        {isModal ? <Route path="/register" component={UserLoginModal} /> : null}
+        {isModal ? <Route path="/checkout" component={OrderCartCheckOut} /> : null}
         <Footer />
       </div>
     );
