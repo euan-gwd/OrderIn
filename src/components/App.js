@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header/Header";
+import { RegisterForm, SignInForm } from "./UserManagement";
 import OrderCartCheckOut from "./OrderOnline/OrderCart/OrderCartCheckOut";
 import Footer from "./Footer/Footer";
 import {
@@ -196,6 +197,8 @@ class App extends React.PureComponent {
             path="/order-online/:storeId"
             render={() => <OrderOnline restaurantName={this.state.selectedStore} />}
           />
+          <Route path="/register" render={() => <RegisterForm />} />
+          <Route path="/signin" render={() => <SignInForm />} />
           <Route component={NotFound} />
         </Switch>
         {isModal ? <Route path="/checkout" component={OrderCartCheckOut} /> : null}
