@@ -36,7 +36,7 @@ class RefineSearchBySuburb extends React.PureComponent {
               <span className="selection-text-padding">{cityName}</span>
             </div>
             <div className="well">
-              <h1 className="has-text-centered is-size-4">
+              <h1 className="has-text-centered is-size-5-touch is-size-4-desktop ">
                 <span className="icon is-medium">
                   <i className="fa fa-map-o" />
                 </span>

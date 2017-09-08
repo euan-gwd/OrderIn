@@ -65,7 +65,7 @@ class SearchBox extends React.PureComponent {
               onSubmit={this.handleSubmit}
             >
               <SearchDeliveryOptions selectDeliveryOption={this.selectDeliveryOption} />
-              <h4 className="searchBox-header is-size-5-touch is-size-4-desktop has-text-centered">
+              <h4 className="searchBox-header is-size-6-touch is-size-4-desktop has-text-centered">
                 Enter your street address & suburb:
               </h4>
               <div className="field has-addons">

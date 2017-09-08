@@ -1,21 +1,38 @@
 .well {
-  display: grid;
+  display: block;
   background-color: var(--header-bkgrd);
   border-radius: 5px;
-  margin-bottom: 2em;
-  padding: 1.25em 1.5em 1em 1.5em;
+  padding-top: 0.125rem;
+  padding-left: 0;
+  padding-bottom: 0.75rem;
+  padding-right: 2rem;
   box-shadow: inset 0 2px 3px rgba(10, 10, 10, 0.1);
 }
 
 .inner-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1vh;
+  grid-template-columns: 1fr 1fr;
+  max-width: 100%;
 }
 
-.selection-text-padding {
-  padding: 1.8rem;
-  font-size: 1.5rem;
+@media screen and (min-width: 768px) {
+  .well {
+    padding: 0 1.5vw 1.5vh;
+  }
+
+  .inner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .selection-text-padding {
+    padding: 1.8rem;
+    font-size: 1.5rem;
+  }
+
+  .searchBox-header {
+    padding: 0.25rem 0 0.5rem 0;
+  }
 }
 
 .submit-error {
@@ -24,8 +41,4 @@
 
 .mt {
   margin-top: 0.75rem;
-}
-
-.searchBox-header {
-  padding: 0.25rem 0 0.5rem 0;
 }

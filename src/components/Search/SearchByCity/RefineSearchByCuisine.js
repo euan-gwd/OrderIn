@@ -48,7 +48,7 @@ class RefineSearchByCuisine extends React.PureComponent {
               <span className="selection-text-padding">{suburbName}</span>
             </div>
             <div className="well">
-              <h1 className="has-text-centered is-size-4">
+              <h1 className="has-text-centered is-size-5-touch is-size-4-desktop ">
                 <span className="icon">
                   <i className="fa fa-cutlery fa-lg" />
                 </span>
