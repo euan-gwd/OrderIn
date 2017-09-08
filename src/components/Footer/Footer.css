@@ -38,23 +38,50 @@
 }
 
 .invite-wrapper {
-  display: flex;
-  justify-content: space-around;
+  display: block;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-.bordered {
+.invite-item:not(:last-child) {
   border-right: 1px solid var(--border-color);
+  padding: 0.5rem 0.25rem;
 }
 
 .contact-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   margin-bottom: 1rem;
 }
 
 .contact-item {
   padding: 0 0.25rem;
+}
+
+.copyright-notice-wrapper {
+  display: block;
+}
+
+.copyright-notice-item {
+  padding: 0 0.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  .invite-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .copyright-notice-wrapper {
+    display: flex;
+    justify-content: center;
+  }
 }

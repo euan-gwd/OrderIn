@@ -21,21 +21,21 @@ const Footer = () => {
             </a>
           </div>
           <div className="invite-wrapper">
-            <div className="bordered">
+            <div className="invite-item">
               <p className="has-text-bold has-text-centered">Sign Up your Company</p>
               <p className="has-text-grey has-text-centered">
                 With a corporate account, employees can order food quickly and easily.
               </p>
               <button className="button is-danger">&#9656; Sign Up</button>
             </div>
-            <div className="bordered">
+            <div className="invite-item">
               <p className="has-text-bold has-text-centered">Add your restaurant to OrderIn!</p>
               <p className="has-text-grey has-text-centered">
                 Sign up with South Africa’s Premier Online food ordering service.
               </p>
               <button className="button is-danger">&#9656; Sign Up</button>
             </div>
-            <div>
+            <div className="invite-item">
               <p className="has-text-bold has-text-centered">Join Our Team</p>
               <p className="has-text-grey has-text-centered">
                 We are looking for dynamic individuals to be part of our growth.
@@ -62,10 +62,13 @@ const Footer = () => {
             </div>
             <div className="contact-item has-text-grey-light">(9 AM – 10 PM)</div>
           </div>
-          <p>
-            <span>© Copyright OrderIn (Pty) Ltd. All rights reserved. </span>
-            <a className="has-text-danger">Privacy Policy, Terms & Conditions</a>
-          </p>
+          <small className="copyright-notice-wrapper">
+            <p className="copyright-notice-item">© Copyright OrderIn (Pty) Ltd.</p>
+            <p className="copyright-notice-item">All rights reserved.</p>
+            <a className="has-text-danger copyright-notice-item">
+              Privacy Policy, Terms & Conditions
+            </a>
+          </small>
         </div>
       </div>
     </div>
