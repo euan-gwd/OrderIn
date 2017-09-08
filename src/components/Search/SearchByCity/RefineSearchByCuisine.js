@@ -14,7 +14,7 @@ class RefineSearchByCuisine extends React.Component {
       <section className="hero is-danger">
         <div className="hero-body">
           <div className="container">
-            <div className="box has-text-centered is-size-6-touch is-size-4-desktop">
+            <div className="box has-text-centered is-size-5-touch is-size-4-desktop">
               <Route
                 render={props => (
                   <a

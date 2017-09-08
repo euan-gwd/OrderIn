@@ -9,12 +9,10 @@ class SearchByCity extends React.Component {
       <div className="hero-body">
         <div className="container">
           <div className="well">
-            <h1 className="has-text-centered is-size-5-touch is-size-4-desktop">
-              <span className="icon is-medium">
-                <i className="fa fa-map-marker fa-lg" />
-              </span>
+            <p className="has-text-centered is-size-5-touch is-size-4-desktop">
+              <i className="fa fa-map-marker" />
               Search by City
-            </h1>
+            </p>
             <div className="inner-grid">
               {citiesData.map(city => (
                 <Route
