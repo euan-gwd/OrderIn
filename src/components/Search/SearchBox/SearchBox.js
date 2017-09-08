@@ -55,7 +55,7 @@ class SearchBox extends React.PureComponent {
     return (
       <div className="hero-body">
         <div className="container">
-          <h1 className="subtitle has-text-centered is-size-2">
+          <h1 className="subtitle has-text-centered is-size-4-touch is-size-2-desktop">
             <strong>Simply</strong> order food online.
           </h1>
           <div className="columns is-centered">
@@ -65,7 +65,9 @@ class SearchBox extends React.PureComponent {
               onSubmit={this.handleSubmit}
             >
               <SearchDeliveryOptions selectDeliveryOption={this.selectDeliveryOption} />
-              <h4 className="searchBox-header">Enter your street address & suburb:</h4>
+              <h4 className="searchBox-header is-size-5-touch is-size-4-desktop has-text-centered">
+                Enter your street address & suburb:
+              </h4>
               <div className="field has-addons">
                 <p className="control is-expanded has-icons-left has-icons-right">
                   <input
