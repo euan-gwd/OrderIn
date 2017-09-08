@@ -1,0 +1,49 @@
+.form-field:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+.form-header {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--border-color);
+  margin-bottom: 1rem;
+}
+
+input[type="checkbox"].terms {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+input[type="checkbox"].terms ~ label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f096";
+  letter-spacing: 5px;
+  font-size: 1.25em;
+  color: #535353;
+  width: 1.2em;
+  cursor: pointer;
+}
+
+input[type="checkbox"].terms:checked ~ label:before {
+  content: "\f046";
+  font-size: 1.25em;
+  color: var(--btn-bkgrd);
+  letter-spacing: 2.5px;
+}
+
+input[type="checkbox"].terms:focus ~ label:before,
+input[type="checkbox"].terms:focus ~ label {
+  cursor: pointer;
+}
+
+.terms-label {
+  font-size: 1rem;
+}
