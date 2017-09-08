@@ -1,0 +1,35 @@
+.navbar-end {
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+@media screen and (min-width: 1008px) {
+  .navbar-end {
+    align-items: stretch;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 319px) {
+  .navbar > .navcontainer {
+    display: inline-flex;
+  }
+
+  .navbar-end {
+    display: inline-flex;
+    justify-content: center;
+  }
+}
+
+.navbar > .navcontainer {
+  align-items: stretch;
+  display: flex;
+  min-height: 3.25rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 1007px) {
+  .navbar > .navcontainer {
+    display: flex;
+  }
+}

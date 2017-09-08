@@ -1,29 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "./logo-orderin-208x50.png";
+import "./Header.css";
 
 const Header = () => (
   <nav className="navbar is-transparent has-shadow">
-    <div className="container is-fluid">
+    <div className="navcontainer">
       <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
+        <NavLink to="/" className="navbar-item">
           <img src={Logo} alt="OrderIn Logo" width="112" height="28" />
-        </Link>
+        </NavLink>
       </div>
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="field has-addons">
             <p className="control">
-              <Link to="/register" className="button is-danger is-inverted">
+              <NavLink to="/register" className="button is-danger is-inverted">
                 <i className="fa fa-icon fa-pencil-square-o" />
                 <span>Register</span>
-              </Link>
+              </NavLink>
             </p>
             <p className="control">
-              <Link to="/signin" className="button is-danger is-inverted">
+              <NavLink to="/signin" className="button is-danger is-inverted">
                 <i className="fa fa-icon fa-lock" />
                 <span>Login</span>
-              </Link>
+              </NavLink>
             </p>
           </div>
         </div>

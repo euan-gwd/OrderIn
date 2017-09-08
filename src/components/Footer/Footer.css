@@ -44,7 +44,6 @@
 }
 
 .invite-item:not(:last-child) {
-  border-right: 1px solid var(--border-color);
   padding: 0.5rem 0.25rem;
 }
 
@@ -71,6 +70,11 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 1rem;
+  }
+
+  .invite-item:not(:last-child) {
+    border-right: 1px solid var(--border-color);
+    padding: 0.5rem 0.25rem;
   }
 
   .contact-wrapper {

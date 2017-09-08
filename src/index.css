@@ -6239,7 +6239,7 @@ a.nav-item:not(.button).is-tab.is-active {
 a.navbar-item:hover, a.navbar-item.is-active,
 .navbar-link:hover,
 .navbar-link.is-active {
-  background-color: whitesmoke;
+  background-color: transparent;
   color: #0a0a0a;
 }
 
