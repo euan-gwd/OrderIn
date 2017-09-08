@@ -1,18 +1,21 @@
+.search-container {
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+}
+
 .well {
-  display: block;
+  /* display: block; */
   background-color: var(--header-bkgrd);
   border-radius: 5px;
-  padding-top: 0.125rem;
-  padding-left: 0;
-  padding-bottom: 0.75rem;
-  padding-right: 2rem;
+  padding: 0.125rem 0 0.75rem 0;
   box-shadow: inset 0 2px 3px rgba(10, 10, 10, 0.1);
 }
 
 .inner-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 100%;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  /* grid-gap: 0.125rem 0.5rem; */
 }
 
 .breadcrumb-icon {
@@ -37,6 +40,7 @@
   .inner-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.125rem 0.5rem;
   }
 
   .searchBox-header {

@@ -8,9 +8,9 @@ class SearchCityResultsContainer extends React.Component {
     const { cityName, suburbName, cuisineName, selectStore } = this.props;
     const searchResult = { suburbName, cityName, cuisineName };
     return (
-      <section className="hero is-danger">
-        <div className="hero-body">
-          <div className="container">
+      <section className="">
+        <div className="">
+          <div className="">
             <div className="box has-text-centered has-text-danger">
               <span className="breadcrumb-link-inactive">Cities</span>
               <i className="fa breadcrumb-icon fa-chevron-right" />

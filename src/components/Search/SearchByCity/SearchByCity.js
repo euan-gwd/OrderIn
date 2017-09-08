@@ -6,8 +6,8 @@ class SearchByCity extends React.Component {
   render() {
     const { selectCity, citiesData } = this.props;
     return (
-      <div className="hero-body">
-        <div className="container">
+      <div className="">
+        <div className="">
           <div className="well">
             <p className="has-text-centered is-size-5-touch is-size-4-desktop">
               <i className="fa fa-map-marker" />

@@ -11,9 +11,9 @@ class RefineSearchByCuisine extends React.Component {
     const searchResult = { suburbName, cityName, undefined };
 
     return (
-      <section className="hero is-danger">
-        <div className="hero-body">
-          <div className="container">
+      <section className="">
+        <div className="">
+          <div className="">
             <div className="box has-text-centered is-size-5-touch is-size-4-desktop">
               <Route
                 render={props => (
