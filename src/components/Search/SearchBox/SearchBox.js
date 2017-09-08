@@ -4,7 +4,7 @@ import "../search_styles.css";
 import { titleCase } from "../../helpers";
 import SearchDeliveryOptions from "./SearchDeliveryOptions/SearchDeliveryOptions";
 
-class SearchBox extends React.PureComponent {
+class SearchBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -65,7 +65,7 @@ class SearchBox extends React.PureComponent {
               onSubmit={this.handleSubmit}
             >
               <SearchDeliveryOptions selectDeliveryOption={this.selectDeliveryOption} />
-              <h4 className="searchBox-header is-size-6-touch is-size-4-desktop has-text-centered">
+              <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered has-text-grey">
                 Enter your street address & suburb:
               </h4>
               <div className="field has-addons">

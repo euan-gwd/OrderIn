@@ -15,6 +15,20 @@
   max-width: 100%;
 }
 
+.breadcrumb-icon {
+  vertical-align: middle;
+  color: #b5b5b5;
+}
+
+.breadcrumb-link-inactive {
+  color: #b5b5b5 !important;
+  padding-right: 0.5rem;
+}
+
+.breadcrumb-link-active {
+  color: var(--btn-bkgrd);
+}
+
 @media screen and (min-width: 768px) {
   .well {
     padding: 0 1.5vw 1.5vh;
@@ -25,13 +39,13 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .selection-text-padding {
-    padding: 1.8rem;
-    font-size: 1.5rem;
+  .searchBox-header {
+    padding-top: 0.25rem;
   }
 
-  .searchBox-header {
-    padding: 0.25rem 0 0.5rem 0;
+  .icon-padding {
+    vertical-align: text-top;
+    padding: 0 0.5rem;
   }
 }
 

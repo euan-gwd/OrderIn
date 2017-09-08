@@ -3,7 +3,7 @@ import "../search_styles.css";
 import { Route } from "react-router-dom";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 
-class SearchCuisineResultsContainer extends React.PureComponent {
+class SearchCuisineResultsContainer extends React.Component {
   render() {
     const { cityName, suburbName, cuisineName, selectStore } = this.props;
     const searchResult = { suburbName, cityName, cuisineName };
@@ -12,14 +12,14 @@ class SearchCuisineResultsContainer extends React.PureComponent {
         <div className="hero-body">
           <div className="container">
             <div className="box has-text-centered has-text-danger">
-              <span className="selection-text-padding has-text-grey-light">Cuisine</span>
+              <span className=" has-text-grey-light">Cuisine</span>
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className=" has-text-grey-light"
                     onClick={() => {
                       props.history.push(`/`);
                     }}
@@ -34,7 +34,7 @@ class SearchCuisineResultsContainer extends React.PureComponent {
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className=" has-text-grey-light"
                     onClick={() => {
                       props.history.goBack();
                     }}
@@ -46,7 +46,7 @@ class SearchCuisineResultsContainer extends React.PureComponent {
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding ">{suburbName}</span>
+              <span className=" ">{suburbName}</span>
             </div>
             <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
           </div>

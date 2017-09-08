@@ -3,7 +3,7 @@ import "../search_styles.css";
 import { Route } from "react-router-dom";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 
-class SearchCityResultsContainer extends React.PureComponent {
+class SearchCityResultsContainer extends React.Component {
   render() {
     const { cityName, suburbName, cuisineName, selectStore } = this.props;
     const searchResult = { suburbName, cityName, cuisineName };
@@ -12,14 +12,12 @@ class SearchCityResultsContainer extends React.PureComponent {
         <div className="hero-body">
           <div className="container">
             <div className="box has-text-centered has-text-danger">
-              <span className="selection-text-padding has-text-grey-light">Cities</span>
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
+              <span className="breadcrumb-link-inactive">Cities</span>
+              <i className="fa breadcrumb-icon fa-chevron-right" />
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className="breadcrumb-link-inactive"
                     onClick={() => {
                       props.history.push(`/`);
                     }}
@@ -28,13 +26,11 @@ class SearchCityResultsContainer extends React.PureComponent {
                   </a>
                 )}
               />
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
+              <i className="fa breadcrumb-icon fa-chevron-right" />
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className="breadcrumb-link-inactive"
                     onClick={() => {
                       props.history.goBack();
                     }}
@@ -43,10 +39,8 @@ class SearchCityResultsContainer extends React.PureComponent {
                   </a>
                 )}
               />
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <span className="selection-text-padding ">{cuisineName}</span>
+              <i className="fa breadcrumb-icon fa-chevron-right" />
+              <span className="breadcrumb-link-active">{cuisineName}</span>
             </div>
             <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
           </div>

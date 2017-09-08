@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import "./StoreStyles.css";
 
-class Store extends React.PureComponent {
+class Store extends React.Component {
   render() {
     const { details, selectStore } = this.props;
     const storeId = details.name.replace(/\s+/g, "");

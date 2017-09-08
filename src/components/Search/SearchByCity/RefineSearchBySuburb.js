@@ -4,7 +4,7 @@ import "../search_styles.css";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 import { unSlug } from "../../helpers";
 
-class RefineSearchBySuburb extends React.PureComponent {
+class RefineSearchBySuburb extends React.Component {
   render() {
     const { citiesData, match, selectSuburb, selectStore } = this.props;
     const cityName = unSlug(match.params.cityId);
@@ -17,11 +17,11 @@ class RefineSearchBySuburb extends React.PureComponent {
       <section className="hero is-danger">
         <div className="hero-body">
           <div className="container">
-            <div className="box has-text-centered has-text-danger">
+            <div className="box has-text-centered is-size-6-touch is-size-4-desktop">
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className="breadcrumb-link-inactive"
                     onClick={() => {
                       props.history.goBack();
                     }}
@@ -30,18 +30,14 @@ class RefineSearchBySuburb extends React.PureComponent {
                   </a>
                 )}
               />
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <span className="selection-text-padding">{cityName}</span>
+              <i className="fa breadcrumb-icon fa-chevron-right" />
+              <span className="has-text-danger">{cityName}</span>
             </div>
             <div className="well">
-              <h1 className="has-text-centered is-size-5-touch is-size-4-desktop ">
-                <span className="icon is-medium">
-                  <i className="fa fa-map-o" />
-                </span>
+              <p className="has-text-centered is-size-5-touch is-size-4-desktop ">
+                <i className="fa fa-map-o" />
                 Refine Search by Suburb
-              </h1>
+              </p>
               <div className="inner-grid">
                 {suburbsData.map(suburb => (
                   <Route

@@ -4,7 +4,7 @@ import "../search_styles.css";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 import { unSlug } from "../../helpers";
 
-class RefineSearchByCuisine extends React.PureComponent {
+class RefineSearchByCuisine extends React.Component {
   render() {
     const { cuisinesData, match, selectCuisine, cityName, selectStore } = this.props;
     const suburbName = unSlug(match.params.suburbId);
@@ -14,11 +14,11 @@ class RefineSearchByCuisine extends React.PureComponent {
       <section className="hero is-danger">
         <div className="hero-body">
           <div className="container">
-            <div className="box has-text-centered has-text-danger">
+            <div className="box has-text-centered is-size-6-touch is-size-4-desktop">
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className="breadcrumb-link-inactive"
                     onClick={() => {
                       props.history.push(`/`);
                     }}
@@ -27,13 +27,11 @@ class RefineSearchByCuisine extends React.PureComponent {
                   </a>
                 )}
               />
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
+              <i className="fa breadcrumb-icon fa-chevron-right" />
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className="breadcrumb-link-inactive"
                     onClick={() => {
                       props.history.goBack();
                     }}
@@ -42,18 +40,14 @@ class RefineSearchByCuisine extends React.PureComponent {
                   </a>
                 )}
               />
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <span className="selection-text-padding">{suburbName}</span>
+              <i className="fa breadcrumb-icon fa-chevron-right" />
+              <span className="breadcrumb-link-active">{suburbName}</span>
             </div>
             <div className="well">
-              <h1 className="has-text-centered is-size-5-touch is-size-4-desktop ">
-                <span className="icon">
-                  <i className="fa fa-cutlery fa-lg" />
-                </span>
+              <p className="has-text-centered is-size-5-touch is-size-4-desktop ">
+                <i className="fa fa-cutlery" />
                 Refine Search by Cuisine
-              </h1>
+              </p>
               <div className="inner-grid">
                 {cuisinesData.map(cuisine => (
                   <Route

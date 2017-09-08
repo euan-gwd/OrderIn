@@ -4,7 +4,7 @@ import "../search_styles.css";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 import { unSlug } from "../../helpers";
 
-class RefineCuisineSearchBySuburb extends React.PureComponent {
+class RefineCuisineSearchBySuburb extends React.Component {
   render() {
     const { citiesData, match, selectSuburb, cuisineName, selectStore } = this.props;
     const cityName = unSlug(match.params.cityId);
@@ -20,7 +20,7 @@ class RefineCuisineSearchBySuburb extends React.PureComponent {
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className=" has-text-grey-light"
                     onClick={() => {
                       props.history.push(`/`);
                     }}
@@ -35,7 +35,7 @@ class RefineCuisineSearchBySuburb extends React.PureComponent {
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className=" has-text-grey-light"
                     onClick={() => {
                       props.history.goBack();
                     }}
@@ -47,7 +47,7 @@ class RefineCuisineSearchBySuburb extends React.PureComponent {
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding">{cityName}</span>
+              <span className="">{cityName}</span>
             </div>
             <div className="well">
               <h1 className="has-text-centered is-size-3">

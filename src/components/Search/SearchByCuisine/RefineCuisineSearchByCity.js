@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
 
-class RefineCuisineSearchByCity extends React.PureComponent {
+class RefineCuisineSearchByCity extends React.Component {
   render() {
     const { selectCity, citiesData, cuisineName, match } = this.props;
     return (
@@ -13,7 +13,7 @@ class RefineCuisineSearchByCity extends React.PureComponent {
               <Route
                 render={props => (
                   <a
-                    className="selection-text-padding has-text-grey-light"
+                    className=" has-text-grey-light"
                     onClick={() => {
                       props.history.goBack();
                     }}
@@ -25,7 +25,7 @@ class RefineCuisineSearchByCity extends React.PureComponent {
               <span className="icon is-left has-text-grey-light">
                 <i className="fa fa-chevron-right fa-lg" />
               </span>
-              <span className="selection-text-padding">{cuisineName}</span>
+              <span className="">{cuisineName}</span>
             </div>
             <div className="well">
               <h1 className="has-text-centered is-size-3">
