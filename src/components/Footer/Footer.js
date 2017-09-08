@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer has-inset-shadow">
       <div className="container">
         <div className="content has-text-centered">
           <div className="icons-wrapper">
