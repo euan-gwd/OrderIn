@@ -23,5 +23,11 @@
 }
 
 .mt {
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.searchBox-header {
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.25rem 0 0.5rem 0;
 }

@@ -70,7 +70,7 @@ input[type="radio"].pickup:focus ~ label {
 
 .search-options-wrapper {
   grid-area: storedelivery;
-  border-bottom: 1px dashed var(--border-color);
+  border-bottom: 1px dotted var(--border-color);
   color: #0e301a;
   padding-top: calc(0.375em - 1px);
   padding-right: calc(0.625em - 1px);
@@ -82,5 +82,5 @@ input[type="radio"].pickup:focus ~ label {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 1vh;
+  padding-bottom: 0.25rem;
 }
