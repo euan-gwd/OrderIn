@@ -47,7 +47,7 @@ class SearchBox extends React.PureComponent {
       ? "icon is-right is-small has-text-warning"
       : "icon is-right is-small has-text-white";
     return (
-      <div className="hero-body">
+      <div className="hero-body is-medium">
         <div className="container">
           <h1 className="subtitle has-text-centered is-size-2">
             <strong>Simply</strong> order food online.
