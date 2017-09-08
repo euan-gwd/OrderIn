@@ -1,7 +1,8 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import "./search_styles.css";
-import { titleCase } from "../helpers";
+import "../search_styles.css";
+import { titleCase } from "../../helpers";
+import SearchDeliveryOptions from "./SearchDeliveryOptions/SearchDeliveryOptions";
 
 class SearchBox extends React.PureComponent {
   constructor(props) {
@@ -11,7 +12,8 @@ class SearchBox extends React.PureComponent {
       fireRedirect: false,
       inputIsValid: false,
       touched: false,
-      invalidSummit: false
+      invalidSummit: false,
+      orderOption: 0
     };
   }
 
@@ -25,6 +27,10 @@ class SearchBox extends React.PureComponent {
 
   handleInputFocus = event => {
     this.setState({ touched: true, invalidSummit: false });
+  };
+
+  selectDeliveryOption = selectedDeliveryOption => {
+    this.setState({ orderOption: selectedDeliveryOption });
   };
 
   handleSubmit = event => {
@@ -58,9 +64,8 @@ class SearchBox extends React.PureComponent {
               className="column is-half box"
               onSubmit={this.handleSubmit}
             >
-              <p className="has-text-centered is-size-4">
-                Enter your street address, suburb & city:
-              </p>
+              <SearchDeliveryOptions selectDeliveryOption={this.selectDeliveryOption} />
+              <p className="has-text-centered is-size-4">Enter your street address & suburb:</p>
               <div className="field has-addons">
                 <p className="control is-expanded has-icons-left has-icons-right">
                   <input
