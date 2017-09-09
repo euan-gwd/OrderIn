@@ -1,10 +1,10 @@
 import React from "react";
+
 import "./OrderOnlineStyles.css";
 import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import StoreInfo from "./StoreInfo/StoreInfo";
 import OrderMenuItem from "./OrderMenuItem/OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
-import sampleDishes from "../../mockAPI/sample-dishes";
 import { Stores } from "../../mockAPI/sample-stores";
 
 class OrderOnline extends React.Component {
@@ -17,17 +17,23 @@ class OrderOnline extends React.Component {
       ? (this.state = {
           restaurantName: `${nameRef}`,
           restaurantsData: Stores,
-          menuItems: sampleDishes,
+          menuItems: {},
           order: JSON.parse(ordersRef) || {},
           orderOption: 0
         })
       : (this.state = {
           restaurantName: this.props.restaurantName,
           restaurantsData: Stores,
-          menuItems: sampleDishes,
+          menuItems: {},
           order: {},
           orderOption: 0
         });
+  }
+
+  componentDidMount() {
+    const { restaurantName, restaurantsData } = this.state;
+    const storeData = restaurantsData.find(restaurant => restaurant.name === restaurantName);
+    this.setState({ menuItems: storeData.menu });
   }
 
   addToOrder = key => {
@@ -68,7 +74,7 @@ class OrderOnline extends React.Component {
                   Vegetarian
                 </span>
               </header>
-              <ul>
+              <ul className="outer">
                 {Object.keys(menuItems).map(menuItem => (
                   <OrderMenuItem
                     key={menuItem}

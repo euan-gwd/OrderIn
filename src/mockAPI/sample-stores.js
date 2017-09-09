@@ -5,7 +5,8 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/Logo 2Kitchens.png"),
     address: "8 Stowe Street",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/2Kitchens")
   },
 
   {
@@ -13,7 +14,8 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/Bingo Logo.jpg"),
     address: "5 Sir Lowry Road",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/Bingo")
   },
 
   {
@@ -21,7 +23,8 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/Cybercellar.jpg"),
     address: "175 Victoria Road",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/CyberCellar")
   },
 
   {
@@ -29,7 +32,8 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/fat cactus final logo.jpg"),
     address: "160 Albert Road",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/FatCactus")
   },
 
   {
@@ -37,7 +41,8 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/fishaways_tag.png"),
     address: "169 Victoria Road",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/Fishaways")
   },
 
   {
@@ -45,7 +50,8 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/food truck mafia logo new.png"),
     address: "19 Kent Street",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/FoodTruckMafia")
   },
 
   {
@@ -53,7 +59,8 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/Jamaica Me Crazy.jpg"),
     address: "74 Roodebloem Road",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/JamaicaMeCrazy")
   },
 
   {
@@ -61,7 +68,8 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/Three Feathers Diner.jpg"),
     address: "86 Bromwell Street",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/ThreeFeathersDiner")
   },
 
   {
@@ -69,6 +77,7 @@ export const Stores = [
     tagline: "insert witty tagline here",
     image: require("./images/yum logo.png"),
     address: "31 Brickfield Road",
-    tel: "000-000-000"
+    tel: "000-000-000",
+    menu: require("./sample-stores-menus/Yum")
   }
 ];

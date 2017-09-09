@@ -1,11 +1,12 @@
 .StoreMenu {
   padding-top: 0.5rem;
+  background-color: white;
 }
 
 .store-menu {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: minmax(1em, auto) 1fr;
+  grid-template-rows: minmax(160px, auto) 1fr;
   grid-template-areas: "storeheader storeorderlist" "storedelivery storeorderlist"
     "storemenulist storeorderlist";
   grid-gap: 0.5rem;
@@ -29,6 +30,11 @@
 
 .store-main-content {
   grid-area: storemenulist;
+}
+
+.outer {
+  max-height: 600px;
+  overflow: scroll;
 }
 
 .store-sidebar {

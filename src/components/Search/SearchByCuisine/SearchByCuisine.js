@@ -6,7 +6,7 @@ class SearchByCuisine extends React.Component {
   render() {
     const { selectCuisine, cuisinesData } = this.props;
     return (
-      <div className="search-body">
+      <div className="search-body mb">
         <div className="well">
           <p className="has-text-centered is-size-5-touch is-size-4-desktop">
             <i className="fa fa-cutlery" />

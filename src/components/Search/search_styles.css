@@ -123,6 +123,10 @@
   margin-top: 0.75rem;
 }
 
+.mb {
+  margin-bottom: 3rem;
+}
+
 @media screen and (min-width: 1200px) {
   .search-body {
     max-width: 1000px;
