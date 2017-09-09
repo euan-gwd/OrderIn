@@ -1,10 +1,9 @@
-[
-  {
-    "name": "Burger 1",
-    "description": "Insert Burger 1 description",
-    "price": 4200,
-    "status": "available"
-  },
+[{
+  "name": "Burger 1",
+  "description": "Insert Burger 1 description",
+  "price": 4200,
+  "status": "available"
+},
   {
     "name": "Burger 2",
     "description": "Insert Burger 2 description",

@@ -1,10 +1,11 @@
 import React from "react";
+// import axios from "axios";
 import "./OrderOnlineStyles.css";
 import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import StoreInfo from "./StoreInfo/StoreInfo";
 import OrderMenuItem from "./OrderMenuItem/OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
-import sampleDishes from "../../mockAPI/sample-dishes";
+// import sampleDishes from "../../mockAPI/sample-dishes";
 import { Stores } from "../../mockAPI/sample-stores";
 
 class OrderOnline extends React.Component {
@@ -17,17 +18,26 @@ class OrderOnline extends React.Component {
       ? (this.state = {
           restaurantName: `${nameRef}`,
           restaurantsData: Stores,
-          menuItems: sampleDishes,
+          menuItems: {},
           order: JSON.parse(ordersRef) || {},
           orderOption: 0
         })
       : (this.state = {
           restaurantName: this.props.restaurantName,
           restaurantsData: Stores,
-          menuItems: sampleDishes,
+          menuItems: {},
           order: {},
           orderOption: 0
         });
+  }
+  componentDidMount() {
+    const { restaurantName } = this.state;
+    const storeId = restaurantName.replace(/\s+/g, "");
+    console.log(storeId);
+    fetch(`../../mockAPI/sample-stores-menus/${storeId}`).then(res => console.log(res.json()));
+    // .then(data => {
+    //   console.log(data);
+    // });
   }
 
   addToOrder = key => {
