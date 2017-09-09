@@ -85,7 +85,7 @@ class App extends React.Component {
     ); // not initial render
 
     return (
-      <div>
+      <div style={divStyle}>
         <Header />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route
@@ -207,5 +207,9 @@ class App extends React.Component {
     );
   }
 }
+
+const divStyle = {
+  backgroundColor: "#A81F00"
+};
 
 export default App;

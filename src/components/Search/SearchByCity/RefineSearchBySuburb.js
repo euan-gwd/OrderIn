@@ -29,7 +29,7 @@ class RefineSearchBySuburb extends React.Component {
             )}
           />
           <i className="fa breadcrumb-icon fa-chevron-right" />
-          <span className="has-text-danger">{cityName}</span>
+          <span className="breadcrumb-link-active">{cityName}</span>
         </div>
         <div className="well">
           <p className="has-text-centered is-size-5-touch is-size-4-desktop">

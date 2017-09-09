@@ -8,10 +8,10 @@ class SearchByCuisine extends React.Component {
     return (
       <div className="search-body">
         <div className="well">
-          <h1 className="has-text-centered is-size-5-touch is-size-4-desktop">
+          <p className="has-text-centered is-size-5-touch is-size-4-desktop">
             <i className="fa fa-cutlery" />
             Search by Cuisine
-          </h1>
+          </p>
           <div className="inner-grid">
             {cuisinesData.map(cuisine => (
               <Route

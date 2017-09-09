@@ -6,55 +6,47 @@ class RefineCuisineSearchByCity extends React.Component {
   render() {
     const { selectCity, citiesData, cuisineName, match } = this.props;
     return (
-      <section className="hero is-danger">
-        <div className="hero-body">
-          <div className="container">
-            <div className="box has-text-centered has-text-danger">
+      <section className="search-body">
+        <div className="breadcrumb-box has-text-centered">
+          <Route
+            render={props => (
+              <a
+                className="breadcrumb-link-inactive"
+                onClick={() => {
+                  props.history.goBack();
+                }}
+              >
+                Cuisine
+              </a>
+            )}
+          />
+          <i className="fa breadcrumb-icon fa-chevron-right" />
+          <span className="breadcrumb-link-active">{cuisineName}</span>
+        </div>
+        <div className="well">
+          <p className="has-text-centered is-size-5-touch is-size-4-desktop">
+            <i className="fa fa-map-marker" />
+            Search by City
+          </p>
+          <div className="inner-grid">
+            {citiesData.map(city => (
               <Route
+                key={city.name}
                 render={props => (
                   <a
-                    className=" has-text-grey-light"
                     onClick={() => {
-                      props.history.goBack();
+                      let getSlug = require("speakingurl");
+                      let CityName = getSlug(`${city.name}`);
+                      selectCity(`${CityName}`);
+                      props.history.push(`${match.url}/${CityName}`);
                     }}
+                    className="search-links"
                   >
-                    Cuisine
+                    {city.name}
                   </a>
                 )}
               />
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <span className="">{cuisineName}</span>
-            </div>
-            <div className="well">
-              <h1 className="has-text-centered is-size-3">
-                <span className="icon is-medium">
-                  <i className="fa fa-map-marker" />
-                </span>
-                Search by City
-              </h1>
-              <div className="inner-grid">
-                {citiesData.map(city => (
-                  <Route
-                    key={city.name}
-                    render={props => (
-                      <button
-                        onClick={() => {
-                          let getSlug = require("speakingurl");
-                          let CityName = getSlug(`${city.name}`);
-                          selectCity(`${CityName}`);
-                          props.history.push(`${match.url}/${CityName}`);
-                        }}
-                        className="button is-link"
-                      >
-                        {city.name}
-                      </button>
-                    )}
-                  />
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

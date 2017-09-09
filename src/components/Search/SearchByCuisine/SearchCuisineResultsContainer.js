@@ -8,49 +8,39 @@ class SearchCuisineResultsContainer extends React.Component {
     const { cityName, suburbName, cuisineName, selectStore } = this.props;
     const searchResult = { suburbName, cityName, cuisineName };
     return (
-      <section className="hero is-danger">
-        <div className="hero-body">
-          <div className="container">
-            <div className="box has-text-centered has-text-danger">
-              <span className=" has-text-grey-light">Cuisine</span>
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <Route
-                render={props => (
-                  <a
-                    className=" has-text-grey-light"
-                    onClick={() => {
-                      props.history.push(`/`);
-                    }}
-                  >
-                    {cuisineName}
-                  </a>
-                )}
-              />
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <Route
-                render={props => (
-                  <a
-                    className=" has-text-grey-light"
-                    onClick={() => {
-                      props.history.goBack();
-                    }}
-                  >
-                    {cityName}
-                  </a>
-                )}
-              />
-              <span className="icon is-left has-text-grey-light">
-                <i className="fa fa-chevron-right fa-lg" />
-              </span>
-              <span className=" ">{suburbName}</span>
-            </div>
-            <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
-          </div>
+      <section className="search-body">
+        <div className="breadcrumb-box has-text-centered">
+          <span className="breadcrumb-link-inactive">Cuisine</span>
+          <i className="fa breadcrumb-icon fa-chevron-right" />
+          <Route
+            render={props => (
+              <a
+                className="breadcrumb-link-inactive"
+                onClick={() => {
+                  props.history.push(`/`);
+                }}
+              >
+                {cuisineName}
+              </a>
+            )}
+          />
+          <i className="fa breadcrumb-icon fa-chevron-right" />
+          <Route
+            render={props => (
+              <a
+                className="breadcrumb-link-inactive"
+                onClick={() => {
+                  props.history.goBack();
+                }}
+              >
+                {cityName}
+              </a>
+            )}
+          />
+          <i className="fa breadcrumb-icon fa-chevron-right" />
+          <span className="breadcrumb-link-active">{suburbName}</span>
         </div>
+        <SearchResultsList searchResult={searchResult} selectStore={selectStore} />
       </section>
     );
   }

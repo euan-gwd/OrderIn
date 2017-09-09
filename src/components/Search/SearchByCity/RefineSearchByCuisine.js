@@ -42,7 +42,7 @@ class RefineSearchByCuisine extends React.Component {
           <span className="breadcrumb-link-active">{suburbName}</span>
         </div>
         <div className="well">
-          <p className="has-text-centered is-size-5-touch is-size-4-desktop ">
+          <p className="has-text-centered is-size-5-touch is-size-4-desktop">
             <i className="fa fa-cutlery" />
             Refine Search by Cuisine
           </p>
