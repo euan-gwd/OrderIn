@@ -1,11 +1,10 @@
 import React from "react";
-// import axios from "axios";
+
 import "./OrderOnlineStyles.css";
 import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import StoreInfo from "./StoreInfo/StoreInfo";
 import OrderMenuItem from "./OrderMenuItem/OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
-// import sampleDishes from "../../mockAPI/sample-dishes";
 import { Stores } from "../../mockAPI/sample-stores";
 
 class OrderOnline extends React.Component {
@@ -75,7 +74,7 @@ class OrderOnline extends React.Component {
                   Vegetarian
                 </span>
               </header>
-              <ul>
+              <ul className="outer">
                 {Object.keys(menuItems).map(menuItem => (
                   <OrderMenuItem
                     key={menuItem}
