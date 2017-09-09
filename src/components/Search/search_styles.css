@@ -17,12 +17,13 @@
 .inner-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 1.5vh 0;
   font-size: 1rem;
 }
 
 .search-links {
   text-align: justify;
-  padding: 1vh 0;
+  padding-left: 1vw;
   font-weight: normal;
   word-spacing: -25%;
   background-color: transparent;
@@ -44,7 +45,10 @@
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: #4a4a4a;
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr
+    minmax(50px, 1fr);
+  align-items: center;
   padding: 0.25rem 0;
   margin-bottom: 1rem;
 }
@@ -68,12 +72,28 @@
   padding: 0 0.5rem;
 }
 
+.breadcrumb-link-inactive:hover {
+  color: var(--btn-bkgrd) !important;
+  padding: 0 0.5rem;
+}
+
+.breadcrumb-nolink-inactive {
+  color: #b5b5b5 !important;
+  padding: 0 0.5rem;
+}
+
 .breadcrumb-link-active {
   color: var(--btn-bkgrd);
   padding: 0 0.5rem;
 }
 
-@media screen and (min-width: 321px) {
+@media screen and (max-width: 480px) {
+  .breadcrumb-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 481px) {
   .search-body {
     display: grid;
     justify-content: center;
@@ -85,7 +105,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
     color: #4a4a4a;
-    display: block;
+    display: grid;
     padding: 0.25rem;
     margin-bottom: 1rem;
   }
