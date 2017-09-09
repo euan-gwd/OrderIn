@@ -11,14 +11,12 @@ const OrderBreadCrumbNav = () => (
             props.history.push(`/`);
           }}
         >
-          <i className="fa fa-icon fa-map-marker" />
+          <i className="fa breadcrumb-icon fa-map-marker" />
           Enter Your Address
         </a>
       )}
     />
-    <span className="icon is-left has-text-grey-light">
-      <i className="fa fa-chevron-right" />
-    </span>
+    <i className="fa breadcrumb-icon fa-chevron-right" />
     <Route
       render={props => (
         <a
@@ -26,22 +24,18 @@ const OrderBreadCrumbNav = () => (
             props.history.goBack();
           }}
         >
-          <i className="fa fa-icon fa-home fa-lg" />
+          <i className="fa breadcrumb-icon fa-home" />
           Pick A Restaurant
         </a>
       )}
     />
-    <span className="icon is-left has-text-grey-light">
-      <i className="fa fa-chevron-right" />
-    </span>
-    <span className="has-text-danger">
+    <i className="fa breadcrumb-icon fa-chevron-right" />
+    <span className="breadcrumb-link-active">
       <i className="fa fa-icon fa-cutlery" />
       Order Food
     </span>
-    <span className="icon is-left has-text-grey-light">
-      <i className="fa fa-chevron-right" />
-    </span>
-    <span className="has-text-grey-light">
+    <i className="fa breadcrumb-icon fa-chevron-right" />
+    <span className="breadcrumb-link-inactive">
       <i className="fa fa-icon fa-shopping-cart" />
       CheckOut
     </span>

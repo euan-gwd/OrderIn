@@ -1,8 +1,9 @@
 .breadcrumb-item-centered {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-around;
   align-content: center;
+  font-size: 0.75rem;
 }
 
 .navbox {
@@ -15,4 +16,15 @@
 .fa-icon {
   vertical-align: text-top;
   padding-right: 0.5rem;
+}
+
+@media screen and (max-width: 361px) {
+  .breadcrumb-item-centered {
+    font-size: 0.5rem;
+  }
+  .navbox {
+    padding: 0.125rem 0.25rem;
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+  }
 }
