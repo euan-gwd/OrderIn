@@ -20,7 +20,7 @@ import { Cities } from "../mockAPI/sample-city-list";
 import { Cuisines } from "../mockAPI/sample-cuisine-list";
 import { unSlug } from "./helpers";
 
-class App extends React.PureComponent {
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,7 +85,7 @@ class App extends React.PureComponent {
     ); // not initial render
 
     return (
-      <div>
+      <div style={divStyle}>
         <Header />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route
@@ -207,5 +207,9 @@ class App extends React.PureComponent {
     );
   }
 }
+
+const divStyle = {
+  backgroundColor: "#A81F00"
+};
 
 export default App;

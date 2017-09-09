@@ -112,9 +112,7 @@ th {
   --body-bkgrd: #A81F00;
   --well-bkgrd: #9A1C00; 
   --btn-bkgrd: #9A1C00;
-  /* --primary-color: var(--primary-color); */
   --primary-color: #9A1C00;
-  /* --btn-bkgrd: #a72101; */
   --btn-hover: #841a01;
   --deep-red: #600D03;
   --border-color: rgba(10, 10, 10, 0.1);
@@ -6239,7 +6237,7 @@ a.nav-item:not(.button).is-tab.is-active {
 a.navbar-item:hover, a.navbar-item.is-active,
 .navbar-link:hover,
 .navbar-link.is-active {
-  background-color: whitesmoke;
+  background-color: transparent;
   color: #0a0a0a;
 }
 

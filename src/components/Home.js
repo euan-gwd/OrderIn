@@ -1,10 +1,8 @@
 import React from "react";
-import SearchBox from "./Search/SearchBox";
-import SearchByCuisine from "./Search/SearchByCuisine/SearchByCuisine";
-import SearchByCity from "./Search/SearchByCity/SearchByCity";
+import { SearchBox, SearchByCity, SearchByCuisine } from "./Search";
 
 const Home = ({ searchSelected, selectCity, citiesData, selectCuisine, cuisinesData }) => (
-  <div className="hero is-danger is-medium">
+  <div>
     <SearchBox searchSelected={searchSelected} />
     <SearchByCity selectCity={selectCity} citiesData={citiesData} />
     <SearchByCuisine selectCuisine={selectCuisine} cuisinesData={cuisinesData} />

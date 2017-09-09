@@ -1,8 +1,7 @@
 import React from "react";
-import "./OrderDeliveryOptions.css";
-import DeliveryAddressForm from "./DeliveryAddressForm";
+import "./SearchDeliveryOptions.css";
 
-class OrderDeliveryOptions extends React.Component {
+class SearchDeliveryOptions extends React.Component {
   state = { selectedOption: "Pickup", deliveryAddress: "Pickup" };
 
   handleOptionChange = changeEvent => {
@@ -16,8 +15,8 @@ class OrderDeliveryOptions extends React.Component {
 
   render() {
     return (
-      <div className="store-delivery">
-        <div className="options-container">
+      <div className="search-options-wrapper">
+        <div className="search-option-container">
           <div>
             <input
               id="delivery"
@@ -43,12 +42,9 @@ class OrderDeliveryOptions extends React.Component {
             <label htmlFor="pickup">Pickup</label>
           </div>
         </div>
-        {this.state.selectedOption === "Delivery" && (
-          <DeliveryAddressForm clientAddress={this.clientAddress} />
-        )}
       </div>
     );
   }
 }
 
-export default OrderDeliveryOptions;
+export default SearchDeliveryOptions;

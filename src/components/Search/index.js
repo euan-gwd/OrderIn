@@ -1,4 +1,4 @@
-import SearchBox from "./SearchBox";
+import SearchBox from "./SearchBox/SearchBox";
 import SearchByCity from "./SearchByCity/SearchByCity";
 import RefineSearchBySuburb from "./SearchByCity/RefineSearchBySuburb";
 import RefineSearchByCuisine from "./SearchByCity/RefineSearchByCuisine";

@@ -2,7 +2,7 @@ import React from "react";
 import { formatPrice } from "../../helpers";
 import "./OrderMenuItemStyles.css";
 
-class OrderMenuItem extends React.PureComponent {
+class OrderMenuItem extends React.Component {
   render() {
     const { menuItem, addToOrder, index } = this.props;
     const isAvailable = menuItem.status === "available";

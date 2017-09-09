@@ -1,0 +1,31 @@
+.navbar > .navcontainer {
+  align-items: stretch;
+  display: flex;
+  min-height: 3.25rem;
+  width: 100%;
+}
+
+@media screen and (max-width: 1007px) {
+  .navbar > .navcontainer {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .navbar > .navcontainer {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 362px) {
+  .navbar-end {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}

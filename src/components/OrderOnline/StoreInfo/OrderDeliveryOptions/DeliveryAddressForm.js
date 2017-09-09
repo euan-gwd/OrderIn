@@ -1,7 +1,7 @@
 import React from "react";
 import { titleCase } from "../../../helpers";
 
-class DeliveryAddressFrom extends React.PureComponent {
+class DeliveryAddressFrom extends React.Component {
   state = { DeliveryAddress: 0 };
 
   handleInput = event => {
