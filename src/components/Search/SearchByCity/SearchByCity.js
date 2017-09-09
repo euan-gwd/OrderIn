@@ -9,7 +9,7 @@ class SearchByCity extends React.Component {
       <div className="search-body">
         <div className="well">
           <p className="has-text-centered is-size-5-touch is-size-4-desktop">
-            <i className="fa fa-map-marker" />
+            <i className="fa fa-icon fa-map-marker" />
             Search by City
           </p>
           <div className="inner-grid">

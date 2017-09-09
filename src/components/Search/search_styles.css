@@ -49,18 +49,28 @@
   margin-bottom: 1rem;
 }
 
+.fa-icon {
+  vertical-align: text-top;
+  padding-right: 0.5rem;
+}
+
 .breadcrumb-icon {
   vertical-align: middle;
   color: #b5b5b5;
 }
 
+.plh {
+  padding-left: 0.5rem;
+}
+
 .breadcrumb-link-inactive {
   color: #b5b5b5 !important;
-  padding-right: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .breadcrumb-link-active {
   color: var(--btn-bkgrd);
+  padding: 0 0.5rem;
 }
 
 @media screen and (min-width: 321px) {
@@ -91,6 +101,16 @@
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     grid-gap: 0.125rem 0.5rem;
     font-size: 1rem;
+  }
+
+  .breadcrumb-link-inactive {
+    color: #b5b5b5 !important;
+    padding: 0 0.25rem;
+  }
+
+  .breadcrumb-link-active {
+    color: var(--btn-bkgrd);
+    padding: 0 0.25rem;
   }
 }
 

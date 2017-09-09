@@ -9,7 +9,7 @@ class SearchByCuisine extends React.Component {
       <div className="search-body mb">
         <div className="well">
           <p className="has-text-centered is-size-5-touch is-size-4-desktop">
-            <i className="fa fa-cutlery" />
+            <i className="fa fa-icon fa-cutlery" />
             Search by Cuisine
           </p>
           <div className="inner-grid">
