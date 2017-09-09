@@ -30,14 +30,11 @@ class OrderOnline extends React.Component {
           orderOption: 0
         });
   }
+
   componentDidMount() {
-    const { restaurantName } = this.state;
-    const storeId = restaurantName.replace(/\s+/g, "");
-    console.log(storeId);
-    fetch(`../../mockAPI/sample-stores-menus/${storeId}`).then(res => console.log(res.json()));
-    // .then(data => {
-    //   console.log(data);
-    // });
+    const { restaurantName, restaurantsData } = this.state;
+    const storeData = restaurantsData.find(restaurant => restaurant.name === restaurantName);
+    this.setState({ menuItems: storeData.menu });
   }
 
   addToOrder = key => {
