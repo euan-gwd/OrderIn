@@ -8,7 +8,7 @@ class SearchResultsList extends React.Component {
     const { searchResult, selectStore } = this.props;
     const restaurants = Stores;
     return (
-      <div className="search-body">
+      <div className="results-body">
         <h2 className="has-text-centered has-text-white is-size-5-touch is-size-3-desktop">
           {searchResult.cuisineName} Restaurants in {searchResult.suburbName}{" "}
           {searchResult.cityName}

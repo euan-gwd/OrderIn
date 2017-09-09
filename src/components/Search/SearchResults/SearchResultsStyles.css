@@ -8,3 +8,28 @@
   color: #4a4a4a;
   display: block;
 }
+
+.results-body {
+  margin: 0 auto;
+  display: block;
+  background-color: var(--body-bkgrd);
+  color: #fff;
+}
+
+@media screen and (min-width: 321px) {
+  .results-body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .results-body {
+    max-width: 1000px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--body-bkgrd);
+  }
+}
