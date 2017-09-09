@@ -17,17 +17,17 @@ class SearchByCity extends React.Component {
               <Route
                 key={city.name}
                 render={props => (
-                  <button
+                  <a
                     onClick={() => {
                       let getSlug = require("speakingurl");
                       let CityName = getSlug(`${city.name}`);
                       selectCity(`${CityName}`);
                       props.history.push(`/Cities/${CityName}`);
                     }}
-                    className="button is-link"
+                    className="search-links"
                   >
                     {city.name}
-                  </button>
+                  </a>
                 )}
               />
             ))}

@@ -112,9 +112,7 @@ th {
   --body-bkgrd: #A81F00;
   --well-bkgrd: #9A1C00; 
   --btn-bkgrd: #9A1C00;
-  /* --primary-color: var(--primary-color); */
   --primary-color: #9A1C00;
-  /* --btn-bkgrd: #a72101; */
   --btn-hover: #841a01;
   --deep-red: #600D03;
   --border-color: rgba(10, 10, 10, 0.1);

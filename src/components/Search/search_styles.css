@@ -1,15 +1,13 @@
 .search-body {
   margin: 0 auto;
   padding: 15px 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   background-color: var(--body-bkgrd);
   color: #fff;
 }
 
 .well {
-  display: flex;
+  display: block;
   background-color: var(--header-bkgrd);
   border-radius: 5px;
   padding: 0;
@@ -18,8 +16,38 @@
 
 .inner-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
-  font-size: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  font-size: 1rem;
+}
+
+.search-links {
+  text-align: justify;
+  padding: 1vh 0;
+  font-weight: normal;
+  word-spacing: -25%;
+  background-color: transparent;
+  border-color: transparent;
+  color: white;
+}
+
+.search-links:hover,
+.search-links:focus,
+.search-links:active {
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.breadcrumb-box {
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  color: #4a4a4a;
+  display: block;
+  padding: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 .breadcrumb-icon {
@@ -36,9 +64,14 @@
   color: var(--btn-bkgrd);
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 321px) {
+  .search-body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
   .well {
-    flex-direction: column;
     padding: 1vh 15px 2vh;
     flex-grow: 1;
     flex-shrink: 1;
@@ -52,7 +85,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .well {
     padding: 0 1.5vw 1.5vh;
   }

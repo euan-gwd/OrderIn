@@ -17,17 +17,17 @@ class SearchByCuisine extends React.Component {
               <Route
                 key={cuisine}
                 render={props => (
-                  <button
+                  <a
                     onClick={() => {
                       let getSlug = require("speakingurl");
                       let cuisineName = getSlug(`${cuisine}`);
                       selectCuisine(`${cuisineName}`);
                       props.history.push(`/Cuisine/${cuisineName}`);
                     }}
-                    className="button is-link"
+                    className="search-links"
                   >
                     {cuisine}
-                  </button>
+                  </a>
                 )}
               />
             ))}
