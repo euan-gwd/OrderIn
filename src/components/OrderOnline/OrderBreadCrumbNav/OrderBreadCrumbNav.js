@@ -30,13 +30,13 @@ const OrderBreadCrumbNav = () => (
       )}
     />
     <i className="fa breadcrumb-icon fa-chevron-right" />
-    <span className="breadcrumb-link-active">
-      <i className="fa fa-icon fa-cutlery" />
+    <span className="has-text-danger">
+      <i className="fa fa-cutlery" />
       Order Food
     </span>
     <i className="fa breadcrumb-icon fa-chevron-right" />
-    <span className="breadcrumb-link-inactive">
-      <i className="fa fa-icon fa-shopping-cart" />
+    <span className="has-text-grey-light">
+      <i className="fa fa-shopping-cart" />
       CheckOut
     </span>
   </div>

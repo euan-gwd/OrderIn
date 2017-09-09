@@ -62,44 +62,42 @@ class OrderOnline extends React.Component {
     const orderNo = sessionStorage.getItem(`storeUniqueOrderNo`);
     return (
       <div className="StoreMenu">
-        <main className="container">
-          <OrderBreadCrumbNav />
-          <div className="store-menu">
-            <StoreInfo restaurant={restaurant} selectDeliveryOption={this.selectDeliveryOption} />
-            <div className="store-main-content">
-              <header className="menu-list-header">
-                <span className="is-size-4">Menu</span>
-                <span>
-                  <i className="fa fa-icon fa-leaf has-text-success" />
-                  Vegetarian
-                </span>
-              </header>
-              <ul className="outer">
-                {Object.keys(menuItems).map(menuItem => (
-                  <OrderMenuItem
-                    key={menuItem}
-                    index={menuItem}
-                    menuItem={menuItems[menuItem]}
-                    addToOrder={this.addToOrder}
-                  />
-                ))}
-              </ul>
-              <footer className="has-text-centered spacer has-text-danger">
-                <p className="icon is-large">
-                  <i className="fa fa-arrow-up" aria-hidden="true" />
-                </p>
-              </footer>
-            </div>
-            <OrderCart
-              restaurantName={restaurantName}
-              menuItems={menuItems}
-              orderOption={orderOption}
-              order={this.state.order}
-              orderNumber={orderNo}
-              removeFromOrder={this.removeFromOrder}
-            />
+        <OrderBreadCrumbNav />
+        <div className="store-menu">
+          <StoreInfo restaurant={restaurant} selectDeliveryOption={this.selectDeliveryOption} />
+          <div className="store-main-content">
+            <header className="menu-list-header">
+              <span className="is-size-4">Menu</span>
+              <span>
+                <i className="fa fa-icon fa-leaf has-text-success" />
+                Vegetarian
+              </span>
+            </header>
+            <ul className="outer">
+              {Object.keys(menuItems).map(menuItem => (
+                <OrderMenuItem
+                  key={menuItem}
+                  index={menuItem}
+                  menuItem={menuItems[menuItem]}
+                  addToOrder={this.addToOrder}
+                />
+              ))}
+            </ul>
+            <footer className="has-text-centered spacer has-text-danger">
+              <p className="icon is-large">
+                <i className="fa fa-arrow-up" aria-hidden="true" />
+              </p>
+            </footer>
           </div>
-        </main>
+          <OrderCart
+            restaurantName={restaurantName}
+            menuItems={menuItems}
+            orderOption={orderOption}
+            order={this.state.order}
+            orderNumber={orderNo}
+            removeFromOrder={this.removeFromOrder}
+          />
+        </div>
       </div>
     );
   }
