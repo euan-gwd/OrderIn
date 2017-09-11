@@ -5,7 +5,7 @@ import "./DeliveryAddressFormStyles.css";
 class DeliveryAddressFrom extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { inputIsValid: null, address: "" };
+    this.state = { inputIsValid: null, address: this.props.deliveryAddress };
   }
 
   handleInputChange = address => {

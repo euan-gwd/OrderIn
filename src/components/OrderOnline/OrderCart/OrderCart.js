@@ -87,7 +87,7 @@ class OrderCart extends React.Component {
             <p>
               <span className="has-text-danger has-text-bold">#{orderNumber}</span> from
               <span className="has-text-danger has-text-bold"> {restaurantName} </span>
-              for <span className="has-text-danger has-text-bold">{orderOption || "Pickup"}</span>
+              for <span className="has-text-danger has-text-bold">{orderOption}</span>
             </p>
           </div>
           <div className="cartitem-itemsList">

@@ -18,15 +18,13 @@ class OrderOnline extends React.Component {
           restaurantName: `${nameRef}`,
           restaurantsData: Stores,
           menuItems: {},
-          order: JSON.parse(ordersRef) || {},
-          orderOption: 0
+          order: JSON.parse(ordersRef) || {}
         })
       : (this.state = {
           restaurantName: this.props.restaurantName,
           restaurantsData: Stores,
           menuItems: {},
-          order: {},
-          orderOption: 0
+          order: {}
         });
   }
 
@@ -34,6 +32,18 @@ class OrderOnline extends React.Component {
     const { restaurantName, restaurantsData } = this.state;
     const storeData = restaurantsData.find(restaurant => restaurant.name === restaurantName);
     this.setState({ menuItems: storeData.menu });
+
+    const deliveryAddressRef = sessionStorage.getItem(`deliveryAddress`);
+    const selectedOrderOptionRef = sessionStorage.getItem(`selectedOrderOption`);
+    selectedOrderOptionRef
+      ? this.setState({
+          orderOption: `${selectedOrderOptionRef}`
+        })
+      : this.setState({ orderOption: this.props.orderOptions });
+
+    selectedOrderOptionRef
+      ? this.setState({ deliveryAddress: `${deliveryAddressRef}` })
+      : this.setState({ deliveryAddress: this.props.deliveryAddress });
   }
 
   addToOrder = key => {
@@ -57,14 +67,26 @@ class OrderOnline extends React.Component {
   }
 
   render() {
-    const { restaurantName, restaurantsData, orderOption, menuItems } = this.state;
+    const {
+      restaurantName,
+      restaurantsData,
+      orderOption,
+      menuItems,
+      deliveryAddress,
+      order
+    } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);
     const orderNo = sessionStorage.getItem(`storeUniqueOrderNo`);
     return (
       <div className="StoreMenu">
         <OrderBreadCrumbNav />
         <div className="store-menu">
-          <StoreInfo restaurant={restaurant} selectDeliveryOption={this.selectDeliveryOption} />
+          <StoreInfo
+            restaurant={restaurant}
+            selectDeliveryOption={this.selectDeliveryOption}
+            selectedOption={orderOption || "Pickup"}
+            deliveryAddress={deliveryAddress}
+          />
           <div className="store-main-content">
             <header className="menu-list-header">
               <span className="is-size-4">Menu</span>
@@ -93,7 +115,7 @@ class OrderOnline extends React.Component {
             restaurantName={restaurantName}
             menuItems={menuItems}
             orderOption={orderOption}
-            order={this.state.order}
+            order={order}
             orderNumber={orderNo}
             removeFromOrder={this.removeFromOrder}
           />

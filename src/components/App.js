@@ -25,8 +25,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchResult: {},
-      selectedOrderOption: {},
-      deliveryAddress: {},
+      selectedOrderOption: "Pickup",
+      deliveryAddress: "Pickup",
       selectedStore: {},
       selectedCity: {},
       selectedSuburb: {},
@@ -54,6 +54,8 @@ class App extends React.Component {
       cityName,
       cuisineName
     };
+    sessionStorage.setItem(`deliveryAddress`, searchTerm);
+    sessionStorage.setItem(`selectedOrderOption`, orderOption);
     this.setState({
       searchResult: searchItem,
       deliveryAddress: searchTerm,
@@ -205,7 +207,8 @@ class App extends React.Component {
             render={() => (
               <OrderOnline
                 restaurantName={this.state.selectedStore}
-                orderOptions={this.state.orderOptions}
+                orderOptions={this.state.orderOptions || "Pickup"}
+                deliveryAddress={this.state.deliveryAddress || "Pickup"}
               />
             )}
           />

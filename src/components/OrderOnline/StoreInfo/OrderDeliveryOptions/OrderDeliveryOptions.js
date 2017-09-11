@@ -3,7 +3,13 @@ import "./OrderDeliveryOptions.css";
 import DeliveryAddressForm from "./DeliveryAddressForm";
 
 class OrderDeliveryOptions extends React.Component {
-  state = { selectedOption: "Pickup", deliveryAddress: "Pickup" };
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedOption: this.props.selectedOption || "Pickup",
+      deliveryAddress: this.props.deliveryAddress || ""
+    };
+  }
 
   handleOptionChange = changeEvent => {
     this.setState({ selectedOption: changeEvent.target.value });
@@ -44,7 +50,10 @@ class OrderDeliveryOptions extends React.Component {
           </div>
         </div>
         {this.state.selectedOption === "Delivery" && (
-          <DeliveryAddressForm clientAddress={this.clientAddress} />
+          <DeliveryAddressForm
+            clientAddress={this.clientAddress}
+            deliveryAddress={this.state.deliveryAddress}
+          />
         )}
       </div>
     );
