@@ -25,6 +25,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchResult: {},
+      selectedOrderOption: {},
+      deliveryAddress: {},
       selectedStore: {},
       selectedCity: {},
       selectedSuburb: {},
@@ -42,16 +44,20 @@ class App extends React.Component {
     }
   }
 
-  searchSelected = searchTerm => {
-    const [street, suburbName, cityName] = searchTerm;
-    console.log(street);
+  searchSelected = (searchTerm, orderOption) => {
+    const searchResultArray = searchTerm.split(",").slice(1, 3);
+    const [suburbName, cityName] = searchResultArray;
     const cuisineName = undefined;
     const searchItem = {
       suburbName,
       cityName,
       cuisineName
     };
-    this.setState({ searchResult: searchItem });
+    this.setState({
+      searchResult: searchItem,
+      deliveryAddress: searchTerm,
+      selectedOrderOption: orderOption
+    });
   };
 
   selectStore = store => {
@@ -195,7 +201,12 @@ class App extends React.Component {
           />
           <Route
             path="/order-online/:storeId"
-            render={() => <OrderOnline restaurantName={this.state.selectedStore} />}
+            render={() => (
+              <OrderOnline
+                restaurantName={this.state.selectedStore}
+                orderOptions={this.state.orderOptions}
+              />
+            )}
           />
           <Route path="/register" render={() => <RegisterForm />} />
           <Route path="/signin" render={() => <SignInForm />} />

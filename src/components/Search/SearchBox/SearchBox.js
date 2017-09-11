@@ -11,7 +11,7 @@ class SearchBox extends React.Component {
       fireRedirect: false,
       inputIsValid: null,
       invalidInputSummitted: false,
-      orderOption: 0,
+      orderOption: "Pickup",
       address: ""
     };
   }
@@ -33,9 +33,9 @@ class SearchBox extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.state.inputIsValid) {
-      const searchItems = this.state.address.split(",");
-      this.props.searchSelected(searchItems);
+    const { address, orderOption, inputIsValid } = this.state;
+    if (inputIsValid) {
+      this.props.searchSelected(address, orderOption);
       this.setState({ fireRedirect: true });
     } else {
       this.setState({ invalidInputSummitted: true });

@@ -10,7 +10,7 @@ class SearchResultsList extends React.Component {
     return (
       <div className="results-body">
         <h2 className="has-text-centered has-text-white is-size-5-touch is-size-3-desktop">
-          {searchResult.cuisineName} Restaurants in {searchResult.suburbName}{" "}
+          {searchResult.cuisineName} Restaurants near {searchResult.suburbName}{" "}
           {searchResult.cityName}
         </h2>
         <div className="storelist-box">
