@@ -1,7 +1,6 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import PlacesAutocomplete from "react-places-autocomplete";
-// import "../search_styles.css";
 import "./SearchBoxStyles.css";
 // import { titleCase } from "../../helpers";
 import SearchDeliveryOptions from "./SearchDeliveryOptions/SearchDeliveryOptions";
@@ -20,10 +19,15 @@ class SearchBox extends React.Component {
     };
   }
 
-  handleInputChange = address => this.setState({ address });
+  handleInputChange = address => {
+    this.setState({ address });
+    this.state.address.length > 6
+      ? this.setState({ inputIsValid: true })
+      : this.setState({ inputIsValid: false });
+  };
 
   handleInputSelect = address => {
-    this.setState({ address });
+    this.setState({ address, inputIsValid: true });
   };
 
   selectDeliveryOption = selectedDeliveryOption => {
@@ -33,21 +37,22 @@ class SearchBox extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state.address);
-    console.log(this.state.address.length);
-    // if (this.state.searchTerm.length > 0) {
-    //   const searchItems = this.state.searchTerm.split(",");
-    //   let sanitizeitems = searchItems
-    //     .map(item => (item.startsWith(" ") ? item.trim() : item))
-    //     .map(item => titleCase(item));
-    //   this.props.searchSelected(sanitizeitems);
-    //   this.setState({ fireRedirect: true });
+    if (this.state.inputIsValid) {
+      const searchItems = this.state.address.split(",");
+      console.log(searchItems);
+    }
+    //   // let sanitizeitems = searchItems
+    //   //   .map(item => (item.startsWith(" ") ? item.trim() : item))
+    //   //   .map(item => titleCase(item));
+    //   // this.props.searchSelected(sanitizeitems);
+    //   // this.setState({ fireRedirect: true });
     // } else {
-    //   this.setState({ invalidSummit: true });
+    //   this.setState({ invalidSummit: false });
     // }
   };
 
   render() {
-    const { fireRedirect } = this.state;
+    const { fireRedirect, inputIsValid } = this.state;
 
     const inputStyles = {
       root: "field",
@@ -91,18 +96,19 @@ class SearchBox extends React.Component {
                 <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered has-text-grey">
                   Enter your street address & suburb:
                 </h4>
-                <div className="">
-                  <i className="fa fa-icon fa-search" />
-                  <PlacesAutocomplete
-                    autocompleteItem={AutocompleteItem}
-                    onSelect={this.handleInputSelect}
-                    classNames={inputStyles}
-                    inputProps={inputProps}
-                    options={options}
-                  />
-                </div>
+                <PlacesAutocomplete
+                  autocompleteItem={AutocompleteItem}
+                  onSelect={this.handleInputSelect}
+                  classNames={inputStyles}
+                  inputProps={inputProps}
+                  options={options}
+                />
                 <div className="field mt">
-                  <button type="submit" className="button is-danger is-fullwidth is-medium">
+                  <button
+                    type="submit"
+                    className="button is-danger is-fullwidth is-medium"
+                    disabled={!inputIsValid}
+                  >
                     Find Restaurants
                   </button>
                 </div>
