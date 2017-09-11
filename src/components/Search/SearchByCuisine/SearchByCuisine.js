@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
 
-class SearchByCuisine extends React.Component {
+class SearchByCuisine extends React.PureComponent {
   render() {
     const { selectCuisine, cuisinesData } = this.props;
     return (

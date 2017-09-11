@@ -1,7 +1,7 @@
 import React from "react";
 import "./formstyles.css";
 
-class SignInForm extends React.Component {
+class SignInForm extends React.PureComponent {
   render() {
     return (
       <div className="hero is-danger is-medium">

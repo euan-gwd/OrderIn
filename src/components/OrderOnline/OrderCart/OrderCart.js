@@ -4,7 +4,7 @@ import CSSTransitionGroup from "react-addons-css-transition-group";
 import { formatPrice } from "../../helpers";
 import "./OrderCartStyles.css";
 
-class OrderCart extends React.Component {
+class OrderCart extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { gratuityAmount: 0 };

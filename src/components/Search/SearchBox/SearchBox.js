@@ -4,7 +4,7 @@ import PlacesAutocomplete from "react-places-autocomplete";
 import "./SearchBoxStyles.css";
 import SearchDeliveryOptions from "./SearchDeliveryOptions/SearchDeliveryOptions";
 
-class SearchBox extends React.Component {
+class SearchBox extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {

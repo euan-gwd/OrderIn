@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import "../search_styles.css";
 
-class SearchByCity extends React.Component {
+class SearchByCity extends React.PureComponent {
   render() {
     const { selectCity, citiesData } = this.props;
     return (
