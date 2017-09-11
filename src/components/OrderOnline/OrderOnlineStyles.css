@@ -1,6 +1,12 @@
 .StoreMenu {
-  padding-top: 0.5rem;
+  padding: 0.5rem 24px;
   background-color: white;
+}
+
+@media screen and (max-width: 361px) {
+  .StoreMenu {
+    padding: 0.5rem 0.25rem;
+  }
 }
 
 .store-menu {

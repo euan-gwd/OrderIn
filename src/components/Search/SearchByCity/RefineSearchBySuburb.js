@@ -33,7 +33,7 @@ class RefineSearchBySuburb extends React.Component {
         </div>
         <div className="well">
           <p className="has-text-centered is-size-5-touch is-size-4-desktop">
-            <i className="fa fa-map-o" />
+            <i className="fa fa-icon fa-map-o" />
             Refine Search by Suburb
           </p>
           <div className="inner-grid">

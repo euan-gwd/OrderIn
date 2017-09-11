@@ -1,18 +1,33 @@
-.breadcrumb-item-centered {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-around;
-  align-content: center;
-}
-
 .navbox {
-  padding: 1.25rem;
+  padding: 1rem;
   border: 1px solid rgba(10, 10, 10, 0.1);
   border-radius: 5px;
   margin-bottom: 1.25rem;
 }
 
-.fa-icon {
-  vertical-align: text-top;
-  padding-right: 0.5rem;
+.breadcrumb-item-centered {
+  display: grid;
+  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr
+    minmax(50px, 1fr);
+  font-size: 0.75rem;
+  align-items: center;
+}
+
+.plh {
+  padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  .breadcrumb-item-centered {
+    font-size: 0.5rem;
+  }
+
+  .navbox {
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+  }
+
+  .plh {
+    padding-left: 0;
+  }
 }

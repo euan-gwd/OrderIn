@@ -10,7 +10,7 @@ class SearchCuisineResultsContainer extends React.Component {
     return (
       <section className="search-body">
         <div className="breadcrumb-box has-text-centered">
-          <span className="breadcrumb-link-inactive">Cuisine</span>
+          <span className="breadcrumb-nolink-inactive">Cuisine</span>
           <i className="fa breadcrumb-icon fa-chevron-right" />
           <Route
             render={props => (

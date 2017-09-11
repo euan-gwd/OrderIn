@@ -43,7 +43,7 @@ class RefineSearchByCuisine extends React.Component {
         </div>
         <div className="well">
           <p className="has-text-centered is-size-5-touch is-size-4-desktop">
-            <i className="fa fa-cutlery" />
+            <i className="fa fa-icon fa-cutlery" />
             Refine Search by Cuisine
           </p>
           <div className="inner-grid">

@@ -74,8 +74,3 @@ input[type="radio"].pickup:focus ~ label {
   align-items: center;
   padding-bottom: 1vh;
 }
-
-.deliveryAddress {
-  border-top: 1px dashed var(--border-color);
-  padding: 0.5vh;
-}
