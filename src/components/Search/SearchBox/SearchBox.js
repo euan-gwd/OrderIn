@@ -61,7 +61,7 @@ class SearchBox extends React.Component {
 
     const options = {
       componentRestrictions: { country: "za" },
-      types: ["address"]
+      types: ["geocode"]
     };
 
     const inputProps = {
