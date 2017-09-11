@@ -46,8 +46,9 @@ class App extends React.Component {
 
   searchSelected = (searchTerm, orderOption) => {
     const searchResultArray = searchTerm.split(",").slice(1, 3);
-    const [suburbName, cityName] = searchResultArray;
-    const cuisineName = undefined;
+    let sanitizeData = searchResultArray.map(item => (item.startsWith(" ") ? item.trim() : item));
+    let cuisineName = undefined;
+    const [suburbName, cityName] = sanitizeData;
     const searchItem = {
       suburbName,
       cityName,
