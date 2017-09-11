@@ -2,18 +2,15 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import PlacesAutocomplete from "react-places-autocomplete";
 import "./SearchBoxStyles.css";
-// import { titleCase } from "../../helpers";
 import SearchDeliveryOptions from "./SearchDeliveryOptions/SearchDeliveryOptions";
 
 class SearchBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: 0,
       fireRedirect: false,
-      inputIsValid: false,
-      touched: false,
-      invalidSummit: false,
+      inputIsValid: null,
+      invalidInputSummitted: false,
       orderOption: 0,
       address: ""
     };
@@ -30,29 +27,23 @@ class SearchBox extends React.Component {
     this.setState({ address, inputIsValid: true });
   };
 
-  selectDeliveryOption = selectedDeliveryOption => {
+  handleDeliveryOption = selectedDeliveryOption => {
     this.setState({ orderOption: selectedDeliveryOption });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.state.address);
     if (this.state.inputIsValid) {
       const searchItems = this.state.address.split(",");
-      console.log(searchItems);
+      this.props.searchSelected(searchItems);
+      this.setState({ fireRedirect: true });
+    } else {
+      this.setState({ invalidInputSummitted: true });
     }
-    //   // let sanitizeitems = searchItems
-    //   //   .map(item => (item.startsWith(" ") ? item.trim() : item))
-    //   //   .map(item => titleCase(item));
-    //   // this.props.searchSelected(sanitizeitems);
-    //   // this.setState({ fireRedirect: true });
-    // } else {
-    //   this.setState({ invalidSummit: false });
-    // }
   };
 
   render() {
-    const { fireRedirect, inputIsValid } = this.state;
+    const { fireRedirect, inputIsValid, invalidInputSummitted } = this.state;
 
     const inputStyles = {
       root: "field",
@@ -69,7 +60,8 @@ class SearchBox extends React.Component {
     );
 
     const options = {
-      componentRestrictions: { country: "za" }
+      componentRestrictions: { country: "za" },
+      types: ["address"]
     };
 
     const inputProps = {
@@ -92,7 +84,7 @@ class SearchBox extends React.Component {
                 className="column is-half box"
                 onSubmit={this.handleSubmit}
               >
-                <SearchDeliveryOptions selectDeliveryOption={this.selectDeliveryOption} />
+                <SearchDeliveryOptions selectDeliveryOption={this.handleDeliveryOption} />
                 <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered has-text-grey">
                   Enter your street address & suburb:
                 </h4>
@@ -103,6 +95,11 @@ class SearchBox extends React.Component {
                   inputProps={inputProps}
                   options={options}
                 />
+                {invalidInputSummitted && (
+                  <span className="submit-error has-text-warning">
+                    Please supply correctly formatted address.
+                  </span>
+                )}
                 <div className="field mt">
                   <button
                     type="submit"
