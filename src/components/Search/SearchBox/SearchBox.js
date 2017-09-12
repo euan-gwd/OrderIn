@@ -4,7 +4,7 @@ import PlacesAutocomplete from "react-places-autocomplete";
 import "./SearchBoxStyles.css";
 import SearchDeliveryOptions from "./SearchDeliveryOptions/SearchDeliveryOptions";
 
-class SearchBox extends React.Component {
+class SearchBox extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -85,7 +85,7 @@ class SearchBox extends React.Component {
                 onSubmit={this.handleSubmit}
               >
                 <SearchDeliveryOptions selectDeliveryOption={this.handleDeliveryOption} />
-                <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered has-text-grey">
+                <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered">
                   Enter your street address & suburb:
                 </h4>
                 <PlacesAutocomplete

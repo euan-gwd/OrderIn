@@ -3,13 +3,13 @@ import Store from "./Store";
 import "./SearchResultsStyles.css";
 import { Stores } from "../../../mockAPI/sample-stores";
 
-class SearchResultsList extends React.Component {
+class SearchResultsList extends React.PureComponent {
   render() {
     const { searchResult, selectStore } = this.props;
     const restaurants = Stores;
     return (
       <div className="results-body">
-        <h2 className="has-text-centered has-text-white is-size-5-touch is-size-3-desktop">
+        <h2 className="top-spacer has-text-centered has-text-white is-size-5-touch is-size-3-desktop">
           {searchResult.cuisineName} Restaurants near {searchResult.suburbName}{" "}
           {searchResult.cityName}
         </h2>

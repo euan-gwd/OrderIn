@@ -1,6 +1,6 @@
 .search-body {
   margin: 0 auto;
-  padding: 15px 15px;
+  padding: 5px 10px 5px 10px;
   display: block;
   background-color: var(--body-bkgrd);
   color: #fff;
@@ -9,26 +9,32 @@
 .well {
   display: block;
   background-color: var(--header-bkgrd);
-  border-radius: 5px;
-  padding: 0;
+  border-radius: 3px;
+  padding: 0 0.125rem;
   box-shadow: inset 0 2px 3px rgba(10, 10, 10, 0.1);
+  height: 50vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 .inner-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-gap: 1.5vh 0;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-gap: 1.5vh 1vw;
   font-size: 1rem;
 }
 
 .search-links {
   text-align: justify;
   padding-left: 1vw;
-  font-weight: normal;
-  word-spacing: -25%;
+  font-weight: bold;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  text-decoration: none;
   background-color: transparent;
   border-color: transparent;
-  color: white;
+  color: #d8d8d8;
 }
 
 .search-links:hover,
@@ -36,21 +42,21 @@
 .search-links:active {
   background-color: transparent;
   color: white;
-  font-weight: bold;
   text-decoration: underline;
 }
 
 .breadcrumb-box {
+  display: grid;
+  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr
+    minmax(50px, 1fr);
+  grid-auto-flow: column;
+  align-items: center;
+  padding: 0.25rem 0;
+  margin-bottom: 1rem;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: #4a4a4a;
-  display: grid;
-  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr
-    minmax(50px, 1fr);
-  align-items: center;
-  padding: 0.25rem 0;
-  margin-bottom: 1rem;
 }
 
 .fa-icon {
@@ -95,6 +101,7 @@
 
 @media screen and (min-width: 481px) {
   .search-body {
+    padding: 15px 15px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -114,12 +121,14 @@
     padding: 1vh 15px 2vh;
     flex-grow: 1;
     flex-shrink: 1;
+    height: auto;
+    overflow-y: none;
   }
 
   .inner-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
-    grid-gap: 0.125rem 0.5rem;
+    grid-gap: 0.25rem 0.5rem;
     font-size: 1rem;
   }
 
@@ -137,12 +146,14 @@
 @media screen and (min-width: 769px) {
   .well {
     padding: 0 1.5vw 1.5vh;
+    height: auto;
+    overflow-y: none;
   }
 
   .inner-grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(150px, 1fr));
-    grid-gap: 0.125rem 0.5rem;
+    grid-gap: 0.5rem;
   }
 
   .searchBox-header {
@@ -164,7 +175,7 @@
 }
 
 .mb {
-  margin-bottom: 3rem;
+  margin-bottom: 4vh;
 }
 
 @media screen and (min-width: 1200px) {

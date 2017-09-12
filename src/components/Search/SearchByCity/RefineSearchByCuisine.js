@@ -4,7 +4,7 @@ import "../search_styles.css";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 import { unSlug } from "../../helpers";
 
-class RefineSearchByCuisine extends React.Component {
+class RefineSearchByCuisine extends React.PureComponent {
   render() {
     const { cuisinesData, match, selectCuisine, cityName, selectStore } = this.props;
     const suburbName = unSlug(match.params.suburbId);
@@ -12,7 +12,7 @@ class RefineSearchByCuisine extends React.Component {
 
     return (
       <section className="search-body">
-        <div className="breadcrumb-box has-text-centered">
+        <div className="breadcrumb-box has-text-centered is-hidden-mobile">
           <Route
             render={props => (
               <a

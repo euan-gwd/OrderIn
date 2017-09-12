@@ -3,13 +3,13 @@ import "../search_styles.css";
 import { Route } from "react-router-dom";
 import SearchResultsList from "../SearchResults/SearchResultsList";
 
-class SearchCuisineResultsContainer extends React.Component {
+class SearchCuisineResultsContainer extends React.PureComponent {
   render() {
     const { cityName, suburbName, cuisineName, selectStore } = this.props;
     const searchResult = { suburbName, cityName, cuisineName };
     return (
-      <section className="search-body">
-        <div className="breadcrumb-box has-text-centered">
+      <section className="search-body mb">
+        <div className="breadcrumb-box has-text-centered is-hidden-mobile">
           <span className="breadcrumb-nolink-inactive">Cuisine</span>
           <i className="fa breadcrumb-icon fa-chevron-right" />
           <Route

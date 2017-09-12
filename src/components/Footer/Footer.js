@@ -46,7 +46,7 @@ const Footer = () => {
           <div className="contact-wrapper">
             <div className="contact-item">
               <a className="has-text-danger">
-                <span className="icon is-left has-text-grey-light">
+                <span className="icon is-left has-text-grey">
                   <i className="fa fa-envelope" />
                 </span>
                 customerservice@orderin.co.za
@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
             <div className="contact-item">
               <a className="has-text-danger">
-                <span className="icon is-left has-text-grey-light">
+                <span className="icon is-left has-text-grey">
                   <i className="fa fa-phone-square" />
                 </span>
                 +27 21 201 1155
