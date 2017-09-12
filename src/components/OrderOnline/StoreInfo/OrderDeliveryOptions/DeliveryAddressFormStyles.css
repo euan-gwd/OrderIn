@@ -46,6 +46,9 @@
   border-right: 1px solid#22c65b;
   border-top: 1px solid #e6e6e6;
   border-radius: 0 0 2px 2px;
+  height: 20vh;
+  z-index: 1;
+  overflow-y: scroll;
 }
 
 .delivery-form-suggestion-item {

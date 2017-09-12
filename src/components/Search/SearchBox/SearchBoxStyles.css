@@ -41,6 +41,9 @@
   border-right: 1px solid#9a1c00;
   border-top: 1px solid #e6e6e6;
   border-radius: 0 0 2px 2px;
+  height: 20vh;
+  z-index: 1;
+  overflow-y: scroll;
 }
 
 .search-suggestion-item {
