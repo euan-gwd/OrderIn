@@ -8,7 +8,7 @@ class SearchCuisineResultsContainer extends React.PureComponent {
     const { cityName, suburbName, cuisineName, selectStore } = this.props;
     const searchResult = { suburbName, cityName, cuisineName };
     return (
-      <section className="search-body">
+      <section className="search-body mb">
         <div className="breadcrumb-box has-text-centered is-hidden-mobile">
           <span className="breadcrumb-nolink-inactive">Cuisine</span>
           <i className="fa breadcrumb-icon fa-chevron-right" />

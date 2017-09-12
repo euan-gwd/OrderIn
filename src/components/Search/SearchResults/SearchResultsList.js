@@ -9,7 +9,7 @@ class SearchResultsList extends React.PureComponent {
     const restaurants = Stores;
     return (
       <div className="results-body">
-        <h2 className="has-text-centered has-text-white is-size-5-touch is-size-3-desktop">
+        <h2 className="top-spacer has-text-centered has-text-white is-size-5-touch is-size-3-desktop">
           {searchResult.cuisineName} Restaurants near {searchResult.suburbName}{" "}
           {searchResult.cityName}
         </h2>
