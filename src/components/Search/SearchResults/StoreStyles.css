@@ -1,10 +1,10 @@
 .storelist-wrapper {
   display: grid;
-  grid-template-columns: 1fr 9fr 1fr 1fr;
-  grid-template-areas: "imgleft maincontent maincontent actionsright"
-    "imgleft maincontent maincontent actionsright";
+  grid-template-columns: minmax(19px, 64px) minmax(100px, 2fr) minmax(50px, 1fr);
+  grid-column-gap: 0.25rem;
+  grid-template-rows: minmax(20px, auto);
   border-bottom: 1px solid var(--border-color);
-  padding: 0.5em;
+  padding: 0.25em;
   align-items: center;
 }
 
@@ -14,12 +14,57 @@
 
 .storelist-img {
   grid-area: imgleft;
+  object-fit: cover;
+  grid-column: 1/ span 1;
+  grid-row: 1 / span 3;
 }
 
-.storelist-content {
-  grid-area: maincontent;
+.storelist-name {
+  grid-column: 2 /span 2;
+  grid-row: 1;
 }
 
-.storelist-actions {
-  grid-area: actionsright;
+.storelist-address {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}
+
+.store-button {
+  grid-column: 2 / span 2;
+  grid-row: 3;
+  height: 2.2em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  align-self: center;
+  font-size: 1rem;
+  user-select: none;
+  background-color: transparent;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.store-button:hover {
+  background-color: var(--btn-bkgrd);
+  border-color: var(--btn-bkgrd);
+  color: #fff;
+}
+
+@media screen and (min-width: 481px) {
+  .storelist-wrapper {
+    display: grid;
+    grid-template-areas: "imgleft maincontent maincontent actionsright"
+      "imgleft maincontent maincontent actionsright";
+  }
+  .store-button {
+    padding-bottom: calc(0.375em - 1px);
+    padding-left: calc(0.625em - 1px);
+    padding-right: calc(0.625em - 1px);
+    padding-top: calc(0.375em - 1px);
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
 }

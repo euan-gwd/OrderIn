@@ -23,21 +23,21 @@ const Footer = () => {
           <div className="invite-wrapper">
             <div className="invite-item">
               <p className="has-text-bold has-text-centered">Sign Up your Company</p>
-              <p className="has-text-grey-light has-text-centered">
+              <p className="has-text-grey has-text-centered">
                 With a corporate account, employees can order food quickly and easily.
               </p>
               <button className="button is-danger">&#9656; Sign Up</button>
             </div>
             <div className="invite-item">
               <p className="has-text-bold has-text-centered">Add your restaurant to OrderIn!</p>
-              <p className="has-text-grey-light has-text-centered">
+              <p className="has-text-grey has-text-centered">
                 Sign up with South Africa’s Premier Online food ordering service.
               </p>
               <button className="button is-danger">&#9656; Sign Up</button>
             </div>
             <div className="invite-item">
               <p className="has-text-bold has-text-centered">Join Our Team</p>
-              <p className="has-text-grey-light has-text-centered">
+              <p className="has-text-grey has-text-centered">
                 We are looking for dynamic individuals to be part of our growth.
               </p>
               <button className="button is-danger">&#9656; View Jobs</button>
