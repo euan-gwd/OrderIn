@@ -15,7 +15,7 @@ class RefineSearchBySuburb extends React.PureComponent {
 
     return (
       <section className="search-body">
-        <div className="breadcrumb-box has-text-centered">
+        <div className="breadcrumb-box has-text-centered is-hidden-mobile">
           <Route
             render={props => (
               <a
