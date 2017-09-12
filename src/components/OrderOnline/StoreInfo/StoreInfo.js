@@ -6,23 +6,17 @@ const StoreInfo = ({ restaurant, selectDeliveryOption, selectedOption, deliveryA
   return (
     <div className="store-header">
       <div className="storeinfo-wrapper">
-        <div className="storeinfo-img">
-          <img src={restaurant.image} alt="logo" className="image is-64x64" />
-        </div>
-        <div className="storeinfo-content">
-          <h3 className="is-size-4 has-text-grey-dark">
-            {restaurant.name}
-            <span className="restaurant-tagline has-text-grey-light">{restaurant.tagline}</span>
-          </h3>
-          <span className="has-text-grey-light">
-            <i className="fa fa-icon fa-map-marker" />
-            {restaurant.address}
-          </span>
-          <span className="has-text-grey-light">
-            <i className="fa icon-padding fa-phone" />
-            {restaurant.tel}
-          </span>
-        </div>
+        <img src={restaurant.image} alt="logo" className="storeinfo-img" />
+        <div className="storeinfo-name has-text-bold has-text-grey-dark">{restaurant.name}</div>
+        <span className="storeinfo-tagline has-text-grey-light">{restaurant.tagline}</span>
+        <span className="storeinfo-address has-text-grey-light">
+          <i className="fa fa-icon fa-map-marker" />
+          {restaurant.address}
+        </span>
+        <span className="storeinfo-phone has-text-grey-light">
+          <i className="fa fa-icon fa-phone" />
+          {restaurant.tel}
+        </span>
       </div>
       <OrderDeliveryOptions
         selectDeliveryOption={selectDeliveryOption}
