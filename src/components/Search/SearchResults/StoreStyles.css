@@ -54,17 +54,40 @@
 }
 
 @media screen and (min-width: 481px) {
-  .storelist-wrapper {
-    display: grid;
-    grid-template-areas: "imgleft maincontent maincontent actionsright"
-      "imgleft maincontent maincontent actionsright";
+  .storelist-img {
+    grid-area: imgleft;
+    object-fit: cover;
+    grid-column: 1/ span 1;
+    grid-row: 1 / span 3;
   }
+
+  .storelist-name {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100vw;
+  }
+
+  .storelist-address {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
   .store-button {
-    padding-bottom: calc(0.375em - 1px);
-    padding-left: calc(0.625em - 1px);
-    padding-right: calc(0.625em - 1px);
-    padding-top: calc(0.375em - 1px);
-    padding-left: 0.75em;
-    padding-right: 0.75em;
+    grid-column: 3;
+    grid-row: 1 / span 3;
+    height: 2.2em;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: none;
+    justify-self: end;
+    align-self: center;
+    font-size: 1rem;
+    user-select: none;
+    background-color: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
   }
 }
