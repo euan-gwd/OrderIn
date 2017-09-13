@@ -7,7 +7,8 @@ class OrderDeliveryOptions extends React.PureComponent {
     super(props);
     this.state = {
       selectedOption: this.props.selectedOption || "Pickup",
-      deliveryAddress: this.props.deliveryAddress || ""
+      deliveryAddress: this.props.deliveryAddress || "",
+      confirmed: false
     };
   }
 
@@ -18,10 +19,12 @@ class OrderDeliveryOptions extends React.PureComponent {
 
   clientAddress = item => {
     this.setState({ deliveryAddress: item });
+    this.setState({ confirmed: true });
     sessionStorage.setItem(`deliveryAddress`, item);
   };
 
   render() {
+    const { selectedOption, confirmed } = this.state;
     return (
       <div className="store-delivery">
         <div className="options-container">
@@ -30,9 +33,9 @@ class OrderDeliveryOptions extends React.PureComponent {
               id="delivery"
               name="question"
               type="radio"
-              className="delivery"
+              className="order-delivery"
               value="Delivery"
-              checked={this.state.selectedOption === "Delivery"}
+              checked={selectedOption === "Delivery"}
               onChange={this.handleOptionChange}
             />
             <label htmlFor="delivery">Delivery</label>
@@ -42,15 +45,16 @@ class OrderDeliveryOptions extends React.PureComponent {
               id="pickup"
               name="question"
               type="radio"
-              className="pickup"
+              className="order-pickup"
               value="Pickup"
               onChange={this.handleOptionChange}
-              checked={this.state.selectedOption === "Pickup"}
+              checked={selectedOption === "Pickup"}
             />
             <label htmlFor="pickup">Pickup</label>
           </div>
         </div>
-        {this.state.selectedOption === "Delivery" && (
+        {selectedOption === "Delivery" &&
+        !confirmed && (
           <DeliveryAddressForm clientAddress={this.clientAddress} deliveryAddress={this.state.deliveryAddress} />
         )}
       </div>

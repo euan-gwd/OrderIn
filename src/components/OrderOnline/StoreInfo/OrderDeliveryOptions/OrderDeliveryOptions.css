@@ -1,4 +1,4 @@
-input[type="radio"].delivery {
+input[type="radio"].order-delivery {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -9,7 +9,7 @@ input[type="radio"].delivery {
   width: 1px;
 }
 
-input[type="radio"].delivery ~ label:before {
+input[type="radio"].order-delivery ~ label:before {
   font-family: FontAwesome;
   display: inline-block;
   content: "\f0d1";
@@ -20,20 +20,20 @@ input[type="radio"].delivery ~ label:before {
   cursor: pointer;
 }
 
-input[type="radio"].delivery:checked ~ label:before {
+input[type="radio"].order-delivery:checked ~ label:before {
   content: "\f00c";
   font-size: 1.5em;
   color: var(--radio-btn-color);
   letter-spacing: 5px;
 }
 
-input[type="radio"].delivery:focus ~ label:before,
-input[type="radio"].delivery:focus ~ label {
+input[type="radio"].order-delivery:focus ~ label:before,
+input[type="radio"].order-delivery:focus ~ label {
   color: var(--radio-btn-color);
   cursor: pointer;
 }
 
-input[type="radio"].pickup {
+input[type="radio"].order-pickup {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -44,7 +44,7 @@ input[type="radio"].pickup {
   width: 1px;
 }
 
-input[type="radio"].pickup ~ label:before {
+input[type="radio"].order-pickup ~ label:before {
   font-family: FontAwesome;
   display: inline-block;
   content: "\f290";
@@ -55,15 +55,15 @@ input[type="radio"].pickup ~ label:before {
   cursor: pointer;
 }
 
-input[type="radio"].pickup:checked ~ label:before {
+input[type="radio"].order-pickup:checked ~ label:before {
   content: "\f00c";
   font-size: 1.5em;
   color: var(--radio-btn-color);
   letter-spacing: 5px;
 }
 
-input[type="radio"].pickup:focus ~ label:before,
-input[type="radio"].pickup:focus ~ label {
+input[type="radio"].order-pickup:focus ~ label:before,
+input[type="radio"].order-pickup:focus ~ label {
   color: var(--radio-btn-color);
   cursor: pointer;
 }
