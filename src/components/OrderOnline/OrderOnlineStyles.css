@@ -1,5 +1,5 @@
 .StoreMenu {
-  padding: 0.5rem 15px;
+  padding: 0.5rem 10px;
   background-color: white;
 }
 
@@ -7,9 +7,13 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(160px, auto) 1fr;
-  grid-template-areas: "storeheader storeheader" "storedelivery storedelivery"
-    "storemenulist storemenulist" "storeorderlist storeorderlist";
-  grid-gap: 0.5rem;
+  grid-template-areas: "storeheader storeheader" "storedelivery storedelivery" "storemenulist storemenulist"
+    "storeorderlist storeorderlist";
+  grid-gap: 0.25rem;
+}
+
+.store-header {
+  grid-area: storeheader;
 }
 
 .store-delivery {
@@ -29,7 +33,7 @@
 }
 
 .outer {
-  max-height: 600px;
+  max-height: 480px;
   overflow: scroll;
 }
 
@@ -40,10 +44,15 @@
 .menu-list-header {
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
-  padding: 0.5rem 0.25rem;
+  padding: 0.25rem 0.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.outer {
+  max-height: 600px;
+  overflow: scroll;
 }
 
 @media screen and (min-width: 481px) {
@@ -55,8 +64,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: minmax(160px, auto) 1fr;
-    grid-template-areas: "storeheader storeorderlist" "storedelivery storeorderlist"
-      "storemenulist storeorderlist";
+    grid-template-areas: "storeheader storeorderlist" "storedelivery storeorderlist" "storemenulist storeorderlist";
     grid-gap: 0.5rem;
   }
 
@@ -81,7 +89,7 @@
   }
 
   .outer {
-    max-height: 600px;
+    max-height: 720px;
     overflow: scroll;
   }
 

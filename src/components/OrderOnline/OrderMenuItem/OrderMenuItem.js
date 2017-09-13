@@ -19,19 +19,13 @@ class OrderMenuItem extends React.PureComponent {
     );
     return (
       <li className="item-grid">
-        <div className="item-name has-text-grey-darker">{menuItem.name}</div>
+        <div className="item-name has-text-bold">{menuItem.name}</div>
         <div className="item-desc has-text-grey">{menuItem.description}</div>
-        <div className="item-veg">
-          {menuItem.vegetarian && <i className="fa fa-icon fa-leaf has-text-success" />}
-        </div>
+        <div className="item-veg">{menuItem.vegetarian && <i className="fa fa-icon fa-leaf has-text-success" />}</div>
         <div className="item-actions">
           <div className="item-group">
             <span className="item-price">{formatPrice(menuItem.price)}</span>
-            <button
-              className="button is-danger is-outlined"
-              disabled={!isAvailable}
-              onClick={() => addToOrder(index)}
-            >
+            <button className="button is-danger is-outlined" disabled={!isAvailable} onClick={() => addToOrder(index)}>
               {buttonText}
             </button>
           </div>

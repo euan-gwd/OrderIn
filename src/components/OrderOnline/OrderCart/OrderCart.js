@@ -84,11 +84,9 @@ class OrderCart extends React.PureComponent {
             My Order
           </div>
           <div className="cart-orderNo">
-            <p>
-              <span className="has-text-danger has-text-bold">#{orderNumber}</span> from
-              <span className="has-text-danger has-text-bold"> {restaurantName} </span>
-              for <span className="has-text-danger has-text-bold">{orderOption}</span>
-            </p>
+            <span className="has-text-danger has-text-bold">#{orderNumber}</span> from
+            <span className="has-text-danger has-text-bold"> {restaurantName} </span>
+            for <span className="has-text-danger has-text-bold">{orderOption}</span>
           </div>
           <div className="cartitem-itemsList">
             <CSSTransitionGroup
@@ -100,9 +98,7 @@ class OrderCart extends React.PureComponent {
               {orderIds.map(this.renderOrder)}
             </CSSTransitionGroup>
             {orderIds.length === 0 && (
-              <div className="order-no-line-items has-text-grey-lighter">
-                No items added yet. &#9785;
-              </div>
+              <div className="order-no-line-items has-text-grey-lighter">No items added yet. &#9785;</div>
             )}
           </div>
           <div className="cart-totals-wrapper">

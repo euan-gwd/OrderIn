@@ -67,14 +67,7 @@ class OrderOnline extends React.PureComponent {
   }
 
   render() {
-    const {
-      restaurantName,
-      restaurantsData,
-      orderOption,
-      menuItems,
-      deliveryAddress,
-      order
-    } = this.state;
+    const { restaurantName, restaurantsData, orderOption, menuItems, deliveryAddress, order } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);
     const orderNo = sessionStorage.getItem(`storeUniqueOrderNo`);
     return (
@@ -89,7 +82,7 @@ class OrderOnline extends React.PureComponent {
           />
           <div className="store-main-content">
             <header className="menu-list-header">
-              <span className="is-size-4">Menu</span>
+              <span className="is-size-5 has-text-bold">Menu</span>
               <span>
                 <i className="fa fa-icon fa-leaf has-text-success" />
                 Vegetarian

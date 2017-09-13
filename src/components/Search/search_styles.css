@@ -10,7 +10,7 @@
   display: block;
   background-color: var(--header-bkgrd);
   border-radius: 3px;
-  padding: 0 0.125rem;
+  padding: 0.25vh 0.125rem;
   box-shadow: inset 0 2px 3px rgba(10, 10, 10, 0.1);
   height: 50vh;
   overflow-y: scroll;
@@ -47,8 +47,7 @@
 
 .breadcrumb-box {
   display: grid;
-  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr
-    minmax(50px, 1fr);
+  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr);
   grid-auto-flow: column;
   align-items: center;
   padding: 0.25rem 0;
@@ -60,8 +59,8 @@
 }
 
 .fa-icon {
-  vertical-align: text-top;
-  padding-right: 0.5rem;
+  vertical-align: baseline;
+  padding-right: 0.25rem;
 }
 
 .breadcrumb-icon {
