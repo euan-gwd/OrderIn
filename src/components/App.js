@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header/Header";
 import { RegisterForm, SignInForm } from "./UserManagement";
-import { OrderCart, OrderCartCheckOut } from "./OrderOnline/OrderCart";
+import { OrderCartMobile, OrderCartCheckOut } from "./OrderOnline/OrderCart";
 import Footer from "./Footer/Footer";
 import {
   RefineSearchBySuburb,
@@ -205,7 +205,15 @@ class App extends React.PureComponent {
               />
             )}
           />
-          <Route path="/cart" render={() => <OrderCart />} />
+          <Route
+            path="/cart"
+            render={() => (
+              <OrderCartMobile
+                restaurantName={this.state.selectedStore}
+                orderOptions={this.state.orderOptions || "Pickup"}
+              />
+            )}
+          />
           <Route path="/register" render={() => <RegisterForm />} />
           <Route path="/signin" render={() => <SignInForm />} />
           <Route component={NotFound} />

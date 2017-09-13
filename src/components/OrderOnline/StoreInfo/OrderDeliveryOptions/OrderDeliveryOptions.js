@@ -18,6 +18,7 @@ class OrderDeliveryOptions extends React.PureComponent {
 
   clientAddress = item => {
     this.setState({ deliveryAddress: item });
+    sessionStorage.setItem(`deliveryAddress`, item);
   };
 
   render() {
@@ -50,10 +51,7 @@ class OrderDeliveryOptions extends React.PureComponent {
           </div>
         </div>
         {this.state.selectedOption === "Delivery" && (
-          <DeliveryAddressForm
-            clientAddress={this.clientAddress}
-            deliveryAddress={this.state.deliveryAddress}
-          />
+          <DeliveryAddressForm clientAddress={this.clientAddress} deliveryAddress={this.state.deliveryAddress} />
         )}
       </div>
     );

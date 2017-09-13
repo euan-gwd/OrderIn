@@ -37,13 +37,13 @@ class OrderOnline extends React.PureComponent {
     const selectedOrderOptionRef = sessionStorage.getItem(`selectedOrderOption`);
     selectedOrderOptionRef
       ? this.setState({
-          orderOption: `${selectedOrderOptionRef}`
+          orderOption: `${selectedOrderOptionRef}`,
+          deliveryAddress: `${deliveryAddressRef}`
         })
-      : this.setState({ orderOption: this.props.orderOptions });
-
-    selectedOrderOptionRef
-      ? this.setState({ deliveryAddress: `${deliveryAddressRef}` })
-      : this.setState({ deliveryAddress: this.props.deliveryAddress });
+      : this.setState({
+          orderOption: this.props.orderOptions,
+          deliveryAddress: this.props.deliveryAddress
+        });
   }
 
   addToOrder = key => {
@@ -64,6 +64,8 @@ class OrderOnline extends React.PureComponent {
 
   componentWillUpdate(nextProps, nextState) {
     sessionStorage.setItem(`CurrentOrder`, JSON.stringify(nextState.order));
+    sessionStorage.setItem(`menuItems`, JSON.stringify(nextState.menuItems));
+    sessionStorage.setItem(`orderOpt`, nextState.orderOption);
   }
 
   render() {

@@ -161,6 +161,10 @@
   padding: 0 2rem;
 }
 
+.back-link {
+  padding: 5vw 1vw;
+}
+
 @media screen and (min-width: 481px) {
   .cart {
     border: 1px solid var(--border-color);
