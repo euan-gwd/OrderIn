@@ -17,11 +17,12 @@ const OrderCartCheckOut = ({ match, history }) => {
             </span>
           </p>
           <button className="button is-danger has-text-white" aria-label="close" onClick={back}>
-            close
+            &#10007;close
           </button>
         </header>
         <section className="modal-card-body">
-          <h1 className="title has-text-centered">Hire Me</h1>
+          <p className="title has-text-centered">Hire Me</p>
+          <p className="has-text-centered"> If you like what you see, please get in touch</p>
           <div className="hire-icons-wrapper">
             <a href="https://github.com/euan-gwd" className="hire-icon">
               <i className="fa fa-github-square fa-3x" />
