@@ -2,27 +2,21 @@
   display: grid;
   background-color: var(--header-bkgrd);
   min-height: 3.25rem;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "menus logo cart";
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "logo menus";
   color: #0e301a;
-  padding: 0 5px;
+  padding: 0 11px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
 }
 
 .headerbar-logo {
   grid-area: logo;
-  justify-self: center;
+  justify-self: start;
   align-self: center;
 }
 
 .headerbar-dropdown {
   grid-area: menus;
-  justify-self: start;
-  align-self: center;
-}
-
-.headerbar-cart {
-  grid-area: cart;
   justify-self: end;
   align-self: center;
 }
@@ -40,6 +34,12 @@
   cursor: pointer;
   text-align: right;
   white-space: nowrap;
+  align-items: center;
+}
+
+.header-icon {
+  vertical-align: baseline;
+  padding-right: 0.25rem;
 }
 
 .header-button:hover,
