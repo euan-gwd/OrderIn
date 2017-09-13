@@ -75,6 +75,8 @@ class OrderCart extends React.PureComponent {
     const orderIds = Object.keys(order);
     const subtotal = this.calculateOrder(orderIds);
     const total = this.calculateGratuity(subtotal);
+    let cartCount = orderIds.length;
+    this.props.cartCounter(cartCount);
 
     return (
       <div className="store-sidebar">

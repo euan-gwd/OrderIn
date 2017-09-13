@@ -95,7 +95,6 @@ class OrderCartMobile extends React.PureComponent {
     const orderIds = Object.keys(order);
     const subtotal = this.calculateOrder(orderIds);
     const total = this.calculateGratuity(subtotal);
-
     return (
       <div className="store-sidebar">
         <div className="cart">
