@@ -88,7 +88,7 @@ class OrderOnline extends React.PureComponent {
                 Vegetarian
               </span>
             </header>
-            <ul className="outer">
+            <div>
               {Object.keys(menuItems).map(menuItem => (
                 <OrderMenuItem
                   key={menuItem}
@@ -97,7 +97,7 @@ class OrderOnline extends React.PureComponent {
                   addToOrder={this.addToOrder}
                 />
               ))}
-            </ul>
+            </div>
             <footer className="has-text-centered spacer has-text-danger">
               <p className="icon is-large">
                 <i className="fa fa-arrow-up" aria-hidden="true" />

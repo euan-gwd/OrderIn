@@ -103,7 +103,7 @@ class OrderCart extends React.PureComponent {
           </div>
           <div className="cart-totals-wrapper">
             <div className="cart-subtotal-line">
-              <span className="">Subtotal:</span>
+              <span className="">Subtotal:*</span>
               <span>{formatPrice(subtotal)}</span>
             </div>
             <div className="cart-gratuity-line">
@@ -125,7 +125,7 @@ class OrderCart extends React.PureComponent {
             </div>
           </div>
           <div className="cartitem-divider has-text-grey-light">
-            <p>All Totals include VAT</p>
+            <p>*Includes VAT</p>
             <p>**Optional</p>
           </div>
           <div className="cartitem-divider">

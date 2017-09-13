@@ -30,13 +30,14 @@
 }
 
 .store-button {
-  grid-column: 2 / span 2;
+  grid-column: 3;
   grid-row: 3;
-  height: 2.2em;
+  height: 2rem;
   border: 1px solid transparent;
   border-radius: 3px;
   box-shadow: none;
   align-self: center;
+  justify-self: end;
   font-size: 1rem;
   user-select: none;
   background-color: transparent;

@@ -11,7 +11,7 @@ const Header = () => (
       </NavLink>
     </div>
 
-    <div className="headerbar-dropdown dropdown is-hoverable is-right is-hidden-desktop">
+    <div className="headerbar-dropdown dropdown is-hoverable is-hidden-desktop">
       <div className="dropdown-trigger">
         <button className="header-button" aria-haspopup="true" aria-controls="dropdown-menu-user">
           <i className="fa fa-user-circle-o fa-lg" />
@@ -29,6 +29,12 @@ const Header = () => (
           </NavLink>
         </div>
       </div>
+    </div>
+
+    <div className="headerbar-cart is-hidden-desktop">
+      <NavLink to="/cart" className="button is-danger">
+        <i className="fa fa-icon fa-shopping-cart fa-lg" />
+      </NavLink>
     </div>
 
     <div className="headerbar-buttons is-hidden-touch">

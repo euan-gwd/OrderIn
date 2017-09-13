@@ -2,21 +2,27 @@
   display: grid;
   background-color: var(--header-bkgrd);
   min-height: 3.25rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "logo menus";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "menus logo cart";
   color: #0e301a;
-  padding: 0 11px;
+  padding: 0 5px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
 }
 
 .headerbar-logo {
   grid-area: logo;
-  justify-self: start;
+  justify-self: center;
   align-self: center;
 }
 
 .headerbar-dropdown {
   grid-area: menus;
+  justify-self: start;
+  align-self: center;
+}
+
+.headerbar-cart {
+  grid-area: cart;
   justify-self: end;
   align-self: center;
 }

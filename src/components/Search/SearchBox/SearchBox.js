@@ -18,9 +18,7 @@ class SearchBox extends React.PureComponent {
 
   handleInputChange = address => {
     this.setState({ address });
-    this.state.address.length > 6
-      ? this.setState({ inputIsValid: true })
-      : this.setState({ inputIsValid: false });
+    this.state.address.length > 6 ? this.setState({ inputIsValid: true }) : this.setState({ inputIsValid: false });
   };
 
   handleInputSelect = address => {
@@ -73,7 +71,7 @@ class SearchBox extends React.PureComponent {
 
     return (
       <div className="hero is-danger">
-        <div className="hero-body">
+        <div className="hero-body headerBar-spacer">
           <div className="container">
             <h1 className="subtitle has-text-centered is-size-4-touch is-size-2-desktop">
               <strong>Simply</strong> order food online.
@@ -96,16 +94,10 @@ class SearchBox extends React.PureComponent {
                   options={options}
                 />
                 {invalidInputSummitted && (
-                  <span className="submit-error has-text-warning">
-                    Please supply correctly formatted address.
-                  </span>
+                  <span className="submit-error has-text-warning">Please supply correctly formatted address.</span>
                 )}
                 <div className="field mt">
-                  <button
-                    type="submit"
-                    className="button is-danger is-fullwidth is-medium"
-                    disabled={!inputIsValid}
-                  >
+                  <button type="submit" className="button is-danger is-fullwidth is-medium" disabled={!inputIsValid}>
                     Find Restaurants
                   </button>
                 </div>
