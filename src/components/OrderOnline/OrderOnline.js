@@ -106,14 +106,16 @@ class OrderOnline extends React.PureComponent {
               </p>
             </footer>
           </div>
-          <OrderCart
-            restaurantName={restaurantName}
-            menuItems={menuItems}
-            orderOption={orderOption}
-            order={order}
-            orderNumber={orderNo}
-            removeFromOrder={this.removeFromOrder}
-          />
+          <div className="is-hidden-touch">
+            <OrderCart
+              restaurantName={restaurantName}
+              menuItems={menuItems}
+              orderOption={orderOption}
+              order={order}
+              orderNumber={orderNo}
+              removeFromOrder={this.removeFromOrder}
+            />
+          </div>
         </div>
       </div>
     );

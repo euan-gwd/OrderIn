@@ -16,6 +16,12 @@ class OrderCartMobile extends React.PureComponent {
     };
   }
 
+  removeFromOrder = key => {
+    const decreaseOrder = { ...this.state.order };
+    decreaseOrder[key] > 1 ? (decreaseOrder[key] -= 1) : delete decreaseOrder[key];
+    this.setState({ order: decreaseOrder });
+  };
+
   renderOrder = key => {
     const { menuItems, order } = this.state;
     const menuItem = menuItems[key];
@@ -24,7 +30,7 @@ class OrderCartMobile extends React.PureComponent {
       <button
         className="button is-white has-text-danger is-small"
         onClick={() => {
-          this.props.removeFromOrder(key);
+          this.removeFromOrder(key);
         }}
       >
         &#10683;remove
@@ -78,7 +84,7 @@ class OrderCartMobile extends React.PureComponent {
   };
 
   componentWillUpdate(nextProps, nextState) {
-    console.log({ nextProps, nextState });
+    sessionStorage.setItem(`CurrentOrder`, JSON.stringify(nextState.order));
   }
 
   render() {
