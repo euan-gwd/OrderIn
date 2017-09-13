@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import Logo from "./logo-orderin-208x50.png";
 import "./Header.css";
 
@@ -32,9 +32,9 @@ const Header = () => (
     </div>
 
     <div className="headerbar-cart is-hidden-desktop">
-      <NavLink to="/cart" className="button is-danger">
+      <Link to="/cart" className="button is-danger">
         <i className="fa fa-icon fa-shopping-cart fa-lg" />
-      </NavLink>
+      </Link>
     </div>
 
     <div className="headerbar-buttons is-hidden-touch">

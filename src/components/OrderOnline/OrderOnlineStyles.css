@@ -39,6 +39,7 @@
 
 .store-sidebar {
   grid-area: storeorderlist;
+  padding: 0 10px;
 }
 
 .menu-list-header {
@@ -95,6 +96,8 @@
 
   .store-sidebar {
     grid-area: storeorderlist;
+    margin: 0;
+    padding: 0;
   }
 
   .menu-list-header {
