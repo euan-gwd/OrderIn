@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./OrderOnlineStyles.css";
 import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import StoreInfo from "./StoreInfo/StoreInfo";
@@ -66,6 +65,8 @@ class OrderOnline extends React.PureComponent {
     sessionStorage.setItem(`CurrentOrder`, JSON.stringify(nextState.order));
     sessionStorage.setItem(`menuItems`, JSON.stringify(nextState.menuItems));
     sessionStorage.setItem(`orderOpt`, nextState.orderOption);
+    let cartCount = Object.keys(nextState.order).length;
+    this.props.getCartCount(cartCount);
   }
 
   render() {

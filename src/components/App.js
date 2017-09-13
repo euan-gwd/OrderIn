@@ -85,13 +85,17 @@ class App extends React.PureComponent {
     this.setState({ selectedCuisine: cuisine });
   };
 
+  getCartCount = count => {
+    this.setState({ cartCount: count });
+  };
+
   render() {
     const { location } = this.props;
     const isModal = !!(location.state && location.state.modal && this.previousLocation !== location); // not initial render
 
     return (
       <div style={divStyle}>
-        <Header />
+        <Header cartCount={this.state.cartCount} />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route
             exact
@@ -202,6 +206,7 @@ class App extends React.PureComponent {
                 restaurantName={this.state.selectedStore}
                 orderOptions={this.state.orderOptions || "Pickup"}
                 deliveryAddress={this.state.deliveryAddress || "Pickup"}
+                getCartCount={this.getCartCount}
               />
             )}
           />

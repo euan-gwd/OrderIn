@@ -3,9 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import Logo from "./logo-orderin-208x50.png";
 import "./Header.css";
 
-const Header = () => {
-  const cartCount = sessionStorage.getItem(`cartCount`);
-  console.log(cartCount);
+const Header = ({ cartCount = 0 }) => {
   return (
     <nav className="headerbar">
       <div className="headerbar-logo">
@@ -33,12 +31,13 @@ const Header = () => {
           </div>
         </div>
       </div>
-
-      <div className="headerbar-cart is-hidden-desktop">
-        <Link to="/cart" className="button is-danger">
-          <i className="fa fa-icon fa-shopping-cart fa-lg" />
-        </Link>
-      </div>
+      {cartCount !== 0 && (
+        <div className="headerbar-cart is-hidden-desktop">
+          <Link to="/cart" className="button is-danger">
+            <i className="fa fa-icon fa-shopping-cart fa-lg" />
+          </Link>
+        </div>
+      )}
 
       <div className="headerbar-buttons is-hidden-touch">
         <NavLink to="/register" className="button is-danger is-inverted">
