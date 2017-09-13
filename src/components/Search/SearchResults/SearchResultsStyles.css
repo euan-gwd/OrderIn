@@ -1,5 +1,9 @@
-.top-spacer {
-  margin-top: 4vh;
+.storelist-header {
+  margin: 1rem 0;
+  text-align: center;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .storelist-box {
@@ -16,7 +20,12 @@
   color: #fff;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
+  .storelist-header {
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+
   .results-body {
     display: grid;
     justify-content: center;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import "../search_styles.css";
+import "../search_global_styles.css";
 
 class SearchByCuisine extends React.PureComponent {
   render() {

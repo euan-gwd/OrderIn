@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./OrderOnlineStyles.css";
 import OrderBreadCrumbNav from "./OrderBreadCrumbNav/OrderBreadCrumbNav";
 import StoreInfo from "./StoreInfo/StoreInfo";
@@ -37,13 +36,13 @@ class OrderOnline extends React.PureComponent {
     const selectedOrderOptionRef = sessionStorage.getItem(`selectedOrderOption`);
     selectedOrderOptionRef
       ? this.setState({
-          orderOption: `${selectedOrderOptionRef}`
+          orderOption: `${selectedOrderOptionRef}`,
+          deliveryAddress: `${deliveryAddressRef}`
         })
-      : this.setState({ orderOption: this.props.orderOptions });
-
-    selectedOrderOptionRef
-      ? this.setState({ deliveryAddress: `${deliveryAddressRef}` })
-      : this.setState({ deliveryAddress: this.props.deliveryAddress });
+      : this.setState({
+          orderOption: this.props.orderOptions,
+          deliveryAddress: this.props.deliveryAddress
+        });
   }
 
   addToOrder = key => {
@@ -64,17 +63,14 @@ class OrderOnline extends React.PureComponent {
 
   componentWillUpdate(nextProps, nextState) {
     sessionStorage.setItem(`CurrentOrder`, JSON.stringify(nextState.order));
+    sessionStorage.setItem(`menuItems`, JSON.stringify(nextState.menuItems));
+    sessionStorage.setItem(`orderOpt`, nextState.orderOption);
+    let cartCount = Object.keys(nextState.order).length;
+    this.props.getCartCount(cartCount);
   }
 
   render() {
-    const {
-      restaurantName,
-      restaurantsData,
-      orderOption,
-      menuItems,
-      deliveryAddress,
-      order
-    } = this.state;
+    const { restaurantName, restaurantsData, orderOption, menuItems, deliveryAddress, order } = this.state;
     const restaurant = restaurantsData.find(restaurant => restaurant.name === restaurantName);
     const orderNo = sessionStorage.getItem(`storeUniqueOrderNo`);
     return (
@@ -89,13 +85,13 @@ class OrderOnline extends React.PureComponent {
           />
           <div className="store-main-content">
             <header className="menu-list-header">
-              <span className="is-size-4">Menu</span>
+              <span className="is-size-5 has-text-bold">Menu</span>
               <span>
                 <i className="fa fa-icon fa-leaf has-text-success" />
                 Vegetarian
               </span>
             </header>
-            <ul className="outer">
+            <div>
               {Object.keys(menuItems).map(menuItem => (
                 <OrderMenuItem
                   key={menuItem}
@@ -104,21 +100,23 @@ class OrderOnline extends React.PureComponent {
                   addToOrder={this.addToOrder}
                 />
               ))}
-            </ul>
+            </div>
             <footer className="has-text-centered spacer has-text-danger">
               <p className="icon is-large">
                 <i className="fa fa-arrow-up" aria-hidden="true" />
               </p>
             </footer>
           </div>
-          <OrderCart
-            restaurantName={restaurantName}
-            menuItems={menuItems}
-            orderOption={orderOption}
-            order={order}
-            orderNumber={orderNo}
-            removeFromOrder={this.removeFromOrder}
-          />
+          <div className="is-hidden-touch">
+            <OrderCart
+              restaurantName={restaurantName}
+              menuItems={menuItems}
+              orderOption={orderOption}
+              order={order}
+              orderNumber={orderNo}
+              removeFromOrder={this.removeFromOrder}
+            />
+          </div>
         </div>
       </div>
     );

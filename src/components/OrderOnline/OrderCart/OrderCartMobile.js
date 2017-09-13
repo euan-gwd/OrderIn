@@ -1,23 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import CSSTransitionGroup from "react-addons-css-transition-group";
 import { formatPrice } from "../../helpers";
 import "./OrderCartStyles.css";
 
-class OrderCart extends React.PureComponent {
+class OrderCartMobile extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { gratuityAmount: 0 };
+    const ordersRef = sessionStorage.getItem(`CurrentOrder`);
+    const menuItemsRef = sessionStorage.getItem(`menuItems`);
+    this.state = {
+      order: JSON.parse(ordersRef) || {},
+      menuItems: JSON.parse(menuItemsRef),
+      gratuityAmount: 0
+    };
   }
 
+  removeFromOrder = key => {
+    const decreaseOrder = { ...this.state.order };
+    decreaseOrder[key] > 1 ? (decreaseOrder[key] -= 1) : delete decreaseOrder[key];
+    this.setState({ order: decreaseOrder });
+  };
+
   renderOrder = key => {
-    const menuItem = this.props.menuItems[key];
-    const count = this.props.order[key];
+    const { menuItems, order } = this.state;
+    const menuItem = menuItems[key];
+    const count = order[key];
     const removeButton = (
       <button
         className="button is-white has-text-danger is-small"
         onClick={() => {
-          this.props.removeFromOrder(key);
+          this.removeFromOrder(key);
         }}
       >
         &#10683;remove
@@ -41,10 +54,10 @@ class OrderCart extends React.PureComponent {
         {removeButton}
       </li>
     );
-  };
+  }; //end renderOrder
 
   calculateOrder = orderIds => {
-    const { menuItems, order } = this.props;
+    const { menuItems, order } = this.state;
     return orderIds.reduce((prevTotal, key) => {
       const menuItem = menuItems[key];
       const count = order[key];
@@ -70,12 +83,18 @@ class OrderCart extends React.PureComponent {
     this.setState({ gratuityAmount: gratuityAmount });
   };
 
+  componentWillUpdate(nextProps, nextState) {
+    sessionStorage.setItem(`CurrentOrder`, JSON.stringify(nextState.order));
+  }
+
   render() {
-    const { restaurantName, orderOption, order, orderNumber } = this.props;
+    const { restaurantName } = this.props;
+    const { order } = this.state;
+    const orderNumber = sessionStorage.getItem(`storeUniqueOrderNo`);
+    const orderOption = sessionStorage.getItem(`orderOpt`);
     const orderIds = Object.keys(order);
     const subtotal = this.calculateOrder(orderIds);
     const total = this.calculateGratuity(subtotal);
-
     return (
       <div className="store-sidebar">
         <div className="cart">
@@ -142,9 +161,23 @@ class OrderCart extends React.PureComponent {
             </Link>
           </div>
         </div>
+        <div className="back-link">
+          <Route
+            render={props => (
+              <a
+                className="button is-small is-light is-fullwidth"
+                onClick={() => {
+                  props.history.goBack();
+                }}
+              >
+                Go Back
+              </a>
+            )}
+          />
+        </div>
       </div>
     );
   }
 }
 
-export default OrderCart;
+export default OrderCartMobile;

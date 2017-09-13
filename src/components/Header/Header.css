@@ -2,39 +2,94 @@
   display: grid;
   background-color: var(--header-bkgrd);
   min-height: 3.25rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "menus logo cart";
   color: #0e301a;
-  padding: 0 24px;
+  padding: 0 5px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+  position: fixed;
+  width: 100vw;
+  z-index: 10;
 }
 
-@media screen and (max-width: 480px) {
-  .headerbar {
-    grid-template-columns: 1fr;
-    padding: 3vh 0 2vh;
-    grid-row-gap: 0.5rem;
-  }
+.headerbar-logo {
+  grid-area: logo;
+  justify-self: center;
+  align-self: center;
+}
 
-  .headerbar-logo {
-    justify-self: center;
-    align-self: center;
-  }
+.headerbar-dropdown {
+  grid-area: menus;
+  justify-self: start;
+  align-self: center;
+}
 
-  .headerbar-end {
-    justify-self: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.25rem;
-  }
+.headerbar-cart {
+  grid-area: cart;
+  justify-self: end;
+  align-self: center;
+}
+
+.header-button {
+  height: 2.2em;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  align-self: center;
+  font-size: 1rem;
+  user-select: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  text-align: right;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.header-icon {
+  vertical-align: baseline;
+  padding-right: 0.25rem;
+}
+
+.header-button:hover,
+.header-button:active {
+  background-color: var(--deep-red);
+  border-color: var(--deep-red);
+  color: #fff;
+}
+
+.header-dropdown-content {
+  background-color: var(--deep-red);
+  color: #fff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 @media screen and (min-width: 481px) {
+  .headerbar {
+    display: grid;
+    background-color: var(--header-bkgrd);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo menus";
+    color: #0e301a;
+    padding: 0 24px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+    position: relative;
+  }
+
   .headerbar-logo {
+    grid-area: logo;
     justify-self: start;
     align-self: center;
   }
 
-  .headerbar-end {
+  .headerbar-buttons {
+    grid-area: menus;
     justify-self: end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }

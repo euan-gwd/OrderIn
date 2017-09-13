@@ -6,13 +6,18 @@
   color: #fff;
 }
 
+.search-header-spacer {
+  margin-top: 3.75rem;
+  margin-bottom: 2rem;
+}
+
 .well {
-  display: block;
+  display: grid;
   background-color: var(--header-bkgrd);
   border-radius: 3px;
-  padding: 0 0.125rem;
+  padding: 0.25rem 0.125rem;
   box-shadow: inset 0 2px 3px rgba(10, 10, 10, 0.1);
-  height: 50vh;
+  max-height: 50vh;
   overflow-y: scroll;
   overflow-x: hidden;
   overflow-wrap: break-word;
@@ -47,12 +52,11 @@
 
 .breadcrumb-box {
   display: grid;
-  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr
-    minmax(50px, 1fr);
+  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr);
   grid-auto-flow: column;
   align-items: center;
   padding: 0.25rem 0;
-  margin-bottom: 1rem;
+  margin: 0;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
@@ -60,8 +64,8 @@
 }
 
 .fa-icon {
-  vertical-align: text-top;
-  padding-right: 0.5rem;
+  vertical-align: baseline;
+  padding-right: 0.25rem;
 }
 
 .breadcrumb-icon {
@@ -93,10 +97,16 @@
   padding: 0 0.5rem;
 }
 
-@media screen and (max-width: 480px) {
-  .breadcrumb-box {
-    grid-template-columns: 1fr;
-  }
+.submit-error {
+  font-size: 0.75rem;
+}
+
+.mt {
+  margin-top: 0.75rem;
+}
+
+.mb {
+  margin-bottom: 4vh;
 }
 
 @media screen and (min-width: 481px) {
@@ -107,22 +117,24 @@
     align-items: center;
   }
 
+  .search-header-spacer {
+    margin-top: 0;
+  }
+
   .breadcrumb-box {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
     color: #4a4a4a;
     display: grid;
-    padding: 0.25rem;
-    margin-bottom: 1rem;
+    padding: 0.75rem 0.25rem;
+    margin: 1.25rem 0;
   }
 
   .well {
     padding: 1vh 15px 2vh;
-    flex-grow: 1;
-    flex-shrink: 1;
-    height: auto;
     overflow-y: none;
+    height: initial;
   }
 
   .inner-grid {
@@ -146,8 +158,8 @@
 @media screen and (min-width: 769px) {
   .well {
     padding: 0 1.5vw 1.5vh;
-    height: auto;
     overflow-y: none;
+    height: initial;
   }
 
   .inner-grid {
@@ -164,18 +176,6 @@
     vertical-align: text-top;
     padding: 0 0.5rem;
   }
-}
-
-.submit-error {
-  font-size: 0.75rem;
-}
-
-.mt {
-  margin-top: 0.75rem;
-}
-
-.mb {
-  margin-bottom: 4vh;
 }
 
 @media screen and (min-width: 1200px) {

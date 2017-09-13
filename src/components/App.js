@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header/Header";
 import { RegisterForm, SignInForm } from "./UserManagement";
-import OrderCartCheckOut from "./OrderOnline/OrderCart/OrderCartCheckOut";
+import { OrderCartMobile, OrderCartCheckOut } from "./OrderOnline/OrderCart";
 import Footer from "./Footer/Footer";
 import {
   RefineSearchBySuburb,
@@ -85,17 +85,17 @@ class App extends React.PureComponent {
     this.setState({ selectedCuisine: cuisine });
   };
 
+  getCartCount = count => {
+    this.setState({ cartCount: count });
+  };
+
   render() {
     const { location } = this.props;
-    const isModal = !!(
-      location.state &&
-      location.state.modal &&
-      this.previousLocation !== location
-    ); // not initial render
+    const isModal = !!(location.state && location.state.modal && this.previousLocation !== location); // not initial render
 
     return (
       <div style={divStyle}>
-        <Header />
+        <Header cartCount={this.state.cartCount} />
         <Switch location={isModal ? this.previousLocation : location}>
           <Route
             exact
@@ -194,10 +194,7 @@ class App extends React.PureComponent {
               <Route
                 path="/Search"
                 render={() => (
-                  <SearchResultsList
-                    searchResult={this.state.searchResult}
-                    selectStore={this.selectStore}
-                  />
+                  <SearchResultsList searchResult={this.state.searchResult} selectStore={this.selectStore} />
                 )}
               />
             )}
@@ -209,6 +206,16 @@ class App extends React.PureComponent {
                 restaurantName={this.state.selectedStore}
                 orderOptions={this.state.orderOptions || "Pickup"}
                 deliveryAddress={this.state.deliveryAddress || "Pickup"}
+                getCartCount={this.getCartCount}
+              />
+            )}
+          />
+          <Route
+            path="/cart"
+            render={() => (
+              <OrderCartMobile
+                restaurantName={this.state.selectedStore}
+                orderOptions={this.state.orderOptions || "Pickup"}
               />
             )}
           />

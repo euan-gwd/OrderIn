@@ -1325,7 +1325,7 @@ a.box:active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-color: white;
+  background-color: transparent;
   border-color: #dbdbdb;
   color: #363636;
   cursor: pointer;
@@ -1385,6 +1385,21 @@ a.box:active {
   -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
           box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
   color: #363636;
+}
+
+.button.is-outlined {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.button.is-outlined:hover {
+  background-color: var(--border-color);
+  border-color: transparent;
+}
+
+.button.is-outlined[disabled] {
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .button.is-link {
@@ -2199,7 +2214,7 @@ a.box:active {
 }
 
 .button.is-danger:hover, .button.is-danger.is-hovered {
-  background-color: var(--btn-hover);
+  background-color: var(--deep-red);
   border-color: transparent;
   color: #fff;
 }
@@ -2212,10 +2227,9 @@ a.box:active {
 }
 
 .button.is-danger:active, .button.is-danger.is-active {
-  background-color: var(--btn-hover);
+  background-color: var(--btn-bkgrd);
   border-color: transparent;
-  -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
-          box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2);
+  box-shadow: none;
   color: #fff;
 }
 
@@ -2224,7 +2238,7 @@ a.box:active {
   border-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
-  opacity: .75;
+  opacity: .95;
 }
 
 .button.is-danger.is-inverted {
@@ -5096,7 +5110,7 @@ a.tag:hover {
 }
 
 .dropdown-item {
-  color: #4a4a4a;
+  color: #fff;
   display: block;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -5110,8 +5124,8 @@ a.dropdown-item {
 }
 
 a.dropdown-item:hover {
-  background-color: whitesmoke;
-  color: #0a0a0a;
+  background-color: var(--primary-color);
+  color: #fff;
 }
 
 a.dropdown-item.is-active {
