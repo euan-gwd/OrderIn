@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header/Header";
 import { RegisterForm, SignInForm } from "./UserManagement";
-import OrderCartCheckOut from "./OrderOnline/OrderCart/OrderCartCheckOut";
+import { OrderCart, OrderCartCheckOut } from "./OrderOnline/OrderCart";
 import Footer from "./Footer/Footer";
 import {
   RefineSearchBySuburb,
@@ -87,11 +87,7 @@ class App extends React.PureComponent {
 
   render() {
     const { location } = this.props;
-    const isModal = !!(
-      location.state &&
-      location.state.modal &&
-      this.previousLocation !== location
-    ); // not initial render
+    const isModal = !!(location.state && location.state.modal && this.previousLocation !== location); // not initial render
 
     return (
       <div style={divStyle}>
@@ -194,10 +190,7 @@ class App extends React.PureComponent {
               <Route
                 path="/Search"
                 render={() => (
-                  <SearchResultsList
-                    searchResult={this.state.searchResult}
-                    selectStore={this.selectStore}
-                  />
+                  <SearchResultsList searchResult={this.state.searchResult} selectStore={this.selectStore} />
                 )}
               />
             )}
@@ -212,6 +205,7 @@ class App extends React.PureComponent {
               />
             )}
           />
+          <Route path="/cart" render={() => <OrderCart />} />
           <Route path="/register" render={() => <RegisterForm />} />
           <Route path="/signin" render={() => <SignInForm />} />
           <Route component={NotFound} />
