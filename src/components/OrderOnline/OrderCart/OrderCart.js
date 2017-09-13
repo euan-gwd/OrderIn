@@ -20,7 +20,7 @@ class OrderCart extends React.PureComponent {
           this.props.removeFromOrder(key);
         }}
       >
-        &#8854; remove
+        &#10683;remove
       </button>
     );
 

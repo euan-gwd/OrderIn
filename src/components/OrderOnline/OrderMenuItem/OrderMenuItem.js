@@ -7,12 +7,12 @@ class OrderMenuItem extends React.PureComponent {
     const { menuItem, addToOrder, index } = this.props;
     const isAvailable = menuItem.status === "available";
     const buttonText = isAvailable ? (
-      <span>
+      <span className="has-text-success">
         <i className="fa fa-icon fa-plus-circle" />
         Add
       </span>
     ) : (
-      <span>
+      <span className="has-text-warning">
         <i className="fa fa-icon fa-exclamation-triangle" />
         Sold Out
       </span>
@@ -25,7 +25,7 @@ class OrderMenuItem extends React.PureComponent {
         <div className="item-actions">
           <div className="item-group">
             <span className="item-price">{formatPrice(menuItem.price)}</span>
-            <button className="button is-danger is-outlined" disabled={!isAvailable} onClick={() => addToOrder(index)}>
+            <button className="button is-outlined" disabled={!isAvailable} onClick={() => addToOrder(index)}>
               {buttonText}
             </button>
           </div>

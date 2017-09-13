@@ -23,13 +23,13 @@ input[type="radio"].delivery ~ label:before {
 input[type="radio"].delivery:checked ~ label:before {
   content: "\f00c";
   font-size: 1.5em;
-  color: var(--btn-bkgrd);
+  color: var(--radio-btn-color);
   letter-spacing: 5px;
 }
 
 input[type="radio"].delivery:focus ~ label:before,
 input[type="radio"].delivery:focus ~ label {
-  color: var(--btn-bkgrd);
+  color: var(--radio-btn-color);
   cursor: pointer;
 }
 
@@ -58,13 +58,13 @@ input[type="radio"].pickup ~ label:before {
 input[type="radio"].pickup:checked ~ label:before {
   content: "\f00c";
   font-size: 1.5em;
-  color: var(--btn-bkgrd);
+  color: var(--radio-btn-color);
   letter-spacing: 5px;
 }
 
 input[type="radio"].pickup:focus ~ label:before,
 input[type="radio"].pickup:focus ~ label {
-  color: var(--btn-bkgrd);
+  color: var(--radio-btn-color);
   cursor: pointer;
 }
 
