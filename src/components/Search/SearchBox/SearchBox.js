@@ -45,12 +45,12 @@ class SearchBox extends React.PureComponent {
 
     const inputStyles = {
       root: "field",
-      input: "search-input",
-      autocompleteContainer: "search-autocomplete-container"
+      input: "searchBox-input",
+      autocompleteContainer: "searchBox-autocomplete-container"
     };
 
     const AutocompleteItem = ({ formattedSuggestion }) => (
-      <div className="search-suggestion-item">
+      <div className="searchBox-suggestion-item">
         <i className="fa fa-icon fa-map-marker" />
         <strong>{formattedSuggestion.mainText}</strong>{" "}
         <small className="has-text-grey-light">{formattedSuggestion.secondaryText}</small>
@@ -70,42 +70,33 @@ class SearchBox extends React.PureComponent {
     };
 
     return (
-      <div className="hero is-danger">
-        <div className="hero-body headerBar-spacer">
-          <div className="container">
-            <h1 className="subtitle has-text-centered is-size-4-touch is-size-2-desktop">
-              <strong>Simply</strong> order food online.
-            </h1>
-            <div className="columns is-centered">
-              <form
-                ref={input => (this.searchForm = input)}
-                className="column is-half box"
-                onSubmit={this.handleSubmit}
-              >
-                <SearchDeliveryOptions selectDeliveryOption={this.handleDeliveryOption} />
-                <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered">
-                  Enter your street address & suburb:
-                </h4>
-                <PlacesAutocomplete
-                  autocompleteItem={AutocompleteItem}
-                  onSelect={this.handleInputSelect}
-                  classNames={inputStyles}
-                  inputProps={inputProps}
-                  options={options}
-                />
-                {invalidInputSummitted && (
-                  <span className="submit-error has-text-warning">Please supply correctly formatted address.</span>
-                )}
-                <div className="field mt">
-                  <button type="submit" className="button is-danger is-fullwidth is-medium" disabled={!inputIsValid}>
-                    Find Restaurants
-                  </button>
-                </div>
-              </form>
-            </div>
+      <div className="searchBox-hero">
+        <h1 className="search-header has-text-centered is-size-5-touch is-size-2-desktop">
+          <span className="has-text-bold has-text-white">Simply</span> order food online.
+        </h1>
+
+        <form ref={input => (this.searchForm = input)} className="searchBox" onSubmit={this.handleSubmit}>
+          <SearchDeliveryOptions selectDeliveryOption={this.handleDeliveryOption} />
+          <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered">
+            Enter your street address & suburb:
+          </h4>
+          <PlacesAutocomplete
+            autocompleteItem={AutocompleteItem}
+            onSelect={this.handleInputSelect}
+            classNames={inputStyles}
+            inputProps={inputProps}
+            options={options}
+          />
+          {invalidInputSummitted && (
+            <span className="submit-error has-text-warning">Please supply correctly formatted address.</span>
+          )}
+          <div className="field mt">
+            <button type="submit" className="button is-danger is-fullwidth is-medium" disabled={!inputIsValid}>
+              Find Restaurants
+            </button>
           </div>
-          {fireRedirect && <Redirect push to="/Search" />}
-        </div>
+        </form>
+        {fireRedirect && <Redirect push to="/Search" />}
       </div>
     );
   }

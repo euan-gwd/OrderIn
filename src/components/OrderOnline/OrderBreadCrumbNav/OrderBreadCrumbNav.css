@@ -2,32 +2,33 @@
   padding: 1rem;
   border: 1px solid rgba(10, 10, 10, 0.1);
   border-radius: 5px;
-  margin-bottom: 1.25rem;
+  margin-top: 3.25rem;
+  margin-bottom: 1rem;
 }
 
 .breadcrumb-item-centered {
   display: grid;
-  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr
-    minmax(50px, 1fr);
-  font-size: 0.75rem;
+  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr);
+  font-size: 0.5rem;
   align-items: center;
 }
 
 .plh {
-  padding-left: 0.5rem;
+  padding-left: 0;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   .breadcrumb-item-centered {
-    font-size: 0.5rem;
+    font-size: 0.75rem;
   }
 
   .navbox {
     border-radius: 3px;
-    margin-bottom: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
   }
 
   .plh {
-    padding-left: 0;
+    padding-left: 0.5rem;
   }
 }
