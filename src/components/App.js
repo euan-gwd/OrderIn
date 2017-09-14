@@ -179,8 +179,9 @@ class App extends React.PureComponent {
           <Route
             exact
             path="/Cuisine/:cuisineId/:cityId/:suburbId"
-            render={() => (
+            render={props => (
               <SearchCuisineResultsContainer
+                {...props}
                 cuisineName={this.state.selectedCuisine}
                 cityName={this.state.selectedCity}
                 suburbName={this.state.selectedSuburb}
