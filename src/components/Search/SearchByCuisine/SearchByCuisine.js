@@ -6,12 +6,12 @@ class SearchByCuisine extends React.PureComponent {
   render() {
     const { selectCuisine, cuisinesData } = this.props;
     return (
-      <div className="search-body mb">
+      <div className="searchByCuisine-container">
         <div className="well">
-          <p className="has-text-centered has-text-bold is-size-5-touch is-size-4-desktop">
+          <div className="inner-grid-header">
             <i className="fa fa-icon fa-cutlery" />
             Search by Cuisine
-          </p>
+          </div>
           <div className="inner-grid">
             {cuisinesData.map(cuisine => (
               <Route

@@ -41,10 +41,9 @@ class SearchBox extends React.PureComponent {
   };
 
   render() {
-    const { fireRedirect, inputIsValid, invalidInputSummitted } = this.state;
+    const { fireRedirect, inputIsValid } = this.state;
 
     const inputStyles = {
-      root: "field",
       input: "searchBox-input",
       autocompleteContainer: "searchBox-autocomplete-container"
     };
@@ -52,7 +51,7 @@ class SearchBox extends React.PureComponent {
     const AutocompleteItem = ({ formattedSuggestion }) => (
       <div className="searchBox-suggestion-item">
         <i className="fa fa-icon fa-map-marker" />
-        <strong>{formattedSuggestion.mainText}</strong>{" "}
+        <strong className="mr">{formattedSuggestion.mainText}</strong>
         <small className="has-text-grey-light">{formattedSuggestion.secondaryText}</small>
       </div>
     );
@@ -70,12 +69,12 @@ class SearchBox extends React.PureComponent {
     };
 
     return (
-      <div className="searchBox-hero">
-        <h1 className="search-header has-text-centered is-size-5-touch is-size-2-desktop">
+      <div className="searchBox-container">
+        <h1 className="searchBox-title">
           <span className="has-text-bold has-text-white">Simply</span> order food online.
         </h1>
 
-        <form ref={input => (this.searchForm = input)} className="searchBox" onSubmit={this.handleSubmit}>
+        <form ref={input => (this.searchForm = input)} className="searchBox-form" onSubmit={this.handleSubmit}>
           <SearchDeliveryOptions selectDeliveryOption={this.handleDeliveryOption} />
           <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered">
             Enter your street address & suburb:
@@ -87,14 +86,9 @@ class SearchBox extends React.PureComponent {
             inputProps={inputProps}
             options={options}
           />
-          {invalidInputSummitted && (
-            <span className="submit-error has-text-warning">Please supply correctly formatted address.</span>
-          )}
-          <div className="field mt">
-            <button type="submit" className="button is-danger is-fullwidth is-medium" disabled={!inputIsValid}>
-              Find Restaurants
-            </button>
-          </div>
+          <button type="submit" className="searchButton" disabled={!inputIsValid}>
+            Find Restaurants
+          </button>
         </form>
         {fireRedirect && <Redirect push to="/Search" />}
       </div>

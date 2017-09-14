@@ -1,7 +1,20 @@
-.search-body {
+.searchByCity-container {
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  max-height: 50vh;
+}
+
+.searchByCuisine-container {
+  margin: 0;
+  display: grid;
+  justify-content: center;
+}
+
+.search-results-container {
   margin: 0 auto;
   padding: 5px 10px 5px 10px;
-  display: block;
+  display: grid;
   background-color: var(--body-bkgrd);
   color: #fff;
 }
@@ -11,8 +24,15 @@
   margin-bottom: 2rem;
 }
 
+.inner-grid-header {
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 .well {
-  display: grid;
+  display: block;
   background-color: var(--header-bkgrd);
   border-radius: 3px;
   padding: 0.25rem 0.125rem;
@@ -97,28 +117,23 @@
   padding: 0 0.5rem;
 }
 
-.submit-error {
-  font-size: 0.75rem;
-}
-
-.mt {
-  margin-top: 0.75rem;
-}
-
-.mb {
-  margin-bottom: 4vh;
-}
-
 @media screen and (min-width: 481px) {
-  .search-body {
-    padding: 15px 15px;
+  .searchByCity-container {
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
+    padding: 0 15px;
+  }
+
+  .searchByCuisine-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding: 0 15px;
   }
 
   .search-header-spacer {
-    margin-top: 0;
+    margin: 0 auto;
   }
 
   .breadcrumb-box {
@@ -132,9 +147,13 @@
   }
 
   .well {
-    padding: 1vh 15px 2vh;
-    overflow-y: none;
-    height: initial;
+    margin: 0;
+    padding: 0.5rem;
+    max-height: unset;
+    height: auto;
+    overflow-y: unset;
+    overflow-x: unset;
+    overflow-wrap: unset;
   }
 
   .inner-grid {
@@ -157,9 +176,13 @@
 
 @media screen and (min-width: 769px) {
   .well {
-    padding: 0 1.5vw 1.5vh;
-    overflow-y: none;
-    height: initial;
+    margin: 0;
+    padding: 0.5rem;
+    max-height: unset;
+    height: auto;
+    overflow-y: unset;
+    overflow-x: unset;
+    overflow-wrap: unset;
   }
 
   .inner-grid {
@@ -168,22 +191,8 @@
     grid-gap: 0.5rem;
   }
 
-  .searchBox-header {
-    padding-top: 0.25rem;
-  }
-
   .icon-padding {
     vertical-align: text-top;
     padding: 0 0.5rem;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .search-body {
-    max-width: 1000px;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--body-bkgrd);
   }
 }

@@ -6,7 +6,7 @@ class RefineCuisineSearchByCity extends React.PureComponent {
   render() {
     const { selectCity, citiesData, cuisineName, match } = this.props;
     return (
-      <section className="search-body">
+      <section className="search-results-container">
         <div className="search-header-spacer">
           <div className="breadcrumb-box has-text-centered is-hidden-mobile">
             <Route

@@ -13,7 +13,7 @@ class RefineCuisineSearchBySuburb extends React.PureComponent {
     const searchResult = { undefined, cityName, cuisineName };
 
     return (
-      <section className="search-body">
+      <section className="search-results-container">
         <div className="search-header-spacer">
           <div className="breadcrumb-box has-text-centered is-hidden-mobile">
             <Route

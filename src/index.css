@@ -160,6 +160,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  min-height: 100vh;
+  position: relative; 
+  margin: 0;
 }
 
 a {
@@ -2755,7 +2758,6 @@ a.box:active {
 .input.is-inline,
 .textarea.is-inline {
   display: inline;
-  width: auto;
 }
 
 .textarea {
@@ -2856,7 +2858,6 @@ a.box:active {
   padding-right: calc(0.625em - 1px);
   padding-top: calc(0.375em - 1px);
   position: relative;
-  vertical-align: top;
   background-color: white;
   border-color: #dbdbdb;
   color: #363636;
@@ -9537,10 +9538,5 @@ label.panel-block:hover {
   .section.is-large {
     padding: 18rem 1.5rem;
   }
-}
-
-.footer {
-  background-color: #f6f6f6;
-  padding: 3rem 1.5rem 6rem;
 }
 /*# sourceMappingURL=bulma.css.map */

@@ -1,29 +1,52 @@
-.searchBox-hero {
-  margin: 0 auto;
-  padding: 1.25rem 10px 5px 10px;
-  display: block;
-  background-color: var(--body-bkgrd);
-  color: #fff;
+.searchBox-container {
+  padding: 0 15px;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: "SB-title" "SB-form";
+  justify-content: center;
+  align-items: center;
 }
 
-.search-header {
+.searchBox-title {
+  grid-area: SB-title;
   margin-top: 3.25rem;
   margin-bottom: 0;
   color: #e4e4e4;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.5rem;
 }
 
-.searchBox {
+.searchBox-form {
+  grid-area: SB-form;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 50px;
+  grid-template-areas: "SBF-options" "SBF-header" "SBF-input" "SBF-autofocus" "SBF-button";
+  max-height: 200px;
+  padding: 0.5rem;
+  color: #4a4a4a;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  color: #4a4a4a;
-  display: block;
-  padding: 0.5rem;
-  margin-bottom: 4vh;
-  max-height: 200px;
+}
+
+.searchBox-options {
+  grid-area: SBF-options;
+  border-bottom: 1px dotted var(--border-color);
+  color: #0e301a;
+  padding-top: calc(0.375em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+}
+
+.searchBox-header {
+  grid-area: SBF-header;
 }
 
 .searchBox-input {
+  grid-area: SBF-input;
   align-items: center;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -61,30 +84,75 @@
 }
 
 .searchBox-autocomplete-container {
+  grid-area: SBF-autofocus;
+  grid-row: 3 / span 3;
   border-bottom: 1px solid#9a1c00;
   border-left: 1px solid#9a1c00;
   border-right: 1px solid#9a1c00;
   border-top: 1px solid #e6e6e6;
   border-radius: 0 0 2px 2px;
-  height: 20vh;
+  max-height: 32.5vh;
+  width: 100%;
   z-index: 20;
   overflow-y: scroll;
+  position: absolute;
 }
 
 .searchBox-suggestion-item {
+  grid-area: SBF-autofocus;
   padding: 4px;
   text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mr {
+  margin-right: 0.25rem;
+}
+
+.searchBox-suggestion-item:hover {
+  border-color: black;
+}
+
+.searchButton {
+  grid-area: SBF-button;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+  font-size: 1.25rem;
+  height: 2.25em;
+  line-height: 1.5;
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-top: calc(0.375em - 1px);
+  position: relative;
+  vertical-align: top;
+  user-select: none;
+  background-color: var(--btn-bkgrd);
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.searchButton[disabled] {
+  background-color: var(--btn-bkgrd);
+  border-color: #dbdbdb;
+  box-shadow: none;
+  opacity: 0.75;
 }
 
 @media screen and (min-width: 481px) {
-  .searchBox-hero {
-    padding: 15px 15px;
+  .searchBox-container {
+    padding: 0 15px;
     display: grid;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .searchBox {
-    width: 50vw;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: ".SB-title ." ". SB-form .";
   }
 }

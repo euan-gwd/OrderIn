@@ -46,12 +46,21 @@
   border-right: 1px solid#22c65b;
   border-top: 1px solid #e6e6e6;
   border-radius: 0 0 2px 2px;
-  height: 20vh;
+  height: 32.5vh;
+  width: 100%;
   z-index: 20;
   overflow-y: scroll;
+  position: absolute;
 }
 
 .delivery-form-suggestion-item {
   padding: 4px;
   text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mr {
+  margin-right: 0.25rem;
 }
