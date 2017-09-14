@@ -1,34 +1,52 @@
-.searchBox-hero {
+.searchBox-container {
   padding: 0 15px;
   display: grid;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas: "SB-title" "SB-form";
   justify-content: center;
   align-items: center;
 }
 
-.searchButton {
-  margin-top: 0.75rem;
-  display: block;
-}
-
-.search-header {
-  grid-column: 2;
-  grid-row: 1;
+.searchBox-title {
+  grid-area: SB-title;
   margin-top: 3.25rem;
   margin-bottom: 0;
   color: #e4e4e4;
+  text-align: center;
+  font-weight: normal;
+  font-size: 1.5rem;
 }
 
 .searchBox-form {
+  grid-area: SB-form;
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: "SBF-options" "SBF-header" "SBF-input" "SBF-autofocus" "SBF-button";
+  max-height: 200px;
   padding: 0.5rem;
-  margin-bottom: 4vh;
   color: #4a4a4a;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
 }
 
+.searchBox-options {
+  grid-area: SBF-options;
+  border-bottom: 1px dotted var(--border-color);
+  color: #0e301a;
+  padding-top: calc(0.375em - 1px);
+  padding-right: calc(0.625em - 1px);
+  padding-bottom: calc(0.375em - 1px);
+  padding-left: calc(0.625em - 1px);
+}
+
+.searchBox-header {
+  grid-area: SBF-header;
+}
+
 .searchBox-input {
+  grid-area: SBF-input;
   align-items: center;
   border: 1px solid transparent;
   border-radius: 3px;
@@ -66,14 +84,15 @@
 }
 
 .searchBox-autocomplete-container {
+  grid-area: SBF-autofocus;
   border-bottom: 1px solid#9a1c00;
   border-left: 1px solid#9a1c00;
   border-right: 1px solid#9a1c00;
   border-top: 1px solid #e6e6e6;
   border-radius: 0 0 2px 2px;
-  height: 50vh;
-  z-index: 20;
-  overflow-y: auto;
+  height: 20vh;
+  z-index: 3;
+  overflow-y: scroll;
 }
 
 .searchBox-suggestion-item {
@@ -81,16 +100,16 @@
   text-align: left;
 }
 
-@media screen and (min-width: 481px) {
-  .search-header {
-    grid-column: 2;
-    grid-row: 1;
-    margin: 0;
-  }
+.searchButton {
+  grid-area: SBF-button;
+}
 
-  .searchBox-form {
-    grid-column: 2;
-    grid-row: 2;
-    margin: 0;
+@media screen and (min-width: 481px) {
+  .searchBox-container {
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: ".SB-title ." ". SB-form .";
   }
 }

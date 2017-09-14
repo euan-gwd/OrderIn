@@ -70,8 +70,8 @@ class SearchBox extends React.PureComponent {
     };
 
     return (
-      <div className="searchBox-hero">
-        <h1 className="search-header has-text-centered is-size-5-touch is-size-2-desktop">
+      <div className="searchBox-container">
+        <h1 className="searchBox-title">
           <span className="has-text-bold has-text-white">Simply</span> order food online.
         </h1>
 

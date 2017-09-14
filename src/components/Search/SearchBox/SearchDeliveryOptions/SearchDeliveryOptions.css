@@ -68,15 +68,6 @@ input[type="radio"].pickup:focus ~ label {
   cursor: pointer;
 }
 
-.search-options-wrapper {
-  border-bottom: 1px dotted var(--border-color);
-  color: #0e301a;
-  padding-top: calc(0.375em - 1px);
-  padding-right: calc(0.625em - 1px);
-  padding-bottom: calc(0.375em - 1px);
-  padding-left: calc(0.625em - 1px);
-}
-
 .search-option-container {
   display: flex;
   justify-content: space-around;
