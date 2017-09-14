@@ -44,7 +44,6 @@ class SearchBox extends React.PureComponent {
     const { fireRedirect, inputIsValid } = this.state;
 
     const inputStyles = {
-      root: "field",
       input: "searchBox-input",
       autocompleteContainer: "searchBox-autocomplete-container"
     };
@@ -52,7 +51,7 @@ class SearchBox extends React.PureComponent {
     const AutocompleteItem = ({ formattedSuggestion }) => (
       <div className="searchBox-suggestion-item">
         <i className="fa fa-icon fa-map-marker" />
-        <strong>{formattedSuggestion.mainText}</strong>{" "}
+        <span>{formattedSuggestion.mainText}</span>
         <small className="has-text-grey-light">{formattedSuggestion.secondaryText}</small>
       </div>
     );
@@ -80,20 +79,16 @@ class SearchBox extends React.PureComponent {
           <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered">
             Enter your street address & suburb:
           </h4>
-          <label className="">
-            <PlacesAutocomplete
-              autocompleteItem={AutocompleteItem}
-              onSelect={this.handleInputSelect}
-              classNames={inputStyles}
-              inputProps={inputProps}
-              options={options}
-            />
-          </label>
-          <div className="searchButton">
-            <button type="submit" className="button is-danger is-fullwidth is-medium" disabled={!inputIsValid}>
-              Find Restaurants
-            </button>
-          </div>
+          <PlacesAutocomplete
+            autocompleteItem={AutocompleteItem}
+            onSelect={this.handleInputSelect}
+            classNames={inputStyles}
+            inputProps={inputProps}
+            options={options}
+          />
+          <button type="submit" className="searchButton" disabled={!inputIsValid}>
+            Find Restaurants
+          </button>
         </form>
         {fireRedirect && <Redirect push to="/Search" />}
       </div>
