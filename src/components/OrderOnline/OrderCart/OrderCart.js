@@ -128,6 +128,19 @@ class OrderCart extends React.PureComponent {
             <p>*Includes VAT</p>
             <p>**Optional</p>
           </div>
+          <div className="cart-gratuity-line">
+          <label htmlFor="gratuity" className="gratuity-label">
+            Add Gratuity:**
+          </label>
+          <input
+            type="number"
+            name="gratuity"
+            className="gratuity-input"
+            value={this.state.gratuityAmount}
+            disabled={orderIds.length === 0}
+            onChange={this.handleGratuityChange}
+          />
+        </div>
           <div className="cartitem-divider">
             <Link
               className="button is-success is-fullwidth is-medium"
