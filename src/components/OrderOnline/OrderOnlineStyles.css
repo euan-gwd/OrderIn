@@ -1,5 +1,5 @@
 .StoreMenu {
-  padding: 0.5rem 10px;
+  padding: 0.5rem 5px;
   background-color: white;
 }
 
@@ -63,21 +63,20 @@
 
   .store-menu {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: minmax(160px, auto) 1fr;
-    /* grid-template-areas: "storeheader storeheader" "storedelivery storedelivery" "storemenulist storeorderlist"; */
+    grid-template-areas: "storeheader storeheader ." "storemenulist storemenulist storeorderlist";
     grid-gap: 0.5rem;
   }
 
   .store-header {
-    /* grid-area: storeheader; */
-    grid-row: 1;
-    grid-column: 1 / span 2;
+    grid-area: storeheader;
   }
 
   .store-delivery {
-    /* grid-area: storedelivery; */
-    grid-row: 2 / span 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     border: 1px dashed #23d160;
     border-radius: 3px;
     background-color: #f6fef9;
@@ -89,24 +88,12 @@
   }
 
   .store-main-content {
-    /* grid-area: storemenulist; */
-    grid-row: 3;
-    grid-column: 1;
-  }
-
-  .outer {
-    max-height: 720px;
-    overflow: scroll;
+    grid-area: storemenulist;
   }
 
   .store-sidebar {
-    /* grid-area: storeorderlist; */
-    grid-row: 3;
-    grid-column: 2;
-    margin: 0;
+    grid-area: storeorderlist;
     padding: 0;
-    max-height: 1000px;
-    z-index: 0;
   }
 
   .menu-list-header {

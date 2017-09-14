@@ -42,7 +42,6 @@
     display: grid;
     grid-template-columns: minmax(19px, 64px) auto 1fr;
     grid-column-gap: 0.25rem;
-    margin-bottom: 1vh;
   }
 
   .storeinfo-img {

@@ -1,10 +1,14 @@
+.cart-wrapper {
+  background-color: #fff;
+  padding: 3.75rem 10px 2rem;
+}
+
 .cart {
   border: 1px solid var(--border-color);
   border-radius: 2.5px;
   width: 100%;
   position: relative;
   background-color: #fff;
-  z-index: 20;
 }
 
 .cartitem-divider {
@@ -171,6 +175,7 @@
     border: 1px solid var(--border-color);
     border-radius: 2.5px;
     width: 29.8vw;
-    position: relative;
+    /* position: fixed; */
+    z-index: 20;
   }
 }
