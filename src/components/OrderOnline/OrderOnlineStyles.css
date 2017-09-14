@@ -26,6 +26,7 @@
   padding-right: calc(0.625em - 1px);
   padding-bottom: calc(0.375em - 1px);
   padding-left: calc(0.625em - 1px);
+  max-height: 200px;
 }
 
 .store-main-content {

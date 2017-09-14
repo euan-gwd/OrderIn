@@ -10,9 +10,7 @@ class DeliveryAddressFrom extends React.PureComponent {
 
   handleInputChange = address => {
     this.setState({ address });
-    this.state.address.length > 6
-      ? this.setState({ inputIsValid: true })
-      : this.setState({ inputIsValid: false });
+    this.state.address.length > 6 ? this.setState({ inputIsValid: true }) : this.setState({ inputIsValid: false });
   };
 
   handleInputSelect = address => {
@@ -40,8 +38,8 @@ class DeliveryAddressFrom extends React.PureComponent {
 
     const AutocompleteItem = ({ formattedSuggestion }) => (
       <div className="delivery-form-suggestion-item">
-        <i className="fa fa-icon fa-map-marker" />
-        <strong>{formattedSuggestion.mainText}</strong>{" "}
+        <i className="fa fa-icon fa-map-marker is-hidden-mobile" />
+        <strong className="mr">{formattedSuggestion.mainText}</strong>
         <small className="has-text-grey-light">{formattedSuggestion.secondaryText}</small>
       </div>
     );
@@ -79,9 +77,7 @@ class DeliveryAddressFrom extends React.PureComponent {
             </div>
           </div>
           {invalidInputSummitted && (
-            <span className="submit-error has-text-warning">
-              Please supply correctly formatted address.
-            </span>
+            <span className="submit-error has-text-warning">Please supply correctly formatted address.</span>
           )}
         </form>
       </div>
