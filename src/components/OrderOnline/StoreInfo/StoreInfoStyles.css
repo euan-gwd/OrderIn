@@ -6,7 +6,6 @@
 }
 
 .storeinfo-img {
-  grid-area: imgleft;
   object-fit: cover;
   grid-column: 1;
   grid-row: 1 / span 4;
@@ -37,7 +36,7 @@
   grid-row: 4;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) {
   .storeinfo-wrapper {
     display: grid;
     grid-template-columns: minmax(19px, 64px) auto 1fr;
@@ -45,7 +44,49 @@
   }
 
   .storeinfo-img {
-    grid-area: imgleft;
+    object-fit: cover;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .storeinfo-name {
+    font-size: 1.5rem;
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+
+  .storeinfo-tagline {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: end;
+    margin: 0 0 0.5vh 0;
+  }
+
+  .storeinfo-address {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  .storeinfo-phone {
+    grid-column: 3;
+    grid-row: 2;
+    align-self: end;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1008px) {
+  .storeinfo-wrapper {
+    display: grid;
+    grid-template-columns: minmax(19px, 64px) auto 1fr;
+    grid-column-gap: 0.25rem;
+  }
+
+  .storeinfo-img {
     object-fit: cover;
     grid-column: 1;
     grid-row: 1 / span 2;

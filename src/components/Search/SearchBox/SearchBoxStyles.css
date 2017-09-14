@@ -148,7 +148,17 @@
   opacity: 0.75;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) {
+  .searchBox-container {
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: ". SB-title ." ". SB-form .";
+  }
+}
+
+@media screen and (min-width: 1008px) {
   .searchBox-container {
     padding: 0 15px;
     display: grid;

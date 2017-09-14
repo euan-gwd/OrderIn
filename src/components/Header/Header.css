@@ -68,7 +68,33 @@
   padding-top: 0.5rem;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) {
+  .headerbar {
+    display: grid;
+    background-color: var(--header-bkgrd);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "menus logo cart";
+    color: #0e301a;
+    padding: 0 24px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
+    position: relative;
+  }
+
+  .headerbar-logo {
+    grid-area: logo;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .headerbar-buttons {
+    grid-area: menus;
+    justify-self: end;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1008px) {
   .headerbar {
     display: grid;
     background-color: var(--header-bkgrd);

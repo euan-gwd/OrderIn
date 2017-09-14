@@ -57,7 +57,23 @@
   overflow: scroll;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) {
+  .StoreMenu {
+    padding: 0.5rem 24px;
+    background-color: white;
+  }
+
+  .store-menu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(160px, auto) 1fr;
+    grid-template-areas: "storeheader storeheader" "storedelivery storedelivery" "storemenulist storemenulist"
+      "storeorderlist storeorderlist";
+    grid-gap: 0.25rem;
+  }
+}
+
+@media screen and (min-width: 1008px) {
   .StoreMenu {
     padding: 0.5rem 24px;
   }

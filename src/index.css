@@ -1195,13 +1195,13 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   display: none !important;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .is-hidden-mobile {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 769px), print {
+@media screen and (min-width: 481px) and (max-width: 1007px), print {
   .is-hidden-tablet {
     display: none !important;
   }
