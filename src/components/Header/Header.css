@@ -68,12 +68,12 @@
   padding-top: 0.5rem;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) {
   .headerbar {
     display: grid;
     background-color: var(--header-bkgrd);
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "logo menus";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "menus logo cart";
     color: #0e301a;
     padding: 0 24px;
     box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
@@ -82,7 +82,7 @@
 
   .headerbar-logo {
     grid-area: logo;
-    justify-self: start;
+    justify-self: center;
     align-self: center;
   }
 
@@ -94,12 +94,12 @@
   }
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 1008px) {
   .headerbar {
     display: grid;
     background-color: var(--header-bkgrd);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "menus logo cart";
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo menus";
     color: #0e301a;
     padding: 0 24px;
     box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);

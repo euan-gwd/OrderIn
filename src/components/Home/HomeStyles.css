@@ -4,7 +4,16 @@
   grid-row-gap: 2rem;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) {
+  .site {
+    display: grid;
+    grid-template-rows: 1fr 0.5fr 2fr;
+    grid-row-gap: 2rem;
+    margin-bottom: 3.25rem;
+  }
+}
+
+@media screen and (min-width: 1008px) {
   .site {
     display: grid;
     grid-template-rows: 2fr 1fr 2fr;

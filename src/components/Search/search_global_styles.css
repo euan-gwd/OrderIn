@@ -117,7 +117,48 @@
   padding: 0 0.5rem;
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) {
+  .searchByCity-container {
+    margin: 0;
+    display: grid;
+    justify-content: center;
+    max-height: 50vh;
+  }
+
+  .searchByCuisine-container {
+    margin: 0;
+    display: grid;
+    justify-content: center;
+  }
+
+  .search-results-container {
+    margin: 0 auto;
+    padding: 5px 10px 5px 10px;
+    display: grid;
+    background-color: var(--body-bkgrd);
+    color: #fff;
+  }
+
+  .well {
+    margin: 0;
+    padding: 0.5rem;
+    max-height: unset;
+    height: auto;
+    overflow-y: unset;
+    overflow-x: unset;
+    overflow-wrap: unset;
+  }
+
+  .inner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 1fr));
+    grid-auto-rows: 45px;
+    grid-gap: 0.25rem 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1008px) {
   .searchByCity-container {
     display: grid;
     justify-content: center;
@@ -158,9 +199,13 @@
 
   .inner-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-    grid-gap: 0.25rem 0.5rem;
-    font-size: 1rem;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    grid-gap: 0.5rem;
+  }
+
+  .icon-padding {
+    vertical-align: text-top;
+    padding: 0 0.5rem;
   }
 
   .breadcrumb-link-inactive {
@@ -171,28 +216,5 @@
   .breadcrumb-link-active {
     color: var(--btn-bkgrd);
     padding: 0 0.25rem;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  .well {
-    margin: 0;
-    padding: 0.5rem;
-    max-height: unset;
-    height: auto;
-    overflow-y: unset;
-    overflow-x: unset;
-    overflow-wrap: unset;
-  }
-
-  .inner-grid {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(150px, 1fr));
-    grid-gap: 0.5rem;
-  }
-
-  .icon-padding {
-    vertical-align: text-top;
-    padding: 0 0.5rem;
   }
 }
