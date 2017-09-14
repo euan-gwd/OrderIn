@@ -107,13 +107,14 @@
   .menu-list {
     grid-area: list;
     height: 720px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .store-cart {
     grid-area: storecart;
     padding: 0 0.25vw;
     width: 29.8vw;
+    max-height: 720px;
   }
 
   .menu-list-footer {
