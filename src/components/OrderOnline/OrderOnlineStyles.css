@@ -1,5 +1,5 @@
 .StoreMenu {
-  padding: 0.5rem 10px;
+  padding: 0.5rem 5px;
   background-color: white;
 }
 
@@ -63,9 +63,9 @@
 
   .store-menu {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: minmax(160px, auto) 1fr;
-    grid-template-areas: "storeheader storeorderlist" "storedelivery storeorderlist" "storemenulist storeorderlist";
+    grid-template-areas: "storeheader . ." "storemenulist storemenulist storemenulist";
     grid-gap: 0.5rem;
   }
 
@@ -74,7 +74,9 @@
   }
 
   .store-delivery {
-    grid-area: storedelivery;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     border: 1px dashed #23d160;
     border-radius: 3px;
     background-color: #f6fef9;
@@ -87,26 +89,34 @@
 
   .store-main-content {
     grid-area: storemenulist;
-  }
-
-  .outer {
-    max-height: 720px;
-    overflow: scroll;
-  }
-
-  .store-sidebar {
-    grid-area: storeorderlist;
-    margin: 0;
-    padding: 0;
-    max-height: 1000px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header header storecart" "list list storecart" "footer footer footer";
   }
 
   .menu-list-header {
+    grid-area: header;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     padding: 0.5rem 0.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .menu-list {
+    grid-area: list;
+    height: 720px;
+    overflow-y: scroll;
+  }
+
+  .store-cart {
+    grid-area: storecart;
+    padding: 0 0.25vw;
+    width: 29.8vw;
+  }
+
+  .menu-list-footer {
+    grid-area: footer;
   }
 }
