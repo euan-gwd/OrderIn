@@ -43,7 +43,7 @@
 
 .searchBox-header {
   grid-area: SBF-header;
-  margin-top: 0.25rem;
+  align-self: end;
 }
 
 .searchBox-input {
