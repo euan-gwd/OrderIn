@@ -58,5 +58,35 @@ module.exports = {
     price: 3900,
     description: "Insert Burger 10 description",
     status: "available"
+  },
+  dish11: {
+    name: "Burger 11",
+    price: 11000,
+    description: "Insert Burger 11 description",
+    status: "available"
+  },
+  dish12: {
+    name: "Burger 12",
+    price: 12000,
+    description: "Insert Burger 12 description",
+    status: "available"
+  },
+  dish13: {
+    name: "Burger 13",
+    price: 13000,
+    description: "Insert Burger 13 description",
+    status: "available"
+  },
+  dish14: {
+    name: "Burger 14",
+    price: 14000,
+    description: "Insert Burger 14 description",
+    status: "available"
+  },
+  dish15: {
+    name: "Burger 15",
+    price: 15000,
+    description: "Insert Burger 15 description",
+    status: "available"
   }
 };

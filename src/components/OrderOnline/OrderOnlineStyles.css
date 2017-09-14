@@ -65,7 +65,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: minmax(160px, auto) 1fr;
-    grid-template-areas: "storeheader storeheader ." "storemenulist storemenulist storeorderlist";
+    grid-template-areas: "storeheader . ." "storemenulist storemenulist storemenulist";
     grid-gap: 0.5rem;
   }
 
@@ -89,19 +89,34 @@
 
   .store-main-content {
     grid-area: storemenulist;
-  }
-
-  .store-sidebar {
-    grid-area: storeorderlist;
-    padding: 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header header storecart" "list list storecart" "footer footer footer";
   }
 
   .menu-list-header {
+    grid-area: header;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     padding: 0.5rem 0.25rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .menu-list {
+    grid-area: list;
+    height: 720px;
+    overflow-y: scroll;
+  }
+
+  .store-cart {
+    grid-area: storecart;
+    padding: 0 0.25vw;
+    width: 29.8vw;
+  }
+
+  .menu-list-footer {
+    grid-area: footer;
   }
 }

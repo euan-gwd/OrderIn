@@ -171,11 +171,13 @@
 }
 
 @media screen and (min-width: 481px) {
+  .cart-wrapper {
+    background-color: #fff;
+    padding: 0;
+  }
+
   .cart {
     border: 1px solid var(--border-color);
     border-radius: 2.5px;
-    width: 29.8vw;
-    /* position: fixed; */
-    z-index: 20;
   }
 }

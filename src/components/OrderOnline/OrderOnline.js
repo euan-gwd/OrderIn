@@ -91,7 +91,7 @@ class OrderOnline extends React.PureComponent {
                 Vegetarian
               </span>
             </header>
-            <div>
+            <div className="menu-list">
               {Object.keys(menuItems).map(menuItem => (
                 <OrderMenuItem
                   key={menuItem}
@@ -101,21 +101,21 @@ class OrderOnline extends React.PureComponent {
                 />
               ))}
             </div>
-            <footer className="has-text-centered spacer has-text-danger">
+            <div className="store-cart is-hidden-touch">
+              <OrderCart
+                restaurantName={restaurantName}
+                menuItems={menuItems}
+                orderOption={orderOption}
+                order={order}
+                orderNumber={orderNo}
+                removeFromOrder={this.removeFromOrder}
+              />
+            </div>
+            <footer className="menu-list-footer has-text-centered spacer has-text-danger">
               <p className="icon is-large">
                 <i className="fa fa-arrow-up" aria-hidden="true" />
               </p>
             </footer>
-          </div>
-          <div className="store-sidebar is-hidden-touch">
-            <OrderCart
-              restaurantName={restaurantName}
-              menuItems={menuItems}
-              orderOption={orderOption}
-              order={order}
-              orderNumber={orderNo}
-              removeFromOrder={this.removeFromOrder}
-            />
           </div>
         </div>
       </div>
