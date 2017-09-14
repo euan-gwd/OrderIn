@@ -102,6 +102,13 @@
   grid-area: SBF-autofocus;
   padding: 4px;
   text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mr {
+  margin-right: 0.25rem;
 }
 
 .searchBox-suggestion-item:hover {

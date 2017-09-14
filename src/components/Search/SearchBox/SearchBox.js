@@ -51,7 +51,7 @@ class SearchBox extends React.PureComponent {
     const AutocompleteItem = ({ formattedSuggestion }) => (
       <div className="searchBox-suggestion-item">
         <i className="fa fa-icon fa-map-marker" />
-        <span>{formattedSuggestion.mainText}</span>
+        <strong className="mr">{formattedSuggestion.mainText}</strong>
         <small className="has-text-grey-light">{formattedSuggestion.secondaryText}</small>
       </div>
     );
