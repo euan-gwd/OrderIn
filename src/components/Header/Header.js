@@ -34,7 +34,7 @@ const Header = ({ cartCount = 0 }) => {
       {cartCount !== 0 && (
         <div className="headerbar-cart is-hidden-desktop">
           <Link to="/cart" className="button is-danger">
-            <i className="fa fa-icon fa-shopping-cart fa-lg" />
+            <i className="fa fa-icon fa-cart-arrow-down fa-lg" />
           </Link>
         </div>
       )}

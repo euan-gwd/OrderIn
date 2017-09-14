@@ -7,7 +7,7 @@ import "./OrderCartStyles.css";
 class OrderCart extends React.PureComponent {
   constructor(props) {
     super(props);
-    this.state = { gratuityAmount: 0 };
+    this.state = { gratuityAmount: 0, couponCode: "" };
   }
 
   renderOrder = key => {
@@ -67,7 +67,15 @@ class OrderCart extends React.PureComponent {
     if (gratuityAmount < 0) {
       return (gratuityAmount = 0);
     }
-    this.setState({ gratuityAmount: gratuityAmount });
+    this.setState({ gratuityAmount });
+  };
+
+  handleCouponCode = evt => {
+    let couponCode = evt.target.value;
+    if (couponCode < 0) {
+      return (couponCode = "");
+    }
+    this.setState({ couponCode });
   };
 
   render() {
@@ -128,6 +136,19 @@ class OrderCart extends React.PureComponent {
             <p>*Includes VAT</p>
             <p>**Optional</p>
           </div>
+          <div className="cart-coupon-line">
+            <label htmlFor="coupon-code" className="coupon-label">
+              Do you have a Coupon Code?
+            </label>
+            <input
+              type="text"
+              name="coupon-code"
+              className="coupon-input"
+              value={this.state.couponCode}
+              disabled={orderIds.length === 0}
+              onChange={this.handleCouponCode}
+            />
+          </div>
           <div className="cartitem-divider">
             <Link
               className="button is-success is-fullwidth is-medium"
@@ -137,7 +158,7 @@ class OrderCart extends React.PureComponent {
               }}
               disabled={orderIds.length === 0}
             >
-              <i className="fa fa-icon fa-shopping-cart" />
+              <i className="fa fa-icon fa-cart-arrow-down" />
               <span>Check Out</span>
             </Link>
           </div>

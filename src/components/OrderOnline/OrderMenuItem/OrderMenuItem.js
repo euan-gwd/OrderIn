@@ -8,7 +8,7 @@ class OrderMenuItem extends React.PureComponent {
     const isAvailable = menuItem.status === "available";
     const buttonText = isAvailable ? (
       <span className="has-text-success">
-        <i className="fa fa-icon fa-plus-circle" />
+        <i className="fa fa-icon fa-cart-plus" />
         Add
       </span>
     ) : (
