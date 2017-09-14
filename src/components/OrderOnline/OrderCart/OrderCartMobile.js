@@ -12,7 +12,8 @@ class OrderCartMobile extends React.PureComponent {
     this.state = {
       order: JSON.parse(ordersRef) || {},
       menuItems: JSON.parse(menuItemsRef),
-      gratuityAmount: 0
+      gratuityAmount: 0,
+      couponCode: ""
     };
   }
 
@@ -83,13 +84,21 @@ class OrderCartMobile extends React.PureComponent {
     this.setState({ gratuityAmount: gratuityAmount });
   };
 
+  handleCouponCode = evt => {
+    let couponCode = evt.target.value;
+    if (couponCode < 0) {
+      return (couponCode = "");
+    }
+    this.setState({ couponCode });
+  };
+
   componentWillUpdate(nextProps, nextState) {
     sessionStorage.setItem(`CurrentOrder`, JSON.stringify(nextState.order));
   }
 
   render() {
     const { restaurantName } = this.props;
-    const { order } = this.state;
+    const { order, couponCode } = this.state;
     const orderNumber = sessionStorage.getItem(`storeUniqueOrderNo`);
     const orderOption = sessionStorage.getItem(`orderOpt`);
     const orderIds = Object.keys(order);
@@ -147,6 +156,19 @@ class OrderCartMobile extends React.PureComponent {
             <p>*Includes VAT</p>
             <p>**Optional</p>
           </div>
+          <div className="cart-coupon-line">
+            <label htmlFor="coupon-code" className="coupon-label">
+              Do you have a Coupon Code?
+            </label>
+            <input
+              type="text"
+              name="coupon-code"
+              className="coupon-input"
+              value={couponCode}
+              disabled={orderIds.length === 0}
+              onChange={this.handleCouponCode}
+            />
+          </div>
           <div className="cartitem-divider">
             <Link
               className="button is-success is-fullwidth is-medium"
@@ -156,7 +178,7 @@ class OrderCartMobile extends React.PureComponent {
               }}
               disabled={orderIds.length === 0}
             >
-              <i className="fa fa-icon fa-shopping-cart" />
+              <i className="fa fa-icon fa-cart-arrow-down" />
               <span>Check Out</span>
             </Link>
           </div>
