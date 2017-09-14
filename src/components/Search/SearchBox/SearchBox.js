@@ -41,7 +41,7 @@ class SearchBox extends React.PureComponent {
   };
 
   render() {
-    const { fireRedirect, inputIsValid, invalidInputSummitted } = this.state;
+    const { fireRedirect, inputIsValid } = this.state;
 
     const inputStyles = {
       root: "field",
@@ -75,22 +75,21 @@ class SearchBox extends React.PureComponent {
           <span className="has-text-bold has-text-white">Simply</span> order food online.
         </h1>
 
-        <form ref={input => (this.searchForm = input)} className="searchBox" onSubmit={this.handleSubmit}>
+        <form ref={input => (this.searchForm = input)} className="searchBox-form" onSubmit={this.handleSubmit}>
           <SearchDeliveryOptions selectDeliveryOption={this.handleDeliveryOption} />
           <h4 className="searchBox-header is-size-6-touch is-size-5-desktop has-text-centered">
             Enter your street address & suburb:
           </h4>
-          <PlacesAutocomplete
-            autocompleteItem={AutocompleteItem}
-            onSelect={this.handleInputSelect}
-            classNames={inputStyles}
-            inputProps={inputProps}
-            options={options}
-          />
-          {invalidInputSummitted && (
-            <span className="submit-error has-text-warning">Please supply correctly formatted address.</span>
-          )}
-          <div className="field mt">
+          <label className="">
+            <PlacesAutocomplete
+              autocompleteItem={AutocompleteItem}
+              onSelect={this.handleInputSelect}
+              classNames={inputStyles}
+              inputProps={inputProps}
+              options={options}
+            />
+          </label>
+          <div className="searchButton">
             <button type="submit" className="button is-danger is-fullwidth is-medium" disabled={!inputIsValid}>
               Find Restaurants
             </button>

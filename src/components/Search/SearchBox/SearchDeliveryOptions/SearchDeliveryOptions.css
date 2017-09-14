@@ -69,7 +69,6 @@ input[type="radio"].pickup:focus ~ label {
 }
 
 .search-options-wrapper {
-  grid-area: storedelivery;
   border-bottom: 1px dotted var(--border-color);
   color: #0e301a;
   padding-top: calc(0.375em - 1px);

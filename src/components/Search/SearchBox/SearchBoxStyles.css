@@ -1,9 +1,16 @@
-.searchBox-hero {
+/* .searchBox-hero {
   margin: 0 auto;
   padding: 1.25rem 10px 5px 10px;
   display: block;
   background-color: var(--body-bkgrd);
   color: #fff;
+} */
+
+.searchBox-hero {
+  padding: 0 15px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-header {
@@ -12,15 +19,14 @@
   color: #e4e4e4;
 }
 
-.searchBox {
+.searchBox-form {
+  display: grid;
+  padding: 0.5rem;
+  margin-bottom: 4vh;
+  color: #4a4a4a;
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-  color: #4a4a4a;
-  display: block;
-  padding: 0.5rem;
-  margin-bottom: 4vh;
-  max-height: 200px;
 }
 
 .searchBox-input {
@@ -66,9 +72,9 @@
   border-right: 1px solid#9a1c00;
   border-top: 1px solid #e6e6e6;
   border-radius: 0 0 2px 2px;
-  height: 20vh;
+  height: 50vh;
   z-index: 20;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .searchBox-suggestion-item {
@@ -77,14 +83,25 @@
 }
 
 @media screen and (min-width: 481px) {
-  .searchBox-hero {
-    padding: 15px 15px;
+  /* .searchBox-hero {
+    padding: 0 15px;
     display: grid;
     justify-content: center;
     align-items: center;
+  } */
+
+  .search-header {
+    grid-column: 2;
+    grid-row: 1;
   }
 
-  .searchBox {
-    width: 50vw;
+  .searchBox-form {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .searchButton {
+    margin-top: 0.75rem;
+    display: block;
   }
 }
