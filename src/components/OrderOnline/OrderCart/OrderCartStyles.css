@@ -171,6 +171,6 @@
     border: 1px solid var(--border-color);
     border-radius: 2.5px;
     width: 29.8vw;
-    position: fixed;
+    position: relative;
   }
 }
