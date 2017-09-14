@@ -72,5 +72,6 @@ input[type="radio"].pickup:focus ~ label {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--border-color);
 }
