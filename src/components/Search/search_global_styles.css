@@ -122,7 +122,6 @@
     margin: 0;
     display: grid;
     justify-content: center;
-    max-height: 50vh;
   }
 
   .searchByCuisine-container {
@@ -132,18 +131,29 @@
   }
 
   .search-results-container {
-    margin: 0;
-    display: grid;
-    justify-content: center;
+    margin: 0 24px;
     background-color: var(--body-bkgrd);
     color: #fff;
   }
 
   .search-results-body {
-    margin: 0;
     display: grid;
-    grid-template-rows: 0.155fr 1fr 0.5fr 2fr;
-    grid-row-gap: 2rem;
+    grid-template-rows: 0.1125fr 1fr;
+    grid-row-gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .breadcrumb-box {
+    display: grid;
+    grid-template-columns: minmax(48px, 1fr) 0.25fr minmax(50px, 1fr) 0.25fr minmax(50px, 1fr) 0.25fr minmax(50px, 1fr);
+    align-items: center;
+    padding: 0;
+    margin: 1rem 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
   }
 
   .well {
@@ -163,22 +173,11 @@
     grid-gap: 0.25rem 0.5rem;
     font-size: 1rem;
   }
-
-  .breadcrumb-box {
-    display: grid;
-    grid-template-columns: minmax(48px, 1fr) 0.25fr minmax(50px, 1fr) 0.25fr minmax(50px, 1fr) 0.25fr minmax(50px, 1fr);
-    align-items: center;
-    padding: 0;
-    margin: 2rem 0 2rem 0;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
-    color: #4a4a4a;
-  }
 }
 
 @media screen and (min-width: 1008px) {
   .searchByCity-container {
+    margin: 0;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -186,6 +185,7 @@
   }
 
   .searchByCuisine-container {
+    margin: 0;
     display: grid;
     justify-content: center;
     align-content: center;
@@ -193,6 +193,7 @@
   }
 
   .search-results-body {
+    margin: 0;
     display: grid;
     justify-content: center;
     align-content: center;
