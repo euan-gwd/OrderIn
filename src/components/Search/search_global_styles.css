@@ -55,7 +55,7 @@
   padding-left: 1vw;
   font-weight: bold;
   word-wrap: break-word;
-  white-space: pre-wrap;
+  white-space: normal;
   text-decoration: none;
   background-color: transparent;
   border-color: transparent;
@@ -159,11 +159,9 @@
   .well {
     margin: 0;
     padding: 0.5rem 24px;
-    max-height: unset;
+    max-height: initial;
     height: auto;
     overflow-y: unset;
-    overflow-x: unset;
-    overflow-wrap: unset;
   }
 
   .inner-grid {
@@ -172,6 +170,13 @@
     grid-auto-rows: 48px;
     grid-gap: 0.25rem 0.5rem;
     font-size: 1rem;
+  }
+
+  .search-links {
+    text-align: center;
+    word-wrap: normal;
+    white-space: normal;
+    padding: 0;
   }
 }
 
