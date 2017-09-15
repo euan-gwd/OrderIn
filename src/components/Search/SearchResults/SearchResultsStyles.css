@@ -2,7 +2,7 @@
   margin: 1rem 0;
   text-align: center;
   color: #fff;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
 }
 
@@ -23,7 +23,7 @@
 @media screen and (min-width: 481px) and (max-width: 1007px) {
   .storelist-header {
     margin: 1rem 0;
-    font-size: 2rem;
+    font-size: 1.35rem;
   }
 
   .results-body {
