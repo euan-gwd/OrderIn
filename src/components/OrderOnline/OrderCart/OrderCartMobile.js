@@ -119,9 +119,10 @@ class OrderCartMobile extends React.PureComponent {
             <span className="has-text-danger has-text-bold"> {restaurantName} </span>
             for <span className="has-text-danger has-text-bold">{orderOption}</span>
           </div>
-          <div className="cartitem-itemsList">
+          <div className="cartitem-itemsList-container">
             <CSSTransitionGroup
               component="ul"
+              className="cartitem-itemsList"
               transitionName="order"
               transitionEnterTimeout={500}
               transitionLeaveTimeout={500}
@@ -172,6 +173,9 @@ class OrderCartMobile extends React.PureComponent {
               disabled={orderIds.length === 0}
               onChange={this.handleCouponCode}
             />
+            <button className="coupon-input-mobile-button" disabled={couponCode.length === 0 || orderIds.length === 0}>
+              <i className="fa fa-icon fa-check" />
+            </button>
           </div>
           <div className="cartitem-divider">
             <Link
