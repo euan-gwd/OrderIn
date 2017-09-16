@@ -170,13 +170,10 @@
 
 .cart-coupon-line-mobile {
   display: grid;
-  align-items: center;
-  padding-top: 0.25rem;
-  padding-right: 0.25rem;
-  padding-bottom: 0.25rem;
-  padding-left: 0.25rem;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 0.5fr 1fr;
+  align-items: center;
+  padding: 0.25rem;
   align-items: center;
   border-bottom: 1px dotted var(--border-color);
   font-size: 1rem;
@@ -299,6 +296,10 @@
     border-bottom: 1px solid var(--border-color);
   }
 
+  .cartitem-divider {
+    padding: 0.5rem 0.5rem;
+  }
+
   .cart {
     border: 1px solid var(--border-color);
     border-radius: 2.5px;
@@ -306,25 +307,65 @@
 
   .order-line-item {
     display: grid;
-    grid-template-columns: 6fr 1fr 0.5fr;
+    grid-template-columns: 4fr 1fr 0.5fr;
+    grid-template-rows: minmax(48px, 1fr);
     align-items: center;
   }
 
-  .gratuity-prefix {
-    justify-self: end;
-  }
-
-  .cart-coupon-line-mobile {
+  .cart-gratuity-line {
     display: grid;
-    padding: 0 0.25rem 0.5rem;
+    grid-template-columns: 2fr 0.25fr 80px;
+    padding: 0 0.25rem 0.5rem 0.25rem;
     align-items: center;
     border-bottom: 1px dotted var(--border-color);
     font-size: 1rem;
     font-weight: normal;
   }
 
+  .gratuity-prefix {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    padding-left: 0.25rem;
+    z-index: 1;
+    font-size: 1.125rem;
+    /* font-weight: 600; */
+  }
+
+  .gratuity-input {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .cart-coupon-line-mobile {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    border-bottom: 1px dotted var(--border-color);
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .coupon-label-mobile {
+    text-align: left;
+    padding: 0.25rem 0;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
   .coupon-input-mobile {
-    justify-self: center;
+    grid-row: 1;
+    grid-column: 2;
+  }
+
+  .coupon-input-mobile-button {
+    grid-column: 3;
+    grid-row: 1;
   }
 }
 
