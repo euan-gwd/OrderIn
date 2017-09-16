@@ -68,7 +68,7 @@
   padding-top: 0.5rem;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .headerbar {
     display: grid;
     background-color: var(--header-bkgrd);

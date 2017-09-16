@@ -285,7 +285,7 @@
   padding: 5vw 1vw;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .cart-wrapper {
     background-color: #fff;
     padding: 3.75rem 24px 2rem;
@@ -381,7 +381,6 @@
 
   .cartitem-itemsList {
     padding: 0.5rem 0 0.5rem 0.25rem;
-    /* border-bottom: 1px solid var(--border-color); */
     max-height: 700px;
   }
 
@@ -392,8 +391,8 @@
 
   .order-line-item {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    grid-template-rows: minmax(30px, 1fr);
+    grid-template-columns: 2fr 1fr 0.25fr;
+    grid-template-rows: minmax(35px, 1fr);
     align-items: center;
   }
 

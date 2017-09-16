@@ -17,7 +17,7 @@
   padding-left: 0;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .navbox {
     border-radius: 3px;
     margin-top: 3.25rem;

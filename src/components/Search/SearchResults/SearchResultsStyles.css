@@ -20,7 +20,7 @@
   color: #fff;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .storelist-header {
     margin: 1rem 0;
     font-size: 1.35rem;

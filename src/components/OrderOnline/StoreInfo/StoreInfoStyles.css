@@ -36,7 +36,7 @@
   grid-row: 4;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .storeinfo-wrapper {
     display: grid;
     grid-template-columns: minmax(19px, 64px) auto 1fr;

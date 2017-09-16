@@ -65,7 +65,7 @@
   margin-right: 0.25rem;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .delivery-form-autocomplete-container {
     border-bottom: 1px solid#22c65b;
     border-left: 1px solid#22c65b;
