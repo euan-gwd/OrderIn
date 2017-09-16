@@ -77,7 +77,7 @@
     color: #0e301a;
     padding: 0 24px;
     box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1);
-    position: relative;
+    position: fixed;
   }
 
   .headerbar-logo {

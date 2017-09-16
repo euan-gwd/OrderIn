@@ -138,6 +138,7 @@ class OrderCartMobile extends React.PureComponent {
               <label htmlFor="gratuity" className="gratuity-label">
                 Add Gratuity:**
               </label>
+              <span className="gratuity-prefix">R</span>
               <input
                 type="number"
                 name="gratuity"

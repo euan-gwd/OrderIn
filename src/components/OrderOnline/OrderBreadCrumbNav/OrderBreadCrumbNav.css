@@ -17,7 +17,15 @@
   padding-left: 0;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) {
+  .navbox {
+    border-radius: 3px;
+    margin-top: 3.25rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 1008px) {
   .breadcrumb-item-centered {
     font-size: 0.75rem;
   }
