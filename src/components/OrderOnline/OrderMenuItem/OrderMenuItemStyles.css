@@ -1,6 +1,6 @@
 .item-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 0.75fr 1fr 1fr;
   border-bottom: 1px solid lightgrey;
   padding: 0;
   align-items: center;
@@ -22,12 +22,12 @@
 }
 
 .item-desc {
-  grid-column: 1/ span 3;
+  grid-column: 1/ span 2;
   grid-row: 2;
 }
 
 .item-actions {
-  grid-column: 4/5;
+  grid-column: 3/5;
   grid-row: span 2;
 }
 
@@ -39,13 +39,64 @@
   grid-column-gap: 1vw;
 }
 
-@media screen and (min-width: 481px) {
+.item-price {
+  justify-self: end;
+}
+
+.item-disabled-button {
+  justify-content: center;
+  display: grid;
+  border-color: transparent;
+  color: #f7860d;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 481px) and (max-width: 1007px) {
   .item-grid {
+    display: grid;
+    grid-template-columns: 2fr 0.125fr 1fr 1fr;
     padding: 0.5rem 0.25rem;
   }
+
+  .item-desc {
+    grid-column: 1/ span 3;
+    grid-row: 2;
+  }
+
+  .item-actions {
+    grid-column: 4/5;
+    grid-row: span 2;
+  }
+
   .item-group {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    grid-column-gap: 0.5vw;
+  }
+}
+
+@media screen and (min-width: 1008px) {
+  .item-grid {
+    display: grid;
+    grid-template-columns: 2fr 0.125fr 1fr 1fr;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .item-desc {
+    grid-column: 1/ span 3;
+    grid-row: 2;
+  }
+
+  .item-actions {
+    grid-column: 4/5;
+    grid-row: span 2;
+  }
+
+  .item-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-column-gap: 0.5vw;
   }
 }

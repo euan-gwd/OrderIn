@@ -37,7 +37,7 @@ class OrderCart extends React.PureComponent {
         <span>
           <span>{count}</span>x {menuItem.name}
         </span>
-        <span>{formatPrice(count * menuItem.price)}</span>
+        <span className="order-line-item-price">{formatPrice(count * menuItem.price)}</span>
         {removeButton}
       </li>
     );
@@ -111,8 +111,8 @@ class OrderCart extends React.PureComponent {
           </div>
           <div className="cart-totals-wrapper">
             <div className="cart-subtotal-line">
-              <span className="">Subtotal:*</span>
-              <span>{formatPrice(subtotal)}</span>
+              <span>Subtotal:*</span>
+              <span className="">{formatPrice(subtotal)}</span>
             </div>
             <div className="cart-gratuity-line">
               <label htmlFor="gratuity" className="gratuity-label">
@@ -129,8 +129,8 @@ class OrderCart extends React.PureComponent {
               />
             </div>
             <div className="cart-totals-line">
-              <span className="">Total:</span>
-              <span>{orderIds.length === 0 ? "R0.00" : formatPrice(total)}</span>
+              <span>Total:</span>
+              <span className="">{orderIds.length === 0 ? "R0.00" : formatPrice(total)}</span>
             </div>
           </div>
           <div className="cartitem-divider has-text-grey-light">

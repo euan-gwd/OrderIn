@@ -33,7 +33,8 @@ module.exports = {
     name: "Burger 6",
     description: "Insert Burger 6 description",
     price: 3000,
-    status: "unavailable"
+    status: "unavailable",
+    vegetarian: true
   },
   dish7: {
     name: "Burger 7",
@@ -69,7 +70,8 @@ module.exports = {
     name: "Burger 12",
     price: 12000,
     description: "Insert Burger 12 description",
-    status: "available"
+    status: "available",
+    vegetarian: true
   },
   dish13: {
     name: "Burger 13",

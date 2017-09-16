@@ -1336,8 +1336,6 @@ a.box:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
   text-align: center;
   white-space: nowrap;
 }
@@ -1404,6 +1402,7 @@ a.box:active {
 .button.is-outlined[disabled] {
   background-color: transparent;
   border-color: transparent;
+  padding: 0;
 }
 
 .button.is-link {
