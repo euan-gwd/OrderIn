@@ -23,6 +23,13 @@
     margin-top: 3.25rem;
     margin-bottom: 1rem;
   }
+
+  .breadcrumb-item-centered {
+    display: grid;
+    grid-template-columns: minmax(50px, 1fr) 0.5fr minmax(50px, 1fr) 0.5fr minmax(50px, 1fr) 0.5fr minmax(50px, 1fr);
+    font-size: 0.75rem;
+    align-items: center;
+  }
 }
 
 @media screen and (min-width: 1008px) {

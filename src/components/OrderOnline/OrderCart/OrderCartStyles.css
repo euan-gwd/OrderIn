@@ -22,7 +22,7 @@
 }
 
 .cartitem-itemsList {
-  padding: 0.5rem 0.25rem;
+  padding: 0.5rem 0.125rem 0.5rem;
   border-bottom: 1px solid var(--border-color);
 }
 
@@ -265,6 +265,10 @@
     display: grid;
     grid-template-columns: 6fr 1fr 0.5fr;
     align-items: center;
+  }
+
+  .gratuity-prefix {
+    justify-self: end;
   }
 
   .cart-coupon-line {
