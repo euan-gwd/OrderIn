@@ -11,7 +11,7 @@ const OrderBreadCrumbNav = () => (
             props.history.push(`/`);
           }}
         >
-          <i className="fa breadcrumb-icon fa-map-marker is-hidden-mobile" />
+          <i className="fa order-breadcrumb-icon fa-map-marker is-hidden-mobile" />
           <span className="plh">Enter Your Address</span>
         </a>
       )}
@@ -24,19 +24,19 @@ const OrderBreadCrumbNav = () => (
             props.history.goBack();
           }}
         >
-          <i className="fa breadcrumb-icon fa-home is-hidden-mobile" />
+          <i className="fa order-breadcrumb-icon fa-home is-hidden-mobile" />
           <span className="plh">Pick A Restaurant</span>
         </a>
       )}
     />
     <i className="fa breadcrumb-icon fa-chevron-right" />
     <span className="has-text-danger">
-      <i className="fa fa-cutlery is-hidden-mobile" />
+      <i className="fa order-breadcrumb-icon fa-cutlery is-hidden-mobile" />
       <span className="plh">Order Food</span>
     </span>
     <i className="fa breadcrumb-icon fa-chevron-right" />
     <span className="has-text-grey-light">
-      <i className="fa fa-shopping-cart is-hidden-mobile" />
+      <i className="fa order-breadcrumb-icon fa-shopping-cart is-hidden-mobile" />
       <span className="plh">CheckOut</span>
     </span>
   </div>
