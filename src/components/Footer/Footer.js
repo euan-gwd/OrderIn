@@ -65,10 +65,9 @@ const Footer = () => {
           <small className="copyright-notice-wrapper">
             <p className="copyright-notice-item">© Copyright OrderIn (Pty) Ltd.</p>
             <p className="copyright-notice-item">All rights reserved.</p>
-            <a className="has-text-danger copyright-notice-item">
-              Privacy Policy, Terms & Conditions
-            </a>
+            <a className="has-text-danger copyright-notice-item">Privacy Policy, Terms & Conditions</a>
           </small>
+          <div className="disclaimer">FOR DEMO ONLY: please go to www.orderin.co.za for actual site </div>
         </div>
       </div>
     </div>

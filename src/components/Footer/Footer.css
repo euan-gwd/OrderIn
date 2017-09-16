@@ -69,6 +69,10 @@
   padding: 0 0.25rem;
 }
 
+.disclaimer {
+  border: 1px solid var(--border-color);
+}
+
 @media screen and (min-width: 768px) {
   .icons-wrapper {
     justify-content: center;
