@@ -1,6 +1,6 @@
 .searchBox-container {
-  padding: 0 15px;
-  /* margin-top: 3.25rem; */
+  padding: 0 5px;
+  margin-top: 2.25rem;
   display: grid;
   grid-template-rows: 100px 200px;
   grid-template-areas: "SB-title" "SB-form";
@@ -10,7 +10,6 @@
 
 .searchBox-title {
   grid-area: SB-title;
-  /* margin-top: 3.25rem; */
   margin-bottom: 0;
   color: #e4e4e4;
   text-align: center;
