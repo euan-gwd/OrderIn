@@ -67,7 +67,13 @@ const Footer = () => {
             <p className="copyright-notice-item">All rights reserved.</p>
             <a className="has-text-danger copyright-notice-item">Privacy Policy, Terms & Conditions</a>
           </small>
-          <div className="disclaimer">FOR DEMO ONLY: please go to www.orderin.co.za for actual site </div>
+          <div className="disclaimer">
+            FOR DEMO ONLY: please visit
+            <a className="disclaimer-link" href="http://www.orderin.co.za">
+              www.orderin.co.za
+            </a>
+            for the actual OrderIn Website
+          </div>
         </div>
       </div>
     </div>

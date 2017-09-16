@@ -34,7 +34,10 @@ class OrderCartMobile extends React.PureComponent {
           this.removeFromOrder(key);
         }}
       >
-        &#10683;remove
+        <span className="">
+          <i className="fa fa-icon fa-times" />
+          <span className="">remove</span>
+        </span>
       </button>
     );
 
