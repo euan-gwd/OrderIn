@@ -13,7 +13,7 @@
 
 .search-results-container {
   margin: 0 auto;
-  padding: 5px 10px 5px 10px;
+  padding: 0;
   display: grid;
   background-color: var(--body-bkgrd);
   color: #fff;
@@ -22,6 +22,8 @@
 .search-results-body {
   margin-top: 3.75rem;
   margin-bottom: 2rem;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .inner-grid-header {
@@ -51,7 +53,7 @@
 }
 
 .search-links {
-  text-align: center;
+  text-align: justify;
   font-weight: bold;
   word-wrap: break-word;
   white-space: normal;
