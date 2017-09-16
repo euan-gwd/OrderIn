@@ -51,7 +51,7 @@
   opacity: 0.5;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .item-grid {
     display: grid;
     grid-template-columns: 2fr 0.125fr 1fr 1fr;

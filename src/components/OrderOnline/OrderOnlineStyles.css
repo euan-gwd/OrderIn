@@ -57,7 +57,7 @@
   overflow: scroll;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .StoreMenu {
     padding: 0.5rem 24px;
     background-color: white;

@@ -120,7 +120,7 @@
   padding: 0 0.5rem;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .searchByCity-container {
     margin: 0;
     display: grid;

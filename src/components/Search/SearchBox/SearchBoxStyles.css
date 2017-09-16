@@ -149,7 +149,7 @@
   opacity: 0.75;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1007px) {
+@media screen and (min-width: 481px) and (max-width: 1007px) and (orientation: portrait) {
   .searchBox-container {
     padding: 0 15px;
     display: grid;
