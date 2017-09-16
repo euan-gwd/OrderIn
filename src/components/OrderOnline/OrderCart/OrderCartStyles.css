@@ -164,7 +164,7 @@
   padding: 0 !important;
 }
 
-.cart-coupon-line {
+.cart-coupon-line-mobile {
   display: grid;
   padding: 0 0.25rem 0.5rem;
   align-items: center;
@@ -173,13 +173,12 @@
   font-weight: normal;
 }
 
-.coupon-label {
-  text-align: center;
+.coupon-label-mobile {
+  text-align: left;
   color: darkgray;
 }
 
-.coupon-input {
-  justify-self: end;
+.coupon-input-mobile {
   align-items: center;
   border: 1px solid transparent;
   border-radius: 2px;
@@ -200,26 +199,26 @@
   width: 75%;
 }
 
-.coupon-input:focus,
-.coupon-input.is-focused,
-.coupon-input:active,
-.coupon-input.is-active {
+.coupon-input-mobile:focus,
+.coupon-input-mobile.is-focused,
+.coupon-input-mobile:active,
+.coupon-input-mobile.is-active {
   outline: none;
 }
 
-.coupon-input:hover,
-.coupon-input.is-hovered {
+.coupon-input-mobile:hover,
+.coupon-input-mobile.is-hovered {
   border-color: #b5b5b5;
 }
 
-.coupon-input:focus,
-.coupon-input.is-focused,
-.coupon-input:active,
-.coupon-input.is-active {
+.coupon-input-mobile:focus,
+.coupon-input-mobile.is-focused,
+.coupon-input-mobile:active,
+.coupon-input-mobile.is-active {
   border-color: #b5b5b5;
 }
 
-.coupon-input[disabled] {
+.coupon-input-mobile[disabled] {
   background-color: white;
   border-color: whitesmoke;
   box-shadow: none;
@@ -227,7 +226,7 @@
   cursor: not-allowed;
 }
 
-.coupon-input[disabled]:hover {
+.coupon-input-mobile[disabled]:hover {
   cursor: not-allowed;
 }
 
@@ -271,7 +270,7 @@
     justify-self: end;
   }
 
-  .cart-coupon-line {
+  .cart-coupon-line-mobile {
     display: grid;
     padding: 0 0.25rem 0.5rem;
     align-items: center;
@@ -280,7 +279,7 @@
     font-weight: normal;
   }
 
-  .coupon-input {
+  .coupon-input-mobile {
     justify-self: center;
   }
 }
@@ -307,7 +306,70 @@
     align-items: center;
   }
 
+  .cart-coupon-line {
+    display: grid;
+    padding: 0 0.25rem 0.5rem;
+    align-items: center;
+    border-bottom: 1px dotted var(--border-color);
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  .coupon-label {
+    text-align: center;
+    color: darkgray;
+  }
+
   .coupon-input {
     justify-self: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1.125rem;
+    font-weight: normal;
+    justify-content: flex-start;
+    text-align: right;
+    line-height: 1.5;
+    position: relative;
+    vertical-align: top;
+    background-color: white;
+    border-color: #dbdbdb;
+    color: #a3a3a3;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    max-width: 100%;
+    width: 75%;
+  }
+
+  .coupon-input:focus,
+  .coupon-input.is-focused,
+  .coupon-input:active,
+  .coupon-input.is-active {
+    outline: none;
+  }
+
+  .coupon-input:hover,
+  .coupon-input.is-hovered {
+    border-color: #b5b5b5;
+  }
+
+  .coupon-input:focus,
+  .coupon-input.is-focused,
+  .coupon-input:active,
+  .coupon-input.is-active {
+    border-color: #b5b5b5;
+  }
+
+  .coupon-input[disabled] {
+    background-color: white;
+    border-color: whitesmoke;
+    box-shadow: none;
+    color: #7a7a7a;
+    cursor: not-allowed;
+  }
+
+  .coupon-input[disabled]:hover {
+    cursor: not-allowed;
   }
 }

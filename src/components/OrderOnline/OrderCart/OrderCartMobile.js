@@ -160,14 +160,14 @@ class OrderCartMobile extends React.PureComponent {
             <p>*Includes VAT</p>
             <p>**Optional</p>
           </div>
-          <div className="cart-coupon-line">
-            <label htmlFor="coupon-code" className="coupon-label">
+          <div className="cart-coupon-line-mobile">
+            <label htmlFor="coupon-code" className="coupon-label-mobile">
               Do you have a Coupon Code?
             </label>
             <input
               type="text"
               name="coupon-code"
-              className="coupon-input"
+              className="coupon-input-mobile"
               value={couponCode}
               disabled={orderIds.length === 0}
               onChange={this.handleCouponCode}
