@@ -28,7 +28,7 @@
 
 .order-line-item {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 0.5fr;
   align-items: center;
 }
 
@@ -263,7 +263,7 @@
 
   .order-line-item {
     display: grid;
-    grid-template-columns: 6fr 1fr 1fr;
+    grid-template-columns: 6fr 1fr 0.5fr;
     align-items: center;
   }
 
