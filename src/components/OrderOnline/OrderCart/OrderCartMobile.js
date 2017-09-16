@@ -34,7 +34,7 @@ class OrderCartMobile extends React.PureComponent {
           this.removeFromOrder(key);
         }}
       >
-        &#10683; remove
+        &#10683;remove
       </button>
     );
 
