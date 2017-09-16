@@ -8,7 +8,7 @@
 
 .breadcrumb-item-centered {
   display: grid;
-  grid-template-columns: minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr) 1fr minmax(50px, 1fr);
+  grid-template-columns: minmax(50px, 1fr) 0.5fr minmax(50px, 1fr) 0.5fr minmax(50px, 1fr) 0.5fr minmax(50px, 1fr);
   font-size: 0.5rem;
   align-items: center;
 }
@@ -29,6 +29,14 @@
     grid-template-columns: minmax(50px, 1fr) 0.5fr minmax(50px, 1fr) 0.5fr minmax(50px, 1fr) 0.5fr minmax(50px, 1fr);
     font-size: 0.75rem;
     align-items: center;
+  }
+
+  .plh {
+    padding-left: 0.25rem;
+  }
+
+  .order-breadcrumb-icon {
+    vertical-align: baseline;
   }
 }
 

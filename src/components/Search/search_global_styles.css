@@ -53,8 +53,11 @@
 }
 
 .search-links {
+  display: grid;
+  align-items: center;
   text-align: center;
   font-weight: bold;
+  min-height: 40px;
   word-wrap: break-word;
   white-space: normal;
   text-decoration: none;
