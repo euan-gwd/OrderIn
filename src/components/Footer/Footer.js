@@ -68,7 +68,8 @@ const Footer = () => {
             <a className="has-text-danger copyright-notice-item">Privacy Policy, Terms & Conditions</a>
           </small>
           <div className="disclaimer">
-            FOR DEMO ONLY: please visit
+            FOR DEMO ONLY<br />
+            visit
             <a className="disclaimer-link" href="http://www.orderin.co.za">
               www.orderin.co.za
             </a>
