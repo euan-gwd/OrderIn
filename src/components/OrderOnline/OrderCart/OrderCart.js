@@ -88,91 +88,89 @@ class OrderCart extends React.PureComponent {
     const total = this.calculateGratuity(subtotal);
 
     return (
-      <div className="">
-        <div className="cart">
-          <div className="cartitem-divider is-size-4">
-            <i className="fa fa-icon fa-shopping-basket" />
-            My Order
+      <div className="cart">
+        <div className="cartitem-divider is-size-4">
+          <i className="fa fa-icon fa-shopping-basket" />
+          My Order
+        </div>
+        <div className="cart-orderNo">
+          <span className="has-text-danger has-text-bold">#{orderNumber}</span> from
+          <span className="has-text-danger has-text-bold"> {restaurantName} </span>
+          for <span className="has-text-danger has-text-bold">{orderOption}</span>
+        </div>
+        <div className="cartitem-itemsList-container">
+          <CSSTransitionGroup
+            component="ul"
+            className="cartitem-itemsList"
+            transitionName="order"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
+            {orderIds.map(this.renderOrder)}
+          </CSSTransitionGroup>
+          {orderIds.length === 0 && (
+            <div className="order-no-line-items has-text-grey-lighter">No items added yet. &#9785;</div>
+          )}
+        </div>
+        <div className="cart-totals-wrapper">
+          <div className="cart-subtotal-line">
+            <span>Subtotal:*</span>
+            <span className="">{formatPrice(subtotal)}</span>
           </div>
-          <div className="cart-orderNo">
-            <span className="has-text-danger has-text-bold">#{orderNumber}</span> from
-            <span className="has-text-danger has-text-bold"> {restaurantName} </span>
-            for <span className="has-text-danger has-text-bold">{orderOption}</span>
-          </div>
-          <div className="cartitem-itemsList-container">
-            <CSSTransitionGroup
-              component="ul"
-              className="cartitem-itemsList"
-              transitionName="order"
-              transitionEnterTimeout={500}
-              transitionLeaveTimeout={500}
-            >
-              {orderIds.map(this.renderOrder)}
-            </CSSTransitionGroup>
-            {orderIds.length === 0 && (
-              <div className="order-no-line-items has-text-grey-lighter">No items added yet. &#9785;</div>
-            )}
-          </div>
-          <div className="cart-totals-wrapper">
-            <div className="cart-subtotal-line">
-              <span>Subtotal:*</span>
-              <span className="">{formatPrice(subtotal)}</span>
-            </div>
-            <div className="cart-gratuity-line">
-              <label htmlFor="gratuity" className="gratuity-label">
-                Add Gratuity:**
-              </label>
-              <span className="gratuity-prefix">R</span>
-              <input
-                type="number"
-                name="gratuity"
-                className="gratuity-input"
-                value={this.state.gratuityAmount}
-                disabled={orderIds.length === 0}
-                onChange={this.handleGratuityChange}
-              />
-            </div>
-            <div className="cart-totals-line">
-              <span>Total:</span>
-              <span className="">{orderIds.length === 0 ? "R0.00" : formatPrice(total)}</span>
-            </div>
-          </div>
-          <div className="cartitem-divider has-text-grey-light">
-            <p>*Includes VAT</p>
-            <p>**Optional</p>
-          </div>
-          <div className="cart-coupon-line">
-            <label htmlFor="coupon-code" className="coupon-label">
-              Do you have a Coupon Code?
+          <div className="cart-gratuity-line">
+            <label htmlFor="gratuity" className="gratuity-label">
+              Add Gratuity:**
             </label>
+            <span className="gratuity-prefix">R</span>
             <input
-              type="text"
-              name="coupon-code"
-              className="coupon-input"
-              value={this.state.couponCode}
+              type="number"
+              name="gratuity"
+              className="gratuity-input"
+              value={this.state.gratuityAmount}
               disabled={orderIds.length === 0}
-              onChange={this.handleCouponCode}
+              onChange={this.handleGratuityChange}
             />
-            <button
-              className="coupon-input-mobile-button"
-              disabled={this.state.couponCode.length === 0 || orderIds.length === 0}
-            >
-              <i className="fa fa-icon fa-check" />
-            </button>
           </div>
-          <div className="cartitem-divider">
-            <Link
-              className="button is-success is-fullwidth is-medium"
-              to={{
-                pathname: `/checkout`,
-                state: { modal: true }
-              }}
-              disabled={orderIds.length === 0}
-            >
-              <i className="fa fa-icon fa-cart-arrow-down" />
-              <span>Check Out</span>
-            </Link>
+          <div className="cart-totals-line">
+            <span>Total:</span>
+            <span className="">{orderIds.length === 0 ? "R0.00" : formatPrice(total)}</span>
           </div>
+        </div>
+        <div className="cartitem-divider has-text-grey-light">
+          <p>*Includes VAT</p>
+          <p>**Optional</p>
+        </div>
+        <div className="cart-coupon-line has-text-grey-light">
+          <label htmlFor="coupon-code" className="coupon-label">
+            Do you have a Coupon Code?
+          </label>
+          <input
+            type="text"
+            name="coupon-code"
+            className="coupon-input"
+            value={this.state.couponCode}
+            disabled={orderIds.length === 0}
+            onChange={this.handleCouponCode}
+          />
+          <button
+            className="coupon-input-button"
+            disabled={this.state.couponCode.length === 0 || orderIds.length === 0}
+          >
+            <i className="fa fa-icon fa-check" />
+          </button>
+        </div>
+        <div className="cartitem-divider">
+          <Link
+            className="button is-success is-fullwidth is-medium"
+            to={{
+              pathname: `/checkout`,
+              state: { modal: true }
+            }}
+            disabled={orderIds.length === 0}
+          >
+            <i className="fa fa-icon fa-cart-arrow-down" />
+            <span>Check Out</span>
+          </Link>
         </div>
       </div>
     );

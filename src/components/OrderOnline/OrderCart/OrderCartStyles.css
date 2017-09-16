@@ -387,26 +387,60 @@
   .order-line-item {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
+    grid-template-rows: minmax(30px, 1fr);
     align-items: center;
   }
 
-  .cart-coupon-line {
+  .cart-gratuity-line {
     display: grid;
-    padding: 0 0.25rem 0.5rem;
+    grid-template-columns: 2fr 0.25fr 80px;
+    padding: 0 0.25rem 0.5rem 0.25rem;
     align-items: center;
     border-bottom: 1px dotted var(--border-color);
     font-size: 1rem;
     font-weight: normal;
   }
 
+  .gratuity-prefix {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: start;
+    padding-left: 0.25rem;
+    z-index: 1;
+    font-size: 1.125rem;
+  }
+
+  .gratuity-input {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
+  }
+
+  .cart-coupon-line {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    padding: 0.5rem 0.5rem;
+    border-bottom: 1px dotted var(--border-color);
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 100%;
+    width: 100%;
+  }
+
   .coupon-label {
-    text-align: center;
-    color: darkgray;
+    text-align: left;
+    padding: 0.25rem 0;
+    grid-column: 1/3;
+    grid-row: 1;
   }
 
   .coupon-input {
-    justify-self: center;
+    grid-row: 2;
+    grid-column: 1;
     align-items: center;
+    justify-self: start;
     border: 1px solid transparent;
     border-radius: 2px;
     box-shadow: none;
@@ -423,7 +457,7 @@
     color: #a3a3a3;
     box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
     max-width: 100%;
-    width: 75%;
+    width: 95%;
   }
 
   .coupon-input:focus,
@@ -455,5 +489,34 @@
 
   .coupon-input[disabled]:hover {
     cursor: not-allowed;
+  }
+
+  .coupon-input-button {
+    grid-column: 2;
+    grid-row: 2;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1.125rem;
+    justify-content: center;
+    line-height: 1.5;
+    height: 2rem;
+    vertical-align: top;
+    user-select: none;
+    background-color: #23d160;
+    border-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .coupon-input-button[disabled] {
+    background-color: #f7860d;
+    border-color: transparent;
+    box-shadow: none;
+    opacity: 0.5;
   }
 }
