@@ -329,7 +329,6 @@
     padding-left: 0.25rem;
     z-index: 1;
     font-size: 1.125rem;
-    /* font-weight: 600; */
   }
 
   .gratuity-input {
@@ -372,7 +371,7 @@
 @media screen and (min-width: 1008px) {
   .cart-wrapper {
     background-color: #fff;
-    padding: 1rem 24px 2rem;
+    padding: 1rem 5px 2rem;
   }
 
   .cart {

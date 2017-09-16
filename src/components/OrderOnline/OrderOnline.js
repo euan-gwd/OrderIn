@@ -85,8 +85,8 @@ class OrderOnline extends React.PureComponent {
           />
           <div className="store-main-content">
             <header className="menu-list-header">
-              <span className="is-size-5 has-text-bold">Menu</span>
-              <span>
+              <span className="menu-list-title">Menu</span>
+              <span className="menu-list-subtitle">
                 <i className="fa fa-icon fa-leaf has-text-success" />
                 Vegetarian
               </span>
