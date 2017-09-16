@@ -381,7 +381,13 @@
 
   .cartitem-itemsList {
     padding: 0.5rem 0 0.5rem 0.25rem;
-    border-bottom: 1px solid var(--border-color);
+    /* border-bottom: 1px solid var(--border-color); */
+    max-height: 700px;
+  }
+
+  .order-no-line-items {
+    padding: 1rem 0.25rem;
+    text-align: center;
   }
 
   .order-line-item {
