@@ -68,7 +68,7 @@ class RegisterForm extends React.PureComponent {
                 </div>
                 <div className="form-field">
                   <p className="control">
-                    <button className="button is-danger is-fullwidth is-medium">Register</button>
+                    <button className="button is-danger is-fullwidth is-medium has-text-centered">Register</button>
                   </p>
                 </div>
               </div>

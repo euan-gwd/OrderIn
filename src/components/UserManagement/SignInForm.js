@@ -36,7 +36,7 @@ class SignInForm extends React.PureComponent {
                 </div>
                 <div className="form-field">
                   <p className="control">
-                    <button className="button is-danger is-fullwidth is-medium">SignIn</button>
+                    <button className="button is-danger is-fullwidth is-medium has-text-centered">Sign In</button>
                   </p>
                 </div>
               </div>
