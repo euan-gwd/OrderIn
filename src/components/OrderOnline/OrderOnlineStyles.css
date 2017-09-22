@@ -142,8 +142,7 @@
 
   .store-cart {
     grid-area: storecart;
-    max-height: 540px;
-    overflow: hidden;
+    max-height: 538px;
   }
 
   .menu-list-footer {
