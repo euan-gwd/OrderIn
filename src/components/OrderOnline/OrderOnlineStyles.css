@@ -126,8 +126,8 @@
 
   .menu-list {
     grid-area: list;
-    max-height: 485px;
-    overflow-y: auto;
+    max-height: 79vh;
+    overflow-y: scroll;
   }
 
   .menu-list-title {
@@ -142,7 +142,7 @@
 
   .store-cart {
     grid-area: storecart;
-    max-height: 538px;
+    max-height: 79vh;
   }
 
   .menu-list-footer {
