@@ -1,7 +1,7 @@
 import React from "react";
 import "./formstyles.css";
 
-class RegisterForm extends React.PureComponent {
+class RegisterForm extends React.Component {
   render() {
     return (
       <div className="user-management-container">

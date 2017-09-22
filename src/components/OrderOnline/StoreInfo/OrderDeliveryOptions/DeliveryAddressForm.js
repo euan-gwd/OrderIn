@@ -2,7 +2,7 @@ import React from "react";
 import PlacesAutocomplete from "react-places-autocomplete";
 import "./DeliveryAddressFormStyles.css";
 
-class DeliveryAddressFrom extends React.PureComponent {
+class DeliveryAddressFrom extends React.Component {
   constructor(props) {
     super(props);
     this.state = { inputIsValid: null, address: this.props.deliveryAddress };

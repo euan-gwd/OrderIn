@@ -2,7 +2,7 @@ import React from "react";
 import "./OrderDeliveryOptions.css";
 import DeliveryAddressForm from "./DeliveryAddressForm";
 
-class OrderDeliveryOptions extends React.PureComponent {
+class OrderDeliveryOptions extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
