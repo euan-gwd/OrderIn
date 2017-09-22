@@ -20,7 +20,7 @@ import { Cities } from "../mockAPI/sample-city-list";
 import { Cuisines } from "../mockAPI/sample-cuisine-list";
 import { unSlug } from "./helpers";
 
-class App extends React.Component {
+class App extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {

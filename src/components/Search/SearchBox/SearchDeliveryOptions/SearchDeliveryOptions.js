@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchDeliveryOptions.css";
 
-class SearchDeliveryOptions extends React.Component {
+class SearchDeliveryOptions extends React.PureComponent {
   state = { selectedOption: "Pickup", deliveryAddress: "Pickup" };
 
   handleOptionChange = changeEvent => {

@@ -6,7 +6,7 @@ import OrderMenuItem from "./OrderMenuItem/OrderMenuItem";
 import OrderCart from "./OrderCart/OrderCart";
 import { Stores } from "../../mockAPI/sample-stores";
 
-class OrderOnline extends React.Component {
+class OrderOnline extends React.PureComponent {
   constructor(props) {
     super(props);
     const nameRef = sessionStorage.getItem(`restaurantName`);

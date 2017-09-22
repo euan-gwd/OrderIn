@@ -4,7 +4,7 @@ import CSSTransitionGroup from "react-addons-css-transition-group";
 import { formatPrice } from "../../helpers";
 import "./OrderCartStyles.css";
 
-class OrderCartMobile extends React.Component {
+class OrderCartMobile extends React.PureComponent {
   constructor(props) {
     super(props);
     const ordersRef = sessionStorage.getItem(`CurrentOrder`);

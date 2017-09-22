@@ -3,7 +3,7 @@ import Store from "./Store";
 import "./SearchResultsStyles.css";
 import { Stores } from "../../../mockAPI/sample-stores";
 
-class SearchResultsList extends React.Component {
+class SearchResultsList extends React.PureComponent {
   render() {
     const { searchResult, selectStore } = this.props;
     const restaurants = Stores;
