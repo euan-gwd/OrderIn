@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./index.css";
 import "font-awesome/css/font-awesome.css";
@@ -14,5 +14,5 @@ const Root = () => (
 
 export default Root;
 
-render(<Root />, document.getElementById("root"));
+ReactDOM.render(<Root />, document.getElementById("root"));
 registerServiceWorker();
