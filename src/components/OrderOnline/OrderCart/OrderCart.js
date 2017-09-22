@@ -30,7 +30,8 @@ class OrderCart extends React.PureComponent {
     if (!menuItem || menuItem.status === "unavailable") {
       return (
         <li key={key}>
-          Sorry, {menuItem ? menuItem.name : "menuItem"} is no longer available {removeButton}
+          Sorry, {menuItem ? menuItem.name : "menuItem"} is no longer available{" "}
+          {removeButton}
         </li>
       );
     }
@@ -40,7 +41,9 @@ class OrderCart extends React.PureComponent {
         <span>
           <span>{count}</span>x {menuItem.name}
         </span>
-        <span className="order-line-item-price">{formatPrice(count * menuItem.price)}</span>
+        <span className="order-line-item-price">
+          {formatPrice(count * menuItem.price)}
+        </span>
         {removeButton}
       </li>
     );
@@ -94,9 +97,13 @@ class OrderCart extends React.PureComponent {
           My Order
         </div>
         <div className="cart-orderNo">
-          <span className="has-text-danger has-text-bold">#{orderNumber}</span> from
-          <span className="has-text-danger has-text-bold"> {restaurantName} </span>
-          for <span className="has-text-danger has-text-bold">{orderOption}</span>
+          <span className="has-text-danger has-text-bold">#{orderNumber}</span>
+          from
+          <span className="has-text-danger has-text-bold">
+            {restaurantName}
+          </span>
+          for
+          <span className="has-text-danger has-text-bold">{orderOption}</span>
         </div>
         <div className="cartitem-itemsList-container">
           <CSSTransitionGroup
@@ -109,7 +116,9 @@ class OrderCart extends React.PureComponent {
             {orderIds.map(this.renderOrder)}
           </CSSTransitionGroup>
           {orderIds.length === 0 && (
-            <div className="order-no-line-items has-text-grey-lighter">No items added yet. &#9785;</div>
+            <div className="order-no-line-items has-text-grey-lighter">
+              No items added yet. &#9785;
+            </div>
           )}
         </div>
         <div className="cart-totals-wrapper">
@@ -133,7 +142,9 @@ class OrderCart extends React.PureComponent {
           </div>
           <div className="cart-totals-line">
             <span>Total:</span>
-            <span className="">{orderIds.length === 0 ? "R0.00" : formatPrice(total)}</span>
+            <span className="">
+              {orderIds.length === 0 ? "R0.00" : formatPrice(total)}
+            </span>
           </div>
         </div>
         <div className="cartitem-divider has-text-grey-light">
@@ -154,7 +165,9 @@ class OrderCart extends React.PureComponent {
           />
           <button
             className="coupon-input-button"
-            disabled={this.state.couponCode.length === 0 || orderIds.length === 0}
+            disabled={
+              this.state.couponCode.length === 0 || orderIds.length === 0
+            }
           >
             <i className="fa fa-icon fa-check" />
           </button>

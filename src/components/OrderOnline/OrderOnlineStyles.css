@@ -7,8 +7,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: minmax(160px, auto) 1fr;
-  grid-template-areas: "storeheader storeheader" "storedelivery storedelivery" "storemenulist storemenulist"
-    "storeorderlist storeorderlist";
+  grid-template-areas: "storeheader storeheader" "storedelivery storedelivery"
+    "storemenulist storemenulist" "storeorderlist storeorderlist";
   grid-gap: 0.25rem;
 }
 
@@ -67,8 +67,8 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: minmax(160px, auto) 1fr;
-    grid-template-areas: "storeheader storeheader" "storedelivery storedelivery" "storemenulist storemenulist"
-      "storeorderlist storeorderlist";
+    grid-template-areas: "storeheader storeheader" "storedelivery storedelivery"
+      "storemenulist storemenulist" "storeorderlist storeorderlist";
     grid-gap: 0.25rem;
   }
 }
@@ -82,7 +82,8 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: minmax(160px, auto) 1fr;
-    grid-template-areas: "storeheader . ." "storemenulist storemenulist storemenulist";
+    grid-template-areas: "storeheader . ."
+      "storemenulist storemenulist storemenulist";
     grid-gap: 0.5rem;
   }
 
@@ -109,7 +110,8 @@
     grid-area: storemenulist;
     display: grid;
     grid-template-columns: 1.75fr 0.25fr 1fr;
-    grid-template-areas: "header header storecart" "list list storecart" "footer footer footer";
+    grid-template-areas: "header header storecart" "list list storecart"
+      "footer footer footer";
     grid-column-gap: 0.25rem;
   }
 
@@ -124,7 +126,7 @@
 
   .menu-list {
     grid-area: list;
-    height: 720px;
+    max-height: 485px;
     overflow-y: auto;
   }
 
@@ -140,9 +142,13 @@
 
   .store-cart {
     grid-area: storecart;
+    max-height: 540px;
+    overflow: hidden;
   }
 
   .menu-list-footer {
     grid-area: footer;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.25rem;
   }
 }
