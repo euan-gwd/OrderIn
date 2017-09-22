@@ -372,6 +372,7 @@
   .cart {
     border: 1px solid var(--border-color);
     border-radius: 2.5px;
+    padding: 0 0.25vw;
   }
 
   .cart-orderNo {

@@ -126,7 +126,6 @@
 
   .menu-list {
     grid-area: list;
-    border: 1px solid green;
     max-height: 485px;
     overflow-y: auto;
   }
@@ -143,12 +142,13 @@
 
   .store-cart {
     grid-area: storecart;
-    border: 1px solid red;
     max-height: 540px;
     overflow: hidden;
   }
 
   .menu-list-footer {
     grid-area: footer;
+    border-top: 1px solid var(--border-color);
+    padding-top: 0.25rem;
   }
 }
