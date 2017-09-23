@@ -382,10 +382,10 @@
 
   .cartitem-itemsList-container {
     border-bottom: 1px solid var(--border-color);
-    height: 105px;
-    max-height: 910px;
+    max-height: 105px;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: relative;
   }
 
   .cartitem-itemsList {
@@ -435,6 +435,11 @@
     grid-column: 3;
     grid-row: 1;
     text-align: right;
+  }
+
+  .cart-additionals {
+    display: flex;
+    justify-content: space-around;
   }
 
   .cart-coupon-line {

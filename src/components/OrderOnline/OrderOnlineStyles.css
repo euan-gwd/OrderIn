@@ -113,6 +113,8 @@
     grid-template-areas: "header header storecart" "list list storecart"
       "footer footer footer";
     grid-column-gap: 0.25rem;
+    width: 100%;
+    height: 100vh;
   }
 
   .menu-list-header {
@@ -142,7 +144,6 @@
 
   .store-cart {
     grid-area: storecart;
-    max-height: 79vh;
   }
 
   .menu-list-footer {

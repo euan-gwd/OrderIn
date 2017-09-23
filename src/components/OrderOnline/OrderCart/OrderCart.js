@@ -147,9 +147,9 @@ class OrderCart extends React.PureComponent {
             </span>
           </div>
         </div>
-        <div className="cartitem-divider has-text-grey-light">
-          <p>*Includes VAT</p>
-          <p>**Optional</p>
+        <div className="cart-additionals cartitem-divider has-text-grey-light">
+          <span>*Includes VAT</span>
+          <span>**Optional</span>
         </div>
         <div className="cart-coupon-line has-text-grey-light">
           <label htmlFor="coupon-code" className="coupon-label">
