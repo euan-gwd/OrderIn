@@ -5,3 +5,5 @@ This project was a CLONE of a working site and as such uses a mock API and all t
 As has stated this is a proof of code was used to show the client proof of concept.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+Site was deployed to firebase - recent changes in firebase meant deployed site is no longer available.
