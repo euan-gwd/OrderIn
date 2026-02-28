@@ -6,4 +6,4 @@ As has stated this is a proof of code was used to show the client proof of conce
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-Site was deployed to https://orderin-poc.netlify.com/
+Site was deployed to [https://orderin-poc.netlify.com/](https://orderin-poc.netlify.app/)
